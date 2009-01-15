@@ -1,0 +1,8 @@
+[Activity]
+name = InfoSlicer
+activity_version = 1
+host_version = 1
+icon = slicelogo
+service_name = org.laptop.infoslicer
+class = sugaractivity.sugaractivity
+show_launcher = yes

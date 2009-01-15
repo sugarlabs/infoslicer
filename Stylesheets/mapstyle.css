@@ -1,0 +1,46 @@
+/* Copyright (C) IBM Corporation 2008 */
+
+body
+{
+background-color: #f6f6f6;		/* sets the background colour for the page */
+color: #000000;				/* sets the default font colour for the page */
+}
+
+p,li
+{
+font-family: arial, 'sans serif'; 	/* sets font */
+color: #000000; 			/* sets font color */
+}
+
+h1
+{
+background-color: #0000bb;		/* set the background for the h1 header */
+color: #ffffff;				/* sets the font colour for the h1 header */
+text-align: center; 			/* aligns text in the centre of the page */
+}
+
+h2,h3,h4
+{
+color: #0000dd;				/* sets the font colour for the header elements */
+}
+
+img
+{
+border-style: none;			/* removes the boarder around linked images */
+}
+
+a:link
+{
+color: #990000; 			/* sets the font colour for a:link */
+}
+
+a:visited, a:active
+{
+color: #ff5555; 			/* sets the font colour for these elements */
+}
+
+a:hover
+{
+color: #ff0000;				/* sets the font colour for a:hover */
+}
+
