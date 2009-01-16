@@ -1,13 +1,8 @@
-<!-- Copyright (C) IBM Corporation 2008  -->
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
-	<!ENTITY stroke_color "white">
-	<!ENTITY fill_color "none">
-]>
-
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="0.833333in" height="0.833333in"
-     viewBox="0 0 60 60">
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#000">
+	<!ENTITY fill_color "#eee">
+]><svg height="55px" viewBox="0 0 55 55" width="55px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" stroke="&stroke_color;" fill="&fill_color;">
+<g>
   <path id="Left"
         fill="&fill_color;" stroke="&stroke_color;" stroke-width="3"
         d="M 12.99,13.24
@@ -34,4 +29,5 @@
              40.77,53.95 41.01,49.36 41.00,46.00
              41.00,46.00 41.00,34.00 41.00,34.00
              32.85,39.73 29.80,33.82 30.84,30.00 Z" />
+</g>
 </svg>
