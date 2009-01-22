@@ -1,5 +1,5 @@
-<!-- Copyright (C) IBM Corporation 2008 -->
 <?xml version="1.0"?>
+<!-- Copyright (C) IBM Corporation 2008 -->
 <html xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xsl:version="1.0">
 <head>
 	<title><xsl:value-of select="reference/title" /></title>
