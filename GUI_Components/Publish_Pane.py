@@ -40,4 +40,4 @@ class Publish_Pane(Pane):
             IO_Manager().save_article(article)   
         self.working = article
         self.panel.populate_themes()
-        self.panel.export_message.set_text(_('Select the theme you want, choose the articles you wish to include in the package and click "Publish".'))
+        self.panel.export_message.set_text(_("Select the theme you want, choose the articles you wish to include in the package and click 'Publish'."))
