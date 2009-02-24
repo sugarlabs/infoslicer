@@ -13,6 +13,7 @@ from GUI_Components.Image_Pane import Image_Pane
 from GUI_Components.Publish_Pane import Publish_Pane
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
+from gettext import gettext as _
 
 class Infoslicer_GUI:
     """ 
