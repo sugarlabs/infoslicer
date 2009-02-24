@@ -8,6 +8,7 @@ from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
 import logging
+from gettext import gettext as _
 
 logger = logging.getLogger('infoslicer')
 
@@ -109,14 +110,14 @@ class Image_Pane(Pane):
     def set_working_article(self, article):
         logger.debug("working received, title %s theme %s " %
                 (article.article_title, article.article_theme))
-        self.editarticle.articletitle.set_markup("<span size='medium'><b>Theme:</b>  %s   \n<b>Article:</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s   \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         if article == None:
             article = Article()
         self.editarticle.textbox.set_article(article)
         if article.article_theme == None:
             article.article_theme = _("My Articles")
-        theme_list = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
-        self.gallery.theme = _("Wikipedia Articles")
+        theme_list = IO_Manager().get_pages_in_theme("Wikipedia Articles")
+        self.gallery.theme = "Wikipedia Articles"        
         count = -1
         self.gallery.articlemenu.get_model().clear()
         
@@ -127,4 +128,3 @@ class Image_Pane(Pane):
                 self.gallery.articlemenu.set_active(count)
    
         
-    

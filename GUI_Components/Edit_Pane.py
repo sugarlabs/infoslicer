@@ -9,6 +9,7 @@ from GUI_Components.Compound_Widgets.Library_View import Library_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
 import logging
+from gettext import gettext as _
 
 logger = logging.getLogger('infoslicer')
 
@@ -116,11 +117,11 @@ class Edit_Pane(Pane):
                 start = buf.get_start_iter()
                 end = buf.get_end_iter()
                 buf.delete(start, end)
-                buf.insert(buf.get_start_iter(), _("You can choose a Wikipedia article to copy from by selecting it from the drop-down menu above."))
-                buf.insert(buf.get_end_iter(), _("If you want to download more articles from Wikipedia, you can do this in the Library tab."))
+                buf.insert(buf.get_start_iter(), _("\nYou can choose a Wikipedia article to copy from by selecting it from the drop-down menu above.\n\n"))
+                buf.insert(buf.get_end_iter(), "If you want to download more articles from Wikipedia, you can do this in the Library tab.")
         else:
             buf = article.getBuffer()
-            buf.insert(buf.get_start_iter(), _("You have not downloaded any articles from Wikipedia. You can download new articles in the Library tab."))
+            buf.insert(buf.get_start_iter(), _("\nYou have not downloaded any articles from Wikipedia.\n\nYou can download new articles in the Library tab."))
        
         i = 0
         selectionindex = 0
@@ -141,9 +142,7 @@ class Edit_Pane(Pane):
         return article
     
     def set_working_article(self, article):
-        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s  \n<b> %s </b>  %s</span>" % \
-            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s  \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         self.editarticle.textbox.set_article(article)
         self.editarticle.article_theme = _("Wikipedia Articles")
         
-    
