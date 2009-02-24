@@ -5,6 +5,9 @@ from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 from Processing.Article.Article_Data import *
 import re
 import IO_Manager
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class Article_Builder:
     """
@@ -44,7 +47,7 @@ class Article_Builder:
                 source_article_id = article_id
                 text = ph.renderContents().replace("\n", "").replace("&amp;#160;", "").strip() + " "
                 if text[0:5] == "Satur":
-                    print unicode(text)
+                    logger.debug(unicode(text))
                 sentence_data = Sentence_Data(id, source_article_id, source_section_id, source_paragraph_id, source_sentence_id, text)
                 sentence_data_list.append(sentence_data)
             paragraph_data.append(Paragraph_Data("shortdesc", article_id, "shortdesc", "shortdesc", sentence_data_list))
@@ -203,7 +206,7 @@ class Article_Builder:
                             image_tag = self.tag_generator(output, "image", attrs=[("href", sentence.text.replace(workingDir, ".."))])
                             paragraph_tag.append(image_tag)
                         else:
-                            print sentence.type
+                            logger.ebiug(sentence.type)
                             
                     section_tag.append(paragraph_tag)
                 current_ref.append(section_tag)

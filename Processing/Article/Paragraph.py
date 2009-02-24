@@ -1,6 +1,9 @@
 # Copyright (C) IBM Corporation 2008
 
 from Processing.Article.Sentence import *
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 """
 Created by Jonathan Mace
@@ -39,7 +42,7 @@ class RawParagraph:
         elif sentence_data.type == "picture":
             sentence = Picture(sentence_data, self.buf, insertioniter)
         else:
-            print "WARNING, WEIRD SENTENCES: %s" % (sentence_data.type, )
+            logger.debug("WARNING, WEIRD SENTENCES: %s" % (sentence_data.type))
         self.sentences.insert(insertionindex, sentence)
         
     def deleteSentence(self, lociter):
@@ -232,7 +235,8 @@ class Paragraph( RawParagraph ):
             elif sentence_data.type == "picture":
                 sentence = Picture(sentence_data, buf, insertioniter)
             else:
-                print "WARNING, WEIRD SENTENCES: %s" % (sentence_data.type, )
+                logger.debug("WARNING, WEIRD SENTENCES: %s" %
+                        (sentence_data.type))
             sentences.append(sentence)
             
         insertioniter = buf.get_iter_at_mark(insertionmark)

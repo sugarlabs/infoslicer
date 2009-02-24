@@ -8,7 +8,9 @@ from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
-from gettext import gettext as _
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class Edit_Pane(Pane):
     """
@@ -89,7 +91,7 @@ class Edit_Pane(Pane):
         elif current_selection == _("Sections"):
             self.readarticle.set_section_selection_mode()
             self.editarticle.set_section_selection_mode()
-        #print current_selection           
+        #logger.debug(current_selection)
         
     def get_source_article(self):
         return self.readarticle.textbox.get_article()

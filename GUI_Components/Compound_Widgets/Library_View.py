@@ -10,6 +10,10 @@ from Processing.IO_Manager import *
 from Processing.Article.Article import Article
 from Processing.Article.Article_Data import *
 from GUI_Components.Compound_Widgets.Base_Widgets.Readonly_Textbox import Readonly_Textbox
+import logging
+
+logger = logging.getLogger('infoslicer')
+elogger = logging.getLogger('infoslicer::except')
 
 theme_xpm = [
 "16 16 4 1",
@@ -655,11 +659,11 @@ class Library_View( gtk.HBox ):
             source = self.sourcetext.get_article()
             edit = self.edittext.get_article()
             if source and source.article_title == title and source.article_theme == sourcetheme:
-                print "setting source title"
+                logger.debug("setting source title")
                 source.article_title = newtext
                 self.sourcepanelabel.set_markup("<b>Copy from: </b> %s\n "%(newtext, ))
             if edit and edit.article_title == title and edit.article_theme == sourcetheme:
-                print "setting edit title"
+                logger.debug("setting edit title")
                 edit.article_title = newtext
                 self.editpanelabel.set_markup("<span size='medium'><b>Theme: </b> %s   \n<b>Article to edit: </b> %s</span>"%(sourcetheme, newtext))
             
@@ -686,10 +690,10 @@ class Library_View( gtk.HBox ):
             source = self.sourcetext.get_article()
             edit = self.edittext.get_article()
             if source and source.article_theme == title:
-                print "setting source theme"
+                logger.debug("setting source theme")
                 source.article_theme = newtext
             if edit and edit.article_theme == title:
-                print "setting edit theme"
+                logger.debug("setting edit theme")
                 edit.article_theme = newtext   
                 self.editpanelabel.set_markup("<span size='medium'><b>Theme: </b> %s   \n<b>Article to edit: </b> %s</span>"%(edit.article_theme, edit.article_title))         
             
@@ -755,7 +759,8 @@ class Library_View( gtk.HBox ):
                 themeiter = model.append(None, ["<b>%s</b>" % (newtext, ), self.themeicon, "theme", newtext, True])
                 model.append(themeiter, ["<i>Create new article</i>", self.newarticleicon, "newarticle", "aaaaaaaaaaaaaaaaaaaa", True])
                 
-            except theme_exists_error:
+            except theme_exists_error, e:
+                elogger.debug('name_changed: %s' % e)
                 # If the theme already exists, then we proceed to just highlight it.
                 self.highlight_theme(newtext)
                 return
@@ -837,7 +842,7 @@ class Library_View( gtk.HBox ):
             source = self.sourcetext.get_article()
             edit = self.edittext.get_article()
             if edit != None and edit.article_title == title and edit.article_theme == sourcetheme:
-                print "setting edit title"
+                logger.debug("setting edit title")
                 edit.article_theme = desttheme
                 self.editpanelabel.set_markup("<span size='medium'><b>Theme: </b> %s   \n<b>Article to edit: </b> %s</span>"%(desttheme, title))            
             
@@ -1019,9 +1024,11 @@ class Library_View( gtk.HBox ):
             statuslabel.set_label("Downloading %s..."%(title,))
             IO_Manager().download_wiki_article(title=title, theme=theme, wiki = wiki, statuslabel=statuslabel)
         except PageNotFoundError, e:
+            elogger.debug('download_and_add: %s' % e)
             statuslabel.set_label("%s could not be found."%(title, ))
             return
-        except:
+        except Exception, e:
+            elogger.debug('download_and_add: %s' % e)
             statuslabel.set_label("Error downloading %s. Check your connection."%(title, ))
             return
         
@@ -1081,7 +1088,7 @@ class Library_View( gtk.HBox ):
         buf = article.getBuffer()
         text = buf.get_slice(buf.get_start_iter(), buf.get_end_iter())
         if text:
-            print "article has text"
+            logger.debug("article has text")
             if not theme:
                 theme = "My Articles"
             if not title:
@@ -1135,7 +1142,7 @@ class Library_View( gtk.HBox ):
             while title in articles:
                 i = i + 1
                 title = "New Article %d" % (i, )
-            print title
+            logger.debug(title)
             article.article_title = title
                     
         return article

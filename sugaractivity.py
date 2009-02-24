@@ -5,6 +5,10 @@ from Infoslicer_GUI import Infoslicer_GUI
 from sugar.activity import activity
 from gettext import gettext as _
 from Processing.IO_Manager import IO_Manager 
+from Processing.Article.Article import Article
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class sugaractivity( activity.Activity, Infoslicer_GUI ):
     """
@@ -35,14 +39,14 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         self.show_all()
         self.toolbox.set_current_toolbar(2)
         
-        print "dictionary:"
-        print handle.get_dict()
+        logger.debug("dictionary:")
+        logger.debug(handle.get_dict())
         
     """
     Operating system specific file reading and writing methods are below
     """
     def read_file(self, file_path):
-        print "reading the file"
+        logger.debug("reading the file")
         """ 
         At the moment, the format of a saved file will just be:
         sourcetitle
@@ -62,8 +66,11 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         workingtheme = lines[2]
         currentindex = int(lines[3])
         
-        print "file read"
-        print "sourcetitle: %s, workingtitle: %s, workingtheme: %s, currentindex: %s" % (sourcetitle, workingtitle, workingtheme, currentindex)
+        logger.debug("file read")
+        logger.debug("sourcetitle: %s, workingtitle: %s," \
+                     "workingtheme: %s, currentindex: %s" %
+                     (sourcetitle, workingtitle, workingtheme, currentindex))
+
         iomanager = IO_Manager()
         if iomanager.page_exists(sourcetitle, _("Wikipedia Articles")):
             sourcearticle = iomanager.load_article(sourcetitle, _("Wikipedia Articles"))
@@ -84,7 +91,7 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         self.currentpane.set_working_article(workingarticle)
     
     def write_file(self, file_path):
-        print "writing the file to %s" % file_path
+        logger.debug("writing the file to %s" % file_path)
         sourcearticle = self.currentpane.get_source_article()
         workingarticle = self.currentpane.get_working_article()
         
@@ -100,7 +107,8 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         currentindex = self.currentindex
         
         file = open(file_path, 'w')
-        print "writing source: %s, working: %s, theme: %s" % (sourcetitle, workingtitle, workingtheme)
+        logger.debug("writing source: %s, working: %s, theme: %s" %
+                (sourcetitle, workingtitle, workingtheme))
         file.write("%s\n%s\n%s\n%s" % (sourcetitle, workingtitle, workingtheme, str(currentindex)))
         file.close()
         
@@ -119,7 +127,7 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         
         
     def page_switched(self, widget, page_num, data):
-        print "page_switched to %s" % (page_num, )
+        logger.debug("page_switched to %s" % (page_num))
         if page_num > 0:
             self.mode_switched(page_num - 1)
         

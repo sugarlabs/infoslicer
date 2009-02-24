@@ -13,7 +13,9 @@ from GUI_Components.Image_Pane import Image_Pane
 from GUI_Components.Publish_Pane import Publish_Pane
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
-from gettext import gettext as _
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class Infoslicer_GUI:
     """ 
@@ -25,16 +27,16 @@ class Infoslicer_GUI:
     """
     
     def __init__(self):
-        print "InfoSlicer version 0.1, Copyright (C) 2008 IBM Corporation\
+        logger.info("InfoSlicer version 0.1, Copyright (C) 2008 IBM Corporation\
                \nInfoSlicer comes with ABSOLUTELY NO WARRANTY; for details run the program with the `-warranty' argument.\
-               \nThis is free software, and you are welcome to redistribute it under certain conditions; type `-conditions' for details."
+               \nThis is free software, and you are welcome to redistribute it under certain conditions; type `-conditions' for details.")
         self._parse_args()
         self.__set_up_GUI()
     
     def _parse_args(self):
         for arg in sys.argv:
             if arg == "-warranty" or arg == "-conditions":
-                print "GNU GENERAL PUBLIC LICENSE \
+                logger.info("GNU GENERAL PUBLIC LICENSE \
                     \nTERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION \
                     \n \
 0. This License applies to any program or other work which contains\n\
@@ -314,7 +316,7 @@ proprietary programs.  If your program is a subroutine library, you may\n\
 consider it more useful to permit linking proprietary applications with the\n\
 library.  If this is what you want to do, use the GNU Lesser General\n\
 Public License instead of this License.\n\
-"
+")
         return
     
     def setpanel(self, panel):
@@ -396,8 +398,10 @@ Public License instead of this License.\n\
                     if article in wikiarticle:
                         self.source = IO_Manager().load_article(wikiarticle, _("Wikipedia Articles"))
                         self.working = IO_Manager().load_article(article, theme) 
-                        print "loading source %s from %s" % (wikiarticle, _("Wikipedia Articles"))
-                        print "loading edit %s from %s" % (article, theme)
+                        logger.debug("loading source %s from %s" %
+                                (wikiarticle, "Wikipedia Articles"))
+                        logger.debug("loading edit %s from %s" %
+                                (article, theme))
                         ignore = True
         
         self.currentpane = None
@@ -418,19 +422,19 @@ Public License instead of this License.\n\
     def go_arrange_mode(self, widget, event, data):
         key = event.keyval
         if key == gtk.keysyms.F1:
-            print "f1"
+            logger.debug("f1")
             self.switch_page(0)
         if key == gtk.keysyms.F2:
-            print "f2"
+            logger.debug("f2")
             self.switch_page(1)
         if key == gtk.keysyms.F3:
-            print "f3"
+            logger.debug("f3")
             self.switch_page(2)
             
     """
     Save and quit current article
     """
     def do_quit_event(self):
-        print "quitting"
+        logger.debug("quitting")
         article = self.currentpane.get_working_article()
         IO_Manager().save_article(article)

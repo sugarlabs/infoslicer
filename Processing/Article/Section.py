@@ -1,6 +1,9 @@
 # Copyright (C) IBM Corporation 2008
 
 from Processing.Article.Paragraph import *
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 """
 Created by Jonathan Mace
@@ -259,7 +262,7 @@ class RawSection:
             if paragraph.getStart().compare(nextparagraph.getStart()) == -1:
                 text = self.buf.get_slice(paragraph.getStart(), nextparagraph.getStart())
                 if len(text) > 0 and text[-1] != "\n":
-                    print "concatenating paragraphs"
+                    logger.debug("concatenating paragraphs")
                     nextparagraph.sentences = paragraph.sentences + nextparagraph.sentences
                 else:
                     paragraphs.extend(paragraph.checkIntegrity(nextparagraph.getStart()))

@@ -10,6 +10,10 @@ from MediaWiki_Helper import MediaWiki_Helper, PageNotFoundError
 from MediaWiki_Parser import MediaWiki_Parser
 import shutil
 import re
+import logging
+
+logger = logging.getLogger('infoslicer')
+elogger = logging.getLogger('infoslicer::except')
 
 class theme_not_found_error(Exception):
     def __init__(self, value):
@@ -48,8 +52,9 @@ class IO_Manager:
                 from sugar.activity import activity
                 # On Sugar, save to the data subfolder of the app directory
                 self.workingDir =  os.path.join(activity.get_activity_root(), "data")
-                print "Activity root is: %s" % str(activity.get_activity_root())
-                print "Data folder is: %s" % self.workingDir
+                logger.debug("Activity root is: %s" %
+                        str(activity.get_activity_root()))
+                logger.debug("Data folder is: %s" % self.workingDir)
             else:
                 # On Linux, save to a .slicedata subdir of the user's homedir
                 self.workingDir = os.path.join(os.getenv("HOME"), ".slicedata")
@@ -59,7 +64,7 @@ class IO_Manager:
             proxy_file_handle = open(proxy_file, "r")
             for line in proxy_file_handle.readlines():
                 parts = line.split(':', 1)
-                #print "setting " + parts[0] + " proxy to " + parts[1]
+                #logger.debug("setting " + parts[0] + " proxy to " + parts[1])
                 self.proxies[parts[0].strip()] = parts[1].strip()
             proxy_file_handle.close()
         if self.proxies == {}:
@@ -69,9 +74,9 @@ class IO_Manager:
         """
             removes non-alphanumeric chars from titles and lowercases it
         """
-        print "Cleaning: " + title
+        logger.debug("Cleaning: " + title)
         output = re.sub(re.compile('\W'), "_", title).lower()
-        print "Output: " + output
+        logger.debug("Output: " + output)
         return output
     
     def install_library(self):
@@ -79,17 +84,18 @@ class IO_Manager:
             file_list = [('Lion (from en.wikipedia.org)', os.path.join(os.path.split(__file__)[0], "demolibrary", "lion-wikipedia.dita"), 'Wikipedia Articles'), ('Tiger (from en.wikipedia.org)', os.path.join(os.path.split(__file__)[0], "demolibrary", "tiger-wikipedia.dita"), 'Wikipedia Articles'), ('Giraffe (from en.wikipedia.org)', os.path.join(os.path.split(__file__)[0], "demolibrary", "giraffe-wikipedia.dita"), 'Wikipedia Articles'), ('Giraffe', os.path.join(os.path.split(__file__)[0], "demolibrary", "giraffe-blank.dita"), 'My Articles'), ('Zebra (from en.wikipedia.org)', os.path.join(os.path.split(__file__)[0], "demolibrary", "zebra-wikipedia.dita"), 'Wikipedia Articles')]
             for file in file_list:
                 if file[2] not in self.get_themes():
-                    print "install library: creating theme %s" % file[2]
+                    logger.debug("install library: creating theme %s" %
+                            file[2])
                     self.add_theme_to_library(file[2])
-                print "install library: opening %s" % file[1]
+                logger.debug("install library: opening %s" % file[1])
                 open_file = open(file[1], "r")
                 contents = open_file.read()
                 open_file.close()
                 if contents:
-                    print "install library: content read sucessfully"
-                print "install library: saving page %s" % file[0]
+                    logger.debug("install library: content read sucessfully")
+                logger.debug("install library: saving page %s" % file[0])
                 self.save_page(file[0], contents, file[2], get_images=True)
-                print "install library: save successful"
+                logger.debug("install library: save successful")
                                  
     def __add_page_to_library(self, title, path, theme="My Articles"):
         """
@@ -108,7 +114,8 @@ class IO_Manager:
                 existing_entry.extract()
             map.map.append(Tag(map, "topicref", [("href", path), ("navtitle", title)]))
             self.save_map(theme, map)
-        except Exception:
+        except Exception, e:
+            elogger.debug('__add_page_to_library: %s' % e)
             self.add_theme_to_library(theme)
             self.__add_page_to_library(title, path, theme)
         
@@ -129,7 +136,8 @@ class IO_Manager:
             else:
                 raise theme_exists_error("Theme already exists")
             self.save_map("Library", map)
-        except theme_not_found_error:
+        except theme_not_found_error, e:
+            elogger.debug('add_theme_to_library: %s' % e)
             # this error is caused by failing to open the library, so create the library and try again
             self.__create_map("Library")
             self.add_theme_to_library(theme)
@@ -191,7 +199,8 @@ class IO_Manager:
         """
         try:
             map = self.load_map(theme)
-        except Exception:
+        except Exception, e:
+            elogger.debug('get_pages_in_theme: %s' % e)
             return []
         output = []
         for page in map.map.findAll("topicref"):
@@ -211,7 +220,8 @@ class IO_Manager:
                 output.append(theme["navtitle"])
             output.sort()
             return output
-        except Exception:
+        except Exception, e:
+            elogger.debug('get_themes: %s' % e)
             return []
     
     def get_unique_article_ID(self):
@@ -228,7 +238,7 @@ class IO_Manager:
                 id += len(item[2])
             # Multiply by 1000 to prevent any problems caused by deleting files
             id = id * 1000
-            print "ID FILE NOT FOUND, setting ID to " + str(id)
+            logger.debug("ID FILE NOT FOUND, setting ID to " + str(id))
             id_file = open(os.path.join(self.workingDir, "idfile"), "w")
             id_file.write(str(id))
             id_file.close()
@@ -253,7 +263,7 @@ class IO_Manager:
         """
         document = BeautifulStoneSoup(document)
         dir_path =  os.path.join(self.workingDir, self.clean_title(title), "images")
-        print dir_path
+        logger.debug(dir_path)
         if not os.path.exists(dir_path):
             os.makedirs(dir_path, 0777)
         if statuslabel != None:
@@ -275,7 +285,7 @@ class IO_Manager:
                         path = document.source['href'].rsplit("/", 1)[0] + path
                     else:
                         path = document.source['href'].rsplit("/", 1)[0] + "/" + path
-                print "Retrieving image: " + path
+                logger.debug("Retrieving image: " + path)
                 file = open(os.path.join(dir_path, image_title), 'wb')
                 image_contents = self.__open_URL(path)
                 if image_contents == None:
@@ -313,7 +323,7 @@ class IO_Manager:
             @return: Contents of page.
         """
         theme_map = self.load_map(theme)
-        print title + theme
+        logger.debug(title + theme)
         page_location = theme_map.find("topicref", attrs={ "navtitle" : title })
         if page_location != None:
             page_location = page_location['href']
@@ -340,7 +350,8 @@ class IO_Manager:
             @param from_theme: Source theme.
             @param to_theme: Destination theme.  
         """
-        print "COPY PAGE %s FROM %s TO %s" % (title, fromtheme, totheme)
+        logger.debug("COPY PAGE %s FROM %s TO %s" %
+                (title, fromtheme, totheme))
         article = self.load_raw_page(title, fromtheme)
         self.save_page(title, article, totheme, overwrite=False)
         
@@ -376,7 +387,8 @@ class IO_Manager:
             for page in pages:
                 page.extract()
             self.save_map(from_theme, from_map)
-        except Exception:
+        except Exception, e:
+            elogger.debug('move_page: %s' % e)
             # Shouldn't ever happen
             pass
     
@@ -386,15 +398,15 @@ class IO_Manager:
         """
         urllib._urlopener = self.New_URL_Opener()
         try:
-            print "opening " + url
-            print "proxies: " + str(self.proxies)
+            logger.debug("opening " + url)
+            logger.debug("proxies: " + str(self.proxies))
             doc = urllib.urlopen(url, proxies=self.proxies)
             output = doc.read()
             doc.close()
-            print "url opened succesfully"
+            logger.debug("url opened succesfully")
             return output
         except IOError, e:
-            print e
+            elogger.debug('__open_URL: %s' % e)
     
     def page_exists(self, title, theme):
         """
@@ -406,7 +418,8 @@ class IO_Manager:
                 return True
             else:
                 return False
-        except Exception:
+        except Exception, e:
+            elogger.debug('page_exists: %s' % e)
             return False
         
     def theme_exists(self, theme):
@@ -431,8 +444,8 @@ class IO_Manager:
         entry = theme_map.find("topicref", attrs={"navtitle" : page})
         try:
             os.remove(entry['href'])
-        except Exception:
-            pass
+        except Exception, e:
+            elogger.debug('remove_page: %s' % e)
         entry.extract()
         self.save_map(theme, theme_map)
     
@@ -450,9 +463,9 @@ class IO_Manager:
                 os.remove(os.path.join(self.workingDir, entry['href']))
                 entry.extract()
                 self.save_map("Library", library)
-        except Exception:
+        except Exception, e:
             # Trying to remove a theme that doesn't exist, so pretend it worked.
-            pass
+            elogger.debug('remove_theme: %s' % e)
     
     def rename_page(self, theme, old_title, new_title):
         """
@@ -464,8 +477,8 @@ class IO_Manager:
             if page != None:
                 page['navtitle'] = new_title
                 self.save_map(theme, map)
-        except Exception:
-            pass
+        except Exception, e:
+            elogger.debug('rename_page: %s' % e)
     
     def rename_theme(self, old_name, new_name):
         """
@@ -528,7 +541,8 @@ class IO_Manager:
         file.write(contents)
         file.close()
         self.__add_page_to_library(title, os.path.join(directory, "%s.dita" % new_title), theme)
-        print "Page saved to - " + os.path.join(directory, "%s.dita" % new_title)
+        logger.debug("Page saved to - " + os.path.join(directory, "%s.dita" %
+                new_title))
         return os.path.join(directory, "%s.dita" % new_title)
     
     def validate_image_list(self, image_list):
