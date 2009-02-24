@@ -65,12 +65,12 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         print "file read"
         print "sourcetitle: %s, workingtitle: %s, workingtheme: %s, currentindex: %s" % (sourcetitle, workingtitle, workingtheme, currentindex)
         iomanager = IO_Manager()
-        if iomanager.page_exists(sourcetitle, "Wikipedia Articles"):
-            sourcearticle = iomanager.load_article(sourcetitle, "Wikipedia Articles")
+        if iomanager.page_exists(sourcetitle, _("Wikipedia Articles")):
+            sourcearticle = iomanager.load_article(sourcetitle, _("Wikipedia Articles"))
         else:
             sourcearticle = Article()
             sourcearticle.article_title = sourcetitle
-            sourcearticle.article_theme = "Wikipedia Articles"
+            sourcearticle.article_theme = _("Wikipedia Articles")
         if iomanager.page_exists(workingtitle, workingtheme):
             workingarticle = iomanager.load_article(workingtitle, workingtheme)
         else:
