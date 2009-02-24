@@ -2,7 +2,8 @@
 name = InfoSlicer
 activity_version = 2
 host_version = 1
+bundle_id = org.sugarlabs.InfoSlicer
 icon = slicelogo
-bundle_id = org.sugarlabs.infoslicer
-exec = sugar-activity sugaractivity.sugaractivity
+exec = sugar-activity activity.InfoslicerActivity -s
 show_launcher = yes
+license = GPLv2+

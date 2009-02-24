@@ -9,7 +9,11 @@ class Pane:
     An instance of the Pane class has a panel which is the main view,
     a toolbar which interacts with the panel,
     and methods for getting and setting the source and working articles.
-    
+
+    - name
+    - toolbar
+    - panel
+
     """
     
     def __init__(self):
