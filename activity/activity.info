@@ -1,8 +1,8 @@
 [Activity]
 name = InfoSlicer
-activity_version = 1
+activity_version = 2
 host_version = 1
 icon = slicelogo
-service_name = org.sugarlabs.infoslicer
-class = sugaractivity.sugaractivity
+bundle_id = org.sugarlabs.infoslicer
+exec = sugar-activity sugaractivity.sugaractivity
 show_launcher = yes

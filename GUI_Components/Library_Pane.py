@@ -21,9 +21,9 @@ class Library_Pane(Pane):
     
     def __init__(self):
         Pane.__init__(self)
-        self.wikis = {"English Wikipedia" : "en.wikipedia.org", 
-                      "Simple English Wikipedia" : "simple.wikipedia.org", 
-                      "German Wikipedia": "de.wikipedia.org"}
+        self.wikis = {_("English Wikipedia") : "en.wikipedia.org", 
+                      _("Simple English Wikipedia") : "simple.wikipedia.org", 
+                      _("German Wikipedia") : "de.wikipedia.org"}
         self.toolbar = gtk.Toolbar()
         
         

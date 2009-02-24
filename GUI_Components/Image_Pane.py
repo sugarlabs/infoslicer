@@ -105,7 +105,8 @@ class Image_Pane(Pane):
     
     def set_working_article(self, article):
         print "working received, title %s theme %s " % (article.article_title, article.article_theme)
-        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s   \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>"% \
+            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
         if article == None:
             article = Article()
         self.editarticle.textbox.set_article(article)
