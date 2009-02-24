@@ -235,10 +235,10 @@ class HTML_Parser:
         if (self.remove_classes_regexp != "") and (tag.has_key("class") and (re.match(self.remove_classes_regexp, tag["class"]) != None)):
             tag.extract()
         elif tag.name in self.keep_tags:
-            #newTag = Tag(self.input, tag.name)
-            #newTag.insert(0, tag.renderContents())
-            #tag.replaceWith(newTag)
-            pass
+            new_tag = Tag(self.input, tag.name)
+            new_tag.contents = tag.contents
+            tag.replaceWith(new_tag)
+
         elif tag.name in self.remove_tags_keep_content:            
             children = tag.findChildren(True, recursive=False)
             if len(children)==1:
