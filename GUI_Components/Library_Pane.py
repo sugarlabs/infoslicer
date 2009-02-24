@@ -6,6 +6,7 @@ from GUI_Components.Pane import Pane
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from GUI_Components.Compound_Widgets.Reading_View import Reading_View
 from Processing.IO_Manager import *
+from gettext import gettext as _
 
 class Library_Pane(Pane):
     """ 
@@ -44,7 +45,7 @@ class Library_Pane(Pane):
         """
         User search dialog 
         """
-        searchlabel = gtk.Label("Get article from ")
+        searchlabel = gtk.Label(_("Get article from "))
         searchlabelitem.add(searchlabel)
         searchlabel.show()
         
@@ -66,13 +67,13 @@ class Library_Pane(Pane):
         searchentryitem.show()
         
         searchentry = gtk.Entry()
-        searchentry.set_text("Article name")
-        searchentry.connect("activate", self.click_search_button, None)
+        searchentry.set_text(_("Article name"))
+        searchentry.connect(_("activate"), self.click_search_button, None)
         searchentryitem.add(searchentry)
         searchentry.show()
         
         self.searchbutton = gtk.ToolButton(gtk.STOCK_FIND)
-        self.searchbutton.connect("clicked", self.librarypanel.commence_retrieval, searchentry, statuslabel, wikimenu, self.wikis)
+        self.searchbutton.connect(_("clicked"), self.librarypanel.commence_retrieval, searchentry, statuslabel, wikimenu, self.wikis)
         self.toolbar.insert(self.searchbutton, -1)
         self.searchbutton.show()
         
@@ -87,10 +88,10 @@ class Library_Pane(Pane):
         
         
         self.toolbar = self.toolbar
-        self.name = "Library"
+        self.name = _("Library")
 
     def click_search_button(self, widget, data):
-        self.searchbutton.emit("clicked")
+        self.searchbutton.emit(_("clicked"))
     
     def get_source_article(self):
         return self.librarypanel.get_source()

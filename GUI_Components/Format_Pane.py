@@ -4,6 +4,7 @@ pygtk.require('2.0')
 import gtk
 from GUI_Components.Pane import Pane
 from GUI_Components.Compound_Widgets.Editing_View import Editing_View
+from gettext import gettext as _
 
 class Format_Pane(Pane):
     """
@@ -18,7 +19,7 @@ class Format_Pane(Pane):
     
     def __init__(self):
         Pane.__init__(self)
-        self.name = "Format"
+        self.name = _("Format")
         
         self.panel = Editing_View()
         self.panel.show()
@@ -74,13 +75,13 @@ class Format_Pane(Pane):
     """
     def selection_mode_changed(self, widget, data):
         current_selection = widget.get_active_text()
-        if current_selection == "Nothing":
+        if current_selection == _("Nothing"):
             self.panel.set_full_edit_mode()
-        elif current_selection == "Sentences":
+        elif current_selection == _("Sentences"):
             self.panel.set_sentence_selection_mode()
-        elif current_selection == "Paragraphs":
+        elif current_selection == _("Paragraphs"):
             self.panel.set_paragraph_selection_mode()
-        elif current_selection == "Sections":
+        elif current_selection == _("Sections"):
             self.panel.set_section_selection_mode()
             
     def get_source_article(self):
@@ -94,5 +95,5 @@ class Format_Pane(Pane):
         return article
     
     def set_working_article(self, article):
-        self.panel.articletitle.set_markup("<span size='medium'><b>Theme:</b>  %s   \n<b>Article:</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.panel.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s   \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         self.panel.textbox.set_article(article)      

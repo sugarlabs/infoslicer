@@ -2,7 +2,8 @@
 
 import gtk
 from Infoslicer_GUI import Infoslicer_GUI
-from sugar.activity import activity  
+from sugar.activity import activity
+from gettext import gettext as _
 from Processing.IO_Manager import IO_Manager 
 
 class sugaractivity( activity.Activity, Infoslicer_GUI ):
@@ -26,7 +27,7 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         self._name = handle
         self.toolbox.connect("current-toolbar-changed", self.page_switched, None)
         
-        self.set_title('InfoSlicer')
+        self.set_title(_('InfoSlicer'))
         
         self.set_toolbox(self.toolbox)
         self.toolbox.show() 

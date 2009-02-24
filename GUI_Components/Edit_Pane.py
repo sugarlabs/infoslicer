@@ -8,6 +8,7 @@ from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
+from gettext import gettext as _
 
 class Edit_Pane(Pane):
     """
@@ -27,7 +28,7 @@ class Edit_Pane(Pane):
     
     def __init__(self):
         Pane.__init__(self)
-        self.name = "Edit"    
+        self.name = _("Edit")
 
         """
         Create reading and editing panels
@@ -46,7 +47,7 @@ class Edit_Pane(Pane):
         
         self.toolbar = gtk.Toolbar()
         
-        self.label = gtk.Label("Snap selection to: ")
+        self.label = gtk.Label(_("Snap selection to: "))
         self.label.show()
         
         self.labelcontainer = gtk.ToolItem()
@@ -56,10 +57,10 @@ class Edit_Pane(Pane):
         
         """ Snap selection box """
         self.combobox = gtk.combo_box_new_text()
-        self.combobox.append_text("Nothing")
-        self.combobox.append_text("Sentences")
-        self.combobox.append_text("Paragraphs")
-        self.combobox.append_text("Sections")
+        self.combobox.append_text(_("Nothing"))
+        self.combobox.append_text(_("Sentences"))
+        self.combobox.append_text(_("Paragraphs"))
+        self.combobox.append_text(_("Sections"))
         self.combobox.connect("changed", self.selection_mode_changed, None)
         self.combobox.set_active(1)
         self.combobox.show()
@@ -76,16 +77,16 @@ class Edit_Pane(Pane):
     """        
     def selection_mode_changed(self, widget, data):
         current_selection = widget.get_active_text()
-        if current_selection == "Nothing":
+        if current_selection == _("Nothing"):
             self.readarticle.set_full_edit_mode()
             self.editarticle.set_full_edit_mode()
-        elif current_selection == "Sentences":
+        elif current_selection == _("Sentences"):
             self.readarticle.set_sentence_selection_mode()
             self.editarticle.set_sentence_selection_mode()
-        elif current_selection == "Paragraphs":
+        elif current_selection == _("Paragraphs"):
             self.readarticle.set_paragraph_selection_mode()
             self.editarticle.set_paragraph_selection_mode()
-        elif current_selection == "Sections":
+        elif current_selection == _("Sections"):
             self.readarticle.set_section_selection_mode()
             self.editarticle.set_section_selection_mode()
         #print current_selection           
@@ -113,11 +114,11 @@ class Edit_Pane(Pane):
                 start = buf.get_start_iter()
                 end = buf.get_end_iter()
                 buf.delete(start, end)
-                buf.insert(buf.get_start_iter(), "\nYou can choose a Wikipedia article to copy from by selecting it from the drop-down menu above.\n\n")
+                buf.insert(buf.get_start_iter(), _("\nYou can choose a Wikipedia article to copy from by selecting it from the drop-down menu above.\n\n"))
                 buf.insert(buf.get_end_iter(), "If you want to download more articles from Wikipedia, you can do this in the Library tab.")
         else:
             buf = article.getBuffer()
-            buf.insert(buf.get_start_iter(), "\nYou have not downloaded any articles from Wikipedia.\n\nYou can download new articles in the Library tab.")
+            buf.insert(buf.get_start_iter(), _("\nYou have not downloaded any articles from Wikipedia.\n\nYou can download new articles in the Library tab."))
        
         i = 0
         selectionindex = 0
@@ -138,7 +139,7 @@ class Edit_Pane(Pane):
         return article
     
     def set_working_article(self, article):
-        self.editarticle.articletitle.set_markup("<span size='medium'><b>Theme:</b>  %s  \n<b>Article:</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s  \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         self.editarticle.textbox.set_article(article)
         self.editarticle.article_theme = "Wikipedia Articles"
         

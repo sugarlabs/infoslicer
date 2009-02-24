@@ -7,6 +7,7 @@ from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
+from gettext import gettext as _
 
 class Image_Pane(Pane):
     """
@@ -21,7 +22,7 @@ class Image_Pane(Pane):
     
     def __init__(self):
         Pane.__init__(self)
-        self.name = "Images"    
+        self.name = _("Images")   
         
         self.panel = gtk.HBox()
         self.panel.set_homogeneous(True)
@@ -57,13 +58,13 @@ class Image_Pane(Pane):
         
     def selection_mode_changed(self, widget, data):
         current_selection = widget.get_active_text()
-        if current_selection == "Nothing":
+        if current_selection == _("Nothing"):
             self.editarticle.set_full_edit_mode()
-        elif current_selection == "Sentences":
+        elif current_selection == _("Sentences"):
             self.editarticle.set_sentence_selection_mode()
-        elif current_selection == "Paragraphs":
+        elif current_selection == _("Paragraphs"):
             self.editarticle.set_paragraph_selection_mode()
-        elif current_selection == "Sections":
+        elif current_selection == _("Sections"):
             self.editarticle.set_section_selection_mode()
         
         
@@ -89,10 +90,10 @@ class Image_Pane(Pane):
             else:
                 self.gallery.imagenumberlabel.set_label("")
                 self.gallery.image.clear()
-                self.gallery.caption.set_text("This article does not have any images")
+                self.gallery.caption.set_text(_("This article does not have any images"))
         else:
             self.gallery.imagenumberlabel.set_label("")
-            self.gallery.caption.set_text("Please select a Wikipedia article from the menu above")
+            self.gallery.caption.set_text(_("Please select a Wikipedia article from the menu above"))
     
     def get_source_article(self):
         return self.gallery._source_article
@@ -104,12 +105,12 @@ class Image_Pane(Pane):
     
     def set_working_article(self, article):
         print "working received, title %s theme %s " % (article.article_title, article.article_theme)
-        self.editarticle.articletitle.set_markup("<span size='medium'><b>Theme:</b>  %s   \n<b>Article:</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s   \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         if article == None:
             article = Article()
         self.editarticle.textbox.set_article(article)
         if article.article_theme == None:
-            article.article_theme = "My Articles"
+            article.article_theme = _("My Articles")
         theme_list = IO_Manager().get_pages_in_theme("Wikipedia Articles")
         self.gallery.theme = "Wikipedia Articles"        
         count = -1
