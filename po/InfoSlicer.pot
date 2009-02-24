@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-24 10:05-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: activity/activity.info:2 sugaractivity.py:30
+msgid "InfoSlicer"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:31
+msgid "Edit"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:50
+msgid "Snap selection to: "
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:60 GUI_Components/Edit_Pane.py:80
+#: GUI_Components/Format_Pane.py:78 GUI_Components/Image_Pane.py:61
+msgid "Nothing"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:61 GUI_Components/Edit_Pane.py:83
+#: GUI_Components/Format_Pane.py:80 GUI_Components/Image_Pane.py:63
+msgid "Sentences"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:62 GUI_Components/Edit_Pane.py:86
+#: GUI_Components/Format_Pane.py:82 GUI_Components/Image_Pane.py:65
+msgid "Paragraphs"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:63 GUI_Components/Edit_Pane.py:89
+#: GUI_Components/Format_Pane.py:84 GUI_Components/Image_Pane.py:67
+msgid "Sections"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:117
+msgid ""
+"\n"
+"You can choose a Wikipedia article to copy from by selecting it from the "
+"drop-down menu above.\n"
+"\n"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:121
+msgid ""
+"\n"
+"You have not downloaded any articles from Wikipedia.\n"
+"\n"
+"You can download new articles in the Library tab."
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
+#: GUI_Components/Image_Pane.py:108
+msgid "Theme:"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
+#: GUI_Components/Image_Pane.py:108
+msgid "Article:"
+msgstr ""
+
+#: GUI_Components/Format_Pane.py:22
+msgid "Format"
+msgstr ""
+
+#: GUI_Components/Image_Pane.py:25
+msgid "Images"
+msgstr ""
+
+#: GUI_Components/Image_Pane.py:93
+msgid "This article does not have any images"
+msgstr ""
+
+#: GUI_Components/Image_Pane.py:96
+msgid "Please select a Wikipedia article from the menu above"
+msgstr ""
+
+#: GUI_Components/Image_Pane.py:113
+msgid "My Articles"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:48
+msgid "Get article from "
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:70
+msgid "Article name"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:71
+msgid "activate"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:76 GUI_Components/Library_Pane.py:94
+msgid "clicked"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:91
+msgid "Library"
+msgstr ""
+
+#: GUI_Components/Publish_Pane.py:20
+msgid "Publish"
+msgstr ""
+
+#: GUI_Components/Publish_Pane.py:43
+msgid ""
+"Select the theme you want, choose the articles you wish to include in the "
+"package and click \"Publish\"."
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:107 GUI_Components/Edit_Pane.py:144
+#: GUI_Components/Image_Pane.py:76 GUI_Components/Image_Pane.py:87
+#: GUI_Components/Image_Pane.py:114 GUI_Components/Image_Pane.py:115
+#: sugaractivity.py:68 sugaractivity.py:69 sugaractivity.py:73
+#: Infoslicer_GUI.py:384 Infoslicer_GUI.py:385 Infoslicer_GUI.py:388
+#: Infoslicer_GUI.py:396 Infoslicer_GUI.py:398
+msgid "Wikipedia Articles"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:111
+msgid "Select a source article from this menu"
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:118
+msgid ""
+"If you want to download more articles from Wikipedia, you can do this in the "
+"Library tab."
+msgstr ""
