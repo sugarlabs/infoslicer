@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-24 10:05-0500\n"
+"POT-Creation-Date: 2009-02-24 10:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,4 +141,22 @@ msgstr ""
 msgid ""
 "If you want to download more articles from Wikipedia, you can do this in the "
 "Library tab."
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:117
+msgid ""
+"You can choose a Wikipedia article to copy from by selecting it from the "
+"drop-down menu above."
+msgstr ""
+
+#: GUI_Components/Edit_Pane.py:121
+msgid ""
+"You have not downloaded any articles from Wikipedia. You can download new "
+"articles in the Library tab."
+msgstr ""
+
+#: GUI_Components/Publish_Pane.py:43
+msgid ""
+"Select the theme you want, choose the articles you wish to include in the "
+"package and click 'Publish'."
 msgstr ""
