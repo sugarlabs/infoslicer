@@ -2,6 +2,9 @@
 
 from HTML_Parser import HTML_Parser
 import re
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class MediaWiki_Parser(HTML_Parser):
     
@@ -11,10 +14,15 @@ class MediaWiki_Parser(HTML_Parser):
     def __init__(self, document_to_parse, title, source_url):
         if input == None:
             raise NoDocException("No content to parse - supply document to __init__")
+
+        logger.debug('MediaWiki_Parser: %s' % source_url)
+
+        header, input_content = document_to_parse.split("<text>")
+
         #find the revision id in the xml the wiki API returns
-        revid = re.findall(re.compile('\<parse revid\=\"(?P<rid>[0-9]*)\">'), document_to_parse)
-        #remove the xml padding to parse html inside
-        input_content = document_to_parse.split("<text>")[1]
+        revid = re.findall(re.compile('\<parse.*revid\=\"(?P<rid>[0-9]*)\"'),
+                header)
+
         input_content = input_content.split("</text>")[0]
         #call the normal constructor
         HTML_Parser.__init__(self, "<body>" + input_content + "</body>", title, source_url)
