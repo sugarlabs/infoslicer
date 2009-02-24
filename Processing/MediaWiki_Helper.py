@@ -184,12 +184,12 @@ class MediaWiki_Helper:
         @return: page contents
         @rtype: string"""
         urllib._urlopener = NewURLopener()
-        logger.debiug("opening " + path)
-        logger.debiug("proxies: " + str(self.proxies))
+        logger.debug("opening " + path)
+        logger.debug("proxies: " + str(self.proxies))
         doc = urllib.urlopen(path, proxies=self.proxies)
         output = doc.read()
         doc.close()
-        logger.debiug("url opened successfully")
+        logger.debug("url opened successfully")
         return output
     
     def stripTags(self, input, tag):
