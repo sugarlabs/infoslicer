@@ -73,7 +73,7 @@ class Image_Pane(Pane):
         current = self.gallery._source_article
         self.gallery._source_article = source
         if source and source.article_title:
-            source.article_theme = "Wikipedia Articles"
+            source.article_theme = _("Wikipedia Articles")
             if current:
                 if current.article_title == source.article_title and current.article_theme == source.article_theme:
                     print "same"
@@ -84,7 +84,7 @@ class Image_Pane(Pane):
                 self.gallery.set_image_list(source.image_list)
                 self.gallery.get_first_item()
                 
-                self.gallery.theme = "Wikipedia Articles"
+                self.gallery.theme = _("Wikipedia Articles")
                 self.gallery.source_article_id = source.source_article_id
                 print source.image_list
             else:
@@ -111,8 +111,8 @@ class Image_Pane(Pane):
         self.editarticle.textbox.set_article(article)
         if article.article_theme == None:
             article.article_theme = _("My Articles")
-        theme_list = IO_Manager().get_pages_in_theme("Wikipedia Articles")
-        self.gallery.theme = "Wikipedia Articles"        
+        theme_list = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
+        self.gallery.theme = _("Wikipedia Articles")
         count = -1
         self.gallery.articlemenu.get_model().clear()
         

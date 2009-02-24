@@ -104,18 +104,18 @@ class Edit_Pane(Pane):
         if article_title == None:
             article_title = ""
         """ Grab media wiki pages from default wikipedia theme """
-        titles = IO_Manager().get_pages_in_theme("Wikipedia Articles")
+        titles = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
         self.readarticle.articlemenu.get_model().clear()
         """ Check user has downloaded some source articles """
         if titles != []:
-            self.readarticle.articlemenu.append_text("Select a source article from this menu")
+            self.readarticle.articlemenu.append_text(_("Select a source article from this menu"))
             if article_title == "":
                 buf = article.getBuffer()
                 start = buf.get_start_iter()
                 end = buf.get_end_iter()
                 buf.delete(start, end)
                 buf.insert(buf.get_start_iter(), _("\nYou can choose a Wikipedia article to copy from by selecting it from the drop-down menu above.\n\n"))
-                buf.insert(buf.get_end_iter(), "If you want to download more articles from Wikipedia, you can do this in the Library tab.")
+                buf.insert(buf.get_end_iter(), _("If you want to download more articles from Wikipedia, you can do this in the Library tab."))
         else:
             buf = article.getBuffer()
             buf.insert(buf.get_start_iter(), _("\nYou have not downloaded any articles from Wikipedia.\n\nYou can download new articles in the Library tab."))
@@ -141,6 +141,6 @@ class Edit_Pane(Pane):
     def set_working_article(self, article):
         self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s  \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
         self.editarticle.textbox.set_article(article)
-        self.editarticle.article_theme = "Wikipedia Articles"
+        self.editarticle.article_theme = _("Wikipedia Articles")
         
     

@@ -381,11 +381,11 @@ Public License instead of this License.\n\
         
             
         themes = IO_Manager().get_themes()
-        if "Wikipedia Articles" in themes:
-            i = themes.index("Wikipedia Articles")
+        if _("Wikipedia Articles") in themes:
+            i = themes.index(_("Wikipedia Articles"))
             del themes[i]
             
-        wikiarticles = IO_Manager().get_pages_in_theme("Wikipedia Articles")
+        wikiarticles = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
         for theme in themes:
             articles = IO_Manager().get_pages_in_theme(theme)
             for article in articles:
@@ -393,9 +393,9 @@ Public License instead of this License.\n\
                     break
                 for wikiarticle in wikiarticles:
                     if article in wikiarticle:
-                        self.source = IO_Manager().load_article(wikiarticle, "Wikipedia Articles")
+                        self.source = IO_Manager().load_article(wikiarticle, _("Wikipedia Articles"))
                         self.working = IO_Manager().load_article(article, theme) 
-                        print "loading source %s from %s" % (wikiarticle, "Wikipedia Articles")
+                        print "loading source %s from %s" % (wikiarticle, _("Wikipedia Articles"))
                         print "loading edit %s from %s" % (article, theme)
                         ignore = True
         
