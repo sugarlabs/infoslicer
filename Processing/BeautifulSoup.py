@@ -825,6 +825,8 @@ class Tag(PageElement):
         stopNode = self._lastRecursiveChild().next
         current = self.contents[0]
         while current is not stopNode:
+            if not current:
+                break
             yield current
             current = current.next
 
