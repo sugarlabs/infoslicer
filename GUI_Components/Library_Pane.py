@@ -68,12 +68,12 @@ class Library_Pane(Pane):
         
         searchentry = gtk.Entry()
         searchentry.set_text(_("Article name"))
-        searchentry.connect("activate", self.click_search_button, None)
+        searchentry.connect(_("activate"), self.click_search_button, None)
         searchentryitem.add(searchentry)
         searchentry.show()
         
         self.searchbutton = gtk.ToolButton(gtk.STOCK_FIND)
-        self.searchbutton.connect("clicked", self.librarypanel.commence_retrieval, searchentry, statuslabel, wikimenu, self.wikis)
+        self.searchbutton.connect(_("clicked"), self.librarypanel.commence_retrieval, searchentry, statuslabel, wikimenu, self.wikis)
         self.toolbar.insert(self.searchbutton, -1)
         self.searchbutton.show()
         
@@ -91,7 +91,7 @@ class Library_Pane(Pane):
         self.name = _("Library")
 
     def click_search_button(self, widget, data):
-        self.searchbutton.emit("clicked")
+        self.searchbutton.emit(_("clicked"))
     
     def get_source_article(self):
         return self.librarypanel.get_source()
