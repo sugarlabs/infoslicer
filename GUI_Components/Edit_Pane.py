@@ -114,11 +114,11 @@ class Edit_Pane(Pane):
                 start = buf.get_start_iter()
                 end = buf.get_end_iter()
                 buf.delete(start, end)
-                buf.insert(buf.get_start_iter(), _("\nYou can choose a Wikipedia article to copy from by selecting it from the drop-down menu above.\n\n"))
+                buf.insert(buf.get_start_iter(), _("You can choose a Wikipedia article to copy from by selecting it from the drop-down menu above."))
                 buf.insert(buf.get_end_iter(), _("If you want to download more articles from Wikipedia, you can do this in the Library tab."))
         else:
             buf = article.getBuffer()
-            buf.insert(buf.get_start_iter(), _("\nYou have not downloaded any articles from Wikipedia.\n\nYou can download new articles in the Library tab."))
+            buf.insert(buf.get_start_iter(), _("You have not downloaded any articles from Wikipedia. You can download new articles in the Library tab."))
        
         i = 0
         selectionindex = 0
