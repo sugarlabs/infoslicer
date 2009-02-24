@@ -4,6 +4,10 @@ pygtk.require('2.0')
 import gtk
 from GUI_Components.Compound_Widgets.Base_Widgets.Readonly_Textbox import Readonly_Textbox
 from Processing.IO_Manager import IO_Manager
+import logging
+
+logger = logging.getLogger('infoslicer')
+elogger = logging.getLogger('infoslicer::except')
 
 class Reading_View( gtk.VBox ):
     """ 
@@ -45,7 +49,7 @@ class Reading_View( gtk.VBox ):
             model = combo.get_model()
             firstiter = model.get_iter_first()
             firstvalue = model.get_value(firstiter, 0)
-            print firstvalue
+            logger.debug(firstvalue)
             if firstvalue == "Select a source article from this menu":
                 combo.remove_text(0)
         
@@ -55,7 +59,7 @@ class Reading_View( gtk.VBox ):
                 newarticle = IO_Manager().load_article(title, theme)
                 self.textbox.set_article(newarticle)
             except Exception, e:
-                pass
+                elogger.debug('source_selected: %s' % e)
         
     def set_sentence_selection_mode(self):
         self.textbox.set_mode(0)

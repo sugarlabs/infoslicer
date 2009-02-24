@@ -3,6 +3,9 @@
 import urllib
 import IO_Manager
 from xml.dom import minidom
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 """
 Extend urllib class to spoof user-agent
@@ -181,12 +184,12 @@ class MediaWiki_Helper:
         @return: page contents
         @rtype: string"""
         urllib._urlopener = NewURLopener()
-        print "opening " + path
-        print "proxies: " + str(self.proxies)
+        logger.debiug("opening " + path)
+        logger.debiug("proxies: " + str(self.proxies))
         doc = urllib.urlopen(path, proxies=self.proxies)
         output = doc.read()
         doc.close()
-        print "url opened successfully"
+        logger.debiug("url opened successfully")
         return output
     
     def stripTags(self, input, tag):

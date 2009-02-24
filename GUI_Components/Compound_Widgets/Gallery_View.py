@@ -7,6 +7,9 @@ from Processing.IO_Manager import IO_Manager
 from GUI_Components.Compound_Widgets.Base_Widgets.Editable_Textbox import Editable_Textbox
 from Processing.Article.Article_Data import *
 from Processing.Article.Article import Article
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class Gallery_View( gtk.HBox ): 
     """ 
@@ -137,20 +140,21 @@ class Gallery_View( gtk.HBox ):
         self.imagebuf = gtk.gdk.pixbuf_new_from_file(self.image_list[self.current_index][0])
         self.image.set_from_pixbuf(self.imagebuf)
         self.caption.set_text("\n" + self.image_list[self.current_index][1])    
-        print "setting text to:"
-        print "(%d / %d)\n" % (self.current_index+1, len(self.image_list))
+        logger.debug("setting text to:")
+        logger.debug("(%d / %d)\n" %
+                (self.current_index+1, len(self.image_list)))
         self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))    
         
     def set_image_list(self, image_list):
-        print "validagting image list"
+        logger.debug("validagting image list")
         self.image_list = IO_Manager().validate_image_list(image_list)
-        print self.image_list
+        logger.debug(self.image_list)
         
     def source_selected(self, combobox, param):
         if combobox.get_active_text() == None :
             return
         if self.theme == None:
-            print "no theme set, defaulting to Wikipedia Articles"
+            logger.debug("no theme set, defaulting to Wikipedia Articles")
             self.theme = "Wikipedia Articles"
         if self._source_article.article_title == combobox.get_active_text():
             return
@@ -163,7 +167,7 @@ class Gallery_View( gtk.HBox ):
         self.imagebox.drag_source_set_icon_pixbuf(self.imagebuf)
         
     def drag_data_get_event(self, widget, context, selection_data, info, timestamp, data):
-        print "getting data"
+        logger.debug("getting data")
         atom = gtk.gdk.atom_intern("section")
         imagedata = Picture_Data(self.source_article_id, self.image_list[self.current_index][0])
         captiondata = Sentence_Data(0, self.source_article_id, 0, 0, 0, self.image_list[self.current_index][1])

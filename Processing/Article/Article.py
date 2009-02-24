@@ -6,6 +6,9 @@ import gtk
 from random import Random
 from Article_Data import *
 from Processing.Article.Section import *
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 arrow_xpm = [
 "15 11 4 1",

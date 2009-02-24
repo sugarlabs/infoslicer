@@ -7,7 +7,9 @@ from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
-from gettext import gettext as _
+import logging
+
+logger = logging.getLogger('infoslicer')
 
 class Image_Pane(Pane):
     """
@@ -69,24 +71,25 @@ class Image_Pane(Pane):
         
         
     def set_source_article(self, source):
-        print "source received.  title: %s, theme: %s" % (source.article_title, source.article_theme)
+        logger.debug("source received.  title: %s, theme: %s" %
+                (source.article_title, source.article_theme))
         current = self.gallery._source_article
         self.gallery._source_article = source
         if source and source.article_title:
             source.article_theme = _("Wikipedia Articles")
             if current:
                 if current.article_title == source.article_title and current.article_theme == source.article_theme:
-                    print "same"
+                    logger.debug("same")
                     return
             self.gallery.current_index = 0
             if source.image_list != []:
-                print "setting images"
+                logger.debug("setting images")
                 self.gallery.set_image_list(source.image_list)
                 self.gallery.get_first_item()
                 
                 self.gallery.theme = _("Wikipedia Articles")
                 self.gallery.source_article_id = source.source_article_id
-                print source.image_list
+                logger.debug(source.image_list)
             else:
                 self.gallery.imagenumberlabel.set_label("")
                 self.gallery.image.clear()
@@ -104,9 +107,9 @@ class Image_Pane(Pane):
         return article
     
     def set_working_article(self, article):
-        print "working received, title %s theme %s " % (article.article_title, article.article_theme)
-        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>"% \
-            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
+        logger.debug("working received, title %s theme %s " %
+                (article.article_title, article.article_theme))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b>Theme:</b>  %s   \n<b>Article:</b>  %s</span>"%(article.article_theme, article.article_title))
         if article == None:
             article = Article()
         self.editarticle.textbox.set_article(article)
