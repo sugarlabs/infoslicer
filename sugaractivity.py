@@ -60,7 +60,7 @@ class sugaractivity( activity.Activity, Infoslicer_GUI ):
         sourcetitle = lines[0]
         workingtitle = lines[1]
         workingtheme = lines[2]
-        currentindex = lines[3]
+        currentindex = int(lines[3])
         
         print "file read"
         print "sourcetitle: %s, workingtitle: %s, workingtheme: %s, currentindex: %s" % (sourcetitle, workingtitle, workingtheme, currentindex)
