@@ -116,8 +116,8 @@ class Image_Pane(Pane):
         self.editarticle.textbox.set_article(article)
         if article.article_theme == None:
             article.article_theme = _("My Articles")
-        theme_list = IO_Manager().get_pages_in_theme("Wikipedia Articles")
-        self.gallery.theme = "Wikipedia Articles"        
+        theme_list = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
+        self.gallery.theme = _("Wikipedia Articles")
         count = -1
         self.gallery.articlemenu.get_model().clear()
         
