@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-24 10:19-0500\n"
+"POT-Creation-Date: 2009-02-24 10:54-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,12 +65,14 @@ msgid ""
 msgstr ""
 
 #: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
-#: GUI_Components/Image_Pane.py:108
+#: GUI_Components/Image_Pane.py:108 GUI_Components/Edit_Pane.py:143
+#: GUI_Components/Format_Pane.py:99 GUI_Components/Image_Pane.py:109
 msgid "Theme:"
 msgstr ""
 
 #: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
-#: GUI_Components/Image_Pane.py:108
+#: GUI_Components/Image_Pane.py:108 GUI_Components/Edit_Pane.py:143
+#: GUI_Components/Format_Pane.py:99 GUI_Components/Image_Pane.py:109
 msgid "Article:"
 msgstr ""
 
@@ -90,7 +92,7 @@ msgstr ""
 msgid "Please select a Wikipedia article from the menu above"
 msgstr ""
 
-#: GUI_Components/Image_Pane.py:113
+#: GUI_Components/Image_Pane.py:113 GUI_Components/Image_Pane.py:114
 msgid "My Articles"
 msgstr ""
 
@@ -129,7 +131,8 @@ msgstr ""
 #: GUI_Components/Image_Pane.py:114 GUI_Components/Image_Pane.py:115
 #: sugaractivity.py:68 sugaractivity.py:69 sugaractivity.py:73
 #: Infoslicer_GUI.py:384 Infoslicer_GUI.py:385 Infoslicer_GUI.py:388
-#: Infoslicer_GUI.py:396 Infoslicer_GUI.py:398
+#: Infoslicer_GUI.py:396 Infoslicer_GUI.py:398 GUI_Components/Edit_Pane.py:145
+#: GUI_Components/Image_Pane.py:116
 msgid "Wikipedia Articles"
 msgstr ""
 
@@ -161,3 +164,14 @@ msgid ""
 "package and click 'Publish'."
 msgstr ""
 
+#: GUI_Components/Library_Pane.py:24
+msgid "English Wikipedia"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:25
+msgid "Simple English Wikipedia"
+msgstr ""
+
+#: GUI_Components/Library_Pane.py:26
+msgid "German Wikipedia"
+msgstr ""
