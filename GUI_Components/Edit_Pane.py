@@ -142,7 +142,8 @@ class Edit_Pane(Pane):
         return article
     
     def set_working_article(self, article):
-        self.editarticle.articletitle.set_markup("<span size='medium'><b>" + _("Theme:") + "</b>  %s  \n<b>" + _("Article:") + "</b>  %s</span>"%(article.article_theme, article.article_title))
+        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s  \n<b> %s </b>  %s</span>" % \
+            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
         self.editarticle.textbox.set_article(article)
         self.editarticle.article_theme = _("Wikipedia Articles")
         
