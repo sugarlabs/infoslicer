@@ -10,7 +10,6 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from GUI_Components.Compound_Widgets.Reading_View import Reading_View
 from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from Processing.Article.Article import Article
-from Processing.IO_Manager import IO_Manager
 
 logger = logging.getLogger('infoslicer')
 
@@ -34,13 +33,28 @@ class Edit_Pane(gtk.HBox):
         gtk.HBox.__init__(self)
         self.toolitems = []
 
+        readarticle_box = gtk.VBox()
+        readarticle_box.show()
+
+        labeleb = gtk.EventBox()
+        labeleb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("#EEEEEE"))
+        readarticle_box.pack_start(labeleb, False, False, 0)
+        labeleb.show()
+        
+        self.articletitle = gtk.Label()
+        self.articletitle.set_justify(gtk.JUSTIFY_CENTER)
+        labeleb.add(self.articletitle)
+        self.articletitle.show()
+        
         """
         Create reading and editing panels
         """
         self.readarticle = Reading_View()  
-        self.pack_start(self.readarticle)
+        self.readarticle.set_size_request(gtk.gdk.screen_width()/2, -1)
         self.readarticle.show()
-        
+        readarticle_box.pack_start(self.readarticle)
+        self.pack_start(readarticle_box, False)
+
         self.editarticle = Editing_View()
         self.pack_start(self.editarticle)
         self.editarticle.show()
@@ -76,51 +90,20 @@ class Edit_Pane(gtk.HBox):
             self.editarticle.set_section_selection_mode()
         #logger.debug(current_selection)
         
-    """
-    Grab source article from IO manager and set up as editing source.
-    """
     def set_source_article(self, article):
         if self.readarticle.textbox.get_article() == article:
             return
-        # Populate the drop down menu with the articles in the current theme
-        article_theme = article.article_theme
-        article_title = article.article_title
-        if article_title == None:
-            article_title = ""
-        """ Grab media wiki pages from default wikipedia theme """
-        titles = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
-        self.readarticle.articlemenu.get_model().clear()
-        """ Check user has downloaded some source articles """
-        if titles != []:
-            self.readarticle.articlemenu.append_text(_("Select a source article from this menu"))
-            if article_title == "":
-                buf = article.getBuffer()
-                start = buf.get_start_iter()
-                end = buf.get_end_iter()
-                buf.delete(start, end)
-                buf.insert(buf.get_start_iter(), _("You can choose a Wikipedia article to copy from by selecting it from the drop-down menu above."))
-                buf.insert(buf.get_end_iter(), _("If you want to download more articles from Wikipedia, you can do this in the Library tab."))
-        else:
-            buf = article.getBuffer()
-            buf.insert(buf.get_start_iter(), _("You have not downloaded any articles from Wikipedia. You can download new articles in the Library tab."))
-       
-        i = 0
-        selectionindex = 0
-        for title in titles:
-            self.readarticle.articlemenu.append_text(title)
-            i = i + 1
-            if title == article_title:
-                selectionindex = i
-                
-        self.readarticle.articlemenu.set_active(selectionindex)
-        
-        # Set the read article as appropriate.
+
+        self.articletitle.set_markup(
+                "<span size='medium'><b> %s </b>  %s</span>" % \
+                (_("Article:"), article.article_title))
+
         self.readarticle.textbox.set_article(article)
         
     def set_working_article(self, article):
         if self.editarticle.textbox.get_article() == article:
             return
-        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s  \n<b> %s </b>  %s</span>" % \
-            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
+        self.editarticle.articletitle.set_markup(
+                "<span size='medium'><b> %s </b>  %s</span>" % \
+                (_("Article:"), article.article_title))
         self.editarticle.textbox.set_article(article)
-        self.editarticle.article_theme = _("Wikipedia Articles")

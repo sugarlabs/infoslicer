@@ -4,7 +4,6 @@ from BeautifulSoup import Tag
 from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 from Processing.Article.Article_Data import *
 import re
-import IO_Manager
 import logging
 
 logger = logging.getLogger('infoslicer')
@@ -20,14 +19,15 @@ class Article_Builder:
     
     This class converts between DITA and article_data representation of articles. Badly in need of refactoring!
     """
-    
-    
+
+    def __init__(self, workingDir):
+        self.workingDir = workingDir
 
     def get_article_from_dita(self, dita):
         """
         This method takes an article in DITA format as input, parses the DITA, and outputs the corresponding article_data object
         """
-        workingDir = IO_Manager.IO_Manager().workingDir
+        workingDir = self.workingDir
         self.sentences = []
         has_shortdesc = False
         input = BeautifulStoneSoup(dita)
@@ -160,7 +160,7 @@ class Article_Builder:
         It calls the getData method of the article class to get the article_data representation of the article.
         It then constructs the corresponding DITA representation of the article.
         """
-        workingDir = IO_Manager.IO_Manager().workingDir
+        workingDir = self.workingDir
         article_data = article.getData()
         output = BeautifulStoneSoup("<?xml version='1.0' encoding='utf-8'?><!DOCTYPE reference PUBLIC \"-//IBM//DTD DITA IBM Reference//EN\" \"ibm-reference.dtd\"><reference><title>%s</title><prolog></prolog></reference>" % article_data.article_title)
         current_ref = output.reference            

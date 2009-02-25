@@ -22,6 +22,8 @@ from sugar.activity.activity import ActivityToolbox
 from GUI_Components.Edit_Pane import Edit_Pane
 from GUI_Components.Format_Pane import Format_Pane
 from GUI_Components.Image_Pane import Image_Pane
+import document
+import book
 
 TABS = (Edit_Pane(),
         Image_Pane(),
@@ -63,6 +65,8 @@ class Toolbar(gtk.Toolbar):
             for i in tab.toolitems:
                 self.insert(i, -1)
 
+        txt_toggle.set_active(True)
+
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:
             for i in tab.toolitems:
@@ -73,9 +77,12 @@ class Toolbar(gtk.Toolbar):
         else:
             another = toggles[0] == widget and 1 or 0
             toggles[another].set_active(False)
-            toggles[another].stop_emission('toggled')
             index = int(not another)
 
         for i in TABS[index].toolitems:
             i.show()
+
+        TABS[index].set_source_article(book.wiki.article)
+        TABS[index].set_working_article(book.custom.article)
+
         self.edit.set_current_page(index)

@@ -23,9 +23,10 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
 
-class View(Library_View):
+class View(gtk.EventBox): #Library_View):
     def __init__(self):
-        Library_View.__init__(self)
+        gtk.EventBox.__init__(self)
+        #Library_View.__init__(self)
 
         """
 
@@ -71,6 +72,7 @@ class Toolbar(gtk.Toolbar):
     def __init__(self, library):
         gtk.Toolbar.__init__(self)
         self.library = library
+        return
 
         wikimenu = ToolComboBox(label_text=_('Get article from:'))
         wikimenu.combo.connect('changed', self._wikimenu_changed_cb)

@@ -8,7 +8,6 @@ from gettext import gettext as _
 from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
 from Processing.Article.Article import Article
-from Processing.IO_Manager import IO_Manager
 
 logger = logging.getLogger('infoslicer')
 
@@ -27,8 +26,24 @@ class Image_Pane(gtk.HBox):
         gtk.HBox.__init__(self)
         self.toolitems = []
         
+        gallery_box = gtk.VBox()
+        gallery_box.show()
+
+        labeleb = gtk.EventBox()
+        labeleb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("#EEEEEE"))
+        gallery_box.pack_start(labeleb, False, False, 0)
+        labeleb.show()
+        
+        self.articletitle = gtk.Label()
+        self.articletitle.set_justify(gtk.JUSTIFY_CENTER)
+        labeleb.add(self.articletitle)
+        self.articletitle.show()
+        
         self.gallery = Gallery_View()
-        self.pack_start(self.gallery)
+        self.gallery.set_size_request(gtk.gdk.screen_width()/2, -1)
+        gallery_box.pack_start(self.gallery)
+
+        self.pack_start(gallery_box, False)
         self.editarticle = Editing_View()
         self.pack_start(self.editarticle)
         self.editarticle.show_all()
@@ -38,23 +53,22 @@ class Image_Pane(gtk.HBox):
     def set_source_article(self, source):
         if self.gallery._source_article == source:
             return
-        logger.debug("source received.  title: %s, theme: %s" %
-                (source.article_title, source.article_theme))
+
+        logger.debug("source received.  title: %s" % source.article_title)
         current = self.gallery._source_article
         self.gallery._source_article = source
+
+        self.articletitle.set_markup(
+                "<span size='medium'><b> %s </b>  %s</span>"% \
+                (_("Article:"), source.article_title))
+
         if source and source.article_title:
-            source.article_theme = _("Wikipedia Articles")
-            if current:
-                if current.article_title == source.article_title and current.article_theme == source.article_theme:
-                    logger.debug("same")
-                    return
             self.gallery.current_index = 0
             if source.image_list != []:
                 logger.debug("setting images")
                 self.gallery.set_image_list(source.image_list)
                 self.gallery.get_first_item()
                 
-                self.gallery.theme = _("Wikipedia Articles")
                 self.gallery.source_article_id = source.source_article_id
                 logger.debug(source.image_list)
             else:
@@ -68,22 +82,11 @@ class Image_Pane(gtk.HBox):
     def set_working_article(self, article):
         if self.editarticle.textbox.get_article() == article:
             return
-        logger.debug("working received, title %s theme %s " %
-                (article.article_title, article.article_theme))
-        self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>"% \
-            (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
-        if article == None:
-            article = Article()
+
+        logger.debug("working received, title %s" % article.article_title)
+
+        self.editarticle.articletitle.set_markup(
+                "<span size='medium'><b> %s </b>  %s</span>"% \
+                (_("Article:"), article.article_title))
+
         self.editarticle.textbox.set_article(article)
-        if article.article_theme == None:
-            article.article_theme = _("My Articles")
-        theme_list = IO_Manager().get_pages_in_theme(_("Wikipedia Articles"))
-        self.gallery.theme = _("Wikipedia Articles")
-        count = -1
-        self.gallery.articlemenu.get_model().clear()
-        
-        for item in theme_list:
-            count += 1 
-            self.gallery.articlemenu.append_text(item)
-            if self.gallery._source_article != None and item == self.gallery._source_article.article_title:
-                self.gallery.articlemenu.set_active(count)

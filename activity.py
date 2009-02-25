@@ -22,6 +22,7 @@ from sugar.activity.activity import ActivityToolbox
 from shared import SharedActivity
 import library
 import edit
+import book
 
 gtk.gdk.threads_init()
 gtk.gdk.threads_enter()
@@ -29,14 +30,23 @@ gtk.gdk.threads_enter()
 class InfoslicerActivity(SharedActivity):
     def __init__(self, handle):
         self.notebook = gtk.Notebook()
+        self.notebook.show()
+        self.notebook.props.show_border = False
+        self.notebook.props.show_tabs = False
+
         SharedActivity.__init__(self, self.notebook, 'SERVICE', handle)
 
         self.connect('init', self._init_cb)
         self.connect('tube', self._tube_cb)
 
-        self.notebook.show()
-        self.notebook.props.show_border = False
-        self.notebook.props.show_tabs = False
+    def read_file(self, filepath):
+        pass
+
+    def write_file(self, filepath):
+        pass
+
+    def _init_cb(self, sender):
+        book.init()
 
         self.library = library.View()
         self.library.show()
@@ -60,15 +70,6 @@ class InfoslicerActivity(SharedActivity):
         toolbox.add_toolbar(_('Edit'), edit_bar)
 
         toolbox.set_current_toolbar(1)
-
-    def read_file(self, filepath):
-        pass
-
-    def write_file(self, filepath):
-        pass
-
-    def _init_cb(self, sender):
-        pass
 
     def _tube_cb(self, activity, tube_conn, initiating):
         pass

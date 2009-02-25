@@ -14,6 +14,11 @@
 
 from gettext import gettext as _
 
+from Processing.Article.Article import Article
+
+source = Article()
+working = Article()
+
 def read_file(self, file_path):
     logger.debug("reading the file")
     """ 
