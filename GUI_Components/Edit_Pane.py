@@ -2,18 +2,19 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
-from GUI_Components.Pane import Pane
-from GUI_Components.Compound_Widgets.Reading_View import Reading_View
-from GUI_Components.Compound_Widgets.Editing_View import Editing_View
-from GUI_Components.Compound_Widgets.Library_View import Library_View
-from Processing.Article.Article import Article
-from Processing.IO_Manager import IO_Manager
 import logging
 from gettext import gettext as _
 
+from sugar.graphics.toolcombobox import ToolComboBox
+
+from GUI_Components.Compound_Widgets.Reading_View import Reading_View
+from GUI_Components.Compound_Widgets.Editing_View import Editing_View
+from Processing.Article.Article import Article
+from Processing.IO_Manager import IO_Manager
+
 logger = logging.getLogger('infoslicer')
 
-class Edit_Pane(Pane):
+class Edit_Pane(gtk.HBox):
     """
     Created by Jonathan Mace
     
@@ -30,48 +31,29 @@ class Edit_Pane(Pane):
     """
     
     def __init__(self):
-        Pane.__init__(self)
-        self.name = _("Edit")
+        gtk.HBox.__init__(self)
+        self.toolitems = []
 
         """
         Create reading and editing panels
         """
-        self.panel = gtk.HBox()
-        self.panel.set_homogeneous(True)
-        self.panel.show()        
-        
         self.readarticle = Reading_View()  
-        self.panel.pack_start(self.readarticle)
+        self.pack_start(self.readarticle)
         self.readarticle.show()
         
         self.editarticle = Editing_View()
-        self.panel.pack_start(self.editarticle)
+        self.pack_start(self.editarticle)
         self.editarticle.show()
         
-        self.toolbar = gtk.Toolbar()
-        
-        self.label = gtk.Label(_("Snap selection to: "))
-        self.label.show()
-        
-        self.labelcontainer = gtk.ToolItem()
-        self.labelcontainer.add(self.label)
-        self.toolbar.insert(self.labelcontainer, -1)
-        self.labelcontainer.show()
-        
         """ Snap selection box """
-        self.combobox = gtk.combo_box_new_text()
-        self.combobox.append_text(_("Nothing"))
-        self.combobox.append_text(_("Sentences"))
-        self.combobox.append_text(_("Paragraphs"))
-        self.combobox.append_text(_("Sections"))
-        self.combobox.connect("changed", self.selection_mode_changed, None)
-        self.combobox.set_active(1)
-        self.combobox.show()
-        
-        self.combocontainer = gtk.ToolItem()
-        self.combocontainer.add(self.combobox)
-        self.toolbar.insert(self.combocontainer, -1)
-        self.combocontainer.show()
+        snap = ToolComboBox(label_text=_('Snap selection to:'))
+        snap.combo.append_item(0, _("Nothing"))
+        snap.combo.append_item(1, _("Sentences"))
+        snap.combo.append_item(2, _("Paragraphs"))
+        snap.combo.append_item(3, _("Sections"))
+        snap.combo.connect("changed", self.selection_mode_changed, None)
+        snap.combo.set_active(1)
+        self.toolitems.append(snap)
         
     """
     When highlighting text, while editing, different selection snap methods 
@@ -79,28 +61,27 @@ class Edit_Pane(Pane):
     mode based on user request 
     """        
     def selection_mode_changed(self, widget, data):
-        current_selection = widget.get_active_text()
-        if current_selection == _("Nothing"):
+        current_selection = widget.get_active()
+        if current_selection == 0:
             self.readarticle.set_full_edit_mode()
             self.editarticle.set_full_edit_mode()
-        elif current_selection == _("Sentences"):
+        elif current_selection == 1:
             self.readarticle.set_sentence_selection_mode()
             self.editarticle.set_sentence_selection_mode()
-        elif current_selection == _("Paragraphs"):
+        elif current_selection == 2:
             self.readarticle.set_paragraph_selection_mode()
             self.editarticle.set_paragraph_selection_mode()
-        elif current_selection == _("Sections"):
+        elif current_selection == 3:
             self.readarticle.set_section_selection_mode()
             self.editarticle.set_section_selection_mode()
         #logger.debug(current_selection)
         
-    def get_source_article(self):
-        return self.readarticle.textbox.get_article()
-
     """
     Grab source article from IO manager and set up as editing source.
     """
     def set_source_article(self, article):
+        if self.readarticle.textbox.get_article() == article:
+            return
         # Populate the drop down menu with the articles in the current theme
         article_theme = article.article_theme
         article_title = article.article_title
@@ -136,14 +117,10 @@ class Edit_Pane(Pane):
         # Set the read article as appropriate.
         self.readarticle.textbox.set_article(article)
         
-    
-    def get_working_article(self):
-        article = self.editarticle.textbox.get_article()
-        return article
-    
     def set_working_article(self, article):
+        if self.editarticle.textbox.get_article() == article:
+            return
         self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s  \n<b> %s </b>  %s</span>" % \
             (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
         self.editarticle.textbox.set_article(article)
         self.editarticle.article_theme = _("Wikipedia Articles")
-        
