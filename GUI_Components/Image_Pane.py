@@ -2,17 +2,17 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
-from GUI_Components.Pane import Pane
+import logging
+from gettext import gettext as _
+
 from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
 from Processing.Article.Article import Article
 from Processing.IO_Manager import IO_Manager
-import logging
-from gettext import gettext as _
 
 logger = logging.getLogger('infoslicer')
 
-class Image_Pane(Pane):
+class Image_Pane(gtk.HBox):
     """
     Created by Christopher Leonard
     
@@ -24,54 +24,20 @@ class Image_Pane(Pane):
     """
     
     def __init__(self):
-        Pane.__init__(self)
-        self.name = _("Images")   
+        gtk.HBox.__init__(self)
+        self.toolitems = []
         
-        self.panel = gtk.HBox()
-        self.panel.set_homogeneous(True)
-        self.panel.show()
         self.gallery = Gallery_View()
-        self.panel.pack_start(self.gallery)
+        self.pack_start(self.gallery)
         self.editarticle = Editing_View()
-        self.panel.pack_start(self.editarticle)
+        self.pack_start(self.editarticle)
         self.editarticle.show_all()
 
         self.gallery._source_article = None
         
-        self.toolbar = gtk.Toolbar()
-        """
-        Snapping has been turned off in the Editable Textbox, so we no longer
-        make use of snapping.  This has been left in case we turn it back on.
-        
-        
-        self.combobox = gtk.combo_box_new_text()
-        self.combobox.append_text("Nothing")
-        self.combobox.append_text("Sentences")
-        self.combobox.append_text("Paragraphs")
-        self.combobox.append_text("Sections")
-        self.combobox.connect("changed", self.selection_mode_changed, None)
-        self.combobox.set_active(1)
-        self.combobox.show()
-        
-        self.combocontainer = gtk.ToolItem()
-        self.combocontainer.add(self.combobox)
-        self.toolbar.insert(self.combocontainer, -1)
-        self.combocontainer.show()
-        """
-        
-    def selection_mode_changed(self, widget, data):
-        current_selection = widget.get_active_text()
-        if current_selection == _("Nothing"):
-            self.editarticle.set_full_edit_mode()
-        elif current_selection == _("Sentences"):
-            self.editarticle.set_sentence_selection_mode()
-        elif current_selection == _("Paragraphs"):
-            self.editarticle.set_paragraph_selection_mode()
-        elif current_selection == _("Sections"):
-            self.editarticle.set_section_selection_mode()
-        
-        
     def set_source_article(self, source):
+        if self.gallery._source_article == source:
+            return
         logger.debug("source received.  title: %s, theme: %s" %
                 (source.article_title, source.article_theme))
         current = self.gallery._source_article
@@ -99,15 +65,9 @@ class Image_Pane(Pane):
             self.gallery.imagenumberlabel.set_label("")
             self.gallery.caption.set_text(_("Please select a Wikipedia article from the menu above"))
     
-    def get_source_article(self):
-        return self.gallery._source_article
-         
-    def get_working_article(self):
-        article = self.editarticle.textbox.get_article()
-        #data = article.getData()
-        return article
-    
     def set_working_article(self, article):
+        if self.editarticle.textbox.get_article() == article:
+            return
         logger.debug("working received, title %s theme %s " %
                 (article.article_title, article.article_theme))
         self.editarticle.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>"% \
@@ -127,5 +87,3 @@ class Image_Pane(Pane):
             self.gallery.articlemenu.append_text(item)
             if self.gallery._source_article != None and item == self.gallery._source_article.article_title:
                 self.gallery.articlemenu.set_active(count)
-   
-        

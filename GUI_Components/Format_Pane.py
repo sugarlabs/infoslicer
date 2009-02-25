@@ -2,11 +2,11 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
-from GUI_Components.Pane import Pane
-from GUI_Components.Compound_Widgets.Editing_View import Editing_View
 from gettext import gettext as _
 
-class Format_Pane(Pane):
+from GUI_Components.Compound_Widgets.Editing_View import Editing_View
+
+class Format_Pane(Editing_View):
     """
     Created by Jonathan Mace
     
@@ -18,42 +18,14 @@ class Format_Pane(Pane):
     """
     
     def __init__(self):
-        Pane.__init__(self)
-        self.name = _("Format")
-        
-        self.panel = Editing_View()
-        self.panel.show()
-        
-        self.toolbar = gtk.Toolbar()
+        Editing_View.__init__(self)
+        self.toolitems = []
         
         """
-        Snapping has been turned off in the Editable Textbox, so we no longer
-        make use of snapping.  This has been left in case we turn it back on.
-        
-        self.label = gtk.Label("Snap selection to: ")
-        self.label.show()
-        
-        self.labelcontainer = gtk.ToolItem()
-        self.labelcontainer.add(self.label)
-        self.toolbar.insert(self.labelcontainer, -1)
-        self.labelcontainer.show()
-        
-        
-        self.combobox = gtk.combo_box_new_text()
-        self.combobox.append_text("Nothing")
-        self.combobox.append_text("Sentences")
-        self.combobox.append_text("Paragraphs")
-        self.combobox.append_text("Sections")
-        self.combobox.connect("changed", self.selection_mode_changed, None)
-        self.combobox.set_active(1)
-        self.combobox.show()
-        
-        
         self.combocontainer = gtk.ToolItem()
         self.combocontainer.add(self.combobox)
         self.toolbar.insert(self.combocontainer, -1)
         self.combocontainer.show()
-        """
         
         self.boldbutton = gtk.ToolButton(gtk.STOCK_BOLD)
         self.boldbutton.set_expand(False)
@@ -69,32 +41,14 @@ class Format_Pane(Pane):
         self.underlinebutton.set_expand(False)
         self.toolbar.insert(self.underlinebutton, -1)
         self.underlinebutton.show()
-        
-    """ 
-    User wants to change the default snap selection method 
-    """
-    def selection_mode_changed(self, widget, data):
-        current_selection = widget.get_active_text()
-        if current_selection == _("Nothing"):
-            self.panel.set_full_edit_mode()
-        elif current_selection == _("Sentences"):
-            self.panel.set_sentence_selection_mode()
-        elif current_selection == _("Paragraphs"):
-            self.panel.set_paragraph_selection_mode()
-        elif current_selection == _("Sections"):
-            self.panel.set_section_selection_mode()
-            
-    def get_source_article(self):
-        return self.source
-    
+        """
+
     def set_source_article(self, article):
         self.source = article
         
-    def get_working_article(self):
-        article = self.panel.textbox.get_article()
-        return article
-    
     def set_working_article(self, article):
-        self.panel.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>" % \
+        if self.textbox.get_article() == article:
+            return
+        self.articletitle.set_markup("<span size='medium'><b> %s </b>  %s   \n<b> %s </b>  %s</span>" % \
             (_("Theme:"), article.article_theme, _("Article:"), article.article_title))
-        self.panel.textbox.set_article(article)      
+        self.textbox.set_article(article)      
