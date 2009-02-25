@@ -38,7 +38,7 @@ content based on a number of parameters such as URL, Title, Revision.
 class MediaWiki_Helper:
     
     def __init__(self):
-        self.proxies = IO_Manager.IO_Manager().proxies
+        self.proxies = IO_Manager.proxies
 
     def resolveTitle(self, title, wiki=defaultWiki):
         """Check if a wiki article exists using the mediawiki api. Follow redirects.

@@ -5,7 +5,6 @@ import gtk
 import pango
 import cPickle
 from GUI_Components.Compound_Widgets.Base_Widgets.Textbox import Textbox
-from Processing.IO_Manager import IO_Manager
 
 SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
 
@@ -43,22 +42,12 @@ class Readonly_Textbox( Textbox ):
             self.event_handlers.append(self.connect("move-cursor", self.move_cursor, None))
             self.event_handlers.append(self.connect("button-release-event", self.unclicked_event, None))
             self.event_handlers.append(self.connect("drag_data_get", self.drag_data_get_event, None))
-        self.event_handlers.append(self.connect("drag-data-received", self.drag_data_received, None))
         self.event_handlers.append(self.connect("drag-motion", self.drag_motion, None))
         
     def drag_motion(self, widget, context, x, y, timestamp, data):
         context.drag_status(gtk.gdk.ACTION_COPY, timestamp)
         return True
         
-    def drag_data_received(self, widget, context, x, y, selection_data, info, time, data):
-        data_received_type = str(selection_data.type)   
-        if data_received_type == "article": 
-            data = cPickle.loads(str(selection_data.data))
-            title = data[0]
-            theme = data[1]
-            article = IO_Manager().load_article(title, theme)
-            self.set_article(article)
-    
     def clicked_event(self, widget, event, data):
         if event.type == gtk.gdk._2BUTTON_PRESS or event.type == gtk.gdk._3BUTTON_PRESS:
             self.stop_emission("button_press_event")

@@ -3,11 +3,12 @@ import pygtk
 pygtk.require('2.0')
 import gtk
 import cPickle
-from Processing.IO_Manager import IO_Manager
+import logging
+
 from GUI_Components.Compound_Widgets.Base_Widgets.Editable_Textbox import Editable_Textbox
 from Processing.Article.Article_Data import *
 from Processing.Article.Article import Article
-import logging
+import book
 
 logger = logging.getLogger('infoslicer')
 
@@ -30,7 +31,6 @@ class Gallery_View( gtk.HBox ):
     """
     
     def __init__(self):
-        self.theme = None
         self.image_list = []
         gtk.HBox.__init__(self)
         
@@ -59,11 +59,7 @@ class Gallery_View( gtk.HBox ):
         self.image_drag_container.pack_start(self.imagebox, expand=False)
         self.image_drag_container.pack_start(self.caption, expand=False)
         
-        self.articlemenu = gtk.combo_box_new_text()
-        self.articlemenu.connect("changed", self.source_selected, None)
-        
         image_container = gtk.VBox()
-        image_container.pack_start(self.articlemenu, expand=False)
         image_container.pack_start(gtk.Label(" "))
         image_container.pack_start(self.image_drag_container, expand=False)
         image_container.pack_start(gtk.Label(" "))
@@ -90,12 +86,7 @@ class Gallery_View( gtk.HBox ):
         self.get_next_item(right_button, None)
         
         self.source_article_id = 0
-        if self.theme == None:
-            self.caption.set_text("No theme has been selected, please return to the lirary")
         
-    def insert_new_theme(self, widget, entry):
-        pass
-    
     def get_next_item(self, button, param):
         if self.image_list == []:
             if self._source_article and self._source_article.article_title:
@@ -147,21 +138,8 @@ class Gallery_View( gtk.HBox ):
         
     def set_image_list(self, image_list):
         logger.debug("validagting image list")
-        self.image_list = IO_Manager().validate_image_list(image_list)
+        self.image_list = book.wiki.validate_image_list(image_list)
         logger.debug(self.image_list)
-        
-    def source_selected(self, combobox, param):
-        if combobox.get_active_text() == None :
-            return
-        if self.theme == None:
-            logger.debug("no theme set, defaulting to Wikipedia Articles")
-            self.theme = "Wikipedia Articles"
-        if self._source_article.article_title == combobox.get_active_text():
-            return
-        self._source_article = IO_Manager().load_article(combobox.get_active_text(), self.theme)
-        self.set_image_list(self._source_article.image_list)
-        self.get_first_item()
-        
         
     def drag_begin_event(self, widget, context, data):
         self.imagebox.drag_source_set_icon_pixbuf(self.imagebuf)
