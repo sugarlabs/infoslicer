@@ -23,6 +23,7 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
 from GUI_Components.Compound_Widgets.bookview import BookView
+from GUI_Components.Compound_Widgets.Reading_View import Reading_View
 import book
 
 class View(gtk.EventBox): #Library_View):
@@ -30,14 +31,34 @@ class View(gtk.EventBox): #Library_View):
         gtk.EventBox.__init__(self)
 
         books = gtk.VBox()
+        books.set_size_request(gtk.gdk.screen_width()/4, -1)
         books.pack_start(BookView(book.wiki, _('Wiki Articles')))
         books.pack_start(BookView(book.custom, _('Custom Articles')))
 
+        self.wiki_arcticle = Reading_View()
+        self.custom_arcticle = Reading_View()
+        self.custom_arcticle.set_size_request(gtk.gdk.screen_width()/4*3/2, -1)
+
+        articles = gtk.HBox()
+        articles.pack_start(self.wiki_arcticle)
+        articles.pack_start(self.custom_arcticle, False)
+
         desktop = gtk.HBox()
-        desktop.pack_start(books)
+        desktop.pack_start(books, False)
+        desktop.pack_start(articles)
         desktop.show_all()
 
         self.add(desktop)
+
+        book.wiki.connect('article-changed', self._wiki_changed_cb)
+        book.custom.connect('article-changed', self._custom_changed_cb)
+
+    def _wiki_changed_cb(self, book, article):
+        self.wiki_arcticle.textbox.set_article(article)
+
+    def _custom_changed_cb(self, book, article):
+        self.custom_arcticle.textbox.set_article(article)
+
 
 
         #Library_View.__init__(self)

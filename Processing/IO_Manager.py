@@ -45,6 +45,10 @@ class IO_Manager(gobject.GObject):
     def __init__(self, foo):
         gobject.GObject.__init__(self)
 
+    def load_map(self):
+        # stub
+        pass
+
     def clean_title(self, title):
         """
             removes non-alphanumeric chars from titles and lowercases it
@@ -61,26 +65,15 @@ class IO_Manager(gobject.GObject):
             @param title: The title of the article to add to library.
             @param path: The path of the article to add to library.
         """
-        try:
-            #change to relative path
-            path = path.replace(os.path.join(self.workingDir, ""), "", 1)
-            map = self.load_map()
-            existing_entry = map.find("topicref", attrs={"navtitle" : title})
-            if existing_entry != None:
-                existing_entry.extract()
-            map.map.append(Tag(map, "topicref", [("href", path), ("navtitle", title)]))
-            self.save_map(map)
-        except Exception, e:
-            elogger.debug('__add_page_to_library: %s' % e)
-            self.__add_page_to_library(title, path)
+        #change to relative path
+        path = path.replace(os.path.join(self.workingDir, ""), "", 1)
+        map = self.load_map()
+
+        for i in [i for i in map if i['title'] == title]:
+            self.remove_page(i['title'])
+
+        map.append({'title': title, 'href': path})
         
-    def __create_map(self):
-        return BeautifulStoneSoup(\
-                '<?xml version="1.0" encoding="utf-8"?>\
-                <!DOCTYPE map PUBLIC "-//IBM//DTD DITA IBM Map//EN" "ibm-map.dtd">\
-                <map title="footheme">\
-                </map>')
-    
     def download_wiki_article(self, title, theme, wiki=None, statuslabel = None):
         """
             manages downloading and saving of wiki articles.
@@ -119,22 +112,6 @@ class IO_Manager(gobject.GObject):
 #        file.write(contents)
 #        file.close()
     
-    def get_pages(self):
-        """
-            Returns a list of all pages
-            @return: List of dictionaries containing page 'path' and 'title'.
-        """
-        try:
-            map = self.load_map()
-        except Exception, e:
-            elogger.debug('get_pages: %s' % e)
-            return []
-        output = []
-        for page in map.map.findAll("topicref"):
-            output.append(page['navtitle'])
-        output.sort()
-        return output
-            
     def get_unique_article_ID(self):
         """
             Creates and maintains a file to record the last unique article ID issued.
@@ -210,24 +187,6 @@ class IO_Manager(gobject.GObject):
             else:
                 image.extract()
         return document.prettify()
-              
-    def load_map(self):
-        """
-            Loads the specified theme map.
-            @return: map contents as a Soup
-            @raise theme_not_found_error: If theme map not found.
-        """
-        filepath = os.path.join(self.workingDir, "ditamap")
-
-        if not os.access(filepath, os.F_OK):
-            logger.debug('create new map')
-            return self.__create_map();
-
-        file = open(filepath, "r")
-        map = BeautifulStoneSoup(file.read())
-        file.close()
-
-        return map
     
     def load_raw_page(self, title):
         """
@@ -236,11 +195,12 @@ class IO_Manager(gobject.GObject):
             @param title: Title of page to open.
             @return: Contents of page.
         """
+        logger.debug('load article %s' % title)
         theme_map = self.load_map()
-        logger.debug(title)
-        page_location = theme_map.find("topicref", attrs={ "navtitle" : title })
-        if page_location != None:
-            page_location = page_location['href']
+
+        page_location = [i for i in theme_map if i['title'] == title]
+        if page_location:
+            page_location = page_location[0]['href']
         else:
             raise page_not_found_error("No match for " + title)
         
@@ -283,46 +243,32 @@ class IO_Manager(gobject.GObject):
         except IOError, e:
             elogger.debug('__open_URL: %s' % e)
     
-    def page_exists(self, title):
-        """
-            boolean check if an article exists
-        """
-        try:
-            map = self.load_map()
-            if map.find("topicref", attrs={"navtitle" : title}) != None:
-                return True
-            else:
-                return False
-        except Exception, e:
-            elogger.debug('page_exists: %s' % e)
-            return False
-        
     def remove_page(self, page):
         """
             Removes specified page from the specified.
             @param page: Page to remove
         """
         theme_map = self.load_map()
-        entry = theme_map.find("topicref", attrs={"navtitle" : page})
-        try:
-            os.remove(entry['href'])
-        except Exception, e:
-            elogger.debug('remove_page: %s' % e)
-        entry.extract()
-        self.save_map(theme_map)
+
+        for i, entry in enumerate(theme_map):
+            if entry['title'] != title:
+                continue
+            try:
+                os.remove(entry['href'])
+            except Exception, e:
+                elogger.debug('remove_page: %s' % e)
+            del theme_map[i]
     
     def rename_page(self, old_title, new_title):
         """
             renames specified page
         """
-        try:
-            map = self.load_map()
-            page = map.find("topicref", attrs={"navtitle" : old_title})
-            if page != None:
-                page['navtitle'] = new_title
-                self.save_map(map)
-        except Exception, e:
-            elogger.debug('rename_page: %s' % e)
+        map = self.load_map()
+
+        for entry in map:
+            if entry['title'] != old_title:
+                continue
+            entry['title'] = new_title
     
     def save_article(self, article, overwrite = True):
         """
@@ -335,17 +281,6 @@ class IO_Manager(gobject.GObject):
             self.save_page(title, contents, overwrite)
         else:
             raise theme_not_found_error("Title not specified")
-        
-    def save_map(self, map_data):
-        """
-            Saves the specified map.
-            @param map_data: Contents of map
-        """
-        if not os.path.exists(self.workingDir):
-                os.makedirs(self.workingDir, 0777)
-        map = open(os.path.join(self.workingDir, "ditamap"), "w")
-        map.write(map_data.prettify())
-        map.close()
         
     def save_page(self, title, contents, get_images=False, statuslabel=None):
         """

@@ -18,10 +18,12 @@ import logging
 import gobject
 from gettext import gettext as _
 
+from sugar.graphics.toolbutton import ToolButton
 from sugar.activity.activity import get_bundle_path, get_activity_root
 from sugar.graphics.style import *
 
 from Processing.IO_Manager import IO_Manager
+from GUI_Components.Compound_Widgets.toolbar import WidgetItem, ButtonItem
 
 logger = logging.getLogger('infoslicer')
 
@@ -31,34 +33,53 @@ class BookView(gtk.VBox):
         self.book = book
         self._changing = None
 
-        # title
+        title = gtk.Toolbar()
+
+        # title checkbox
 
         self._check = gtk.CheckButton()
-        self._check.show()
         self._check.props.can_focus = False
+        self._check.props.tooltip_text = _('Chech/uncheck all articles')
         self._check.connect('toggled', self._check_toggled_cb)
         check_box = gtk.HBox()
-        check_box.show()
         check_box.set_size_request(50, -1)
         check_box.pack_start(self._check, True, False)
+        title.insert(WidgetItem(check_box), -1)
 
-        title = gtk.Label(name)
-        title.show()
-        title.modify_fg(gtk.STATE_NORMAL, COLOR_WHITE.get_gdk_color())
-        title_box = gtk.HBox()
-        title_box.show()
-        title_box.pack_start(check_box, False)
-        title_box.pack_start(title, False)
-        title = gtk.EventBox()
-        title.show()
-        title.add(title_box)
-        title.modify_bg(gtk.STATE_NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
+        # title caption
+
+        caption_label = gtk.Label(name)
+        caption_label.modify_fg(gtk.STATE_NORMAL, COLOR_WHITE.get_gdk_color())
+        caption_box = gtk.HBox()
+        caption_box.pack_start(check_box, False)
+        caption_box.pack_start(caption_label, False)
+        caption = gtk.EventBox()
+        caption.add(caption_box)
+        caption.modify_bg(gtk.STATE_NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
+        title.insert(WidgetItem(caption), -1)
+
+        separator = gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(True)
+        title.insert(separator, -1)
+
+        # move buttons
+        
+        downward = ButtonItem('go-down',
+                label='Move downward',
+                tooltip_text=_('Move article downward'))
+        downward.connect('clicked', self._downward_clicked_cb)
+        title.insert(downward, -1)
+        upward = ButtonItem('go-up',
+                label=_('Move upward'),
+                tooltip_text=_('Move article upward'))
+        upward.connect('clicked', self._upward_clicked_cb)
+        title.insert(upward, -1)
 
         # tree
 
         self.store = gtk.ListStore(bool, str)
         self.tree = gtk.TreeView(self.store)
-        self.tree.show()
         self.tree.props.headers_visible = False
         self.tree.connect('cursor-changed', self._cursor_changed_cb)
 
@@ -75,19 +96,25 @@ class BookView(gtk.VBox):
         cell.props.editable = True
         self.tree.insert_column_with_attributes(1, '', cell, text=1)
 
-        for i in self.book.get_pages():
-            self.store.append((False, i))
+        for i in self.book.map:
+            self.store.append((False, i['title']))
 
         # scrolled tree
 
         tree_scroll = gtk.ScrolledWindow()
-        tree_scroll.show()
         tree_scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         tree_scroll.add_with_viewport(self.tree)
 
         self.pack_start(title, False)
         self.pack_start(tree_scroll)
         self.tree.set_cursor(0, self.tree.get_column(1), False)
+        self.show_all()
+
+    def _downward_clicked_cb(self, widget):
+        pass
+
+    def _upward_clicked_cb(self, widget):
+        pass
 
     def _check_toggled_cb(self, widget):
         for i in self.store:

@@ -16,6 +16,7 @@ import os
 import gtk
 import logging
 import gobject
+import cjson
 from gobject import SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 from gettext import gettext as _
 
@@ -39,13 +40,13 @@ class Book(IO_Manager):
         if self._article.article_title == name:
             return
 
-        new_name = [i for i in self.get_pages() if i == name]
+        new = [i for i in self.map if i['title'] == name]
 
-        if not new_name:
+        if not new:
             logger.debug('cannot find article %s' % name)
             return
 
-        self._article = self.load_article(new_name)
+        self._article = self.load_article(new[0]['title'])
         self.emit('article-changed', self._article)
 
     article = gobject.property(type=object,
@@ -54,8 +55,12 @@ class Book(IO_Manager):
     def __init__(self, preinstalled, dirname):
         IO_Manager.__init__(self, 0)
         self.workingDir = os.path.join(get_activity_root(), dirname)
+        self.map = []
 
-        if not os.path.exists(self.workingDir):
+        if os.path.exists(self.workingDir):
+            mapfile = file(os.path.join(self.workingDir, 'map'), 'r')
+            self.map = cjson.decode(mapfile.read())
+        else:
             os.makedirs(self.workingDir, 0777)
 
             for i in preinstalled:
@@ -71,9 +76,8 @@ class Book(IO_Manager):
                 self.save_page(i[0], contents, get_images=True)
                 logger.debug("install library: save successful")
 
-        pages = self.get_pages()
-        if pages:
-            self._article = self.load_article(pages[0])
+        if self.map:
+            self._article = self.load_article(self.map[0]['title'])
         else:
             self._article = None
 
@@ -82,6 +86,15 @@ class Book(IO_Manager):
         self.rename_page(old_name, new_name)
         logger.debug('article %s was renamed to %s' % (old_name, new_name))
         self._article.article_title = new_name
+
+    def save_map(self):
+        mapfile = file(os.path.join(self.workingDir, 'map'), 'w')
+        mapfile.write(cjson.encode(self.map))
+        mapfile.close()
+
+    # backward compatibility with IO_Manager
+    def load_map(self):
+        return self.map
 
 class WikiBook(Book):
     def __init__(self):
@@ -102,3 +115,7 @@ def init():
     global wiki, custom
     wiki = WikiBook()
     custom = CustomBook()
+
+def teardown():
+    wiki.save_map()
+    custom.save_map()
