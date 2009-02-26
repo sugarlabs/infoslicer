@@ -22,10 +22,24 @@ from sugar.graphics.toolcombobox import ToolComboBox
 
 from GUI_Components.Compound_Widgets.Library_View import Library_View
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
+from GUI_Components.Compound_Widgets.bookview import BookView
+import book
 
 class View(gtk.EventBox): #Library_View):
     def __init__(self):
         gtk.EventBox.__init__(self)
+
+        books = gtk.VBox()
+        books.pack_start(BookView(book.wiki, _('Wiki Articles')))
+        books.pack_start(BookView(book.custom, _('Custom Articles')))
+
+        desktop = gtk.HBox()
+        desktop.pack_start(books)
+        desktop.show_all()
+
+        self.add(desktop)
+
+
         #Library_View.__init__(self)
 
         """

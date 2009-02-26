@@ -91,19 +91,16 @@ class Edit_Pane(gtk.HBox):
         #logger.debug(current_selection)
         
     def set_source_article(self, article):
-        if self.readarticle.textbox.get_article() == article:
-            return
-
         self.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \
                 (_("Article:"), article.article_title))
 
-        self.readarticle.textbox.set_article(article)
+        if self.readarticle.textbox.get_article() != article:
+            self.readarticle.textbox.set_article(article)
         
     def set_working_article(self, article):
-        if self.editarticle.textbox.get_article() == article:
-            return
         self.editarticle.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \
                 (_("Article:"), article.article_title))
-        self.editarticle.textbox.set_article(article)
+        if self.editarticle.textbox.get_article() != article:
+            self.editarticle.textbox.set_article(article)

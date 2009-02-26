@@ -22,7 +22,6 @@ from sugar.activity.activity import ActivityToolbox
 from GUI_Components.Edit_Pane import Edit_Pane
 from GUI_Components.Format_Pane import Format_Pane
 from GUI_Components.Image_Pane import Image_Pane
-import document
 import book
 
 TABS = (Edit_Pane(),
@@ -38,6 +37,13 @@ class View(gtk.Notebook):
         for i in TABS:
             self.append_page(i)
             i.show()
+
+        self.connect('map', self._map_cb)
+
+    def _map_cb(self, widget):
+        index = self.get_current_page()
+        TABS[index].set_source_article(book.wiki.article)
+        TABS[index].set_working_article(book.custom.article)
 
 class Toolbar(gtk.Toolbar):
     def __init__(self, edit):

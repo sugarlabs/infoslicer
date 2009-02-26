@@ -51,16 +51,16 @@ class Image_Pane(gtk.HBox):
         self.gallery._source_article = None
         
     def set_source_article(self, source):
+        self.articletitle.set_markup(
+                "<span size='medium'><b> %s </b>  %s</span>"% \
+                (_("Article:"), source.article_title))
+
         if self.gallery._source_article == source:
             return
 
         logger.debug("source received.  title: %s" % source.article_title)
         current = self.gallery._source_article
         self.gallery._source_article = source
-
-        self.articletitle.set_markup(
-                "<span size='medium'><b> %s </b>  %s</span>"% \
-                (_("Article:"), source.article_title))
 
         if source and source.article_title:
             self.gallery.current_index = 0
@@ -80,13 +80,11 @@ class Image_Pane(gtk.HBox):
             self.gallery.caption.set_text(_("Please select a Wikipedia article from the menu above"))
     
     def set_working_article(self, article):
-        if self.editarticle.textbox.get_article() == article:
-            return
-
         logger.debug("working received, title %s" % article.article_title)
 
         self.editarticle.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>"% \
                 (_("Article:"), article.article_title))
 
-        self.editarticle.textbox.set_article(article)
+        if self.editarticle.textbox.get_article() != article:
+            self.editarticle.textbox.set_article(article)
