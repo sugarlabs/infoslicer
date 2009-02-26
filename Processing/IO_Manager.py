@@ -6,6 +6,7 @@ import re
 import logging
 import os
 import urllib
+import gobject
 from gettext import gettext as _
 
 from BeautifulSoup import Tag
@@ -40,9 +41,9 @@ class theme_exists_error(Exception):
 This class sits between the GUI and the back end (handling 
 mediawiki communication and raw pages/article modifications)
 """    
-class IO_Manager:
+class IO_Manager(gobject.GObject):
     def __init__(self, foo):
-        pass
+        gobject.GObject.__init__(self)
 
     def clean_title(self, title):
         """

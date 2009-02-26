@@ -15,6 +15,8 @@
 import os
 import gtk
 import logging
+import gobject
+from gobject import SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 from gettext import gettext as _
 
 from sugar.activity.activity import get_bundle_path, get_activity_root
@@ -27,6 +29,28 @@ wiki = None
 custom = None
 
 class Book(IO_Manager):
+    __gsignals__ = {
+        'article-changed' : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]) } 
+
+    def get_article(self):
+        return self._article
+
+    def set_article(self, name):
+        if self._article.article_title == name:
+            return
+
+        new_name = [i for i in self.get_pages() if i == name]
+
+        if not new_name:
+            logger.debug('cannot find article %s' % name)
+            return
+
+        self._article = self.load_article(new_name)
+        self.emit('article-changed', self._article)
+
+    article = gobject.property(type=object,
+            getter=get_article, setter=set_article)
+
     def __init__(self, preinstalled, dirname):
         IO_Manager.__init__(self, 0)
         self.workingDir = os.path.join(get_activity_root(), dirname)
@@ -49,9 +73,15 @@ class Book(IO_Manager):
 
         pages = self.get_pages()
         if pages:
-            self.article = self.load_article(pages[0])
+            self._article = self.load_article(pages[0])
         else:
-            self.article = Article()
+            self._article = None
+
+    def rename(self, new_name):
+        old_name = self._article.article_title
+        self.rename_page(old_name, new_name)
+        logger.debug('article %s was renamed to %s' % (old_name, new_name))
+        self._article.article_title = new_name
 
 class WikiBook(Book):
     def __init__(self):

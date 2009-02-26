@@ -47,9 +47,8 @@ class Format_Pane(Editing_View):
         self.source = article
         
     def set_working_article(self, article):
-        if self.textbox.get_article() == article:
-            return
         self.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \
                 (_("Article:"), article.article_title))
-        self.textbox.set_article(article)      
+        if self.textbox.get_article() != article:
+            self.textbox.set_article(article)      
