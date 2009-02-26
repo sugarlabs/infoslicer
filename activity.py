@@ -43,7 +43,7 @@ class InfoslicerActivity(SharedActivity):
         pass
 
     def write_file(self, filepath):
-        pass
+        book.teardown()
 
     def _init_cb(self, sender):
         book.init()

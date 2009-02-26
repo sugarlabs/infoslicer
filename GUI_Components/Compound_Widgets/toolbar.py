@@ -13,10 +13,23 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import gtk
+import gobject
+
+from sugar.graphics.icon import Icon
 
 class WidgetItem(gtk.ToolItem):
-    def __init__(self, widget, expand=False):
+    def __init__(self, widget):
         gtk.ToolItem.__init__(self)
-        self.set_expand(expand)
         self.add(widget)
         widget.show()
+
+class ButtonItem(gtk.ToolButton):
+    def __init__(self, icon_name, size=gtk.ICON_SIZE_SMALL_TOOLBAR, **kwargs):
+        gobject.GObject.__init__(self, **kwargs)
+
+        icon = Icon(icon_name=icon_name, icon_size=size)
+        # The alignment is a hack to work around gtk.ToolButton code
+        # that sets the icon_size when the icon_widget is a gtk.Image
+        alignment = gtk.Alignment(0.5, 0.5)
+        alignment.add(icon)
+        self.set_icon_widget(alignment)
