@@ -2,6 +2,7 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
+import os
 import cPickle
 import logging
 
@@ -138,7 +139,7 @@ class Gallery_View( gtk.HBox ):
         
     def set_image_list(self, image_list):
         logger.debug("validagting image list")
-        self.image_list = book.wiki.validate_image_list(image_list)
+        self.image_list = _validate_image_list(book.wiki.root, image_list)
         logger.debug(self.image_list)
         
     def drag_begin_event(self, widget, context, data):
@@ -155,4 +156,19 @@ class Gallery_View( gtk.HBox ):
         string = cPickle.dumps(sectionsdata)
         selection_data.set(atom, 8, string)
         
-        
+def _validate_image_list(root, image_list):
+    """
+        provides a mechanism for validating image lists and expanding relative paths
+        @param image_list: list of images to validate
+        @return: list of images with corrected paths, and broken images removed
+    """
+    for i in xrange(len(image_list)):
+        if not os.access(image_list[i][0], os.F_OK):
+            if os.access(os.path.join(root, image_list[i][0]), os.F_OK):
+                image_list[i] = (os.path.join(root, image_list[i][0]), image_list[i][1])
+            else:
+                image = None
+    #removing during for loop was unreliable
+    while None in image_list:
+        image_list.remove(None)
+    return image_list

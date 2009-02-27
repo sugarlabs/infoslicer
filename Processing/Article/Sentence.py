@@ -2,7 +2,9 @@
 
 import pygtk
 pygtk.require('2.0')
+import os
 import gtk
+import logging
 
 from Article_Data import *
 
@@ -26,7 +28,7 @@ from an action not controlled by the Article object it is contained in.
 
 """
 
-
+logger = logging.getLogger('infoslicer')
 
 class RawSentence:
     
@@ -155,8 +157,11 @@ class Picture( RawSentence ):
         rightmark = buf.create_mark(None, insertioniter, True)
         leftmark = buf.create_mark(None, insertioniter, False)
         
-        pixbuf = gtk.gdk.pixbuf_new_from_file(picture_data.text) 
-        buf.insert_pixbuf(insertioniter, pixbuf)
+        if os.path.isfile(picture_data.text):
+            pixbuf = gtk.gdk.pixbuf_new_from_file(picture_data.text) 
+            buf.insert_pixbuf(insertioniter, pixbuf)
+        else:
+            logger.warning('cannot open image %s' % picture_data.text)
         
         left = buf.get_iter_at_mark(rightmark)
         right = buf.get_iter_at_mark(leftmark)

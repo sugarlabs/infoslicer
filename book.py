@@ -14,58 +14,125 @@
 
 import os
 import gtk
+import uuid
 import logging
 import gobject
 import cjson
+import shutil
 from gobject import SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 from gettext import gettext as _
 
 from sugar.activity.activity import get_bundle_path, get_activity_root
 
-from Processing.IO_Manager import IO_Manager
+import net
+from Processing.Article.Article import Article
+from Processing.Article_Builder import Article_Builder
 
 logger = logging.getLogger('infoslicer')
 
 wiki = None
 custom = None
 
-class Book(IO_Manager):
+class Book(gobject.GObject):
     __gsignals__ = {
-        'article-changed' : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]) } 
+        'article-selected' : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]),
+        'article-added'    : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]),
+        'article-deleted'  : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]) } 
 
     def get_article(self):
         return self._article
 
-    def set_article(self, name):
-        if self._article.article_title == name:
+    def set_article(self, title):
+        if self._article and self._article.article_title == title:
             return
 
-        new = [i for i in self.map if i['title'] == name]
+        if self._article:
+            # save current copy of article
+            self.find_by_uuid(self._article.uid)['title'] = \
+                    self._article.article_title
+            contents = Article_Builder(self.root).get_dita_from_article(
+                    self._article)
+            self._save(self._article.uid, contents)
 
-        if not new:
-            logger.debug('cannot find article %s' % name)
+        if title is None:
             return
 
-        self._article = self.load_article(new[0]['title'])
-        self.emit('article-changed', self._article)
+        index, entry = self.find(title)
+
+        if entry:
+            content = self._load(entry['uid'])
+            if content:
+                data = Article_Builder(self.root).get_article_from_dita(content)
+                self._article = Article(data)
+            else:
+                self._article = Article()
+        else:
+            entry = self._create(title, uuid.uuid1())
+            self._article = Article()
+
+        self._article.uid = entry['uid']
+        self._article.article_title = title
+        self.emit('article-selected', self._article)
 
     article = gobject.property(type=object,
             getter=get_article, setter=set_article)
 
-    def __init__(self, preinstalled, dirname):
-        IO_Manager.__init__(self, 0)
-        self.workingDir = os.path.join(get_activity_root(), dirname)
-        self.map = []
+    def create(self, title, content):
+        uid = str(uuid.uuid1())
+        content = net.image_handler(self.root, uid, content)
+        self._save(uid, content)
+        self._create(title, uid)
 
-        if os.path.exists(self.workingDir):
-            mapfile = file(os.path.join(self.workingDir, 'map'), 'r')
-            self.map = cjson.decode(mapfile.read())
+    def remove(self, title):
+        index, entry = self.find(title)
+
+        if not entry:
+            logger.debug('cannot find %s to remove' % title)
+            return
+
+        if self._article and self._article.article_title == title:
+            self._article = None
+
+        shutil.rmtree(os.path.join(self.root, entry['uid']), True)
+        del self.map[index]
+        self.emit('article-deleted', title)
+
+    def find(self, title):
+        for i, entry in enumerate(self.map):
+            if entry['title'] == title:
+                return (i, entry)
+        return (None, None)
+
+    def find_by_uuid(self, uid):
+        for i in self.map:
+            if i['uid'] == uid:
+                return i
+        return None
+
+    def save_map(self):
+        mapfile = file(os.path.join(self.root, 'map'), 'w')
+        mapfile.write(cjson.encode(self.map))
+        mapfile.close()
+
+    def __init__(self, preinstalled, dirname):
+        gobject.GObject.__init__(self)
+        self.root = os.path.join(get_activity_root(), dirname)
+        self.map = []
+        self._article = None
+
+        if os.path.exists(self.root):
+            try:
+                mapfile = file(os.path.join(self.root, 'map'), 'r')
+                self.map = cjson.decode(mapfile.read())
+                if self.map:
+                    self.props.article = self.map[0]['title']
+            except:
+                logger.debug('cannot find map file; use empty')
         else:
-            os.makedirs(self.workingDir, 0777)
+            os.makedirs(self.root, 0777)
 
             for i in preinstalled:
-                filepath = os.path.join(get_bundle_path(), 'Processing',
-                        'demolibrary', i[1])
+                filepath = os.path.join(get_bundle_path(), 'examples', i[1])
 
                 logger.debug("install library: opening %s" % filepath)
                 open_file = open(filepath, "r")
@@ -73,28 +140,45 @@ class Book(IO_Manager):
                 open_file.close()
 
                 logger.debug("install library: saving page %s" % i[0])
-                self.save_page(i[0], contents, get_images=True)
+                self.create(i[0], contents)
                 logger.debug("install library: save successful")
+                self.save_map()
 
-        if self.map:
-            self._article = self.load_article(self.map[0]['title'])
-        else:
-            self._article = None
+    def _create(self, title, uid):
+        entry = { 'title': title, 'uid': str(uid), 'ready': False }
+        self.map.append(entry)
+        self.emit('article-added', title)
+        return entry
 
-    def rename(self, new_name):
-        old_name = self._article.article_title
-        self.rename_page(old_name, new_name)
-        logger.debug('article %s was renamed to %s' % (old_name, new_name))
-        self._article.article_title = new_name
+    def _load(self, uid):
+        logger.debug('load article %s' % uid)
 
-    def save_map(self):
-        mapfile = file(os.path.join(self.workingDir, 'map'), 'w')
-        mapfile.write(cjson.encode(self.map))
-        mapfile.close()
+        path = os.path.join(self.root, str(uid), 'page.dita')
+        if not os.access(path, os.F_OK):
+            logger.debug('_load: cannot find %s' % path)
+            return None
 
-    # backward compatibility with IO_Manager
-    def load_map(self):
-        return self.map
+        page = open(path, "r")
+        output = page.read()
+        page.close()
+
+        return output
+
+    def _save(self, uid, contents):
+        directory = os.path.join(self.root, str(uid))
+
+        if not os.path.exists(directory):
+            os.makedirs(directory, 0777)
+
+        contents = contents.replace(
+                '<prolog>', '<prolog>\n<resourceid id="%s" />'
+                % uuid.uuid1(), 1)
+
+        file = open(os.path.join(directory, 'page.dita'), 'w')
+        file.write(contents)
+        file.close()
+
+        logger.debug('save: %s' % directory)
 
 class WikiBook(Book):
     def __init__(self):
@@ -117,5 +201,7 @@ def init():
     custom = CustomBook()
 
 def teardown():
+    wiki.props.article = None
     wiki.save_map()
+    custom.props.article = None
     custom.save_map()
