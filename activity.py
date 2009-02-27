@@ -48,32 +48,40 @@ class InfoslicerActivity(SharedActivity):
     def _init_cb(self, sender):
         book.init()
 
-        self.library = library.View()
-        self.library.show()
-        self.notebook.append_page(self.library)
-
+        self.edit_page = 1
         self.edit = edit.View()
-        self.edit.show()
-        self.notebook.append_page(self.edit)
+        self.edit_bar = edit.Toolbar(self.edit)
+
+        self.library = library.View(self._set_edit_sensitive)
+        library_bar = library.Toolbar(self.library)
 
         toolbox = ActivityToolbox(self)
-        toolbox.show()
         toolbox.connect('current-toolbar-changed', self._toolbar_changed_cb)
         self.set_toolbox(toolbox)
-
-        library_bar = library.Toolbar(self.library)
-        library_bar.show()
         toolbox.add_toolbar(_('Library'), library_bar)
+        toolbox.add_toolbar(_('Edit'), self.edit_bar)
 
-        edit_bar = edit.Toolbar(self.edit)
-        edit_bar.show()
-        toolbox.add_toolbar(_('Edit'), edit_bar)
+        edit_fake = gtk.EventBox()
+
+        self.notebook.append_page(self.library)
+        self.notebook.append_page(self.edit)
+        self.notebook.append_page(edit_fake)
 
         toolbox.set_current_toolbar(1)
+        self.show_all()
+
+    def _set_edit_sensitive(self, enable):
+        self.edit_bar.props.sensitive = enable
+        self.edit_page = (enable and 1 or 2)
 
     def _tube_cb(self, activity, tube_conn, initiating):
         pass
 
     def _toolbar_changed_cb(self, widget, index):
         if index > 0:
-            self.notebook.set_current_page(index-1)
+            if index == 1:
+                index = 0
+            else:
+                self.library.sync()
+                index = self.edit_page
+            self.notebook.set_current_page(index)

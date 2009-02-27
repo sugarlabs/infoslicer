@@ -16,6 +16,7 @@ import gtk
 import gobject
 
 from sugar.graphics.icon import Icon
+import sugar.graphics.style as style
 
 class WidgetItem(gtk.ToolItem):
     def __init__(self, widget):
@@ -33,3 +34,7 @@ class ButtonItem(gtk.ToolButton):
         alignment = gtk.Alignment(0.5, 0.5)
         alignment.add(icon)
         self.set_icon_widget(alignment)
+
+        if size == gtk.ICON_SIZE_SMALL_TOOLBAR:
+            button_size = style.SMALL_ICON_SIZE + 4
+            self.set_size_request(button_size, button_size)

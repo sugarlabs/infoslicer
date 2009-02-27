@@ -13,136 +13,170 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import gtk
+from threading import Timer
 from gettext import gettext as _
 
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.icon import Icon
+import sugar.graphics.style as style
 
-from GUI_Components.Compound_Widgets.Library_View import Library_View
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
 from GUI_Components.Compound_Widgets.bookview import BookView
 from GUI_Components.Compound_Widgets.Reading_View import Reading_View
 import book
+import net
 
-class View(gtk.EventBox): #Library_View):
-    def __init__(self):
+class View(gtk.EventBox):
+    def sync(self):
+        self.wiki.sync()
+        self.custom.sync()
+
+    def __init__(self, set_edit_sensitive):
         gtk.EventBox.__init__(self)
+        self._set_edit_sensitive = set_edit_sensitive
+
+        # books
 
         books = gtk.VBox()
         books.set_size_request(gtk.gdk.screen_width()/4, -1)
-        books.pack_start(BookView(book.wiki, _('Wiki Articles')))
-        books.pack_start(BookView(book.custom, _('Custom Articles')))
+        self.wiki = BookView(book.wiki,
+                _('Wiki'), _('Wiki articles'), False)
+        books.pack_start(self.wiki)
+        self.custom = BookView(book.custom,
+                _('Custom'), _('Custom articles'), True)
+        books.pack_start(self.custom)
 
-        self.wiki_arcticle = Reading_View()
-        self.custom_arcticle = Reading_View()
-        self.custom_arcticle.set_size_request(gtk.gdk.screen_width()/4*3/2, -1)
+        # stubs for empty articles
+
+        def create_stub(icon_name, head_text, tail_text):
+            head_label = gtk.Label(head_text)
+            head_label_a = gtk.Alignment(0.5, 1, 0, 0)
+            head_label_a.add(head_label)
+            icon = Icon(icon_name=icon_name,
+                    icon_size=gtk.ICON_SIZE_LARGE_TOOLBAR)
+            tail_label = gtk.Label(tail_text)
+            tail_label_a = gtk.Alignment(0.5, 0, 0, 0)
+            tail_label_a.add(tail_label)
+            stub = gtk.VBox()
+            stub.pack_start(head_label_a)
+            stub.pack_start(icon, False)
+            stub.pack_start(tail_label_a)
+            return stub
+
+        wiki_stub = create_stub('white-search',
+                _('To download Wiki article\ntype "Article name" and click'),
+                _('button on top "Library" panel'))
+        custom_stub = create_stub('add',
+                _('To create custom article click'),
+                _('button on left "Custom" panel'))
+
+        # articles viewers
+
+        wiki_widget = Reading_View()
+        wiki = gtk.Notebook()
+        wiki.props.show_border = False
+        wiki.props.show_tabs = False
+        wiki.append_page(wiki_widget)
+        wiki.append_page(wiki_stub)
+
+        custom_widget = Reading_View()
+        custom = gtk.Notebook()
+        custom.props.show_border = False
+        custom.props.show_tabs = False
+        custom.append_page(custom_widget)
+        custom.append_page(custom_stub)
+        custom.set_size_request(gtk.gdk.screen_width()/4*3/2, -1)
+
+        # workspace
 
         articles = gtk.HBox()
-        articles.pack_start(self.wiki_arcticle)
-        articles.pack_start(self.custom_arcticle, False)
+        articles.pack_start(wiki)
+        articles.pack_start(gtk.VSeparator(), False)
+        articles.pack_start(custom, False)
 
-        desktop = gtk.HBox()
-        desktop.pack_start(books, False)
-        desktop.pack_start(articles)
-        desktop.show_all()
+        self.progress = gtk.Label()
+        self.progress.set_size_request(-1, style.SMALL_ICON_SIZE+4)
+        progress_box = gtk.VBox()
+        progress_box.pack_start(articles)
+        progress_box.pack_start(gtk.HSeparator(), False)
+        progress_box.pack_start(self.progress, False)
 
-        self.add(desktop)
+        workspace = gtk.HBox()
+        workspace.pack_start(books, False)
+        workspace.pack_start(gtk.VSeparator(), False)
+        workspace.pack_start(progress_box)
+        workspace.show_all()
 
-        book.wiki.connect('article-changed', self._wiki_changed_cb)
-        book.custom.connect('article-changed', self._custom_changed_cb)
+        self.add(workspace)
 
-    def _wiki_changed_cb(self, book, article):
-        self.wiki_arcticle.textbox.set_article(article)
+        # init components
 
-    def _custom_changed_cb(self, book, article):
-        self.custom_arcticle.textbox.set_article(article)
+        book.wiki.connect('article-selected', self._article_selected_cb,
+                wiki, wiki_widget)
+        book.wiki.connect('article-deleted', self._article_deleted_cb, wiki)
+        book.custom.connect('article-selected', self._article_selected_cb,
+                custom, custom_widget)
+        book.custom.connect('article-deleted', self._article_deleted_cb, custom)
 
+        self._edit_sensitive = 0
+        self._set_edit_sensitive(False)
 
+        if not book.wiki.article:
+            wiki.set_current_page(1)
+        else:
+            self._article_selected_cb(None, book.wiki.article,
+                    wiki, wiki_widget)
 
-        #Library_View.__init__(self)
+        if not book.custom.article:
+            custom.set_current_page(1)
+        else:
+            self._article_selected_cb(None, book.custom.article,
+                    custom, custom_widget)
 
-        """
+    def _article_selected_cb(self, book, article, notebook, article_widget):
+        notebook.set_current_page(0)
+        article_widget.textbox.set_article(article)
 
-        def get_source_article(self):
-            return self.librarypanel.get_source()
-        
-        def set_source_article(self, article):
-            self.librarypanel.set_source(article)   
-        
-        def get_working_article(self):
-            return self.librarypanel.get_working()
-        
-        def set_working_article(self, article):
-            self.librarypanel.set_working(article)
+        self._edit_sensitive += 1
+        if self._edit_sensitive == 2:
+            self._set_edit_sensitive(True)
 
-
-        # Set up dummy library if appropriate
-        IO_Manager().install_library()
-
-        themes = IO_Manager().get_themes()
-        if "Wikipedia Articles" in themes:
-            i = themes.index("Wikipedia Articles")
-            del themes[i]
-            
-        wikiarticles = IO_Manager().get_pages_in_theme("Wikipedia Articles")
-        for theme in themes:
-            articles = IO_Manager().get_pages_in_theme(theme)
-            for article in articles:
-                if ignore == True:
-                    break
-                for wikiarticle in wikiarticles:
-                    if article in wikiarticle:
-                        self.source = IO_Manager().load_article(wikiarticle, "Wikipedia Articles")
-                        self.working = IO_Manager().load_article(article, theme) 
-                        logger.debug("loading source %s from %s" %
-                                (wikiarticle, "Wikipedia Articles"))
-                        logger.debug("loading edit %s from %s" %
-                                (article, theme))
-                        ignore = True
-        """
+    def _article_deleted_cb(self, abook, article, notebook):
+        if abook.map:
+            return
+        notebook.set_current_page(1)
+        self._edit_sensitive -= 1
+        self._set_edit_sensitive(False)
 
 class Toolbar(gtk.Toolbar):
     def __init__(self, library):
         gtk.Toolbar.__init__(self)
         self.library = library
-        return
 
-        wikimenu = ToolComboBox(label_text=_('Get article from:'))
-        wikimenu.combo.connect('changed', self._wikimenu_changed_cb)
+        self.wikimenu = ToolComboBox(label_text=_('Get article from:'))
         for i in sorted(WIKI.keys()):
-            wikimenu.combo.append_item(WIKI[i], i)
-        self.insert(wikimenu, -1)
-        wikimenu.show()
+            self.wikimenu.combo.append_item(WIKI[i], i)
+        self.wikimenu.combo.set_active(0)
+        self.insert(self.wikimenu, -1)
+        self.wikimenu.show()
 
-        searchentry = gtk.Entry()
-        searchentry.set_size_request(int(gtk.gdk.screen_width() / 4), -1)
-        searchentry.set_text(_("Article name"))
-        searchentry.connect('changed', self._search_activate_cb)
-        searchentry_item = WidgetItem(searchentry)
+        self.searchentry = gtk.Entry()
+        self.searchentry.set_size_request(int(gtk.gdk.screen_width() / 4), -1)
+        self.searchentry.set_text(_("Article name"))
+        self.searchentry.select_region(0, -1)
+        self.searchentry.connect('activate', self._search_activate_cb)
+        searchentry_item = WidgetItem(self.searchentry)
         self.insert(searchentry_item, -1)
         searchentry_item.show()
 
-        self.searchbutton = ToolButton('search', tooltip=_('Find article'))
-        self.searchbutton.connect("clicked", self.library.commence_retrieval,
-                searchentry, self.library.statusbar, wikimenu, WIKI)
+        self.searchbutton = ToolButton('white-search',
+                tooltip=_('Find article'))
+        self.searchbutton.connect('clicked', self._search_clicked_cb)
         self.insert(self.searchbutton, -1)
         self.searchbutton.show()
-
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-        separator.show()
-
-        new = ToolButton('add', tooltip=_('New article'))
-        new.connect("clicked", self._new_clicked_cb)
-        self.insert(new, -1)
-        new.show()
-
-        erase = ToolButton('edit-delete', tooltip=_('Delete selected articles'))
-        erase.connect("clicked", self._erase_clicked_cb)
-        self.insert(erase, -1)
-        erase.show()
 
         separator = gtk.SeparatorToolItem()
         self.insert(separator, -1)
@@ -153,20 +187,36 @@ class Toolbar(gtk.Toolbar):
         self.insert(publish, -1)
         publish.show()
 
+        self.connect('map', self._map_cb)
+
+    def _map_cb(self, widget):
+        self.searchentry.grab_focus()
+
     def _publish_clicked_cb(self):
-        pass
-
-    def _erase_clicked_cb(self):
-        pass
-
-    def _new_clicked_cb(self):
         pass
 
     def _search_activate_cb(self, widget):
         self.searchbutton.emit("clicked")
 
-    def _wikimenu_changed_cb(self, widget, data):
-        self.searchbutton.emit("clicked")
+    def _search_clicked_cb(self, widget):
+        title = self.searchentry.get_text()
+        wiki = self.wikimenu.combo.props.value
+
+        if not title:
+            return
+
+        if book.wiki.find('%s (from %s)' % (title, wiki))[0]:
+            self.library.progress.set_label(_('"%s" article already exists') % title)
+            Timer(10, self._clear_progress).start()
+        else:
+            Timer(0, self._download, [title, wiki]).start()
+
+    def _download(self, title, wiki):
+        net.download_wiki_article(title, wiki, self.library.progress)
+        Timer(10, self._clear_progress).start()
+
+    def _clear_progress(self):
+        self.library.progress.set_label('')
 
 WIKI = { _("English Wikipedia")         : "en.wikipedia.org", 
          _("Simple English Wikipedia")  : "simple.wikipedia.org", 

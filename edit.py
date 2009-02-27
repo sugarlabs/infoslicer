@@ -42,8 +42,11 @@ class View(gtk.Notebook):
 
     def _map_cb(self, widget):
         index = self.get_current_page()
-        TABS[index].set_source_article(book.wiki.article)
-        TABS[index].set_working_article(book.custom.article)
+
+        if book.wiki.article:
+            TABS[index].set_source_article(book.wiki.article)
+        if book.custom.article:
+            TABS[index].set_working_article(book.custom.article)
 
 class Toolbar(gtk.Toolbar):
     def __init__(self, edit):
@@ -88,7 +91,9 @@ class Toolbar(gtk.Toolbar):
         for i in TABS[index].toolitems:
             i.show()
 
-        TABS[index].set_source_article(book.wiki.article)
-        TABS[index].set_working_article(book.custom.article)
+        if book.wiki.article:
+            TABS[index].set_source_article(book.wiki.article)
+        if book.custom.article:
+            TABS[index].set_working_article(book.custom.article)
 
         self.edit.set_current_page(index)

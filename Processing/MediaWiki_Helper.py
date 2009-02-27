@@ -1,9 +1,10 @@
 # Copyright (C) IBM Corporation 2008
 
 import urllib
-import IO_Manager
 from xml.dom import minidom
 import logging
+
+import net
 
 logger = logging.getLogger('infoslicer')
 
@@ -38,7 +39,7 @@ content based on a number of parameters such as URL, Title, Revision.
 class MediaWiki_Helper:
     
     def __init__(self):
-        self.proxies = IO_Manager.proxies
+        self.proxies = net.proxies
 
     def resolveTitle(self, title, wiki=defaultWiki):
         """Check if a wiki article exists using the mediawiki api. Follow redirects.
