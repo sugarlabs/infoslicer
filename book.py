@@ -46,13 +46,7 @@ class Book(gobject.GObject):
         if self._article and self._article.article_title == title:
             return
 
-        if self._article:
-            # save current copy of article
-            self.find_by_uuid(self._article.uid)['title'] = \
-                    self._article.article_title
-            contents = Article_Builder(self.root).get_dita_from_article(
-                    self._article)
-            self._save(self._article.uid, contents)
+        self.sync()
 
         if title is None:
             return
@@ -76,6 +70,17 @@ class Book(gobject.GObject):
 
     article = gobject.property(type=object,
             getter=get_article, setter=set_article)
+
+    # save current article
+    def sync(self):
+        if not self._article:
+            return
+
+        self.find_by_uuid(self._article.uid)['title'] = \
+                self._article.article_title
+        contents = Article_Builder(self.root).get_dita_from_article(
+                self._article)
+        self._save(self._article.uid, contents)
 
     def create(self, title, content):
         uid = str(uuid.uuid1())
