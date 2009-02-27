@@ -14,6 +14,7 @@
 
 import gtk
 from threading import Timer
+from datetime import datetime
 from gettext import gettext as _
 
 from sugar.graphics.toolbutton import ToolButton
@@ -23,11 +24,12 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.icon import Icon
 import sugar.graphics.style as style
 
+import net
+import book
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
 from GUI_Components.Compound_Widgets.bookview import BookView
 from GUI_Components.Compound_Widgets.Reading_View import Reading_View
-import book
-import net
+from Processing.Package_Creator import Package_Creator
 
 class View(gtk.EventBox):
     def sync(self):
@@ -189,11 +191,13 @@ class Toolbar(gtk.Toolbar):
 
         self.connect('map', self._map_cb)
 
+    def _publish_clicked_cb(self):
+        book.custom.sync()
+        Package_Creator(book.custom.article,
+                datetime.strftime(datetime.now(), '%F %T'))
+
     def _map_cb(self, widget):
         self.searchentry.grab_focus()
-
-    def _publish_clicked_cb(self):
-        pass
 
     def _search_activate_cb(self, widget):
         self.searchbutton.emit("clicked")

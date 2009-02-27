@@ -1,9 +1,9 @@
 # Copyright (C) IBM Corporation 2008
 
 import os, platform, zipfile, shutil, re
-from IO_Manager import IO_Manager
-from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
+from sugar.activity.activity import get_bundle_path, get_activity_root
 
+from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 class Package_Creator:
     """
     @author: Matthew Bailey
@@ -16,19 +16,22 @@ class Package_Creator:
     """ 
     Copy articles from library into new content theme (themename) and package up (filename).  
     """
-    def __init__(self, articlestocopy, themename, filename, package_type, caller=None):
+    def __init__(self, articlestocopy, themename, filename, caller=None):
         """
         Grab file's parent directory and create temporary directory structure for content 
         """
-        self.currentdir = os.path.split(__file__)[0]
+        self.root = os.path.join(get_activity_root(), 'tmp', 'publish')
+        shutil.rmtree(self.root, True)
+        os.makedirs(self.root)
+
         self.make_directories(themename)
-        if package_type == 'xol':
-            self.info_file(themename)
-        self.index_redirect(themename, package_type)
+
+        self.info_file(themename)
+        self.index_redirect(themename)
 
         self.dita_management(articlestocopy, themename)
         
-        self.copy_stylesheets(themename)
+        self.copy_stylesheets()
         self.create_bundle(themename, filename)
         
         running_on = platform.system()
@@ -46,11 +49,13 @@ class Package_Creator:
         """
         self.remove_directories(themename)
     
-    def copy_stylesheets(self, themename):
+    def copy_stylesheets(self):
         """
             Copies the XSL and CSS stylesheets into the slicecontent folder
             @param themename: the name of the theme that is being exported
         """
+        for i in glob(os.path.join(get_bundle_path(), 'Stylesheets', '*.xsl')):
+
         themeloc = themename.replace(" ", "_")
         shutil.copyfile('%s/../Stylesheets/ditastylesheet.xsl' % self.currentdir, '%s/%s/slicecontent/ditastylesheet.xsl' % (IO_Manager().workingDir, themeloc))
         shutil.copyfile('%s/../Stylesheets/mapstylesheet.xsl' % self.currentdir, '%s/%s/slicecontent/mapstylesheet.xsl' % (IO_Manager().workingDir, themeloc))
