@@ -52,7 +52,7 @@ class InfoslicerActivity(SharedActivity):
         self.edit = edit.View()
         self.edit_bar = edit.Toolbar(self.edit)
 
-        self.library = library.View(self._set_edit_sensitive)
+        self.library = library.View(self)
         library_bar = library.Toolbar(self.library)
 
         toolbox = ActivityToolbox(self)
@@ -70,7 +70,7 @@ class InfoslicerActivity(SharedActivity):
         toolbox.set_current_toolbar(1)
         self.show_all()
 
-    def _set_edit_sensitive(self, enable):
+    def set_edit_sensitive(self, enable):
         self.edit_bar.props.sensitive = enable
         self.edit_page = (enable and 1 or 2)
 
