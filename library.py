@@ -13,6 +13,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import gtk
+import logging
 from threading import Timer
 from datetime import datetime
 from gettext import gettext as _
@@ -32,6 +33,8 @@ from GUI_Components.Compound_Widgets.Reading_View import Reading_View
 import book
 import xol
 import net
+
+logger = logging.getLogger('infoslicer')
 
 class View(gtk.EventBox):
     def sync(self):
@@ -83,15 +86,15 @@ class View(gtk.EventBox):
         wiki = gtk.Notebook()
         wiki.props.show_border = False
         wiki.props.show_tabs = False
-        wiki.append_page(wiki_widget)
         wiki.append_page(wiki_stub)
+        wiki.append_page(wiki_widget)
 
         custom_widget = Reading_View()
         custom = gtk.Notebook()
         custom.props.show_border = False
         custom.props.show_tabs = False
-        custom.append_page(custom_widget)
         custom.append_page(custom_stub)
+        custom.append_page(custom_widget)
         custom.set_size_request(gtk.gdk.screen_width()/4*3/2, -1)
 
         # workspace
@@ -119,41 +122,37 @@ class View(gtk.EventBox):
         # init components
 
         book.wiki.connect('article-selected', self._article_selected_cb,
-                wiki, wiki_widget)
-        book.wiki.connect('article-deleted', self._article_deleted_cb, wiki)
+                wiki_widget, [wiki, custom])
+        book.wiki.connect('article-deleted', self._article_deleted_cb,
+                [wiki, custom])
         book.custom.connect('article-selected', self._article_selected_cb,
-                custom, custom_widget)
-        book.custom.connect('article-deleted', self._article_deleted_cb, custom)
+                custom_widget, [custom, wiki])
+        book.custom.connect('article-deleted', self._article_deleted_cb,
+                [custom, wiki])
 
-        self._edit_sensitive = 0
         self.activity.set_edit_sensitive(False)
 
-        if not book.wiki.article:
-            wiki.set_current_page(1)
-        else:
-            self._article_selected_cb(None, book.wiki.article,
-                    wiki, wiki_widget)
+        self._article_selected_cb(book.wiki, book.wiki.article,
+                wiki_widget, [wiki, custom])
+        self._article_selected_cb(book.custom, book.custom.article,
+                custom_widget, [custom, wiki])
 
-        if not book.custom.article:
-            custom.set_current_page(1)
-        else:
-            self._article_selected_cb(None, book.custom.article,
-                    custom, custom_widget)
+    def _article_selected_cb(self, abook, article, article_widget, notebooks):
+        if not abook.map:
+            notebooks[0].set_current_page(0)
+            return
 
-    def _article_selected_cb(self, book, article, notebook, article_widget):
-        notebook.set_current_page(0)
+        if notebooks[0].get_current_page() in (-1, 0):
+            notebooks[0].set_current_page(1)
+            if notebooks[1].get_current_page() == 1:
+                self.activity.set_edit_sensitive(True)
+
         article_widget.textbox.set_article(article)
 
-        self._edit_sensitive += 1
-        if self._edit_sensitive == 2:
-            self.activity.set_edit_sensitive(True)
-
-    def _article_deleted_cb(self, abook, article, notebook):
-        if abook.map:
-            return
-        notebook.set_current_page(1)
-        self._edit_sensitive -= 1
-        self.activity.set_edit_sensitive(False)
+    def _article_deleted_cb(self, abook, article, notebooks):
+        if not abook.map:
+            notebooks[0].set_current_page(0)
+            self.activity.set_edit_sensitive(False)
 
 class Toolbar(gtk.Toolbar):
     def __init__(self, library):
