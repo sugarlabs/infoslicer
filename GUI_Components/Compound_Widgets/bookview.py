@@ -171,6 +171,7 @@ class BookView(gtk.VBox):
         self.book.props.article = name
         self.store.append((False, name))
         self.tree.set_cursor(len(self.store)-1, self.tree.get_column(1), True)
+        self._update_check(self.store[-1][PUBLISH])
 
     def _delete_cb(self, widget):
         index, column = self.tree.get_cursor()
@@ -189,6 +190,7 @@ class BookView(gtk.VBox):
             if index >= len(self.store):
                 index -= 1
             self.tree.set_cursor(index, self.tree.get_column(1), False)
+            self._update_check(self.store[index][PUBLISH])
 
     def _swap_cb(self, widget, delta):
         old_index, column = self.tree.get_cursor()
