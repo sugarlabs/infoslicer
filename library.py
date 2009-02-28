@@ -22,23 +22,25 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.icon import Icon
+from sugar.graphics.alert import ConfirmationAlert
+from sugar.datastore import datastore
 import sugar.graphics.style as style
 
-import net
-import book
 from GUI_Components.Compound_Widgets.toolbar import WidgetItem
 from GUI_Components.Compound_Widgets.bookview import BookView
 from GUI_Components.Compound_Widgets.Reading_View import Reading_View
-from Processing.Package_Creator import Package_Creator
+import book
+import xol
+import net
 
 class View(gtk.EventBox):
     def sync(self):
         self.wiki.sync()
         self.custom.sync()
 
-    def __init__(self, set_edit_sensitive):
+    def __init__(self, activity):
         gtk.EventBox.__init__(self)
-        self._set_edit_sensitive = set_edit_sensitive
+        self.activity = activity
 
         # books
 
@@ -124,7 +126,7 @@ class View(gtk.EventBox):
         book.custom.connect('article-deleted', self._article_deleted_cb, custom)
 
         self._edit_sensitive = 0
-        self._set_edit_sensitive(False)
+        self.activity.set_edit_sensitive(False)
 
         if not book.wiki.article:
             wiki.set_current_page(1)
@@ -144,19 +146,20 @@ class View(gtk.EventBox):
 
         self._edit_sensitive += 1
         if self._edit_sensitive == 2:
-            self._set_edit_sensitive(True)
+            self.activity.set_edit_sensitive(True)
 
     def _article_deleted_cb(self, abook, article, notebook):
         if abook.map:
             return
         notebook.set_current_page(1)
         self._edit_sensitive -= 1
-        self._set_edit_sensitive(False)
+        self.activity.set_edit_sensitive(False)
 
 class Toolbar(gtk.Toolbar):
     def __init__(self, library):
         gtk.Toolbar.__init__(self)
         self.library = library
+        self.activity = library.activity
 
         self.wikimenu = ToolComboBox(label_text=_('Get article from:'))
         for i in sorted(WIKI.keys()):
@@ -185,16 +188,35 @@ class Toolbar(gtk.Toolbar):
         separator.show()
 
         publish = ToolButton('filesave', tooltip=_('Publish selected articles'))
-        publish.connect("clicked", self._publish_clicked_cb)
+        publish.connect("clicked", self._publish_clicked_cb, False)
         self.insert(publish, -1)
         publish.show()
 
         self.connect('map', self._map_cb)
 
-    def _publish_clicked_cb(self):
+    def _publish_clicked_cb(self, widget, force):
+        title = self.activity.metadata['title']
+        jobject = datastore.find({'title': title,
+                'mime_type': 'application/vnd.olpc-content'})[0] or None
+
+        if jobject and not force:
+            alert = ConfirmationAlert(
+                    title=_('Overwrite?'),
+                    msg=_('A bundle by that name already exists.' \
+                          'Click "OK" to overwrite it.'))
+
+            def response(alert, response_id, self):
+                self.activity.remove_alert(alert)
+                if response_id is gtk.RESPONSE_OK:
+                    self._publish_clicked_cb(None, True)
+
+            alert.connect('response', response, self)
+            alert.show_all()
+            self.activity.add_alert(alert)
+            return
+
         book.custom.sync()
-        Package_Creator(book.custom.article,
-                datetime.strftime(datetime.now(), '%F %T'))
+        xol.publish(title, jobject)
 
     def _map_cb(self, widget):
         self.searchentry.grab_focus()
