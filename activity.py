@@ -43,7 +43,13 @@ class InfoslicerActivity(SharedActivity):
         pass
 
     def write_file(self, filepath):
+        # XXX this method will be invoked on every props.status changing
+        # thus ignore it and use can_close() instead to save data on exit
+        pass
+
+    def can_close(self):
         book.teardown()
+        return True
 
     def _init_cb(self, sender):
         book.init()
