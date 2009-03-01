@@ -1,16 +1,65 @@
 # Copyright (C) IBM Corporation 2008
 
 import os
+import gtk
 import zipfile
 import uuid
+import logging
 from glob import glob
+from gettext import gettext as _
 
-from sugar.activity.activity import get_bundle_path, get_activity_root
+from sugar.activity.activity import get_bundle_path, get_activity_root, get_bundle_name
 from sugar.datastore import datastore
 from sugar import activity
+from sugar.graphics.alert import ConfirmationAlert
 
 from Processing.NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 import book
+
+logger = logging.getLogger('infoslicer')
+
+def publish(activity, force=False):
+    title = activity.metadata['title']
+    jobject = datastore.find({
+            'activity_id': activity.get_id(),
+            'activity'   : book.custom.uid})[0] or None
+
+    logger.debug('publish: title=%s jobject=%s force=%s' \
+            % (title, jobject and jobject[0].metadata['activity'], force))
+
+    if jobject:
+        if force:
+            jobject = jobject[0]
+        else:
+            alert = ConfirmationAlert(
+                    title=_('Overwrite?'),
+                    msg=_('A bundle by that name already exists.' \
+                          'Click "OK" to overwrite it.'))
+
+            def response(alert, response_id, activity):
+                activity.remove_alert(alert)
+                if response_id is gtk.RESPONSE_OK:
+                    publish(activity, True)
+
+            alert.connect('response', response, activity)
+            alert.show_all()
+            activity.add_alert(alert)
+            jobject[0].destroy()
+            return
+    else:
+        jobject = datastore.create()
+        jobject.metadata['activity_id'] = activity.get_id()
+        jobject.metadata['activity'] = book.custom.uid
+        jobject.metadata['mime_type'] = 'application/vnd.olpc-content'
+        jobject.metadata['description'] = \
+                'This is a bundle containing articles on %s.\n' \
+                'To view these articles, open the \'Browse\' Activity.\n' \
+                'Go to \'Books\', and select \'%s\'.' % (title, title)
+
+    book.custom.sync()
+    jobject.metadata['title'] = title
+    _publish(title, jobject)
+    jobject.destroy()
 
 """
 @author: Matthew Bailey
@@ -19,35 +68,25 @@ This class deals with the creation of content packages, comprised of articles fr
 themes, with are zipped up and installed in the relevant OS specific location. From 
 here they can be distributed to the consumers 
 """
-def publish(title, jobject):
+def _publish(title, jobject):
     zipfilename = os.path.join(get_activity_root(), 'tmp', 'publish.xol')
     zip = zipfile.ZipFile(zipfilename, 'w')
 
-    uid = str(uuid.uuid1())
+    uid = book.custom.uid
 
     for i in glob(os.path.join(get_bundle_path(), 'Stylesheets', '*')):
         zip.write(i, os.path.join(uid, 'slicecontent', os.path.basename(i)))
 
-    info_file(zip, uid, title)
-    index_redirect(zip, uid)
-    dita_management(zip, uid, title)
+    _info_file(zip, uid, title)
+    _index_redirect(zip, uid)
+    _dita_management(zip, uid, title)
     
     zip.close()
 
-    if not jobject:
-        jobject = datastore.create()
-        jobject.metadata['title'] = title
-        jobject.metadata['mime_type'] = 'application/vnd.olpc-content'
-        jobject.metadata['description'] = \
-                'This is a bundle containing articles on %s.\n' \
-                'To view these articles, open the \'Browse\' Activity.\n' \
-                'Go to \'Books\', and select \'%s\'.' % (title, title)
-
     jobject.set_file_path(zipfilename)
     datastore.write(jobject)
-    jobject.destroy()
 
-def dita_management(zip, uid, title):
+def _dita_management(zip, uid, title):
     """
         Creates a DITA map, and copies the requested articles and their associated images into the zipped directories
     """
@@ -92,7 +131,7 @@ def dita_management(zip, uid, title):
     zipstr(zip, os.path.join(uid, 'slicecontent', 'librarymap.ditamap'),
             "\n".join(map))
 
-def index_redirect(zip, uid):
+def _index_redirect(zip, uid):
     """
         Creates the redirecting index.html
     """
@@ -110,12 +149,13 @@ def index_redirect(zip, uid):
     
     zipstr(zip, os.path.join(uid, 'index.html'), "\n".join(html))
 
-def info_file(zip, uid, title):
+def _info_file(zip, uid, title):
     """
         Creates the library.info file
     """
     libraryfile = ['[Library]',\
                    'name = %s' % uid,\
+                   'bundle_id = info.slice.%s' % uid,\
                    'global_name = info.slice.%s' % uid,\
                    'long_name = %s' % title,\
                    'library_version = 1',\

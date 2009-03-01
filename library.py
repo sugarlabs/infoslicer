@@ -23,7 +23,6 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.icon import Icon
-from sugar.graphics.alert import ConfirmationAlert
 from sugar.datastore import datastore
 import sugar.graphics.style as style
 
@@ -138,6 +137,9 @@ class View(gtk.EventBox):
                 custom_widget, [custom, wiki])
 
     def _article_selected_cb(self, abook, article, article_widget, notebooks):
+        if not article:
+            return
+
         if not abook.map:
             notebooks[0].set_current_page(0)
             return
@@ -187,35 +189,14 @@ class Toolbar(gtk.Toolbar):
         separator.show()
 
         publish = ToolButton('filesave', tooltip=_('Publish selected articles'))
-        publish.connect("clicked", self._publish_clicked_cb, False)
+        publish.connect("clicked", self._publish_clicked_cb)
         self.insert(publish, -1)
         publish.show()
 
         self.connect('map', self._map_cb)
 
-    def _publish_clicked_cb(self, widget, force):
-        title = self.activity.metadata['title']
-        jobject = datastore.find({'title': title,
-                'mime_type': 'application/vnd.olpc-content'})[0] or None
-
-        if jobject and not force:
-            alert = ConfirmationAlert(
-                    title=_('Overwrite?'),
-                    msg=_('A bundle by that name already exists.' \
-                          'Click "OK" to overwrite it.'))
-
-            def response(alert, response_id, self):
-                self.activity.remove_alert(alert)
-                if response_id is gtk.RESPONSE_OK:
-                    self._publish_clicked_cb(None, True)
-
-            alert.connect('response', response, self)
-            alert.show_all()
-            self.activity.add_alert(alert)
-            return
-
-        book.custom.sync()
-        xol.publish(title, jobject)
+    def _publish_clicked_cb(self, widget):
+        xol.publish(self.activity)
 
     def _map_cb(self, widget):
         self.searchentry.grab_focus()
