@@ -47,7 +47,7 @@ class Book(gobject.GObject):
             return
 
         logger.debug('set_article: %s' % title)
-        self.sync()
+        self.sync_article()
 
         if title is None:
             return
@@ -73,7 +73,7 @@ class Book(gobject.GObject):
             getter=get_article, setter=set_article)
 
     # save current article
-    def sync(self):
+    def sync_article(self):
         if not self._article:
             return
 
@@ -100,50 +100,55 @@ class Book(gobject.GObject):
             self._article = None
 
         shutil.rmtree(os.path.join(self.root, entry['uid']), True)
-        del self.map[index]
-        self.save_map()
+        del self.index[index]
+        self.sync_index()
 
         self.emit('article-deleted', title)
 
     def find(self, title):
-        for i, entry in enumerate(self.map):
+        for i, entry in enumerate(self.index):
             if entry['title'] == title:
                 return (i, entry)
         return (None, None)
 
     def find_by_uuid(self, uid):
-        for i in self.map:
+        for i in self.index:
             if i['uid'] == uid:
                 return i
         return None
 
-    def save_map(self):
-        data = { 'uid': self.uid,
-                 'map': self.map }
+    def sync_index(self):
+        data = { 'uid'      : self.uid,
+                 'index'    : self.index,
+                 'revision' : self.revision }
 
-        mapfile = file(os.path.join(self.root, 'map'), 'w')
-        mapfile.write(cjson.encode(data))
-        mapfile.close()
+        index = file(os.path.join(self.root, 'index'), 'w')
+        index.write(cjson.encode(data))
+        index.close()
 
     def __init__(self, preinstalled, dirname):
         gobject.GObject.__init__(self)
         self.root = os.path.join(get_activity_root(), dirname)
-        self.map = []
+        self.index = []
         self.uid = None
+        self.revision = 0
         self._article = None
 
         if os.path.exists(self.root):
             try:
-                mapfile = file(os.path.join(self.root, 'map'), 'r')
-                data = cjson.decode(mapfile.read())
+                index = file(os.path.join(self.root, 'index'), 'r')
+                data = cjson.decode(index.read())
                 self.uid = data['uid']
-                self.map = data['map']
-                if self.map:
-                    self.props.article = self.map[0]['title']
+                self.index = data['index']
+                self.revision = data['revision']
+                if self.index:
+                    self.props.article = self.index[0]['title']
             except:
-                logger.debug('cannot find map file; use empty')
-        else:
+                logger.debug('cannot find index file; use empty')
+
+        if not self.uid:
             self.uid = str(uuid.uuid1())
+            self.revision = 1
             os.makedirs(self.root, 0777)
 
             for i in preinstalled:
@@ -157,11 +162,11 @@ class Book(gobject.GObject):
                 logger.debug("install library: saving page %s" % i[0])
                 self.create(i[0], contents)
                 logger.debug("install library: save successful")
-                self.save_map()
+                self.sync_index()
 
     def _create(self, title, uid):
         entry = { 'title': title, 'uid': str(uid), 'ready': False }
-        self.map.append(entry)
+        self.index.append(entry)
         self.emit('article-added', title)
         return entry
 
@@ -216,7 +221,7 @@ def init():
     custom = CustomBook()
 
 def teardown():
-    wiki.props.article = None
-    wiki.save_map()
-    custom.props.article = None
-    custom.save_map()
+    wiki.sync_article()
+    wiki.sync_index()
+    custom.sync_article()
+    custom.sync_index()
