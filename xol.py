@@ -11,7 +11,7 @@ from gettext import gettext as _
 from sugar.activity.activity import get_bundle_path, get_activity_root, get_bundle_name
 from sugar.datastore import datastore
 from sugar import activity
-from sugar.graphics.alert import ConfirmationAlert
+from sugar.graphics.alert import ConfirmationAlert, NotifyAlert
 
 from Processing.NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 import book
@@ -19,6 +19,20 @@ import book
 logger = logging.getLogger('infoslicer')
 
 def publish(activity, force=False):
+    if not [i for i in book.custom.map if i['ready']]:
+        alert = NotifyAlert(
+                title=_('Nothing to publich'),
+                msg=_('Mark arcticles from "Custom" panel and try again.'))
+
+        def response(alert, response_id, activity):
+            activity.remove_alert(alert)
+
+        alert.connect('response', response, activity)
+        alert.show_all()
+        activity.add_alert(alert)
+
+        return
+
     title = activity.metadata['title']
     jobject = datastore.find({
             'activity_id': activity.get_id(),
@@ -32,8 +46,8 @@ def publish(activity, force=False):
             jobject = jobject[0]
         else:
             alert = ConfirmationAlert(
-                    title=_('Overwrite?'),
-                    msg=_('A bundle by that name already exists.' \
+                    title=_('Overwrite existed bundle?'),
+                    msg=_('A bundle for current object was already created. ' \
                           'Click "OK" to overwrite it.'))
 
             def response(alert, response_id, activity):
@@ -45,6 +59,7 @@ def publish(activity, force=False):
             alert.show_all()
             activity.add_alert(alert)
             jobject[0].destroy()
+
             return
     else:
         jobject = datastore.create()
