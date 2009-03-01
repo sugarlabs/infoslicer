@@ -19,7 +19,7 @@ import book
 logger = logging.getLogger('infoslicer')
 
 def publish(activity, force=False):
-    if not [i for i in book.custom.map if i['ready']]:
+    if not [i for i in book.custom.index if i['ready']]:
         alert = NotifyAlert(
                 title=_('Nothing to publich'),
                 msg=_('Mark arcticles from "Custom" panel and try again.'))
@@ -71,10 +71,14 @@ def publish(activity, force=False):
                 'To view these articles, open the \'Browse\' Activity.\n' \
                 'Go to \'Books\', and select \'%s\'.' % (title, title)
 
-    book.custom.sync()
+    book.custom.sync_article()
+    book.custom.revision += 1
+
     jobject.metadata['title'] = title
     _publish(title, jobject)
     jobject.destroy()
+
+    book.custom.sync_index()
 
 """
 @author: Matthew Bailey
@@ -113,7 +117,7 @@ def _dita_management(zip, uid, title):
     
     images = {}
 
-    for entry in book.custom.map:
+    for entry in book.custom.index:
         if not entry['ready']:
             continue
 
@@ -170,10 +174,10 @@ def _info_file(zip, uid, title):
     """
     libraryfile = ['[Library]',\
                    'name = %s' % uid,\
-                   'bundle_id = info.slice.%s' % uid,\
+                   'bundle_class = %s' % uid,\
                    'global_name = info.slice.%s' % uid,\
                    'long_name = %s' % title,\
-                   'library_version = 1',\
+                   'library_version = %d' % book.custom.revision,\
                    'host_version = 1',\
                    'l10n = false',\
                    'locale = en',\

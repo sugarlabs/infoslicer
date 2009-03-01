@@ -140,7 +140,7 @@ class View(gtk.EventBox):
         if not article:
             return
 
-        if not abook.map:
+        if not abook.index:
             notebooks[0].set_current_page(0)
             return
 
@@ -152,7 +152,7 @@ class View(gtk.EventBox):
         article_widget.textbox.set_article(article)
 
     def _article_deleted_cb(self, abook, article, notebooks):
-        if not abook.map:
+        if not abook.index:
             notebooks[0].set_current_page(0)
             self.activity.set_edit_sensitive(False)
 

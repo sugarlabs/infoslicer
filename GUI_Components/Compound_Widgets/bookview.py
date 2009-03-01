@@ -130,7 +130,7 @@ class BookView(gtk.VBox):
         cell.props.editable = True
         self.tree.insert_column_with_attributes(1, '', cell, text=1)
 
-        for i in self.book.map:
+        for i in self.book.index:
             self.store.append((i['ready'], i['title']))
 
         # scrolled tree
@@ -205,15 +205,15 @@ class BookView(gtk.VBox):
         elif new_index >= len(self.store):
             new_index = 0
 
-        self.book.map[old_index], self.book.map[new_index] = \
-                self.book.map[new_index], self.book.map[old_index]
+        self.book.index[old_index], self.book.index[new_index] = \
+                self.book.index[new_index], self.book.index[old_index]
         self.store.swap(self.tree.props.model.get_iter(old_index),
                 self.tree.props.model.get_iter(new_index))
 
     def _check_toggled_cb(self, widget):
         for i, entry in enumerate(self.store):
             entry[PUBLISH] = widget.props.active
-            self.book.map[i]['ready'] = widget.props.active
+            self.book.index[i]['ready'] = widget.props.active
         self._check.props.inconsistent = False
 
     def _update_check(self, value):
@@ -227,7 +227,7 @@ class BookView(gtk.VBox):
     def _cell_toggled_cb(self, cell, index):
         value = not self.store[index][PUBLISH]
         self.store[index][PUBLISH] = value
-        self.book.map[int(index)]['ready'] = value
+        self.book.index[int(index)]['ready'] = value
         self._update_check(value)
 
     def _cursor_changed_cb(self, widget):
