@@ -19,6 +19,7 @@ import logging
 import gobject
 import cjson
 import shutil
+import zipfile
 from gobject import SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 from gettext import gettext as _
 
@@ -126,9 +127,13 @@ class Book(gobject.GObject):
         index.write(cjson.encode(data))
         index.close()
 
-    def __init__(self, preinstalled, dirname):
+    def sync(self):
+        self.sync_article()
+        self.sync_index()
+
+    def __init__(self, preinstalled, root):
         gobject.GObject.__init__(self)
-        self.root = os.path.join(get_activity_root(), dirname)
+        self.root = root
         self.index = []
         self.uid = None
         self.revision = 0
@@ -149,7 +154,7 @@ class Book(gobject.GObject):
         if not self.uid:
             self.uid = str(uuid.uuid1())
             self.revision = 1
-            os.makedirs(self.root, 0777)
+            os.makedirs(self.root, 0775)
 
             for i in preinstalled:
                 filepath = os.path.join(get_bundle_path(), 'examples', i[1])
@@ -207,21 +212,38 @@ class WikiBook(Book):
             (_('Tiger (from en.wikipedia.org)'),    "tiger-wikipedia.dita"),
             (_('Giraffe (from en.wikipedia.org)'),  "giraffe-wikipedia.dita"),
             (_('Zebra (from en.wikipedia.org)'),    "zebra-wikipedia.dita") ]
-        Book.__init__(self, PREINSTALLED, 'data/book')
+
+        root = os.path.join(get_activity_root(), 'data', 'book')
+        Book.__init__(self, PREINSTALLED, root)
 
 class CustomBook(Book):
-    def __init__(self):
+    def __init__(self, filepath=None):
         PREINSTALLED = [
             (_('Giraffe'), "giraffe-blank.dita") ]
-        Book.__init__(self, PREINSTALLED, 'tmp/book')
 
-def init():
-    global wiki, custom
-    wiki = WikiBook()
-    custom = CustomBook()
+        root = os.path.join(get_activity_root(), 'tmp', 'book')
+        shutil.rmtree(root, True)
 
-def teardown():
-    wiki.sync_article()
-    wiki.sync_index()
-    custom.sync_article()
-    custom.sync_index()
+        if not filepath:
+            Book.__init__(self, PREINSTALLED, root)
+        else:
+            zip = zipfile.ZipFile(filepath, 'r')
+            for i in zip.namelist():
+                path = os.path.join(root, i)
+                os.makedirs(os.path.dirname(path), 0775)
+                file(path, 'wb').write(zip.read(i))
+            zip.close()
+
+            Book.__init__(self, [], root)
+
+    def sync(self, filepath):
+        Book.sync(self)
+
+        logger.debug('close: save to %s' % filepath)
+
+        zip = zipfile.ZipFile(filepath, 'w')
+        for root, dirs, files in os.walk(self.root):
+            relpath = root.replace(self.root, '', 1)
+            for i in files:
+                zip.write(os.path.join(root, i), os.path.join(relpath, i))
+        zip.close()
