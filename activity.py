@@ -39,20 +39,10 @@ class InfoslicerActivity(SharedActivity):
         self.connect('init', self._init_cb)
         self.connect('tube', self._tube_cb)
 
-    def read_file(self, filepath):
-        pass
-
-    def write_file(self, filepath):
-        # XXX this method will be invoked on every props.status changing
-        # thus ignore it and use can_close() instead to save data on exit
-        pass
-
-    def can_close(self):
-        book.teardown()
-        return True
-
     def _init_cb(self, sender):
-        book.init()
+        book.wiki = book.WikiBook()
+        if not book.custom:
+            book.custom = book.CustomBook()
 
         self.edit_page = 1
         self.edit = edit.View()
@@ -75,6 +65,13 @@ class InfoslicerActivity(SharedActivity):
 
         toolbox.set_current_toolbar(1)
         self.show_all()
+
+    def read_file(self, filepath):
+        book.custom = book.CustomBook(filepath)
+
+    def write_file(self, filepath):
+        book.wiki.sync()
+        book.custom.sync(filepath)
 
     def set_edit_sensitive(self, enable):
         self.edit_bar.props.sensitive = enable
