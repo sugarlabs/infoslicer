@@ -21,7 +21,7 @@ logger = logging.getLogger('infoslicer')
 def publish(activity, force=False):
     if not [i for i in book.custom.index if i['ready']]:
         alert = NotifyAlert(
-                title=_('Nothing to publich'),
+                title=_('Nothing to publish'),
                 msg=_('Mark arcticles from "Custom" panel and try again.'))
 
         def response(alert, response_id, activity):
