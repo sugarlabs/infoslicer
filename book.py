@@ -46,6 +46,7 @@ class Book(gobject.GObject):
         if self._article and self._article.article_title == title:
             return
 
+        logger.debug('set_article: %s' % title)
         self.sync()
 
         if title is None:
@@ -100,6 +101,8 @@ class Book(gobject.GObject):
 
         shutil.rmtree(os.path.join(self.root, entry['uid']), True)
         del self.map[index]
+        self.save_map()
+
         self.emit('article-deleted', title)
 
     def find(self, title):
@@ -115,25 +118,32 @@ class Book(gobject.GObject):
         return None
 
     def save_map(self):
+        data = { 'uid': self.uid,
+                 'map': self.map }
+
         mapfile = file(os.path.join(self.root, 'map'), 'w')
-        mapfile.write(cjson.encode(self.map))
+        mapfile.write(cjson.encode(data))
         mapfile.close()
 
     def __init__(self, preinstalled, dirname):
         gobject.GObject.__init__(self)
         self.root = os.path.join(get_activity_root(), dirname)
         self.map = []
+        self.uid = None
         self._article = None
 
         if os.path.exists(self.root):
             try:
                 mapfile = file(os.path.join(self.root, 'map'), 'r')
-                self.map = cjson.decode(mapfile.read())
+                data = cjson.decode(mapfile.read())
+                self.uid = data['uid']
+                self.map = data['map']
                 if self.map:
                     self.props.article = self.map[0]['title']
             except:
                 logger.debug('cannot find map file; use empty')
         else:
+            self.uid = str(uuid.uuid1())
             os.makedirs(self.root, 0777)
 
             for i in preinstalled:
