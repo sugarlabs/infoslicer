@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-24 10:54-0500\n"
+"POT-Creation-Date: 2009-03-02 06:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,162 +16,240 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: activity/activity.info:2 sugaractivity.py:30
+#: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:31
-msgid "Edit"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:54
+msgid "Articles are ready to be published"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:50
-msgid "Snap selection to: "
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:84
+msgid "Create"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:60 GUI_Components/Edit_Pane.py:80
-#: GUI_Components/Format_Pane.py:78 GUI_Components/Image_Pane.py:61
-msgid "Nothing"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:85
+msgid "Create new article"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:61 GUI_Components/Edit_Pane.py:83
-#: GUI_Components/Format_Pane.py:80 GUI_Components/Image_Pane.py:63
-msgid "Sentences"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:95
+msgid "Delete"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:62 GUI_Components/Edit_Pane.py:86
-#: GUI_Components/Format_Pane.py:82 GUI_Components/Image_Pane.py:65
-msgid "Paragraphs"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:96
+msgid "Delete current article"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:63 GUI_Components/Edit_Pane.py:89
-#: GUI_Components/Format_Pane.py:84 GUI_Components/Image_Pane.py:67
-msgid "Sections"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:103
+msgid "Move downward"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:117
-msgid ""
-"\n"
-"You can choose a Wikipedia article to copy from by selecting it from the "
-"drop-down menu above.\n"
-"\n"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:104
+msgid "Move article downward"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:121
-msgid ""
-"\n"
-"You have not downloaded any articles from Wikipedia.\n"
-"\n"
-"You can download new articles in the Library tab."
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:108
+msgid "Move upward"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
-#: GUI_Components/Image_Pane.py:108 GUI_Components/Edit_Pane.py:143
-#: GUI_Components/Format_Pane.py:99 GUI_Components/Image_Pane.py:109
-msgid "Theme:"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:109
+msgid "Move article upward"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:142 GUI_Components/Format_Pane.py:98
-#: GUI_Components/Image_Pane.py:108 GUI_Components/Edit_Pane.py:143
-#: GUI_Components/Format_Pane.py:99 GUI_Components/Image_Pane.py:109
-msgid "Article:"
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:171
+msgid "New article"
 msgstr ""
 
-#: GUI_Components/Format_Pane.py:22
-msgid "Format"
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:38
+msgid "Nothing to publish"
 msgstr ""
 
-#: GUI_Components/Image_Pane.py:25
-msgid "Images"
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr ""
 
-#: GUI_Components/Image_Pane.py:93
-msgid "This article does not have any images"
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:55
+msgid "Overwrite existed bundle?"
 msgstr ""
 
-#: GUI_Components/Image_Pane.py:96
-msgid "Please select a Wikipedia article from the menu above"
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:56
+msgid "A bundle for current object was already created. "
 msgstr ""
 
-#: GUI_Components/Image_Pane.py:113 GUI_Components/Image_Pane.py:114
-msgid "My Articles"
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:48
-msgid "Get article from "
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:70
-msgid "Article name"
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:71
-msgid "activate"
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:45
+#, python-format
+msgid " (from %s)"
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:76 GUI_Components/Library_Pane.py:94
-msgid "clicked"
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:91
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/activity.py:57
 msgid "Library"
 msgstr ""
 
-#: GUI_Components/Publish_Pane.py:20
-msgid "Publish"
+#: /home/sugar/src/activities/infoslicer.guifix/activity.py:58
+msgid "Edit"
 msgstr ""
 
-#: GUI_Components/Publish_Pane.py:43
+#: /home/sugar/src/activities/infoslicer.guifix/edit.py:60
+msgid "Text"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/edit.py:65
+msgid "Images"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:220
+msgid "Giraffe"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+msgid "Wiki"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+msgid "Wiki articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+msgid "Custom"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+msgid "Custom articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:76
 msgid ""
-"Select the theme you want, choose the articles you wish to include in the "
-"package and click \"Publish\"."
+"To download Wiki article\n"
+"type \"Article name\" and click"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:107 GUI_Components/Edit_Pane.py:144
-#: GUI_Components/Image_Pane.py:76 GUI_Components/Image_Pane.py:87
-#: GUI_Components/Image_Pane.py:114 GUI_Components/Image_Pane.py:115
-#: sugaractivity.py:68 sugaractivity.py:69 sugaractivity.py:73
-#: Infoslicer_GUI.py:384 Infoslicer_GUI.py:385 Infoslicer_GUI.py:388
-#: Infoslicer_GUI.py:396 Infoslicer_GUI.py:398 GUI_Components/Edit_Pane.py:145
-#: GUI_Components/Image_Pane.py:116
-msgid "Wikipedia Articles"
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:77
+msgid "button on the top \"Library\" panel"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:111
-msgid "Select a source article from this menu"
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:79
+msgid "To create custom article click"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:118
-msgid ""
-"If you want to download more articles from Wikipedia, you can do this in the "
-"Library tab."
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:80
+msgid "button on the left \"Custom\" panel"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:117
-msgid ""
-"You can choose a Wikipedia article to copy from by selecting it from the "
-"drop-down menu above."
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:165
+msgid "Get article from:"
 msgstr ""
 
-#: GUI_Components/Edit_Pane.py:121
-msgid ""
-"You have not downloaded any articles from Wikipedia. You can download new "
-"articles in the Library tab."
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:174
+msgid "Article name"
 msgstr ""
 
-#: GUI_Components/Publish_Pane.py:43
-msgid ""
-"Select the theme you want, choose the articles you wish to include in the "
-"package and click 'Publish'."
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:182
+msgid "Find article"
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:24
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:191
+msgid "Publish selected articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:216
+msgid "Exists"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:217
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:228
 msgid "English Wikipedia"
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:25
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:229
 msgid "Simple English Wikipedia"
 msgstr ""
 
-#: GUI_Components/Library_Pane.py:26
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:230
 msgid "German Wikipedia"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:63
+msgid "Snap selection to:"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:64
+msgid "Nothing"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:65
+msgid "Sentences"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:66
+msgid "Paragraphs"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:67
+msgid "Sections"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:96
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:104
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:56
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:87
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Format_Pane.py:52
+msgid "Article:"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
 msgstr ""
