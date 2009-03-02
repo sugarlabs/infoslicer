@@ -11,7 +11,6 @@ from gettext import gettext as _
 from sugar.activity.activity import get_bundle_path, get_activity_root, get_bundle_name
 from sugar.datastore import datastore
 from sugar import activity
-from sugar.graphics.alert import ConfirmationAlert, NotifyAlert
 
 from Processing.NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 import book
@@ -20,17 +19,9 @@ logger = logging.getLogger('infoslicer')
 
 def publish(activity, force=False):
     if not [i for i in book.custom.index if i['ready']]:
-        alert = NotifyAlert(
-                title=_('Nothing to publish'),
-                msg=_('Mark arcticles from "Custom" panel and try again.'))
-
-        def response(alert, response_id, activity):
-            activity.remove_alert(alert)
-
-        alert.connect('response', response, activity)
-        alert.show_all()
-        activity.add_alert(alert)
-
+        activity.notify_alert(
+                _('Nothing to publish'),
+                _('Mark arcticles from "Custom" panel and try again.'))
         return
 
     title = activity.metadata['title']
@@ -45,21 +36,12 @@ def publish(activity, force=False):
         if force:
             jobject = jobject[0]
         else:
-            alert = ConfirmationAlert(
-                    title=_('Overwrite existed bundle?'),
-                    msg=_('A bundle for current object was already created. ' \
-                          'Click "OK" to overwrite it.'))
-
-            def response(alert, response_id, activity):
-                activity.remove_alert(alert)
-                if response_id is gtk.RESPONSE_OK:
-                    publish(activity, True)
-
-            alert.connect('response', response, activity)
-            alert.show_all()
-            activity.add_alert(alert)
+            activity.confirmation_alert(
+                    _('Overwrite existed bundle?'),
+                    _('A bundle for current object was already created. ' \
+                          'Click "OK" to overwrite it.'),
+                    publish, activity, True)
             jobject[0].destroy()
-
             return
     else:
         jobject = datastore.create()
