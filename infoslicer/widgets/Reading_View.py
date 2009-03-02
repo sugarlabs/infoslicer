@@ -2,7 +2,7 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
-from GUI_Components.Compound_Widgets.Base_Widgets.Readonly_Textbox import Readonly_Textbox
+from Readonly_Textbox import Readonly_Textbox
 import logging
 
 logger = logging.getLogger('infoslicer')

@@ -12,7 +12,8 @@ from sugar.activity.activity import get_bundle_path, get_activity_root, get_bund
 from sugar.datastore import datastore
 from sugar import activity
 
-from Processing.NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
+from infoslicer.processing.NewtifulSoup import NewtifulStoneSoup \
+        as BeautifulStoneSoup
 import book
 
 logger = logging.getLogger('infoslicer')
@@ -109,7 +110,7 @@ def _dita_management(zip, uid, title):
         content = BeautifulStoneSoup(book.custom._load(auid))
 
         for image in content.findAll('image'):
-            image_path = image['href'].replace("..", book.wiki.root)
+            image_path = book.wiki.root + '/' + image['href']
             image_name = os.path.basename(image_path)
             image_ext = os.path.splitext(image_name)[1]
 

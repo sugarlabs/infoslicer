@@ -4,7 +4,7 @@ pygtk.require('2.0')
 import gtk
 import pango
 import cPickle
-from GUI_Components.Compound_Widgets.Base_Widgets.Textbox import Textbox
+from Textbox import Textbox
 
 SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
 

@@ -7,9 +7,9 @@ from gettext import gettext as _
 
 from sugar.graphics.toolcombobox import ToolComboBox
 
-from GUI_Components.Compound_Widgets.Reading_View import Reading_View
-from GUI_Components.Compound_Widgets.Editing_View import Editing_View
-from Processing.Article.Article import Article
+from Reading_View import Reading_View
+from Editing_View import Editing_View
+from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')
 

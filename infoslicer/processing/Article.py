@@ -5,7 +5,7 @@ pygtk.require('2.0')
 import gtk
 from random import Random
 from Article_Data import *
-from Processing.Article.Section import *
+from Section import *
 import logging
 
 logger = logging.getLogger('infoslicer')

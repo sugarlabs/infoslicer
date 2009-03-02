@@ -26,8 +26,8 @@ from gettext import gettext as _
 from sugar.activity.activity import get_bundle_path, get_activity_root
 
 import net
-from Processing.Article.Article import Article
-from Processing import Article_Builder
+from infoslicer.processing.Article import Article
+from infoslicer.processing import Article_Builder
 
 logger = logging.getLogger('infoslicer')
 

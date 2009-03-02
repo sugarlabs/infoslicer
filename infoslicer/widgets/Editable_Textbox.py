@@ -5,7 +5,7 @@ import gtk
 import cPickle
 import pango
 import copy
-from GUI_Components.Compound_Widgets.Base_Widgets.Textbox import Textbox
+from Textbox import Textbox
 
 SNAP_SENTENCE, SNAP_PARAGRAPH, SNAP_SECTION, SNAP_NONE = range(4)
 

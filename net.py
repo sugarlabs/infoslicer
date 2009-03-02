@@ -21,9 +21,11 @@ from gettext import gettext as _
 from sugar.activity.activity import get_bundle_path
 
 import book
-from Processing.NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
-from Processing.MediaWiki_Parser import MediaWiki_Parser
-from Processing.MediaWiki_Helper import MediaWiki_Helper, PageNotFoundError
+from infoslicer.processing.NewtifulSoup import NewtifulStoneSoup \
+        as BeautifulStoneSoup
+from infoslicer.processing.MediaWiki_Parser import MediaWiki_Parser
+from infoslicer.processing.MediaWiki_Helper import MediaWiki_Helper
+from infoslicer.processing.MediaWiki_Helper import PageNotFoundError
 
 logger = logging.getLogger('infoslicer')
 elogger = logging.getLogger('infoslicer::except')
