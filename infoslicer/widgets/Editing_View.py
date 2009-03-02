@@ -2,7 +2,7 @@
 import pygtk
 pygtk.require('2.0')
 import gtk
-from GUI_Components.Compound_Widgets.Base_Widgets.Editable_Textbox import Editable_Textbox
+from Editable_Textbox import Editable_Textbox
 
 class Editing_View( gtk.VBox ): 
     """

@@ -22,7 +22,7 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.activity.activity import get_bundle_path, get_activity_root
 from sugar.graphics.style import *
 
-from GUI_Components.Compound_Widgets.toolbar import WidgetItem, ButtonItem
+from toolbar import WidgetItem, ButtonItem
 
 logger = logging.getLogger('infoslicer')
 

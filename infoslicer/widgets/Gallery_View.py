@@ -6,9 +6,9 @@ import os
 import cPickle
 import logging
 
-from GUI_Components.Compound_Widgets.Base_Widgets.Editable_Textbox import Editable_Textbox
-from Processing.Article.Article_Data import *
-from Processing.Article.Article import Article
+from Editable_Textbox import Editable_Textbox
+from infoslicer.processing.Article_Data import *
+from infoslicer.processing.Article import Article
 import book
 
 logger = logging.getLogger('infoslicer')

@@ -2,7 +2,7 @@
 
 from BeautifulSoup import Tag
 from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
-from Processing.Article.Article_Data import *
+from Article_Data import *
 import re
 import os
 import logging

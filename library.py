@@ -26,12 +26,12 @@ from sugar.graphics.icon import Icon
 from sugar.datastore import datastore
 import sugar.graphics.style as style
 
-from GUI_Components.Compound_Widgets.toolbar import WidgetItem
-from GUI_Components.Compound_Widgets.bookview import BookView
-from GUI_Components.Compound_Widgets.Reading_View import Reading_View
-import book
 import xol
 import net
+import book
+from bookview import BookView
+from toolbar import WidgetItem
+from infoslicer.widgets.Reading_View import Reading_View
 
 logger = logging.getLogger('infoslicer')
 
@@ -74,10 +74,10 @@ class View(gtk.EventBox):
 
         wiki_stub = create_stub('white-search',
                 _('To download Wiki article\ntype "Article name" and click'),
-                _('button on top "Library" panel'))
+                _('button on the top "Library" panel'))
         custom_stub = create_stub('add',
                 _('To create custom article click'),
-                _('button on left "Custom" panel'))
+                _('button on the left "Custom" panel'))
 
         # articles viewers
 

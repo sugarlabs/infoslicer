@@ -4,7 +4,7 @@ pygtk.require('2.0')
 import gtk
 from gettext import gettext as _
 
-from GUI_Components.Compound_Widgets.Editing_View import Editing_View
+from Editing_View import Editing_View
 
 class Format_Pane(Editing_View):
     """

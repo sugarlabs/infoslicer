@@ -5,9 +5,9 @@ import gtk
 import logging
 from gettext import gettext as _
 
-from GUI_Components.Compound_Widgets.Editing_View import Editing_View
-from GUI_Components.Compound_Widgets.Gallery_View import Gallery_View
-from Processing.Article.Article import Article
+from Editing_View import Editing_View
+from Gallery_View import Gallery_View
+from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')
 

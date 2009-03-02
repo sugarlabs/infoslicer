@@ -19,9 +19,9 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
 
-from GUI_Components.Edit_Pane import Edit_Pane
-from GUI_Components.Format_Pane import Format_Pane
-from GUI_Components.Image_Pane import Image_Pane
+from infoslicer.widgets.Edit_Pane import Edit_Pane
+from infoslicer.widgets.Format_Pane import Format_Pane
+from infoslicer.widgets.Image_Pane import Image_Pane
 import book
 
 TABS = (Edit_Pane(),
