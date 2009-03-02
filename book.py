@@ -27,12 +27,14 @@ from sugar.activity.activity import get_bundle_path, get_activity_root
 
 import net
 from Processing.Article.Article import Article
-from Processing.Article_Builder import Article_Builder
+from Processing import Article_Builder
 
 logger = logging.getLogger('infoslicer')
 
 wiki = None
 custom = None
+
+image_root = os.path.join(get_activity_root(), 'data', 'book')
 
 class Book(gobject.GObject):
     __gsignals__ = {
@@ -58,7 +60,8 @@ class Book(gobject.GObject):
         if entry:
             content = self._load(entry['uid'])
             if content:
-                data = Article_Builder(self.root).get_article_from_dita(content)
+                data = Article_Builder.get_article_from_dita(image_root,
+                        content)
                 self._article = Article(data)
             else:
                 self._article = Article()
@@ -75,14 +78,8 @@ class Book(gobject.GObject):
 
     # save current article
     def sync_article(self):
-        if not self._article:
-            return
-
-        self.find_by_uuid(self._article.uid)['title'] = \
-                self._article.article_title
-        contents = Article_Builder(self.root).get_dita_from_article(
-                self._article)
-        self._save(self._article.uid, contents)
+        # stub
+        pass
 
     def create(self, title, content):
         uid = str(uuid.uuid1())
@@ -154,7 +151,9 @@ class Book(gobject.GObject):
         if not self.uid:
             self.uid = str(uuid.uuid1())
             self.revision = 1
-            os.makedirs(self.root, 0775)
+
+            if not os.path.exists(self.root):
+                os.makedirs(self.root, 0775)
 
             for i in preinstalled:
                 filepath = os.path.join(get_bundle_path(), 'examples', i[1])
@@ -213,8 +212,7 @@ class WikiBook(Book):
             (_('Giraffe (from en.wikipedia.org)'),  "giraffe-wikipedia.dita"),
             (_('Zebra (from en.wikipedia.org)'),    "zebra-wikipedia.dita") ]
 
-        root = os.path.join(get_activity_root(), 'data', 'book')
-        Book.__init__(self, PREINSTALLED, root)
+        Book.__init__(self, PREINSTALLED, image_root)
 
 class CustomBook(Book):
     def __init__(self, filepath=None):
@@ -247,3 +245,18 @@ class CustomBook(Book):
             for i in files:
                 zip.write(os.path.join(root, i), os.path.join(relpath, i))
         zip.close()
+
+    def sync_article(self):
+        if not self._article:
+            return
+
+        self.find_by_uuid(self._article.uid)['title'] = \
+                self._article.article_title
+
+        contents, image_sources = Article_Builder.get_dita_from_article(
+                image_root, self._article)
+
+        #for i in image_sources.keys():
+        #    image_sources[i] = wiki[i].
+
+        self._save(self._article.uid, contents)

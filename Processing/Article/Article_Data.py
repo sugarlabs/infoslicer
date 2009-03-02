@@ -27,11 +27,12 @@ class Sentence_Data:
         
 class Picture_Data:
     
-    def __init__(self, source_article_id = -1, text = None):
+    def __init__(self, source_article_id = -1, text = None, orig=None):
         self.source_article_id = source_article_id
         self.id = 0
         self.text = text
         self.type = "picture"
+        self.orig = orig
     
 
 class Paragraph_Data:

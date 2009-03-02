@@ -148,7 +148,9 @@ class Gallery_View( gtk.HBox ):
     def drag_data_get_event(self, widget, context, selection_data, info, timestamp, data):
         logger.debug("getting data")
         atom = gtk.gdk.atom_intern("section")
-        imagedata = Picture_Data(self.source_article_id, self.image_list[self.current_index][0])
+        imagedata = Picture_Data(self.source_article_id,
+                self.image_list[self.current_index][0],
+                self.image_list[self.current_index][2])
         captiondata = Sentence_Data(0, self.source_article_id, 0, 0, 0, self.image_list[self.current_index][1])
         paragraph1data = Paragraph_Data(0, self.source_article_id, 0, 0, [imagedata])
         paragraph2data = Paragraph_Data(0, self.source_article_id, 0, 0, [captiondata])
@@ -165,7 +167,8 @@ def _validate_image_list(root, image_list):
     for i in xrange(len(image_list)):
         if not os.access(image_list[i][0], os.F_OK):
             if os.access(os.path.join(root, image_list[i][0]), os.F_OK):
-                image_list[i] = (os.path.join(root, image_list[i][0]), image_list[i][1])
+                image_list[i] = (os.path.join(root, image_list[i][0]),
+                        image_list[i][1], image_list[i][2])
             else:
                 image = None
     #removing during for loop was unreliable
