@@ -4,6 +4,7 @@ from BeautifulSoup import Tag
 from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
 from Processing.Article.Article_Data import *
 import re
+import os
 import logging
 
 logger = logging.getLogger('infoslicer')
@@ -126,9 +127,12 @@ def get_article_from_dita(image_path, dita):
             if tag.parent.name == "p":
                 source_article_id = article_id
                 text = image_path + '/' + tag['href']
-                picture_data = Picture_Data(source_article_id, text,
-                        tag['orig_href'])
-                sentence_data_list.insert(0, picture_data)
+                if not os.path.exists(text):
+                    logger.info('cannot find image %s' % text)
+                else:
+                    picture_data = Picture_Data(source_article_id, text,
+                            tag['orig_href'])
+                    sentence_data_list.insert(0, picture_data)
             
     article_title = input.find("title").renderContents().replace("\n", "").strip()
     
@@ -141,7 +145,10 @@ def get_article_from_dita(image_path, dita):
                 caption = caption.renderContents().replace("\n", "").strip()
             else:
                 caption = ""
-            image_list.append((img['href'], caption, img['orig_href']))
+            if not os.path.exists(os.path.join(image_path, img['href'])):
+                logger.info('cannot find image %s' % img['href'])
+            else:
+                image_list.append((img['href'], caption, img['orig_href']))
     
     data = Article_Data(article_id, article_id, article_title, "theme", section_data_list, image_list)                   
     
@@ -154,7 +161,6 @@ def get_dita_from_article(image_path, article):
     It calls the getData method of the article class to get the article_data representation of the article.
     It then constructs the corresponding DITA representation of the article.
     """
-    image_sources = {}
     article_data = article.getData()
     output = BeautifulStoneSoup("<?xml version='1.0' encoding='utf-8'?><!DOCTYPE reference PUBLIC \"-//IBM//DTD DITA IBM Reference//EN\" \"ibm-reference.dtd\"><reference><title>%s</title><prolog></prolog></reference>" % article_data.article_title)
     current_ref = output.reference            
@@ -200,7 +206,6 @@ def get_dita_from_article(image_path, article):
                         # switch image to relative path
                         text = sentence.text.replace(image_path, '') \
                                 .lstrip('/')
-                        image_sources[text.split('/')[0]] = None
                         image_tag = _tag_generator(output,
                                 "image", attrs=[("href", text),
                                                 ('orig_href', sentence.orig)])
@@ -225,7 +230,7 @@ def get_dita_from_article(image_path, article):
             image_list_body.append(image_tag)
     dita = output.prettify()
 
-    return (dita, image_sources)
+    return dita
             
 def _tag_generator(soup, name, attrs=[], contents=None):
     if attrs != []:

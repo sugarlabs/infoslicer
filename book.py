@@ -60,8 +60,8 @@ class Book(gobject.GObject):
         if entry:
             content = self._load(entry['uid'])
             if content:
-                data = Article_Builder.get_article_from_dita(image_root,
-                        content)
+                data = Article_Builder.get_article_from_dita(
+                        image_root, content)
                 self._article = Article(data)
             else:
                 self._article = Article()
@@ -253,10 +253,7 @@ class CustomBook(Book):
         self.find_by_uuid(self._article.uid)['title'] = \
                 self._article.article_title
 
-        contents, image_sources = Article_Builder.get_dita_from_article(
+        contents = Article_Builder.get_dita_from_article(
                 image_root, self._article)
-
-        #for i in image_sources.keys():
-        #    image_sources[i] = wiki[i].
 
         self._save(self._article.uid, contents)
