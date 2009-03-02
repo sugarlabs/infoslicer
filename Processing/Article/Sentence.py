@@ -153,6 +153,7 @@ class Picture( RawSentence ):
         formatting = [] 
         
         self.text = picture_data.text
+        self.orig = picture_data.orig
         
         rightmark = buf.create_mark(None, insertioniter, True)
         leftmark = buf.create_mark(None, insertioniter, False)
@@ -172,7 +173,7 @@ class Picture( RawSentence ):
         self.type = "picture"
         
     def getData(self):
-        return Picture_Data(self.source_article_id, self.text)
+        return Picture_Data(self.source_article_id, self.text, self.orig)
 
     def checkIntegrity(self, nextiter):
         sentences = []

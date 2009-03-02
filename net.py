@@ -95,6 +95,7 @@ def image_handler(root, uid, document):
         #change to relative paths:
         if not fail:
             image['href'] = os.path.join(dir_path.replace(os.path.join(root, ""), "", 1), image_title)
+            image['orig_href'] = path
         else:
             image.extract()
 
