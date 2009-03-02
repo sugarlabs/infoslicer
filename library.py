@@ -212,8 +212,9 @@ class Toolbar(gtk.Toolbar):
             return
 
         if book.wiki.find('%s (from %s)' % (title, wiki))[0]:
-            self.library.progress.set_label(_('"%s" article already exists') % title)
-            Timer(10, self._clear_progress).start()
+            self.activity.notify_alert(
+                    _('Exists'),
+                    _('"%s" article already exists') % title)
         else:
             Timer(0, self._download, [title, wiki]).start()
 
