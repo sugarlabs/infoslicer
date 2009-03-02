@@ -41,6 +41,7 @@ class BookView(gtk.VBox):
         gtk.VBox.__init__(self)
         self.book = book
         self._changing = None
+        self._check = None
 
         title = gtk.Toolbar()
 
@@ -217,6 +218,9 @@ class BookView(gtk.VBox):
         self._check.props.inconsistent = False
 
     def _update_check(self, value):
+        if not self._check:
+            return
+
         for i in self.store:
             if i[PUBLISH] != value:
                 self._check.props.inconsistent = True
