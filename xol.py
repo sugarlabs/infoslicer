@@ -170,9 +170,9 @@ def _info_file(zip, uid, title):
         Creates the library.info file
     """
     libraryfile = ['[Library]',\
-                   'name = %s' % uid,\
+                   'name = %s' % title,\
                    'bundle_class = %s' % uid,\
-                   'global_name = info.slice.%s' % uid,\
+                   'global_name = info.slice.%s' % title,\
                    'long_name = %s' % title,\
                    'library_version = %d' % book.custom.revision,\
                    'host_version = 1',\
