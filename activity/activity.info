@@ -1,6 +1,6 @@
 [Activity]
 name = InfoSlicer
-activity_version = 2
+activity_version = 3
 host_version = 1
 icon = slicelogo
 bundle_id = org.sugarlabs.InfoSlicer
