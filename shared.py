@@ -23,29 +23,65 @@ from sugar.graphics.alert import ConfirmationAlert, NotifyAlert
 
 logger = logging.getLogger('infoslicer')
 
+INSTANCED       = 0
+NEW_INSTANCE    = 1
+RESUME_INSTANCE = 2
+
 class CanvasActivity(Activity):
-    __gsignals__ = {
-        'init' : (SIGNAL_RUN_FIRST, None, []) } 
+    def new_instance(self):
+        # stub
+        pass
+        
+    def resume_instance(self, filepath):
+        # stub
+        pass
+    
+    def save_instance(self, filepath):
+        # stub
+        raise NotImplementedError
 
-    def __init__(self, canvas, *args):
-        Activity.__init__(self, *args)
+    def share_instance(self, connection, is_initiator):
+        # stub
+        pass
 
-        self._inited = False
+    def __init__(self, canvas, handle):
+        Activity.__init__(self, handle)
+
+        self.__state = handle.object_id is None \
+                and NEW_INSTANCE or RESUME_INSTANCE
+        self.__resume_filename = None
+        self.__postponed_share = []
 
         # XXX do it after(possible) read_file() invoking
         # have to rely on calling read_file() from map_cb in sugar-toolkit
         canvas.connect_after('map', self._map_canvasactivity_cb)
         self.set_canvas(canvas)
 
-    def get_inited(self):
-        return self._inited
 
-    inited = property(type=bool, default=False, getter=get_inited, setter=None)
+    def __instance(self, cb, *args):
+        for i in self.__postponed_share:
+            self.share_instance(i, self._initiating)
+        self.__postponed_share = []
+        cb(*args)
+
+    def read_file(self, filepath):
+        if self.__state != INSTANCED:
+            self.__resume_filename = filepath
+            self.__state = INSTANCED
+        else:
+            self.__instance(self.resume_instance, filepath);
 
     def _map_canvasactivity_cb(self, widget):
-        self._inited = True
-        self.emit('init')
+        if self.__state == NEW_INSTANCE:
+            self.__instance(self.new_instance)
+        elif self.__state != INSTANCED:
+            self.__state = INSTANCED
+        else:
+            self.__instance(self.resume_instance, self.__resume_filename);
         return False
+
+    def write_file(self, filepath):
+        self.save_instance(filepath)
 
     def notify_alert(self, title, msg):
         alert = NotifyAlert(title=title, msg=msg)
@@ -70,16 +106,15 @@ class CanvasActivity(Activity):
         self.add_alert(alert)
 
 class SharedActivity(CanvasActivity):
-    __gsignals__ = {
-        'tube' : (SIGNAL_RUN_FIRST, None, 2*[TYPE_PYOBJECT]) } 
+    def share_instance(self, connection, is_initiator):
+        # stub
+        pass
 
     def __init__(self, canvas, service, *args):
         CanvasActivity.__init__(self, canvas, *args)
 
         self.service = service
-        self._postpone_tubes = []
 
-        self.connect_after('init', self._init_sharedactivity_cb)
         self.connect('shared', self._shared_cb)
 
         # Owner.props.key
@@ -89,11 +124,6 @@ class SharedActivity(CanvasActivity):
             if self.get_shared():
                 # We've already joined
                 self._joined_cb()
-
-    def _init_sharedactivity_cb(self, sender):
-        for i in self._postpone_tubes:
-            self.emit('tube', i, self._initiating)
-        self._postpone_tubes = []
 
     def _shared_cb(self, activity):
         logger.debug('My activity was shared')
@@ -149,7 +179,7 @@ class SharedActivity(CanvasActivity):
                 self._tubes_chan[telepathy.CHANNEL_TYPE_TUBES], 
                 id, group_iface=self._text_chan[telepathy.CHANNEL_INTERFACE_GROUP])
             
-            if self.get_inited():
-                self.emit('tube', tube_conn, self._initiating)
+            if self.__state == INSTANCED:
+                self.share_instance(tube_conn, self._initiating)
             else:
-                self._postpone_tubes.append(tube_conn)
+                self.__postponed_share.append(tube_conn)

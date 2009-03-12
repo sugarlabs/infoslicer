@@ -36,10 +36,7 @@ class InfoslicerActivity(SharedActivity):
 
         SharedActivity.__init__(self, self.notebook, 'SERVICE', handle)
 
-        self.connect('init', self._init_cb)
-        self.connect('tube', self._tube_cb)
-
-    def _init_cb(self, sender):
+    def instance(self):
         book.wiki = book.WikiBook()
         if not book.custom:
             book.custom = book.CustomBook()
@@ -66,19 +63,20 @@ class InfoslicerActivity(SharedActivity):
         toolbox.set_current_toolbar(1)
         self.show_all()
 
-    def read_file(self, filepath):
-        book.custom = book.CustomBook(filepath)
+    def new_instance(self):
+        self.instance()
 
-    def write_file(self, filepath):
+    def resume_instance(self, filepath):
+        book.custom = book.CustomBook(filepath)
+        self.instance()
+
+    def save_instance(self, filepath):
         book.wiki.sync()
         book.custom.sync(filepath)
 
     def set_edit_sensitive(self, enable):
         self.edit_bar.props.sensitive = enable
         self.edit_page = (enable and 1 or 2)
-
-    def _tube_cb(self, activity, tube_conn, initiating):
-        pass
 
     def _toolbar_changed_cb(self, widget, index):
         if index > 0:
