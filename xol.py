@@ -85,7 +85,7 @@ themes, with are zipped up and installed in the relevant OS specific location. F
 here they can be distributed to the consumers 
 """
 def _publish(title, jobject):
-    zipfilename = os.path.join(get_activity_root(), 'tmp', 'publish.xol')
+    zipfilename = '/tmp/infoslicer.xol'
     zip = zipfile.ZipFile(zipfilename, 'w')
 
     uid = book.custom.uid
@@ -100,7 +100,7 @@ def _publish(title, jobject):
     zip.close()
 
     jobject.set_file_path(zipfilename)
-    datastore.write(jobject)
+    datastore.write(jobject, transfer_ownership=True)
 
 def _dita_management(zip, uid, title):
     """
