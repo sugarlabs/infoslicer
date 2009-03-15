@@ -51,6 +51,19 @@ def publish(activity, force=False):
         if force:
             jobject = jobject[0]
         else:
+            try:
+                # check for 0.84 code
+                from jarabe import config
+            except:
+                # 0.82 couldn't override .xol bundles
+                activity.notify_alert(
+                        _('Bundle exists'),
+                        _('A bundle by "%s" name already exists. Please ' \
+                        'click "Erase" in the Journal. You can click ' \
+                        '"Publish" again afterwards.') % \
+                        jobject[0].metadata['title'])
+                return
+
             activity.confirmation_alert(
                     _('Overwrite existed bundle?'),
                     _('A bundle for current object was already created. ' \

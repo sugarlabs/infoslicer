@@ -36,5 +36,5 @@ class ButtonItem(gtk.ToolButton):
         self.set_icon_widget(alignment)
 
         if size == gtk.ICON_SIZE_SMALL_TOOLBAR:
-            button_size = style.SMALL_ICON_SIZE + 4
+            button_size = style.SMALL_ICON_SIZE + 8
             self.set_size_request(button_size, button_size)
