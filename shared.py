@@ -12,26 +12,27 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import gtk
 import logging
 import telepathy
 from gobject import property, SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 
 from sugar.activity.activity import Activity
 from sugar.presence.sugartubeconn import SugarTubeConnection
-from sugar.graphics.alert import ConfirmationAlert, NotifyAlert
 
-logger = logging.getLogger('infoslicer')
-
-INSTANCED       = 0
-NEW_INSTANCE    = 1
-RESUME_INSTANCE = 2
+NEW_INSTANCE    = 0
+RESUME_INSTANCE = 1
+PRE_INSTANCE    = 2
+POST_INSTANCE   = 3
 
 class CanvasActivity(Activity):
+    # will be invoked after __init__()
+    # instead of resume_instance()
     def new_instance(self):
         # stub
         pass
         
+    # will be invoked after __init__()
+    # instead of new_instance()
     def resume_instance(self, filepath):
         # stub
         pass
@@ -40,6 +41,7 @@ class CanvasActivity(Activity):
         # stub
         raise NotImplementedError
 
+    # will be invoked after __init__() and {new,resume}_instance()
     def share_instance(self, connection, is_initiator):
         # stub
         pass
@@ -47,8 +49,11 @@ class CanvasActivity(Activity):
     def __init__(self, canvas, handle):
         Activity.__init__(self, handle)
 
-        self.__state = handle.object_id is None \
-                and NEW_INSTANCE or RESUME_INSTANCE
+        if handle.object_id:
+            self.__state = RESUME_INSTANCE
+        else:
+            self.__state = NEW_INSTANCE
+
         self.__resume_filename = None
         self.__postponed_share = []
 
@@ -57,62 +62,61 @@ class CanvasActivity(Activity):
         canvas.connect_after('map', self._map_canvasactivity_cb)
         self.set_canvas(canvas)
 
+    def __instance(self):
+        logging.error('CanvasActivity.__instance')
 
-    def __instance(self, cb, *args):
+        if self.__resume_filename:
+            self.resume_instance(self.__resume_filename)
+        else:
+            self.new_instance()
+
         for i in self.__postponed_share:
-            self.share_instance(i, self._initiating)
+            self.share_instance(*i)
         self.__postponed_share = []
-        cb(*args)
+
+        self.__state = POST_INSTANCE
 
     def read_file(self, filepath):
-        if self.__state != INSTANCED:
-            self.__resume_filename = filepath
-            self.__state = INSTANCED
-        else:
-            self.__instance(self.resume_instance, filepath);
+        logging.error('CanvasActivity.read_file state=%s' % self.__state)
+
+        self.__resume_filename = filepath
+
+        if self.__state == RESUME_INSTANCE:
+            self.__state = PRE_INSTANCE
+        elif self.__state == PRE_INSTANCE:
+            self.__instance();
 
     def _map_canvasactivity_cb(self, widget):
+        logging.error('CanvasActivity._map_canvasactivity_cb state=%s' % \
+                self.__state)
+
         if self.__state == NEW_INSTANCE:
-            self.__instance(self.new_instance)
-        elif self.__state != INSTANCED:
-            self.__state = INSTANCED
-        else:
-            self.__instance(self.resume_instance, self.__resume_filename);
+            self.__instance()
+        elif self.__state == RESUME_INSTANCE:
+            self.__state = PRE_INSTANCE
+        elif self.__state == PRE_INSTANCE:
+            self.__instance();
+
         return False
+
+    def _share(self, tube_conn, initiator):
+        logging.error('CanvasActivity._share state=%s' % self.__state)
+
+        if self.__state == RESUME_INSTANCE:
+            self.__postponed_share.append((tube_conn, initiator))
+            self.__state = PRE_INSTANCE
+        elif self.__state == PRE_INSTANCE:
+            self.__postponed_share.append((tube_conn, initiator))
+            self.__instance();
+        elif self.__state == POST_INSTANCE:
+            self.share_instance(tube_conn, initiator)
 
     def write_file(self, filepath):
         self.save_instance(filepath)
 
-    def notify_alert(self, title, msg):
-        alert = NotifyAlert(title=title, msg=msg)
-
-        def response(alert, response_id, self):
-            self.remove_alert(alert)
-
-        alert.connect('response', response, self)
-        alert.show_all()
-        self.add_alert(alert)
-
-    def confirmation_alert(self, title, msg, cb, *cb_args):
-        alert = ConfirmationAlert(title=title, msg=msg)
-
-        def response(alert, response_id, self, cb, *cb_args):
-            self.remove_alert(alert)
-            if response_id is gtk.RESPONSE_OK:
-                cb(*cb_args)
-
-        alert.connect('response', response, self, cb, *cb_args)
-        alert.show_all()
-        self.add_alert(alert)
-
 class SharedActivity(CanvasActivity):
-    def share_instance(self, connection, is_initiator):
-        # stub
-        pass
-
     def __init__(self, canvas, service, *args):
         CanvasActivity.__init__(self, canvas, *args)
-
         self.service = service
 
         self.connect('shared', self._shared_cb)
@@ -126,11 +130,11 @@ class SharedActivity(CanvasActivity):
                 self._joined_cb()
 
     def _shared_cb(self, activity):
-        logger.debug('My activity was shared')
-        self._initiating = True
+        logging.debug('My activity was shared')
+        self.__initiator = True
         self._sharing_setup()
 
-        logger.debug('This is my activity: making a tube...')
+        logging.debug('This is my activity: making a tube...')
         id = self._tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferDBusTube(
             self.service, {})
 
@@ -138,19 +142,19 @@ class SharedActivity(CanvasActivity):
         if not self._shared_activity:
             return
 
-        logger.debug('Joined an existing shared activity')
+        logging.debug('Joined an existing shared activity')
 
-        self._initiating = False
+        self.__initiator = False
         self._sharing_setup()
         
-        logger.debug('This is not my activity: waiting for a tube...')
+        logging.debug('This is not my activity: waiting for a tube...')
         self._tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
             reply_handler=self._list_tubes_reply_cb, 
             error_handler=self._list_tubes_error_cb)
 
     def _sharing_setup(self):
         if self._shared_activity is None:
-            logger.error('Failed to share or join activity')
+            logging.error('Failed to share or join activity')
             return
         self._conn = self._shared_activity.telepathy_conn
         self._tubes_chan = self._shared_activity.telepathy_tubes_chan
@@ -163,10 +167,10 @@ class SharedActivity(CanvasActivity):
             self._new_tube_cb(*tube_info)
 
     def _list_tubes_error_cb(self, e):
-        logger.error('ListTubes() failed: %s', e)
+        logging.error('ListTubes() failed: %s', e)
 
     def _new_tube_cb(self, id, initiator, type, service, params, state):
-        logger.debug('New tube: ID=%d initator=%d type=%d service=%s '
+        logging.debug('New tube: ID=%d initator=%d type=%d service=%s '
                      'params=%r state=%d', id, initiator, type, service, 
                      params, state)
 
@@ -179,7 +183,4 @@ class SharedActivity(CanvasActivity):
                 self._tubes_chan[telepathy.CHANNEL_TYPE_TUBES], 
                 id, group_iface=self._text_chan[telepathy.CHANNEL_INTERFACE_GROUP])
             
-            if self.__state == INSTANCED:
-                self.share_instance(tube_conn, self._initiating)
-            else:
-                self.__postponed_share.append(tube_conn)
+            self._share(tube_conn, self.__initiator)
