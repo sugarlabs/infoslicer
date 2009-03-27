@@ -12,12 +12,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import gtk
 import logging
 import telepathy
 from gobject import property, SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 
 from sugar.activity.activity import Activity
 from sugar.presence.sugartubeconn import SugarTubeConnection
+from sugar.graphics.alert import ConfirmationAlert, NotifyAlert
 
 NEW_INSTANCE    = 0
 RESUME_INSTANCE = 1
@@ -113,6 +115,28 @@ class CanvasActivity(Activity):
 
     def write_file(self, filepath):
         self.save_instance(filepath)
+
+    def notify_alert(self, title, msg):
+        alert = NotifyAlert(title=title, msg=msg)
+
+        def response(alert, response_id, self):
+            self.remove_alert(alert)
+
+        alert.connect('response', response, self)
+        alert.show_all()
+        self.add_alert(alert)
+
+    def confirmation_alert(self, title, msg, cb, *cb_args):
+        alert = ConfirmationAlert(title=title, msg=msg)
+
+        def response(alert, response_id, self, cb, *cb_args):
+            self.remove_alert(alert)
+            if response_id is gtk.RESPONSE_OK:
+                cb(*cb_args)
+
+        alert.connect('response', response, self, cb, *cb_args)
+        alert.show_all()
+        self.add_alert(alert)
 
 class SharedActivity(CanvasActivity):
     def __init__(self, canvas, service, *args):
