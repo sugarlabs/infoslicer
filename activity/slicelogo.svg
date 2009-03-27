@@ -8,6 +8,8 @@
    width="0.833333in"
    height="0.833333in"
    viewBox="0 0 60 60">
+  <g transform="translate(3,2)">
+  <g transform="scale(0.92)">
   <path
      id="Left"
      fill="&fill_color;" stroke="&stroke_color;" stroke-width="3"
@@ -36,4 +38,6 @@
         C 40.77,53.32 41.00,48.85 41.00,45.58
         C 41.00,45.58 41.00,33.89 41.00,33.89
         C 32.85,39.47 29.80,33.71 30.84,29.99 Z" />
+   </g>
+   </g>
 </svg>
