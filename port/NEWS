@@ -1,0 +1,8 @@
+1
+
+* Add tarball.py
+* Add json import wrapper
+* Add object chooser
+* Add activity classes
+* Add pixbuf methods
+* Add TempoSlider and ScrolledBox widgets
