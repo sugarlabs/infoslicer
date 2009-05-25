@@ -18,8 +18,8 @@ from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
+from port.activity import SharedActivity
 
-from shared import SharedActivity
 import library
 import edit
 import book

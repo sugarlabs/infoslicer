@@ -25,12 +25,12 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.icon import Icon
 from sugar.datastore import datastore
 import sugar.graphics.style as style
+from port.widgets import ToolWidget
 
 import xol
 import net
 import book
 from bookview import BookView
-from toolbar import WidgetItem
 from infoslicer.widgets.Reading_View import Reading_View
 
 logger = logging.getLogger('infoslicer')
@@ -174,7 +174,7 @@ class Toolbar(gtk.Toolbar):
         self.searchentry.set_text(_("Article name"))
         self.searchentry.select_region(0, -1)
         self.searchentry.connect('activate', self._search_activate_cb)
-        searchentry_item = WidgetItem(self.searchentry)
+        searchentry_item = ToolWidget(self.searchentry)
         self.insert(searchentry_item, -1)
         searchentry_item.show()
 
