@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-02 06:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.3.0\n"
+
+#: activity/activity.info:2
+msgid "InfoSlicer"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:54
+msgid "Articles are ready to be published"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:84
+msgid "Create"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:85
+msgid "Create new article"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:95
+msgid "Delete"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:96
+msgid "Delete current article"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:103
+msgid "Move downward"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:104
+msgid "Move article downward"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:108
+msgid "Move upward"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:109
+msgid "Move article upward"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:171
+msgid "New article"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:38
+msgid "Nothing to publish"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:55
+msgid "Overwrite existed bundle?"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/xol.py:56
+msgid "A bundle for current object was already created. "
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/activity.py:57
+msgid "Library"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/activity.py:58
+msgid "Edit"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/edit.py:60
+msgid "Text"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/edit.py:65
+msgid "Images"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/book.py:220
+msgid "Giraffe"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+msgid "Wiki"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+msgid "Wiki articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+msgid "Custom"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+msgid "Custom articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:76
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:77
+msgid "button on the top \"Library\" panel"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:79
+msgid "To create custom article click"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:80
+msgid "button on the left \"Custom\" panel"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:165
+msgid "Get article from:"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:174
+msgid "Article name"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:182
+msgid "Find article"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:191
+msgid "Publish selected articles"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:216
+msgid "Exists"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:217
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:228
+msgid "English Wikipedia"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:229
+msgid "Simple English Wikipedia"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/library.py:230
+msgid "German Wikipedia"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:63
+msgid "Snap selection to:"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:64
+msgid "Nothing"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:65
+msgid "Sentences"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:66
+msgid "Paragraphs"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:67
+msgid "Sections"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:96
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:104
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:56
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:87
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Format_Pane.py:52
+msgid "Article:"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr ""
+
+#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr ""
