@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-02 06:08+0000\n"
+"POT-Creation-Date: 2009-08-23 14:54-0400\n"
 "PO-Revision-Date: 2009-05-30 02:17-0400\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: FR <LL@li.org>\n"
@@ -21,238 +21,179 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:54
-msgid "Articles are ready to be published"
-msgstr "Les articles sont prêts à être publiés"
+#~ msgid "Articles are ready to be published"
+#~ msgstr "Les articles sont prêts à être publiés"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:84
-msgid "Create"
-msgstr "Créer"
+#~ msgid "Create"
+#~ msgstr "Créer"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:85
-msgid "Create new article"
-msgstr "Créer un nouvel article"
+#~ msgid "Create new article"
+#~ msgstr "Créer un nouvel article"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:95
-msgid "Delete"
-msgstr "Effacer"
+#~ msgid "Delete"
+#~ msgstr "Effacer"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:96
-msgid "Delete current article"
-msgstr "Effacer l'article actuel"
+#~ msgid "Delete current article"
+#~ msgstr "Effacer l'article actuel"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:103
-msgid "Move downward"
-msgstr "Déplacer vers le bas"
+#~ msgid "Move downward"
+#~ msgstr "Déplacer vers le bas"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:104
-msgid "Move article downward"
-msgstr "Déplacer l'article vers le bas"
+#~ msgid "Move article downward"
+#~ msgstr "Déplacer l'article vers le bas"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:108
-msgid "Move upward"
-msgstr "Déplacer vers le haut"
+#~ msgid "Move upward"
+#~ msgstr "Déplacer vers le haut"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:109
-msgid "Move article upward"
-msgstr "Déplacer l'article vers le haut"
+#~ msgid "Move article upward"
+#~ msgstr "Déplacer l'article vers le haut"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:171
-msgid "New article"
-msgstr "Nouvel article"
+#~ msgid "New article"
+#~ msgstr "Nouvel article"
 
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:38
-msgid "Nothing to publish"
-msgstr "Rien à publier"
+#~ msgid "Nothing to publish"
+#~ msgstr "Rien à publier"
 
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Marquer l'article dans le menu \"Personnaliser\" puis essayez à nouveau."
+#~ msgid "Mark arcticles from \"Custom\" panel and try again."
+#~ msgstr "Marquer l'article dans le menu \"Personnaliser\" puis essayez à nouveau."
 
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:55
-msgid "Overwrite existed bundle?"
-msgstr "Écraser le paquet existant ?"
+#~ msgid "Overwrite existed bundle?"
+#~ msgstr "Écraser le paquet existant ?"
 
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:56
-msgid "A bundle for current object was already created. "
-msgstr "Un paquet pour l'objet courant a déjà été créé."
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Un paquet pour l'objet courant a déjà été créé."
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:37
 #, python-format
-msgid "\"%s\" download in progress..."
-msgstr "Téléchargement de \"%s\" en cours..."
+#~ msgid "\"%s\" download in progress..."
+#~ msgstr "Téléchargement de \"%s\" en cours..."
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:40
 #, python-format
-msgid "Processing \"%s\"..."
-msgstr "Traitement de \"%s\"..."
+#~ msgid "Processing \"%s\"..."
+#~ msgstr "Traitement de \"%s\"..."
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:44
 #, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Téléchargement des images pour \"%s\"..."
+#~ msgid "Downloading \"%s\" images..."
+#~ msgstr "Téléchargement des images pour \"%s\"..."
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:45
 #, python-format
-msgid " (from %s)"
-msgstr " (de \"%s\")"
+#~ msgid " (from %s)"
+#~ msgstr " (de \"%s\")"
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:47
 #, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" téléchargé avec succès"
+#~ msgid "\"%s\" successfully downloaded"
+#~ msgstr "\"%s\" téléchargé avec succès"
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:51
 #, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" n'a pas été trouvé"
+#~ msgid "\"%s\" could not be found"
+#~ msgstr "\"%s\" n'a pas été trouvé"
 
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:55
 #, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Erreur pendant le téléchargement de \"%s\" ; vérifiez votre connexion"
+#~ msgid "Error downloading \"%s\"; check your connection"
+#~ msgstr "Erreur pendant le téléchargement de \"%s\" ; vérifiez votre connexion"
 
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:57
-msgid "Library"
-msgstr "Bibliothèque"
+#~ msgid "Library"
+#~ msgstr "Bibliothèque"
 
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:58
-msgid "Edit"
-msgstr "Éditer"
+#~ msgid "Edit"
+#~ msgstr "Éditer"
 
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:60
-msgid "Text"
-msgstr "Texte"
+#~ msgid "Text"
+#~ msgstr "Texte"
 
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:65
-msgid "Images"
-msgstr "Images"
+#~ msgid "Images"
+#~ msgstr "Images"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Lion (depuis en.wikipedia.org)"
+#~ msgid "Lion (from en.wikipedia.org)"
+#~ msgstr "Lion (depuis en.wikipedia.org)"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tigre (depuis en.wikipedia.org)"
+#~ msgid "Tiger (from en.wikipedia.org)"
+#~ msgstr "Tigre (depuis en.wikipedia.org)"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Girafe (depuis en.wikipedia.org)"
+#~ msgid "Giraffe (from en.wikipedia.org)"
+#~ msgstr "Girafe (depuis en.wikipedia.org)"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zèbre (depuis en.wikipedia.org)"
+#~ msgid "Zebra (from en.wikipedia.org)"
+#~ msgstr "Zèbre (depuis en.wikipedia.org)"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:220
-msgid "Giraffe"
-msgstr "Girafe"
+#~ msgid "Giraffe"
+#~ msgstr "Girafe"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
-msgid "Wiki"
-msgstr "Wiki"
+#~ msgid "Wiki"
+#~ msgstr "Wiki"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
-msgid "Wiki articles"
-msgstr "Articles Wiki"
+#~ msgid "Wiki articles"
+#~ msgstr "Articles Wiki"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
-msgid "Custom"
-msgstr "Personnaliser"
+#~ msgid "Custom"
+#~ msgstr "Personnaliser"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
-msgid "Custom articles"
-msgstr "Articles personnalisés"
+#~ msgid "Custom articles"
+#~ msgstr "Articles personnalisés"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:76
-msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"Pour télécharger un article Wiki\n"
-"tapez \"Nom de l'article\" et cliquez"
+#~ msgid ""
+#~ "To download Wiki article\n"
+#~ "type \"Article name\" and click"
+#~ msgstr ""
+#~ "Pour télécharger un article Wiki\n"
+#~ "tapez \"Nom de l'article\" et cliquez"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:77
-msgid "button on the top \"Library\" panel"
-msgstr "bouton en haut du menu \"Bibliothèque\""
+#~ msgid "button on the top \"Library\" panel"
+#~ msgstr "bouton en haut du menu \"Bibliothèque\""
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:79
-msgid "To create custom article click"
-msgstr "Cliquez pour créer un article personnalisé"
+#~ msgid "To create custom article click"
+#~ msgstr "Cliquez pour créer un article personnalisé"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:80
-msgid "button on the left \"Custom\" panel"
-msgstr "bouton à gauche du menu \"Personnaliser\""
+#~ msgid "button on the left \"Custom\" panel"
+#~ msgstr "bouton à gauche du menu \"Personnaliser\""
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:165
-msgid "Get article from:"
-msgstr "Récupérer l'article depuis :"
+#~ msgid "Get article from:"
+#~ msgstr "Récupérer l'article depuis :"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:174
-msgid "Article name"
-msgstr "Nom de l'article"
+#~ msgid "Article name"
+#~ msgstr "Nom de l'article"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:182
-msgid "Find article"
-msgstr "Trouver un article"
+#~ msgid "Find article"
+#~ msgstr "Trouver un article"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:191
-msgid "Publish selected articles"
-msgstr "Publier les articles choisis"
+#~ msgid "Publish selected articles"
+#~ msgstr "Publier les articles choisis"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:216
-msgid "Exists"
-msgstr "Existe"
+#~ msgid "Exists"
+#~ msgstr "Existe"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:217
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "L'article \"%s\" existe déjà"
+#~ msgid "\"%s\" article already exists"
+#~ msgstr "L'article \"%s\" existe déjà"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:228
-msgid "English Wikipedia"
-msgstr "Wikipedia anglaise"
+#~ msgid "English Wikipedia"
+#~ msgstr "Wikipedia anglaise"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:229
-msgid "Simple English Wikipedia"
-msgstr "Wikipedia anglaise simplifiée"
+#~ msgid "Simple English Wikipedia"
+#~ msgstr "Wikipedia anglaise simplifiée"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:230
-msgid "German Wikipedia"
-msgstr "Wikipedia allemande"
+#~ msgid "German Wikipedia"
+#~ msgstr "Wikipedia allemande"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:63
-msgid "Snap selection to:"
-msgstr "Mettre la sélection sur :"
+#~ msgid "Snap selection to:"
+#~ msgstr "Mettre la sélection sur :"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:64
-msgid "Nothing"
-msgstr "Rien"
+#~ msgid "Nothing"
+#~ msgstr "Rien"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:65
-msgid "Sentences"
-msgstr "Phrases"
+#~ msgid "Sentences"
+#~ msgstr "Phrases"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:66
-msgid "Paragraphs"
-msgstr "Paragraphes"
+#~ msgid "Paragraphs"
+#~ msgstr "Paragraphes"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:67
-msgid "Sections"
-msgstr "Sections"
+#~ msgid "Sections"
+#~ msgstr "Sections"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:96
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:104
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:56
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:87
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Format_Pane.py:52
-msgid "Article:"
-msgstr "Article :"
+#~ msgid "Article:"
+#~ msgstr "Article :"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr " Cet article n'a pas d'images"
+#~ msgid "This article does not have any images"
+#~ msgstr " Cet article n'a pas d'images"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Merci de choisir un article de Wikipedia à partir du menu ci-dessus"
+#~ msgid "Please select a Wikipedia article from the menu above"
+#~ msgstr "Merci de choisir un article de Wikipedia à partir du menu ci-dessus"
