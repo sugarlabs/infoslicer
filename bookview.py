@@ -21,8 +21,7 @@ from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 from sugar.activity.activity import get_bundle_path, get_activity_root
 from sugar.graphics.style import *
-
-from toolbar import WidgetItem, ButtonItem
+from port.widgets import ToolWidget, ToolButton
 
 logger = logging.getLogger('infoslicer')
 
@@ -56,9 +55,9 @@ class BookView(gtk.VBox):
             check_box = gtk.HBox()
             check_box.set_size_request(50, -1)
             check_box.pack_start(self._check, True, False)
-            title.insert(WidgetItem(check_box), -1)
+            title.insert(ToolWidget(check_box), -1)
         else:
-            title.insert(WidgetItem(gtk.Label('  ')), -1)
+            title.insert(ToolWidget(gtk.Label('  ')), -1)
 
         # title caption
 
@@ -70,7 +69,7 @@ class BookView(gtk.VBox):
         caption = gtk.EventBox()
         caption.add(caption_box)
         caption.modify_bg(gtk.STATE_NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
-        title.insert(WidgetItem(caption), -1)
+        title.insert(ToolWidget(caption), -1)
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -80,9 +79,9 @@ class BookView(gtk.VBox):
         # create article button
 
         if custom:
-            create = ButtonItem('add',
-                    label=_('Create'),
-                    tooltip_text=_('Create new article'))
+            create = ToolButton('add',
+                    padding=0,
+                    tooltip=_('Create new article'))
             create.connect('clicked', self._create_cb)
             title.insert(create, -1)
         else:
@@ -91,22 +90,22 @@ class BookView(gtk.VBox):
 
         # delete article button
 
-        delete = ButtonItem('edit-delete',
-                label=_('Delete'),
-                tooltip_text=_('Delete current article'))
+        delete = ToolButton('edit-delete',
+                padding=0,
+                tooltip=_('Delete current article'))
         delete.connect('clicked', self._delete_cb)
         title.insert(delete, -1)
 
         # move buttons
-        
-        downward = ButtonItem('down',
-                label=_('Move downward'),
-                tooltip_text=_('Move article downward'))
+
+        downward = ToolButton('down',
+                padding=0,
+                tooltip=_('Move article downward'))
         downward.connect('clicked', self._swap_cb, +1)
         title.insert(downward, -1)
-        upward = ButtonItem('up',
-                label=_('Move upward'),
-                tooltip_text=_('Move article upward'))
+        upward = ToolButton('up',
+                padding=0,
+                tooltip=_('Move article upward'))
         upward.connect('clicked', self._swap_cb, -1)
         title.insert(upward, -1)
 
@@ -167,7 +166,7 @@ class BookView(gtk.VBox):
         if self._changing:
             gobject.source_remove(self._changing)
             self._changing = None
-            
+
         name = find_name(self.store, _('New article'), 0)
         self.book.props.article = name
         self.store.append((False, name))
@@ -264,6 +263,6 @@ class BookView(gtk.VBox):
         if overides:
             self.tree.set_cursor(overides[0], self.tree.get_column(1), False)
             return
-        
+
         self.book.props.article.article_title = newtext
         self.store[index][TITLE] = newtext

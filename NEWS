@@ -1,3 +1,7 @@
+6
+
+* Patches by jpichon to fix parsing problem that had prevented processing of new articles
+
 5
 
 * Run activity in Sucrose 0.82 environment

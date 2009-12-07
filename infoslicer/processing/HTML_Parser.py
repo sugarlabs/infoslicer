@@ -28,8 +28,8 @@ class HTML_Parser:
     #=======================================================================
     # These lists are used at the parsing stage
     root_node = "body"
-    section_separators = ["h3", "h4", "h5"]
-    reference_separators = ["h1", "h2"]
+    section_separators = ["h2", "h3", "h4", "h5"]
+    reference_separators = ["h1"]
     block_elements = ["img", "table", "ol", "ul"]
     #=======================================================================
         

@@ -17,7 +17,7 @@ class MediaWiki_Parser(HTML_Parser):
 
         logger.debug('MediaWiki_Parser: %s' % source_url)
 
-        header, input_content = document_to_parse.split("<text>")
+        header, input_content = document_to_parse.split("<text xml:space=\"preserve\">")
 
         #find the revision id in the xml the wiki API returns
         revid = re.findall(re.compile('\<parse.*revid\=\"(?P<rid>[0-9]*)\"'),

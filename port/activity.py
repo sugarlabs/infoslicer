@@ -17,6 +17,7 @@
 import gtk
 import logging
 import telepathy
+import gobject
 
 import sugar.activity.activity as toolkit
 from sugar.presence.sugartubeconn import SugarTubeConnection
@@ -26,6 +27,18 @@ _NEW_INSTANCE   = 0
 _NEW_INSTANCE   = 1
 _PRE_INSTANCE   = 2
 _POST_INSTANCE  = 3
+
+class CursorFactory:
+    __shared_state = {"cursors": {}}
+
+    def __init__(self):
+        self.__dict__ = self.__shared_state
+
+    def get_cursor(self, cur_type):
+        if not self.cursors.has_key(cur_type):
+            cur = gtk.gdk.Cursor(cur_type)
+            self.cursors[cur_type] = cur
+        return self.cursors[cur_type]
 
 class Activity(toolkit.Activity):
     """Basic activity class"""
@@ -56,6 +69,10 @@ class Activity(toolkit.Activity):
         Subclass should implement this method to save activity data.
         """
         raise NotImplementedError
+
+    def on_save_instance(self, cb, *args):
+        """ Register callback which will be invoked before save_instance """
+        self.__on_save_instance.append((cb, args))
 
     def share_instance(self, connection, is_initiator):
         """
@@ -98,6 +115,17 @@ class Activity(toolkit.Activity):
         alert.show_all()
         self.add_alert(alert)
 
+    def get_cursor(self):
+        return self._cursor
+
+    def set_cursor(self, cursor):
+        if not isinstance(cursor, gtk.gdk.Cursor):
+            cursor = CursorFactory().get_cursor(cursor)
+
+        if self._cursor != cursor:
+            self._cursor = cursor
+            self.window.set_cursor(self._cursor)
+
     def __init__(self, canvas, handle):
         """
         Initialise the Activity.
@@ -120,6 +148,10 @@ class Activity(toolkit.Activity):
 
         self.__resume_filename = None
         self.__postponed_share = []
+        self.__on_save_instance = []
+
+        self._cursor = None
+        self.set_cursor(gtk.gdk.LEFT_PTR)
 
         # XXX do it after(possible) read_file() invoking
         # have to rely on calling read_file() from map_cb in sugar-toolkit
@@ -153,6 +185,8 @@ class Activity(toolkit.Activity):
 
     def write_file(self, filepath):
         """Subclass should not override this method"""
+        for cb, args in self.__on_save_instance:
+            cb(*args)
         self.save_instance(filepath)
 
     def __map_canvasactivity_cb(self, widget):
