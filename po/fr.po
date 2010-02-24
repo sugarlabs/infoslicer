@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-23 14:54-0400\n"
-"PO-Revision-Date: 2009-05-30 02:17-0400\n"
+"POT-Creation-Date: 2010-01-20 00:31-0500\n"
+"PO-Revision-Date: 2010-02-24 23:50+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: FR <LL@li.org>\n"
 "Language: fr\n"
@@ -15,185 +15,247 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
-#~ msgid "Articles are ready to be published"
-#~ msgstr "Les articles sont prêts à être publiés"
+#: activity.py:54
+msgid "Library"
+msgstr "Bibliothèque"
+
+#: activity.py:55
+msgid "Edit"
+msgstr "Éditer"
+
+#: book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Lion (depuis en.wikipedia.org)"
+
+#: book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tigre (depuis en.wikipedia.org)"
+
+#: book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Girafe (depuis en.wikipedia.org)"
+
+#: book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zèbre (depuis en.wikipedia.org)"
+
+#: book.py:220
+msgid "Giraffe"
+msgstr "Girafe"
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "Les articles sont prêts à être publiés"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "Créer un nouvel article"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "Effacer l'article actuel"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "Déplacer l'article vers le bas"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "Déplacer l'article vers le haut"
+
+#: bookview.py:170
+msgid "New article"
+msgstr "Nouvel article"
+
+#: edit.py:60
+msgid "Text"
+msgstr "Texte"
+
+#: edit.py:65
+msgid "Images"
+msgstr "Images"
+
+#: infoslicer/widgets/Edit_Pane.py:63
+msgid "Snap selection to:"
+msgstr "Mettre la sélection sur :"
+
+#: infoslicer/widgets/Edit_Pane.py:64
+msgid "Nothing"
+msgstr "Rien"
+
+#: infoslicer/widgets/Edit_Pane.py:65
+msgid "Sentences"
+msgstr "Phrases"
+
+#: infoslicer/widgets/Edit_Pane.py:66
+msgid "Paragraphs"
+msgstr "Paragraphes"
+
+#: infoslicer/widgets/Edit_Pane.py:67
+msgid "Sections"
+msgstr "Sections"
+
+#: infoslicer/widgets/Edit_Pane.py:96 infoslicer/widgets/Edit_Pane.py:104
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Article :"
+
+#: infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "Cet article n'a pas d'images"
+
+#: infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Merci de choisir un article de Wikipedia à partir du menu ci-dessus"
+
+#: library.py:52
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:52
+msgid "Wiki articles"
+msgstr "Articles wiki"
+
+#: library.py:55
+msgid "Custom"
+msgstr "Personnaliser"
+
+#: library.py:55
+msgid "Custom articles"
+msgstr "Articles personnalisés"
+
+#: library.py:76
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Pour télécharger un article Wiki\n"
+"tapez \"Nom de l'article\" et cliquez"
+
+#: library.py:77
+msgid "button on the top \"Library\" panel"
+msgstr "bouton en haut du menu \"Bibliothèque\""
+
+#: library.py:79
+msgid "To create custom article click"
+msgstr "Cliquez pour créer un article personnalisé"
+
+#: library.py:80
+msgid "button on the left \"Custom\" panel"
+msgstr "bouton à gauche du menu \"Personnaliser\""
+
+#: library.py:165
+msgid "Get article from:"
+msgstr "Récupérer l'article depuis :"
+
+#: library.py:174
+msgid "Article name"
+msgstr "Nom de l'article"
+
+#: library.py:182
+msgid "Find article"
+msgstr "Trouver un article"
+
+#: library.py:191
+msgid "Publish selected articles"
+msgstr "Publier les articles choisis"
+
+#: library.py:216
+msgid "Exists"
+msgstr "Existe"
+
+#: library.py:217
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "L'article \"%s\" existe déjà"
+
+#: library.py:228
+msgid "English Wikipedia"
+msgstr "Wikipedia anglaise"
+
+#: library.py:229
+msgid "Simple English Wikipedia"
+msgstr "Wikipedia anglaise simplifiée"
+
+#: library.py:230
+msgid "German Wikipedia"
+msgstr "Wikipedia allemande"
+
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "Téléchargement de \"%s\" en cours..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Traitement de \"%s\"..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Téléchargement des images pour \"%s\"..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (de \"%s\")"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" téléchargé avec succès"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" n'a pas été trouvé"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Erreur pendant le téléchargement de \"%s\" ; vérifiez votre connexion"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "Rien à publier"
+
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Marquer l'article dans le menu \"Personnaliser\" puis essayez à nouveau."
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "Le paquet existe"
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "Un paquet nommé \"%s\" existe déjà."
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "Écraser le paquet existant ?"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "Un paquet pour l'objet courant a déjà été créé. "
 
 #~ msgid "Create"
 #~ msgstr "Créer"
 
-#~ msgid "Create new article"
-#~ msgstr "Créer un nouvel article"
-
 #~ msgid "Delete"
 #~ msgstr "Effacer"
-
-#~ msgid "Delete current article"
-#~ msgstr "Effacer l'article actuel"
 
 #~ msgid "Move downward"
 #~ msgstr "Déplacer vers le bas"
 
-#~ msgid "Move article downward"
-#~ msgstr "Déplacer l'article vers le bas"
-
 #~ msgid "Move upward"
 #~ msgstr "Déplacer vers le haut"
-
-#~ msgid "Move article upward"
-#~ msgstr "Déplacer l'article vers le haut"
-
-#~ msgid "New article"
-#~ msgstr "Nouvel article"
-
-#~ msgid "Nothing to publish"
-#~ msgstr "Rien à publier"
-
-#~ msgid "Mark arcticles from \"Custom\" panel and try again."
-#~ msgstr "Marquer l'article dans le menu \"Personnaliser\" puis essayez à nouveau."
-
-#~ msgid "Overwrite existed bundle?"
-#~ msgstr "Écraser le paquet existant ?"
-
-#~ msgid "A bundle for current object was already created. "
-#~ msgstr "Un paquet pour l'objet courant a déjà été créé."
-
-#, python-format
-#~ msgid "\"%s\" download in progress..."
-#~ msgstr "Téléchargement de \"%s\" en cours..."
-
-#, python-format
-#~ msgid "Processing \"%s\"..."
-#~ msgstr "Traitement de \"%s\"..."
-
-#, python-format
-#~ msgid "Downloading \"%s\" images..."
-#~ msgstr "Téléchargement des images pour \"%s\"..."
-
-#, python-format
-#~ msgid " (from %s)"
-#~ msgstr " (de \"%s\")"
-
-#, python-format
-#~ msgid "\"%s\" successfully downloaded"
-#~ msgstr "\"%s\" téléchargé avec succès"
-
-#, python-format
-#~ msgid "\"%s\" could not be found"
-#~ msgstr "\"%s\" n'a pas été trouvé"
-
-#, python-format
-#~ msgid "Error downloading \"%s\"; check your connection"
-#~ msgstr "Erreur pendant le téléchargement de \"%s\" ; vérifiez votre connexion"
-
-#~ msgid "Library"
-#~ msgstr "Bibliothèque"
-
-#~ msgid "Edit"
-#~ msgstr "Éditer"
-
-#~ msgid "Text"
-#~ msgstr "Texte"
-
-#~ msgid "Images"
-#~ msgstr "Images"
-
-#~ msgid "Lion (from en.wikipedia.org)"
-#~ msgstr "Lion (depuis en.wikipedia.org)"
-
-#~ msgid "Tiger (from en.wikipedia.org)"
-#~ msgstr "Tigre (depuis en.wikipedia.org)"
-
-#~ msgid "Giraffe (from en.wikipedia.org)"
-#~ msgstr "Girafe (depuis en.wikipedia.org)"
-
-#~ msgid "Zebra (from en.wikipedia.org)"
-#~ msgstr "Zèbre (depuis en.wikipedia.org)"
-
-#~ msgid "Giraffe"
-#~ msgstr "Girafe"
-
-#~ msgid "Wiki"
-#~ msgstr "Wiki"
-
-#~ msgid "Wiki articles"
-#~ msgstr "Articles Wiki"
-
-#~ msgid "Custom"
-#~ msgstr "Personnaliser"
-
-#~ msgid "Custom articles"
-#~ msgstr "Articles personnalisés"
-
-#~ msgid ""
-#~ "To download Wiki article\n"
-#~ "type \"Article name\" and click"
-#~ msgstr ""
-#~ "Pour télécharger un article Wiki\n"
-#~ "tapez \"Nom de l'article\" et cliquez"
-
-#~ msgid "button on the top \"Library\" panel"
-#~ msgstr "bouton en haut du menu \"Bibliothèque\""
-
-#~ msgid "To create custom article click"
-#~ msgstr "Cliquez pour créer un article personnalisé"
-
-#~ msgid "button on the left \"Custom\" panel"
-#~ msgstr "bouton à gauche du menu \"Personnaliser\""
-
-#~ msgid "Get article from:"
-#~ msgstr "Récupérer l'article depuis :"
-
-#~ msgid "Article name"
-#~ msgstr "Nom de l'article"
-
-#~ msgid "Find article"
-#~ msgstr "Trouver un article"
-
-#~ msgid "Publish selected articles"
-#~ msgstr "Publier les articles choisis"
-
-#~ msgid "Exists"
-#~ msgstr "Existe"
-
-#, python-format
-#~ msgid "\"%s\" article already exists"
-#~ msgstr "L'article \"%s\" existe déjà"
-
-#~ msgid "English Wikipedia"
-#~ msgstr "Wikipedia anglaise"
-
-#~ msgid "Simple English Wikipedia"
-#~ msgstr "Wikipedia anglaise simplifiée"
-
-#~ msgid "German Wikipedia"
-#~ msgstr "Wikipedia allemande"
-
-#~ msgid "Snap selection to:"
-#~ msgstr "Mettre la sélection sur :"
-
-#~ msgid "Nothing"
-#~ msgstr "Rien"
-
-#~ msgid "Sentences"
-#~ msgstr "Phrases"
-
-#~ msgid "Paragraphs"
-#~ msgstr "Paragraphes"
-
-#~ msgid "Sections"
-#~ msgstr "Sections"
-
-#~ msgid "Article:"
-#~ msgstr "Article :"
-
-#~ msgid "This article does not have any images"
-#~ msgstr " Cet article n'a pas d'images"
-
-#~ msgid "Please select a Wikipedia article from the menu above"
-#~ msgstr "Merci de choisir un article de Wikipedia à partir du menu ci-dessus"
