@@ -227,4 +227,5 @@ class Toolbar(gtk.Toolbar):
 
 WIKI = { _("English Wikipedia")         : "en.wikipedia.org", 
          _("Simple English Wikipedia")  : "simple.wikipedia.org", 
-         _("German Wikipedia")          : "de.wikipedia.org" }
+         _("German Wikipedia")          : "de.wikipedia.org",
+         _("Spanish Wikipedia")         : "es.wikipedia.org" }
