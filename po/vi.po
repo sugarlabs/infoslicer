@@ -2,12 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-20 00:31-0500\n"
-"PO-Revision-Date: 2010-03-07 16:19+0200\n"
+"POT-Creation-Date: 2010-04-13 23:08+0000\n"
+"PO-Revision-Date: 2010-04-28 14:21+0200\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: vi\n"
@@ -15,123 +23,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "Cắt ra Thông tin"
 
-#: activity.py:54
-msgid "Library"
-msgstr "Thư viện"
-
-#: activity.py:55
-msgid "Edit"
-msgstr "Sửa"
-
-#: book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Sư tử (từ en.wikipedia.org)"
-
-#: book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Hổ (từ en.wikipedia.org)"
-
-#: book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Hươu cao cổ (từ en.wikipedia.org)"
-
-#: book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Ngựa vằn (từ en.wikipedia.org)"
-
-#: book.py:220
-msgid "Giraffe"
-msgstr "Hươu cao cổ"
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Bài báo sắp sửa xuất bản"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "Tạo bài mới"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "Xoá bài đang sửa"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "Đem bài xuống"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "Đem bài lên"
-
-#: bookview.py:170
-msgid "New article"
-msgstr "Bài mới"
-
-#: edit.py:60
+#: /home/walter/Desktop/infoslicer-activity/edit.py:60
 msgid "Text"
 msgstr "Văn bản"
 
-#: edit.py:65
+#: /home/walter/Desktop/infoslicer-activity/edit.py:65
 msgid "Images"
 msgstr "Ảnh"
 
-#: infoslicer/widgets/Edit_Pane.py:63
-msgid "Snap selection to:"
-msgstr "Đính vùng chọn tới:"
-
-#: infoslicer/widgets/Edit_Pane.py:64
-msgid "Nothing"
-msgstr "Không gì"
-
-#: infoslicer/widgets/Edit_Pane.py:65
-msgid "Sentences"
-msgstr "Câu"
-
-#: infoslicer/widgets/Edit_Pane.py:66
-msgid "Paragraphs"
-msgstr "Đoạn văn"
-
-#: infoslicer/widgets/Edit_Pane.py:67
-msgid "Sections"
-msgstr "Phần"
-
-#: infoslicer/widgets/Edit_Pane.py:96 infoslicer/widgets/Edit_Pane.py:104
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Bài:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Bài này không có ảnh nào"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Hãy chọn một bài báo Wikipedia trong trình đơn trên"
-
-#: library.py:52
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki"
 msgstr "Wiki"
 
-#: library.py:52
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki articles"
 msgstr "Bài Wiki"
 
-#: library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom"
 msgstr "Tự chọn"
 
-#: library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom articles"
 msgstr "Bài tự chọn"
 
-#: library.py:76
+#: /home/walter/Desktop/infoslicer-activity/library.py:76
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -139,111 +61,203 @@ msgstr ""
 "Để tải về bài Wiki, gõ\n"
 "« tên bài » và nhấn nút"
 
-#: library.py:77
+#: /home/walter/Desktop/infoslicer-activity/library.py:77
 msgid "button on the top \"Library\" panel"
 msgstr "trên bảng « Thư viện » ở đầu"
 
-#: library.py:79
+#: /home/walter/Desktop/infoslicer-activity/library.py:79
 msgid "To create custom article click"
 msgstr "Để tạo bài tự chọn, nhấn nút"
 
-#: library.py:80
+#: /home/walter/Desktop/infoslicer-activity/library.py:80
 msgid "button on the left \"Custom\" panel"
 msgstr "trên bảng « Tự chọn » bên trái"
 
-#: library.py:165
+#: /home/walter/Desktop/infoslicer-activity/library.py:165
 msgid "Get article from:"
 msgstr "Lấy bài từ :"
 
-#: library.py:174
+#: /home/walter/Desktop/infoslicer-activity/library.py:174
 msgid "Article name"
 msgstr "Tên bài"
 
-#: library.py:182
+#: /home/walter/Desktop/infoslicer-activity/library.py:182
 msgid "Find article"
 msgstr "Tìm bài"
 
-#: library.py:191
+#: /home/walter/Desktop/infoslicer-activity/library.py:191
 msgid "Publish selected articles"
 msgstr "Xuất các bài được chọn"
 
-#: library.py:216
+#: /home/walter/Desktop/infoslicer-activity/library.py:216
 msgid "Exists"
 msgstr "Đã có"
 
-#: library.py:217
+#: /home/walter/Desktop/infoslicer-activity/library.py:217
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "Bài « %s » đã có"
 
-#: library.py:228
+#: /home/walter/Desktop/infoslicer-activity/library.py:228
 msgid "English Wikipedia"
 msgstr "Wikipedia tiếng Anh"
 
-#: library.py:229
+#: /home/walter/Desktop/infoslicer-activity/library.py:229
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia tiếng Anh đơn giản"
 
-#: library.py:230
+#: /home/walter/Desktop/infoslicer-activity/library.py:230
 msgid "German Wikipedia"
 msgstr "Wikipedia tiếng Đức"
 
-#: net.py:37
+#: /home/walter/Desktop/infoslicer-activity/library.py:231
+msgid "Spanish Wikipedia"
+msgstr "Wikipedia tiếng Tây Ban Nha"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "Bài báo sắp sửa xuất bản"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
+msgid "Create new article"
+msgstr "Tạo bài mới"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
+msgid "Delete current article"
+msgstr "Xoá bài đang sửa"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
+msgid "Move article downward"
+msgstr "Đem bài xuống"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
+msgid "Move article upward"
+msgstr "Đem bài lên"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
+msgid "New article"
+msgstr "Bài mới"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:54
+msgid "Library"
+msgstr "Thư viện"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:55
+msgid "Edit"
+msgstr "Sửa"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:37
 #, python-format
 msgid "\"%s\" download in progress..."
 msgstr "Đang tải về « %s »..."
 
-#: net.py:40
+#: /home/walter/Desktop/infoslicer-activity/net.py:40
 #, python-format
 msgid "Processing \"%s\"..."
 msgstr "Đang xử lý « %s »..."
 
-#: net.py:44
+#: /home/walter/Desktop/infoslicer-activity/net.py:44
 #, python-format
 msgid "Downloading \"%s\" images..."
 msgstr "Đang tải về các ảnh « %s »..."
 
-#: net.py:45
+#: /home/walter/Desktop/infoslicer-activity/net.py:45
 #, python-format
 msgid " (from %s)"
 msgstr " (từ %s)"
 
-#: net.py:47
+#: /home/walter/Desktop/infoslicer-activity/net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
 msgstr "« %s » đã được tải về"
 
-#: net.py:51
+#: /home/walter/Desktop/infoslicer-activity/net.py:51
 #, python-format
 msgid "\"%s\" could not be found"
 msgstr "Không tìm thấy « %s »"
 
-#: net.py:55
+#: /home/walter/Desktop/infoslicer-activity/net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Gặp lỗi khi tải về « %s »: hãy kiểm tra lại sự kết nối"
 
-#: xol.py:38
+#: /home/walter/Desktop/infoslicer-activity/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Sư tử (từ en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Hổ (từ en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Hươu cao cổ (từ en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Ngựa vằn (từ en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:220
+msgid "Giraffe"
+msgstr "Hươu cao cổ"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:38
 msgid "Nothing to publish"
 msgstr "Không có gì cần xuất bản"
 
-#: xol.py:39
+#: /home/walter/Desktop/infoslicer-activity/xol.py:39
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Đánh dấu bài trên bảng « Tự chọn », và thử lại."
 
-#: xol.py:60
+#: /home/walter/Desktop/infoslicer-activity/xol.py:60
 msgid "Bundle exists"
 msgstr "Bó đã có"
 
-#: xol.py:61
+#: /home/walter/Desktop/infoslicer-activity/xol.py:61
 #, python-format
 msgid "A bundle by \"%s\" name already exists. Please "
 msgstr "Một bó tên « %s » đã có. Hãy "
 
-#: xol.py:68
+#: /home/walter/Desktop/infoslicer-activity/xol.py:68
 msgid "Overwrite existed bundle?"
 msgstr "Ghi đè lên bó đã có ?"
 
-#: xol.py:69
+#: /home/walter/Desktop/infoslicer-activity/xol.py:69
 msgid "A bundle for current object was already created. "
 msgstr "Một bó cho đối tượng hiện thời đã được tạo về trước. "
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+msgid "Snap selection to:"
+msgstr "Đính vùng chọn tới:"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+msgid "Nothing"
+msgstr "Không gì"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+msgid "Sentences"
+msgstr "Câu"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+msgid "Paragraphs"
+msgstr "Đoạn văn"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+msgid "Sections"
+msgstr "Phần"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Bài:"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "Bài này không có ảnh nào"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Hãy chọn một bài báo Wikipedia trong trình đơn trên"
