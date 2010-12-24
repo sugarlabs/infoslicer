@@ -10,13 +10,57 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 23:08+0000\n"
-"PO-Revision-Date: 2010-04-14 20:43+0200\n"
-"Last-Translator: Daniel Drake <dsd@laptop.org>\n"
+"POT-Creation-Date: 2010-04-24 11:04+0000\n"
+"PO-Revision-Date: 2010-08-10 22:53+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +148,7 @@ msgstr "Wikipedia en inglés"
 
 #: /home/walter/Desktop/infoslicer-activity/library.py:229
 msgid "Simple English Wikipedia"
-msgstr "Wikipedia en inglés sencilla"
+msgstr "Wikipedia en inglés sencillo"
 
 #: /home/walter/Desktop/infoslicer-activity/library.py:230
 msgid "German Wikipedia"
@@ -113,6 +157,10 @@ msgstr "Wikipedia en alemán"
 #: /home/walter/Desktop/infoslicer-activity/library.py:231
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:232
+msgid "French Wikipedia"
+msgstr "Wikipedia en francés"
 
 #: /home/walter/Desktop/infoslicer-activity/bookview.py:53
 msgid "Articles are ready to be published"
@@ -216,7 +264,7 @@ msgstr "Paquete existe"
 #: /home/walter/Desktop/infoslicer-activity/xol.py:61
 #, python-format
 msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Un paquete de nombre \"%s\" ya existe. Por favor"
+msgstr "Un paquete de nombre \"%s\"  ya existe. Por favor "
 
 #: /home/walter/Desktop/infoslicer-activity/xol.py:68
 msgid "Overwrite existed bundle?"
