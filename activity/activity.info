@@ -7,3 +7,4 @@ bundle_id = org.sugarlabs.InfoSlicer
 exec = sugar-activity activity.InfoslicerActivity
 show_launcher = yes
 license = GPLv2+
+
