@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-24 11:04+0000\n"
+"PO-Revision-Date: 2010-09-05 15:55+0200\n"
+"Last-Translator: Robert <robert_readman@hotmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
+
+#: activity/activity.info:2
+msgid "InfoSlicer"
+msgstr "InfoSlicer"
+
+#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+msgid "Text"
+msgstr "Text"
+
+#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+msgid "Images"
+msgstr "Images"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
+msgid "Wiki"
+msgstr "Wiki"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
+msgid "Wiki articles"
+msgstr "Wiki articles"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
+msgid "Custom"
+msgstr "Custom"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
+msgid "Custom articles"
+msgstr "Custom articles"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:76
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:77
+msgid "button on the top \"Library\" panel"
+msgstr "button on the top \"Library\" panel"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:79
+msgid "To create custom article click"
+msgstr "To create custom article click"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:80
+msgid "button on the left \"Custom\" panel"
+msgstr "button on the left \"Custom\" panel"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:165
+msgid "Get article from:"
+msgstr "Get article from:"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:174
+msgid "Article name"
+msgstr "Article name"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:182
+msgid "Find article"
+msgstr "Find article"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:191
+msgid "Publish selected articles"
+msgstr "Publish selected articles"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:216
+msgid "Exists"
+msgstr "Exists"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "\"%s\" article already exists"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:228
+msgid "English Wikipedia"
+msgstr "English Wikipedia"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:229
+msgid "Simple English Wikipedia"
+msgstr "Simple English Wikipedia"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:230
+msgid "German Wikipedia"
+msgstr "German Wikipedia"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:231
+msgid "Spanish Wikipedia"
+msgstr "Spanish Wikipedia"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:232
+msgid "French Wikipedia"
+msgstr "French Wikipedia"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "Articles are ready to be published"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
+msgid "Create new article"
+msgstr "Create new article"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
+msgid "Delete current article"
+msgstr "Delete current article"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
+msgid "Move article downward"
+msgstr "Move article downward"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
+msgid "Move article upward"
+msgstr "Move article upward"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
+msgid "New article"
+msgstr "New article"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:54
+msgid "Library"
+msgstr "Library"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:55
+msgid "Edit"
+msgstr "Edit"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" download in progress..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Processing \"%s\"..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Downloading \"%s\" images..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (from %s)"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" successfully downloaded"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" could not be found"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Error downloading \"%s\"; check your connection"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Lion (from en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tiger (from en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Giraffe (from en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (from en.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:220
+msgid "Giraffe"
+msgstr "Giraffe"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:38
+msgid "Nothing to publish"
+msgstr "Nothing to publish"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Mark articles from \"Custom\" panel and try again."
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:60
+msgid "Bundle exists"
+msgstr "Bundle exists"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "A bundle by \"%s\" name already exists. Please "
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "Overwrite existed bundle?"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "A bundle for current object was already created. "
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+msgid "Snap selection to:"
+msgstr "Snap selection to:"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+msgid "Nothing"
+msgstr "Nothing"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+msgid "Sentences"
+msgstr "Sentences"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+msgid "Paragraphs"
+msgstr "Paragraphs"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+msgid "Sections"
+msgstr "Sections"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Article:"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "This article does not have any images"
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Please select a Wikipedia article from the menu above"
