@@ -71,10 +71,13 @@ class Book(gobject.GObject):
 
         self._article.uid = entry['uid']
         self._article.article_title = title
-        self.emit('article-selected', self._article)
+        gobject.idle_add(self._emit_article_selected)
 
     article = gobject.property(type=object,
             getter=get_article, setter=set_article)
+
+    def _emit_article_selected(self):
+        self.emit('article-selected', self._article)
 
     # save current article
     def sync_article(self):

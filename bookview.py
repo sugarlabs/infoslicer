@@ -154,7 +154,6 @@ class BookView(gtk.VBox):
 
         self.book.props.article = article
         self.store.append((False, article))
-        self.tree.set_cursor(len(self.store)-1, self.tree.get_column(1), False)
 
     def _create_cb(self, widget):
         def find_name(list, prefix, uniq):
