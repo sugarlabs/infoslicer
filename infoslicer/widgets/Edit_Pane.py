@@ -19,9 +19,9 @@ class Edit_Pane(gtk.HBox):
     
     See __init__.py for overview of panes.
     
-    The Edit Pane gives a side-by-side view of the source article and edit article
-    and allows users to drag text selections from the left hand (source) to the right
-    hand side (edited version).
+    The Edit Pane gives a side-by-side view of the source article and edit
+    article and allows users to drag text selections from the left hand
+    (source) to the right hand side (edited version).
     
     The article displayed in the left hand side (source) can be changed by the 
     drop-down menu (implemented in Compound_Widgets.Reading_View)
@@ -45,7 +45,17 @@ class Edit_Pane(gtk.HBox):
         self.articletitle.set_justify(gtk.JUSTIFY_CENTER)
         labeleb.add(self.articletitle)
         self.articletitle.show()
-        
+
+        vbox = gtk.VBox()
+
+        snap = ToolComboBox(label_text=_('Snap selection to:'))
+        snap.combo.append_item(0, _("Nothing"))
+        snap.combo.append_item(1, _("Sentences"))
+        snap.combo.append_item(2, _("Paragraphs"))
+        snap.combo.append_item(3, _("Sections"))
+        snap.combo.set_active(1)
+        vbox.pack_start(snap, False)
+
         """
         Create reading and editing panels
         """
@@ -53,26 +63,21 @@ class Edit_Pane(gtk.HBox):
         self.readarticle.set_size_request(gtk.gdk.screen_width()/2, -1)
         self.readarticle.show()
         readarticle_box.pack_start(self.readarticle)
-        self.pack_start(readarticle_box, False)
+        vbox.pack_start(readarticle_box)
+
+        self.pack_start(vbox, False)
 
         self.editarticle = Editing_View()
         self.pack_start(self.editarticle)
         self.editarticle.show()
-        
-        """ Snap selection box """
-        snap = ToolComboBox(label_text=_('Snap selection to:'))
-        snap.combo.append_item(0, _("Nothing"))
-        snap.combo.append_item(1, _("Sentences"))
-        snap.combo.append_item(2, _("Paragraphs"))
-        snap.combo.append_item(3, _("Sections"))
+
         snap.combo.connect("changed", self.selection_mode_changed, None)
-        snap.combo.set_active(1)
-        self.toolitems.append(snap)
+        
         
     """
     When highlighting text, while editing, different selection snap methods 
-    can be used (characters, sentences, paragraphs and sections). Change the selection
-    mode based on user request 
+    can be used (characters, sentences, paragraphs and sections). Change the
+    selection mode based on user request
     """        
     def selection_mode_changed(self, widget, data):
         current_selection = widget.get_active()

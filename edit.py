@@ -48,33 +48,39 @@ class View(gtk.Notebook):
         if book.custom.article:
             TABS[index].set_working_article(book.custom.article)
 
-class Toolbar(gtk.Toolbar):
-    def __init__(self, edit):
-        gtk.Toolbar.__init__(self)
+class ToolbarBuilder():
+    def __init__(self, edit, toolbar):
         self.edit = edit
 
-        txt_toggle = ToggleToolButton('ascii')
-        img_toggle = ToggleToolButton('image')
+        self.txt_toggle = ToggleToolButton('ascii')
+        self.img_toggle = ToggleToolButton('image')
 
-        txt_toggle.show()
-        txt_toggle.set_tooltip(_('Text'))
-        txt_toggle.connect('toggled', self._toggle_cb, [txt_toggle, img_toggle])
-        self.insert(txt_toggle, -1)
+        self.txt_toggle.set_tooltip(_('Text'))
+        self.txt_toggle.connect('toggled', self._toggle_cb,
+            [self.txt_toggle, self.img_toggle])
+        toolbar.insert(self.txt_toggle, -1)
 
-        img_toggle.show()
-        img_toggle.set_tooltip(_('Images'))
-        img_toggle.connect('toggled', self._toggle_cb, [txt_toggle, img_toggle])
-        self.insert(img_toggle, -1)
+        self.img_toggle.set_tooltip(_('Images'))
+        self.img_toggle.connect('toggled', self._toggle_cb,
+            [self.txt_toggle, self.img_toggle])
+        toolbar.insert(self.img_toggle, -1)
 
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-        separator.show()
+        self.separator = gtk.SeparatorToolItem()
+        toolbar.insert(self.separator, -1)
 
         for tab in TABS:
             for i in tab.toolitems:
-                self.insert(i, -1)
+                toolbar.insert(i, -1)
 
-        txt_toggle.set_active(True)
+        self.txt_toggle.set_active(True)
+
+    def sensitize_all(self):
+        self.txt_toggle.set_sensitive(True)
+        self.img_toggle.set_sensitive(True)
+
+    def unsensitize_all(self):
+        self.txt_toggle.set_sensitive(False)
+        self.img_toggle.set_sensitive(False)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:

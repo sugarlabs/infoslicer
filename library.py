@@ -44,16 +44,10 @@ class View(gtk.EventBox):
         gtk.EventBox.__init__(self)
         self.activity = activity
 
-        # books
-
-        books = gtk.VBox()
-        books.set_size_request(gtk.gdk.screen_width()/4, -1)
         self.wiki = BookView(book.wiki,
                 _('Wiki'), _('Wiki articles'), False)
-        books.pack_start(self.wiki)
         self.custom = BookView(book.custom,
                 _('Custom'), _('Custom articles'), True)
-        books.pack_start(self.custom)
 
         # stubs for empty articles
 
@@ -80,6 +74,24 @@ class View(gtk.EventBox):
                 _('button on the left "Custom" panel'))
 
         # articles viewers
+        search_box = gtk.HBox()
+        self.wikimenu = ToolComboBox(label_text=_('Get article from:'))
+        for i in sorted(WIKI.keys()):
+            self.wikimenu.combo.append_item(WIKI[i], i)
+        self.wikimenu.combo.set_active(0)
+        search_box.pack_start(self.wikimenu, False)
+
+        self.searchentry = gtk.Entry()
+        self.searchentry.set_size_request(int(gtk.gdk.screen_width() / 4), -1)
+        self.searchentry.set_text(_("Article name"))
+        self.searchentry.select_region(0, -1)
+        self.searchentry.connect('activate', self._search_activate_cb)
+        search_box.pack_start(self.searchentry)
+        search_box.show_all()
+
+        self.searchbutton = gtk.Button(label=_('Search'))
+        self.searchbutton.connect('clicked', self._search_clicked_cb)
+        search_box.pack_start(self.searchbutton, False)
 
         wiki_widget = Reading_View()
         wiki = gtk.Notebook()
@@ -88,32 +100,43 @@ class View(gtk.EventBox):
         wiki.append_page(wiki_stub)
         wiki.append_page(wiki_widget)
 
+        self.progress = gtk.Label()
+        #self.progress.set_size_request(-1, style.SMALL_ICON_SIZE+4)
+        #progress_box = gtk.HBox()
+        #progress_box.pack_start(gtk.HSeparator(), False)
+        #progress_box.pack_start(self.progress, False)
+
+        wiki_box = gtk.VBox()
+        wiki_box.pack_start(search_box, False)
+        wiki_box.pack_start(wiki)
+        wiki_box.pack_start(self.progress, False)
+        wiki_box.set_size_request(gtk.gdk.screen_width()/4*3,
+                gtk.gdk.screen_height()/2)
+
         custom_widget = Reading_View()
         custom = gtk.Notebook()
         custom.props.show_border = False
         custom.props.show_tabs = False
         custom.append_page(custom_stub)
         custom.append_page(custom_widget)
-        custom.set_size_request(gtk.gdk.screen_width()/4*3/2, -1)
+        custom.set_size_request(gtk.gdk.screen_width()/4*3,
+                gtk.gdk.screen_height()/2)
 
         # workspace
 
-        articles = gtk.HBox()
-        articles.pack_start(wiki)
-        articles.pack_start(gtk.VSeparator(), False)
-        articles.pack_start(custom, False)
+        articles_box = gtk.HBox()
+        articles_box.pack_start(self.wiki)
+        articles_box.pack_start(gtk.VSeparator(), False)
+        articles_box.pack_start(wiki_box, False)
 
-        self.progress = gtk.Label()
-        self.progress.set_size_request(-1, style.SMALL_ICON_SIZE+4)
-        progress_box = gtk.VBox()
-        progress_box.pack_start(articles)
-        progress_box.pack_start(gtk.HSeparator(), False)
-        progress_box.pack_start(self.progress, False)
+        custom_box = gtk.HBox()
+        custom_box.pack_start(self.custom)
+        custom_box.pack_start(gtk.VSeparator(), False)
+        custom_box.pack_start(custom, False)
 
-        workspace = gtk.HBox()
-        workspace.pack_start(books, False)
-        workspace.pack_start(gtk.VSeparator(), False)
-        workspace.pack_start(progress_box)
+        workspace = gtk.VBox()
+        workspace.pack_start(articles_box, False)
+        workspace.pack_start(custom_box, False)
         workspace.show_all()
 
         self.add(workspace)
@@ -129,12 +152,12 @@ class View(gtk.EventBox):
         book.custom.connect('article-deleted', self._article_deleted_cb,
                 [custom, wiki])
 
-        self.activity.set_edit_sensitive(False)
-
         self._article_selected_cb(book.wiki, book.wiki.article,
                 wiki_widget, [wiki, custom])
         self._article_selected_cb(book.custom, book.custom.article,
                 custom_widget, [custom, wiki])
+
+        self.connect('map', self._map_cb)
 
     def _article_selected_cb(self, abook, article, article_widget, notebooks):
         if not article:
@@ -156,51 +179,6 @@ class View(gtk.EventBox):
             notebooks[0].set_current_page(0)
             self.activity.set_edit_sensitive(False)
 
-class Toolbar(gtk.Toolbar):
-    def __init__(self, library):
-        gtk.Toolbar.__init__(self)
-        self.library = library
-        self.activity = library.activity
-
-        self.wikimenu = ToolComboBox(label_text=_('Get article from:'))
-        for i in sorted(WIKI.keys()):
-            self.wikimenu.combo.append_item(WIKI[i], i)
-        self.wikimenu.combo.set_active(0)
-        self.insert(self.wikimenu, -1)
-        self.wikimenu.show()
-
-        self.searchentry = gtk.Entry()
-        self.searchentry.set_size_request(int(gtk.gdk.screen_width() / 4), -1)
-        self.searchentry.set_text(_("Article name"))
-        self.searchentry.select_region(0, -1)
-        self.searchentry.connect('activate', self._search_activate_cb)
-        searchentry_item = ToolWidget(self.searchentry)
-        self.insert(searchentry_item, -1)
-        searchentry_item.show()
-
-        self.searchbutton = ToolButton('white-search',
-                tooltip=_('Find article'))
-        self.searchbutton.connect('clicked', self._search_clicked_cb)
-        self.insert(self.searchbutton, -1)
-        self.searchbutton.show()
-
-        separator = gtk.SeparatorToolItem()
-        self.insert(separator, -1)
-        separator.show()
-
-        publish = ToolButton('filesave', tooltip=_('Publish selected articles'))
-        publish.connect("clicked", self._publish_clicked_cb)
-        self.insert(publish, -1)
-        publish.show()
-
-        self.connect('map', self._map_cb)
-
-    def _publish_clicked_cb(self, widget):
-        xol.publish(self.activity)
-
-    def _map_cb(self, widget):
-        self.searchentry.grab_focus()
-
     def _search_activate_cb(self, widget):
         self.searchbutton.emit("clicked")
 
@@ -219,11 +197,29 @@ class Toolbar(gtk.Toolbar):
             Timer(0, self._download, [title, wiki]).start()
 
     def _download(self, title, wiki):
-        net.download_wiki_article(title, wiki, self.library.progress)
+        net.download_wiki_article(title, wiki, self.progress)
         Timer(10, self._clear_progress).start()
 
     def _clear_progress(self):
-        self.library.progress.set_label('')
+        self.progress.set_label('')
+
+    def _map_cb(self, widget):
+        self.searchentry.grab_focus()
+
+
+class ToolbarBuilder():
+    def __init__(self, library, toolbar):
+        self.library = library
+        self.activity = library.activity
+
+        self.publish = ToolButton('filesave',
+                tooltip=_('Publish selected articles'))
+        self.publish.connect("clicked", self._publish_clicked_cb)
+        toolbar.insert(self.publish, -1)
+
+
+    def _publish_clicked_cb(self, widget):
+        xol.publish(self.activity)
 
 WIKI = { _("English Wikipedia")         : "en.wikipedia.org", 
          _("Simple English Wikipedia")  : "simple.wikipedia.org", 
