@@ -17,6 +17,7 @@ import logging
 from threading import Timer
 from datetime import datetime
 from gettext import gettext as _
+import locale
 
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
@@ -74,11 +75,18 @@ class View(gtk.EventBox):
                 _('button on the left "Custom" panel'))
 
         # articles viewers
+        lang_code = locale.getdefaultlocale()[0] or 'en_US'
+        wiki_prefix = lang_code[0:2] + '.'
+        language_order = 0
+        order = 0
         search_box = gtk.HBox()
         self.wikimenu = ToolComboBox(label_text=_('Get article from:'))
         for i in sorted(WIKI.keys()):
             self.wikimenu.combo.append_item(WIKI[i], i)
-        self.wikimenu.combo.set_active(0)
+            if WIKI[i].startswith(wiki_prefix):
+                language_order = order
+            order = order + 1
+        self.wikimenu.combo.set_active(language_order)
         search_box.pack_start(self.wikimenu, False)
 
         self.searchentry = gtk.Entry()
