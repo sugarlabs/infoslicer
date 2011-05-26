@@ -6,6 +6,8 @@ import logging
 
 import net
 
+import re
+
 logger = logging.getLogger('infoslicer')
 
 """
@@ -187,12 +189,17 @@ class MediaWiki_Helper:
         urllib._urlopener = NewURLopener()
         logger.debug("opening " + path)
         logger.debug("proxies: " + str(self.proxies))
-        doc = urllib.urlopen(path, proxies=self.proxies)
+        pathencoded = self.urlEncodeNonAscii(path)
+        logger.debug("pathencoded " + pathencoded)
+        doc = urllib.urlopen(pathencoded, proxies=self.proxies)
         output = doc.read()
         doc.close()
         logger.debug("url opened successfully")
         return output
     
+    def urlEncodeNonAscii(self, b):
+        return re.sub('[\x80-\xFF]', lambda c: '%%%02x' % ord(c.group(0)), b)
+
     def stripTags(self, input, tag):
         """removes specified tag
     
