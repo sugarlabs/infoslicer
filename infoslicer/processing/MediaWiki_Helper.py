@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (C) IBM Corporation 2008
 
 import urllib
