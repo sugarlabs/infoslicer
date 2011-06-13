@@ -2,254 +2,304 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-02 06:08+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-04-24 11:04+0000\n"
+"PO-Revision-Date: 2010-07-04 12:17+0200\n"
+"Last-Translator: Yannis <kiolalis@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "Πληροφοριοκόπτης"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:54
-msgid "Articles are ready to be published"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:84
-msgid "Create"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:85
-msgid "Create new article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:95
-msgid "Delete"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:96
-msgid "Delete current article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:103
-msgid "Move downward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:104
-msgid "Move article downward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:108
-msgid "Move upward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:109
-msgid "Move article upward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:171
-msgid "New article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:38
-msgid "Nothing to publish"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:55
-msgid "Overwrite existed bundle?"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:56
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:57
-msgid "Library"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:58
-msgid "Edit"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:60
+#: /home/walter/Desktop/infoslicer-activity/edit.py:60
 msgid "Text"
-msgstr ""
+msgstr "Κείμενο"
 
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:65
+#: /home/walter/Desktop/infoslicer-activity/edit.py:65
 msgid "Images"
-msgstr ""
+msgstr "Εικόνες"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:220
-msgid "Giraffe"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki"
-msgstr ""
+msgstr "Εν τάχει"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+# Το "Γουίκι" δε μεταφράζεται, δυστυχώς!
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki articles"
-msgstr ""
+msgstr "Άρθρα «εν τάχει»"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom"
-msgstr ""
+msgstr "Προσαρμογή"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom articles"
-msgstr ""
+msgstr "Προσαρμοσμένα άρθρα"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:76
+#: /home/walter/Desktop/infoslicer-activity/library.py:76
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"Για να κάνετε λήψη άρθρων «εν τάχει»\n"
+"πληκτρολογήστε «όνομα άρθρου»\n"
+"και κάντε κλικ"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:77
+#: /home/walter/Desktop/infoslicer-activity/library.py:77
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "πλήκτρο στο επάνω μέρος του πίνακα \"Βιβλιοθήκη\""
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:79
+#: /home/walter/Desktop/infoslicer-activity/library.py:79
 msgid "To create custom article click"
-msgstr ""
+msgstr "Για να δημιουργήσετε προσαρμοσμένο άρθρο κάντε κλικ"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:80
+#: /home/walter/Desktop/infoslicer-activity/library.py:80
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "πλήκτρο στ' αριστερά του πίνακα \"Προσαρμογή\""
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:165
+#: /home/walter/Desktop/infoslicer-activity/library.py:165
 msgid "Get article from:"
-msgstr ""
+msgstr "Λήψη άρθρου από:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:174
+#: /home/walter/Desktop/infoslicer-activity/library.py:174
 msgid "Article name"
-msgstr ""
+msgstr "Όνομα άρθρου"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:182
+#: /home/walter/Desktop/infoslicer-activity/library.py:182
 msgid "Find article"
-msgstr ""
+msgstr "Εύρεση άρθρου"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:191
+#: /home/walter/Desktop/infoslicer-activity/library.py:191
 msgid "Publish selected articles"
-msgstr ""
+msgstr "Δημοσίευση επιλεγμένων άρθρων"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:216
+#: /home/walter/Desktop/infoslicer-activity/library.py:216
 msgid "Exists"
-msgstr ""
+msgstr "Υπάρχει"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:217
+#: /home/walter/Desktop/infoslicer-activity/library.py:217
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "Το άρθρο «%s» υπάρχει ήδη"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:228
+#: /home/walter/Desktop/infoslicer-activity/library.py:228
 msgid "English Wikipedia"
-msgstr ""
+msgstr "Αγγλική Βικιπαίδεια"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:229
+#: /home/walter/Desktop/infoslicer-activity/library.py:229
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "Απλή Αγγλική Βικιπαίδεια"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:230
+#: /home/walter/Desktop/infoslicer-activity/library.py:230
 msgid "German Wikipedia"
-msgstr ""
+msgstr "Γερμανική Βικιπαίδεια"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:63
+#: /home/walter/Desktop/infoslicer-activity/library.py:231
+msgid "Spanish Wikipedia"
+msgstr "Ισπανική Βικιπαίδεια"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:232
+msgid "French Wikipedia"
+msgstr "Γαλλική Βικιπαίδεια"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "Τα άρθρα είναι έτοιμα προς δημοσίευση"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
+msgid "Create new article"
+msgstr "Δημιουργία νέου άρθρου"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
+msgid "Delete current article"
+msgstr "Διαγραφή τρέχοντος άρθρου"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
+msgid "Move article downward"
+msgstr "Μετακίνηση άρθρου προς τα κάτω"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
+msgid "Move article upward"
+msgstr "Μετακίνηση άρθρου προς τα πάνω"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
+msgid "New article"
+msgstr "Νέο άρθρο"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:54
+msgid "Library"
+msgstr "Βιβλιοθήκη"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:55
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "Η λήψη του «%s» είναι σε εξέλιξη..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Επεξεργασία του «%s»..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Λήψη εικόνων του «%s»..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (από το %s)"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "Το «%s» λήφθηκε με επιτυχία"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "Το «%s» δεν ήταν δυνατόν να βρεθεί"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Σφάλμα λήψης του «%s». Ελέγξτε τη σύνδεσή σας"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Λιοντάρι (από el.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Τίγρης (από el.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Καμηλοπάρδαλη (από el.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Ζέβρα (από el.wikipedia.org)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:220
+msgid "Giraffe"
+msgstr "Καμηλοπάρδαλη"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:38
+msgid "Nothing to publish"
+msgstr "Δεν υπάρχει τίποτε προς δημοσίευση"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Επιλέξτε άρθρα από τον πίνακα \"Προσαρμογή\" και ξαναπροσπαθήστε."
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:60
+msgid "Bundle exists"
+msgstr "Η δέσμη υπάρχει"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "Η δέσμη με το όνομα \"%s\" υπάρχει ήδη. Παρακαλώ "
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "Αντικατάσταση υπάρχουσας δέσμης;"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "Μια δέσμη για το τρέχον αντικείμενο έχει ήδη δημιουργηθεί. "
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
 msgid "Snap selection to:"
-msgstr ""
+msgstr "Πάρε την επιλογή στο:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:64
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
 msgid "Nothing"
-msgstr ""
+msgstr "Τίποτα"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:65
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
 msgid "Sentences"
-msgstr ""
+msgstr "Προτάσεις"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:66
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
 msgid "Paragraphs"
-msgstr ""
+msgstr "Παράγραφοι"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:67
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
 msgid "Sections"
-msgstr ""
+msgstr "Τμήματα"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:96
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:104
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:56
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:87
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "Άρθρο:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:77
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "Αυτό το άρθρο δεν περιέχει εικόνες"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:80
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε ένα άρθρο της Βικιπαίδεια από το παραπάνω μενού"
+
+#~ msgid "Create"
+#~ msgstr "Δημιουργία"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Move downward"
+#~ msgstr "Μετακίνηση προς τα κάτω"
+
+#~ msgid "Move upward"
+#~ msgstr "Μετακίνηση προς τα πάνω"

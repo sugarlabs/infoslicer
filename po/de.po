@@ -2,245 +2,252 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-20 00:31-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-06-08 18:55+0200\n"
+"PO-Revision-Date: 2011-05-09 19:45+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "InfoSlicer"
 
-#: activity.py:54
-msgid "Library"
-msgstr ""
+#~ msgid "Text"
+#~ msgstr "Text"
 
-#: activity.py:55
-msgid "Edit"
-msgstr ""
+#~ msgid "Images"
+#~ msgstr "Bilder"
 
-#: book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr ""
+#~ msgid "Wiki"
+#~ msgstr "Wiki"
 
-#: book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
+#~ msgid "Wiki articles"
+#~ msgstr "Wiki-Artikel"
 
-#: book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
+#~ msgid "Custom"
+#~ msgstr "Benutzerdefiniert"
 
-#: book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
+#~ msgid "Custom articles"
+#~ msgstr "benutzerdefinierte Artikel"
 
-#: book.py:220
-msgid "Giraffe"
-msgstr ""
+#~ msgid ""
+#~ "To download Wiki article\n"
+#~ "type \"Article name\" and click"
+#~ msgstr ""
+#~ "Um einen Wiki-Artikel herunterzuladen, einfach den \"Artikelnamen\" eintippen "
+#~ "und klicken."
 
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr ""
+#~ msgid "button on the top \"Library\" panel"
+#~ msgstr "Knopf auf dem oberen \"Library\" panel"
 
-#: bookview.py:84
-msgid "Create new article"
-msgstr ""
+#~ msgid "To create custom article click"
+#~ msgstr "Um einen eigenen Artikel zu verfassen hier klicken."
 
-#: bookview.py:95
-msgid "Delete current article"
-msgstr ""
+#~ msgid "button on the left \"Custom\" panel"
+#~ msgstr "Schaltfläche auf dem linken \"Custom\" Panel"
 
-#: bookview.py:103
-msgid "Move article downward"
-msgstr ""
+#~ msgid "Get article from:"
+#~ msgstr "Artikel erhalten von:"
 
-#: bookview.py:108
-msgid "Move article upward"
-msgstr ""
+#~ msgid "Article name"
+#~ msgstr "Artikelname"
 
-#: bookview.py:170
-msgid "New article"
-msgstr ""
+#~ msgid "Find article"
+#~ msgstr "Artikel finden"
 
-#: edit.py:60
-msgid "Text"
-msgstr ""
+#~ msgid "Publish selected articles"
+#~ msgstr "Ausgewählte Artikel veröffentlichen"
 
-#: edit.py:65
-msgid "Images"
-msgstr ""
+#~ msgid "Exists"
+#~ msgstr "vorhanden"
 
-#: infoslicer/widgets/Edit_Pane.py:63
-msgid "Snap selection to:"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:64
-msgid "Nothing"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:65
-msgid "Sentences"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:66
-msgid "Paragraphs"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:67
-msgid "Sections"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:96 infoslicer/widgets/Edit_Pane.py:104
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr ""
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr ""
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
-
-#: library.py:52
-msgid "Wiki"
-msgstr ""
-
-#: library.py:52
-msgid "Wiki articles"
-msgstr ""
-
-#: library.py:55
-msgid "Custom"
-msgstr ""
-
-#: library.py:55
-msgid "Custom articles"
-msgstr ""
-
-#: library.py:76
-msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-
-#: library.py:77
-msgid "button on the top \"Library\" panel"
-msgstr ""
-
-#: library.py:79
-msgid "To create custom article click"
-msgstr ""
-
-#: library.py:80
-msgid "button on the left \"Custom\" panel"
-msgstr ""
-
-#: library.py:165
-msgid "Get article from:"
-msgstr ""
-
-#: library.py:174
-msgid "Article name"
-msgstr ""
-
-#: library.py:182
-msgid "Find article"
-msgstr ""
-
-#: library.py:191
-msgid "Publish selected articles"
-msgstr ""
-
-#: library.py:216
-msgid "Exists"
-msgstr ""
-
-#: library.py:217
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr ""
+#~ msgid "\"%s\" article already exists"
+#~ msgstr "\"%s\" Artikel bereits vorhanden"
 
-#: library.py:228
-msgid "English Wikipedia"
-msgstr ""
+#~ msgid "English Wikipedia"
+#~ msgstr "Englische Wikipedia"
 
-#: library.py:229
-msgid "Simple English Wikipedia"
-msgstr ""
+#~ msgid "Simple English Wikipedia"
+#~ msgstr "Einfaches Englisch Wikipedia"
 
-#: library.py:230
-msgid "German Wikipedia"
-msgstr ""
+#~ msgid "German Wikipedia"
+#~ msgstr "Deutsche Wikipedia"
 
-#: net.py:37
+#~ msgid "Spanish Wikipedia"
+#~ msgstr "Spanische Wikipedia"
+
+#~ msgid "French Wikipedia"
+#~ msgstr "Französische Wikipedia"
+
+#~ msgid "Articles are ready to be published"
+#~ msgstr "Die Artikel sind bereit um veröffentlicht zu werden."
+
+#~ msgid "Create new article"
+#~ msgstr "Neuen Artikel erstellen"
+
+#~ msgid "Delete current article"
+#~ msgstr "Aktuellen Artikel löschen"
+
+#~ msgid "Move article downward"
+#~ msgstr "Artikel nach unten schieben"
+
+#~ msgid "Move article upward"
+#~ msgstr "Artikel nach oben schieben"
+
+#~ msgid "New article"
+#~ msgstr "Neuer Artikel"
+
+#~ msgid "Library"
+#~ msgstr "Bibliothek"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"
+
 #, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
+#~ msgid "\"%s\" download in progress..."
+#~ msgstr "\"%s\" wird heruntergeladen.."
 
-#: net.py:40
 #, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
+#~ msgid "Processing \"%s\"..."
+#~ msgstr "\"%s\" wird bearbeitet..."
 
-#: net.py:44
 #, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
+#~ msgid "Downloading \"%s\" images..."
+#~ msgstr "Lade \"%s\" Bilder herunter"
 
-#: net.py:45
 #, python-format
-msgid " (from %s)"
-msgstr ""
+#~ msgid " (from %s)"
+#~ msgstr " (von %s)"
 
-#: net.py:47
 #, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
+#~ msgid "\"%s\" successfully downloaded"
+#~ msgstr "\"%s\" erfolgreich heruntergeladen"
 
-#: net.py:51
 #, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
+#~ msgid "\"%s\" could not be found"
+#~ msgstr "\"%s\" konnte nicht gefunden werden"
 
-#: net.py:55
 #, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
+#~ msgid "Error downloading \"%s\"; check your connection"
+#~ msgstr "Fehler beim herunterladen von \"%s\"; bitte Verbindung prüfen"
 
-#: xol.py:38
-msgid "Nothing to publish"
-msgstr ""
+#~ msgid "Lion (from en.wikipedia.org)"
+#~ msgstr "Lion (von en.wikipedia.org)"
 
-#: xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
+#~ msgid "Tiger (from en.wikipedia.org)"
+#~ msgstr "Tiger (von en.wikipedia.org)"
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr ""
+#~ msgid "Giraffe (from en.wikipedia.org)"
+#~ msgstr "Giraffe (von en.wikipedia.org)"
 
-#: xol.py:61
+#~ msgid "Zebra (from en.wikipedia.org)"
+#~ msgstr "Zebra (von en.wikipedia.org)"
+
+#~ msgid "Giraffe"
+#~ msgstr "Giraffe"
+
+#~ msgid "Nothing to publish"
+#~ msgstr "Nichts zu veröffentlichen."
+
+#~ msgid "Mark arcticles from \"Custom\" panel and try again."
+#~ msgstr ""
+#~ "Markiere die Artikel in den \"Einstellungen\" und versuche es noch einmal."
+
+#~ msgid "Bundle exists"
+#~ msgstr "Das Paket existiert."
+
 #, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Ein Paket mit dem Namen \"%s\" existiert bereits. Bitte "
 
-#: xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr ""
+#~ msgid "Overwrite existed bundle?"
+#~ msgstr "Vorhandenes Paket überschreiben?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr ""
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Ein Paket für die aktuellen Objekte wurde bereits erstellt. "
+
+#~ msgid "Snap selection to:"
+#~ msgstr "Schnipse Auswahl zu:"
+
+#~ msgid "Nothing"
+#~ msgstr "Nichts"
+
+#~ msgid "Sentences"
+#~ msgstr "Sätze"
+
+#~ msgid "Paragraphs"
+#~ msgstr "Absätze"
+
+#~ msgid "Sections"
+#~ msgstr "Bereiche"
+
+#~ msgid "Article:"
+#~ msgstr "Artikel:"
+
+#~ msgid "This article does not have any images"
+#~ msgstr "Der Artikel hat keine Bilder"
+
+#~ msgid "Please select a Wikipedia article from the menu above"
+#~ msgstr "Bitte wählen Sie einen Wikipediaartikel aus dem oberen Menü aus"

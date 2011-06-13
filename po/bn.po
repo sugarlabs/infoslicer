@@ -2,254 +2,304 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Loba Yeasmeen <loba@ankur.org.bd>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: honey VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-02 06:08+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2010-04-24 11:04+0000\n"
+"PO-Revision-Date: 2010-03-29 03:18+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "InfoSlicer"
 
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:54
-msgid "Articles are ready to be published"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:84
-msgid "Create"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:85
-msgid "Create new article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:95
-msgid "Delete"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:96
-msgid "Delete current article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:103
-msgid "Move downward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:104
-msgid "Move article downward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:108
-msgid "Move upward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:109
-msgid "Move article upward"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/bookview.py:171
-msgid "New article"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:38
-msgid "Nothing to publish"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:55
-msgid "Overwrite existed bundle?"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/xol.py:56
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:57
-msgid "Library"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/activity.py:58
-msgid "Edit"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:60
+#: /home/walter/Desktop/infoslicer-activity/edit.py:60
 msgid "Text"
-msgstr ""
+msgstr "টেক্সট"
 
-#: /home/sugar/src/activities/infoslicer.guifix/edit.py:65
+#: /home/walter/Desktop/infoslicer-activity/edit.py:65
 msgid "Images"
-msgstr ""
+msgstr "চিত্র"
 
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/book.py:220
-msgid "Giraffe"
-msgstr ""
-
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki"
-msgstr ""
+msgstr "উইকি"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:52
+#: /home/walter/Desktop/infoslicer-activity/library.py:52
 msgid "Wiki articles"
-msgstr ""
+msgstr "উইকির রচনা"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom"
-msgstr ""
+msgstr "পছন্দসই"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:55
+#: /home/walter/Desktop/infoslicer-activity/library.py:55
 msgid "Custom articles"
-msgstr ""
+msgstr "পছন্দসই রচনা"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:76
+#: /home/walter/Desktop/infoslicer-activity/library.py:76
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"উইকির রচনা ডাউনলোড করার জন্য\n"
+"\"রচনার নাম\" লেখ এবং ক্লিক করো"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:77
+#: /home/walter/Desktop/infoslicer-activity/library.py:77
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "উপরের \"লাইব্রেরী\" প্যানেলের বোতাম"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:79
+#: /home/walter/Desktop/infoslicer-activity/library.py:79
 msgid "To create custom article click"
-msgstr ""
+msgstr "নিজের পছন্দসই রচনা তৈরি করার জন্য ক্লিক করো"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:80
+#: /home/walter/Desktop/infoslicer-activity/library.py:80
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "বাম \"পছন্দসই\" প্যানেলের বোতাম"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:165
+#: /home/walter/Desktop/infoslicer-activity/library.py:165
 msgid "Get article from:"
-msgstr ""
+msgstr "যেখাণ থেকে রচনা পাওয়া যাবে:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:174
+#: /home/walter/Desktop/infoslicer-activity/library.py:174
 msgid "Article name"
-msgstr ""
+msgstr "রচনার নাম"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:182
+#: /home/walter/Desktop/infoslicer-activity/library.py:182
 msgid "Find article"
-msgstr ""
+msgstr "রচনা খোঁজো"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:191
+#: /home/walter/Desktop/infoslicer-activity/library.py:191
 msgid "Publish selected articles"
-msgstr ""
+msgstr "নির্বাচিত রচনা প্রকাশ করো"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:216
+#: /home/walter/Desktop/infoslicer-activity/library.py:216
 msgid "Exists"
-msgstr ""
+msgstr "উপস্থিত রয়েছে"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:217
+#: /home/walter/Desktop/infoslicer-activity/library.py:217
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "\"%s\" ইতোমধ্যেই উপস্থিত রচনা"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:228
+#: /home/walter/Desktop/infoslicer-activity/library.py:228
 msgid "English Wikipedia"
-msgstr ""
+msgstr "ইংরেজী উইকিপিডিয়া"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:229
+#: /home/walter/Desktop/infoslicer-activity/library.py:229
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "সহজ ইংরেজী উইকিপিডিয়া"
 
-#: /home/sugar/src/activities/infoslicer.guifix/library.py:230
+#: /home/walter/Desktop/infoslicer-activity/library.py:230
 msgid "German Wikipedia"
+msgstr "জার্মান উইকিপিডিয়া"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#, fuzzy
+msgid "Spanish Wikipedia"
+msgstr "ইংরেজী উইকিপিডিয়া"
+
+#: /home/walter/Desktop/infoslicer-activity/library.py:232
+msgid "French Wikipedia"
 msgstr ""
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:63
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "রচনা প্রকাশ করার জন্য প্রস্তুত"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
+msgid "Create new article"
+msgstr "নতুন রচনা তৈরি করো"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
+msgid "Delete current article"
+msgstr "বর্তমান রচনাটি মুছে ফেলো"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
+msgid "Move article downward"
+msgstr "রচনাটি নিচের দিকে সরাও"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
+msgid "Move article upward"
+msgstr "রচনাটি উপরের দিকে সরাও"
+
+#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
+msgid "New article"
+msgstr "নতুন রচনা"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:54
+msgid "Library"
+msgstr "লাইব্রেরী"
+
+#: /home/walter/Desktop/infoslicer-activity/activity.py:55
+msgid "Edit"
+msgstr "সম্পাদনা করো"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" ডাউনলোডের অগ্রগতি হচ্ছে..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "প্রসেস করছে \"%s\"..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "\"%s\" চিত্র ডাউনলোড করছে..."
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (%s থেকে)"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" সফলভাবে ডাউনলোড হয়েছে"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" খুঁজে পাওয়া যায়নি"
+
+#: /home/walter/Desktop/infoslicer-activity/net.py:55
+#, python-format
+#, fuzzy
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "\"%s\" ডাউনলোড করার সময় ত্রুটি; তোমার নেটওয়ার্ক সংযোগ পরীক্ষা করো"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:210
+msgid "Lion (from en.wikipedia.org)"
+msgstr "সিংহ (en.wikipedia.org থেকে)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:211
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "বাঘ (en.wikipedia.org থেকে)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:212
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "জিরাফ (en.wikipedia.org থেকে)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:213
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "জেব্রা (en.wikipedia.org থেকে)"
+
+#: /home/walter/Desktop/infoslicer-activity/book.py:220
+msgid "Giraffe"
+msgstr "জিরাফ"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:38
+msgid "Nothing to publish"
+msgstr "প্রকাশনার জন্য কিছু নেই"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "\"পছন্দসই\" প্যানেল থেকে রচনাটি চিহ্নিত করো এবং আবার চেষ্টা করো।"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:60
+msgid "Bundle exists"
+msgstr ""
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr ""
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "বিদ্যমান সমষ্টির উপরিলেখ করতে চাও?"
+
+#: /home/walter/Desktop/infoslicer-activity/xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "বর্তমান বস্তুর সমষ্টি ইতোমধ্যেই তৈরি করা হয়েছে। "
+
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
 msgid "Snap selection to:"
-msgstr ""
+msgstr "বেছে নেয়া অংশ য়ার সাথে জুড়ে দেয়া হবে:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:64
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
 msgid "Nothing"
-msgstr ""
+msgstr "কিছুই নয়"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:65
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
 msgid "Sentences"
-msgstr ""
+msgstr "বাক্য"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:66
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
 msgid "Paragraphs"
-msgstr ""
+msgstr "অনুচ্ছেদ"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:67
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
 msgid "Sections"
-msgstr ""
+msgstr "অংশ"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:96
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Edit_Pane.py:104
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:56
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:87
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "রচনা:"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:77
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "এই রচনাটির কোনো চিত্র নেই"
 
-#: /home/sugar/src/activities/infoslicer.guifix/infoslicer/widgets/Image_Pane.py:80
+#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "উপরের মেনু থেকে একটি উইকিপিডিয়া রচনা নির্বাচন করো"
+
+#~ msgid "Create"
+#~ msgstr "তৈরি করো"
+
+#~ msgid "Delete"
+#~ msgstr "মুছে ফেলো"
+
+#~ msgid "Move downward"
+#~ msgstr "নিচের দিকে সরাও"
+
+#~ msgid "Move upward"
+#~ msgstr "উপরের দিকে সরাও"
