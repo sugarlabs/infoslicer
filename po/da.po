@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 11:04+0000\n"
-"PO-Revision-Date: 2011-04-08 06:25+0200\n"
-"Last-Translator: Aputsiaq <aj@isit.gl>\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-08-07 17:51+0200\n"
+"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: da\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,31 +21,116 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "InfoSkærer"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" nedlastning er i gang..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Behandler \"%s\"..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Henter \"%s\" billeder..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (fra %s)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" blev hentet med succes"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" blev ikke fundet"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "Intet at publicere"
+
+# puncspacing checked
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Markér artikler fra \"Brugerdefineret\"-panel og forsøg igen."
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "Bundt eksisterer"
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "Et bundt med navnet \"%s\" eksisterer allerede. Venligst "
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "Overskriv eksisterende bundt?"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "Der er allerede oprettet et bundt for nuværende objekt. "
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "Artikler er klar til at blive publiceret"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "Opret ny artikel"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "Slet nuværende artikel"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "Flyt artikel ned"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "Flyt artikel op"
+
+#: bookview.py:169
+msgid "New article"
+msgstr "Ny artikel"
+
+#: edit.py:58
 msgid "Text"
 msgstr "Tekst"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+#: edit.py:63
 msgid "Images"
 msgstr "Billeder"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki"
 msgstr "Wiki"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki articles"
 msgstr "Wiki-artikler"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom"
 msgstr "Brugerdefineret"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom articles"
 msgstr "Brugerdefinerede artikler"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:76
+#: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -54,210 +139,126 @@ msgstr ""
 "så tast \"Artikelnavn\" og klik"
 
 # puncspacing checked
-#: /home/walter/Desktop/infoslicer-activity/library.py:77
+#: library.py:72
 msgid "button on the top \"Library\" panel"
 msgstr "knappen i toppen af \"Bibliotek\"-panel"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:79
+#: library.py:74
 msgid "To create custom article click"
 msgstr "For at oprette en brugerdefineret artikel, så klik"
 
 # puncspacing  checked
-#: /home/walter/Desktop/infoslicer-activity/library.py:80
+#: library.py:75
 msgid "button on the left \"Custom\" panel"
 msgstr "knappen på venstre \"Brugerdefineret\"-panel"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:165
+#: library.py:83
 msgid "Get article from:"
 msgstr "Hent artikel fra:"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:174
+#: library.py:94
 msgid "Article name"
 msgstr "Artikelnavn"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:182
-msgid "Find article"
-msgstr "Find artikel"
+#: library.py:100
+msgid "Search"
+msgstr "Søg"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:191
-msgid "Publish selected articles"
-msgstr "Publicér markerede artikler"
-
-#: /home/walter/Desktop/infoslicer-activity/library.py:216
+#: library.py:202
 msgid "Exists"
 msgstr "Eksisterer"
 
 # puncspacing checked
-#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\"-artikel eksisterer allerede"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:228
+#: library.py:224
+msgid "Publish selected articles"
+msgstr "Publicér markerede artikler"
+
+#: library.py:232
 msgid "English Wikipedia"
 msgstr "Engelsk Wikipedia"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:229
+#: library.py:233
 msgid "Simple English Wikipedia"
 msgstr "Simpel Engelsk Wikipedia"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:230
+#: library.py:234
 msgid "German Wikipedia"
 msgstr "Tysk Wikipedia"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#: library.py:235
 msgid "Spanish Wikipedia"
 msgstr "Spansk Wikipedia"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:232
+#: library.py:236
 msgid "French Wikipedia"
 msgstr "Fransk Wikipedia"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Artikler er klar til at blive publiceret"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
-msgid "Create new article"
-msgstr "Opret ny artikel"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
-msgid "Delete current article"
-msgstr "Slet nuværende artikel"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
-msgid "Move article downward"
-msgstr "Flyt artikel ned"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
-msgid "Move article upward"
-msgstr "Flyt artikel op"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
-msgid "New article"
-msgstr "Ny artikel"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:54
-msgid "Library"
-msgstr "Bibliotek"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:55
-msgid "Edit"
-msgstr "Redigér"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" nedlastning er i gang..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Behandler \"%s\"..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Henter \"%s\" billeder..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (fra %s)"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" blev hentet med succes"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" blev ikke fundet"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:210
+#: book.py:213
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Løve (fra en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:211
+#: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tiger (fra en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:212
+#: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Giraf (fra en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:213
+#: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Zebra (fra en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:220
+#: book.py:223
 msgid "Giraffe"
 msgstr "Giraf"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:38
-msgid "Nothing to publish"
-msgstr "Intet at publicere"
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "Bibliotek"
 
-# puncspacing checked
-#: /home/walter/Desktop/infoslicer-activity/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Markér artikler fra \"Brugerdefineret\"-panel og forsøg igen."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "Redigér"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:60
-msgid "Bundle exists"
-msgstr "Bundt eksisterer"
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Et bundt med navnet \"%s\" eksisterer allerede. Venligst "
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "Overskriv eksisterende bundt?"
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Der er allerede oprettet et bundt for nuværende objekt. "
-
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+#: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
 msgstr "Snup markering til:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+#: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
 msgstr "Ingenting"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
 msgstr "Sætninger"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
 msgstr "Paragrafer"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
 msgstr "Sektioner"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
 msgstr "Artikel:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
 msgstr "Denne artikel har ingen billeder"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "Vælg venligst en Wikipedia-artikel fra menuen ovenfor"
+
+#~ msgid "Find article"
+#~ msgstr "Find artikel"
