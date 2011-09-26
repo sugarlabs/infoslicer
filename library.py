@@ -220,7 +220,7 @@ class ToolbarBuilder():
         self.library = library
         self.activity = library.activity
 
-        self.publish = ToolButton('filesave',
+        self.publish = ToolButton('export-to-journal',
                 tooltip=_('Publish selected articles'))
         self.publish.connect("clicked", self._publish_clicked_cb)
         toolbar.insert(self.publish, -1)
