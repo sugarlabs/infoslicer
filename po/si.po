@@ -34,47 +34,131 @@ msgid ""
 msgstr ""
 "Project-Id-Version: olpc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 11:04+0000\n"
-"PO-Revision-Date: 2011-02-11 07:28+0200\n"
-"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-09-28 08:28+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: sinhala <LL@li.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Sinhalese\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" බාගතකරමින් පවතින..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "සැකසෙමින් \"%s\"..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "රූප බාගතකරමින් \"%s\" ..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (ගෙන් %s)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" සාර්ථකලෙස බාගතවිය"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" සොයාගත නොහැක"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "බාගතවීම දෝෂසහිතයි \"%s\"; ඔබේ සබඳතාව පරීක්ෂාකරන්න"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "ප්‍රසිද්ධ කිරීමට කිසිවක් නැත"
+
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "ලිපියේ සලකුණු කරන්න \"Custom\" panel and try again."
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr ""
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr ""
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "තිබෙන කට්ටලය මත ලියනවාද?"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr ""
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "ලිපිය ප්‍රසිද්ධ කිරීමට සූදානම්"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "නව ලිපියක් සාදනවා"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "දැනට ඇති ලිපිය මකනවා"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "ලිපිය පහලට ගමන්කරනවා"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "ලිපිය ඉහලට ගමන්කරනවා"
+
+#: bookview.py:169
+msgid "New article"
+msgstr "නව ලිපිය"
+
+#: edit.py:58
 msgid "Text"
 msgstr "අකුරු"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+#: edit.py:63
 msgid "Images"
 msgstr "රූප"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki"
 msgstr "විකි"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki articles"
 msgstr "විකියේ ලිපි"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom"
 msgstr "රිසිසේ සැකසීම"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom articles"
 msgstr "ලිපි රිසිසේ සැකසීම"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:76
+#: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -82,210 +166,127 @@ msgstr ""
 "විකි ලිපි බාගතකිරීමට\n"
 "type \"Article name\" and click"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:77
+#: library.py:72
 msgid "button on the top \"Library\" panel"
 msgstr ""
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:79
+#: library.py:74
 msgid "To create custom article click"
-msgstr " "
+msgstr ""
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:80
+#: library.py:75
 msgid "button on the left \"Custom\" panel"
 msgstr "button on the left \"Custom\" panel"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:165
+#: library.py:83
 msgid "Get article from:"
 msgstr "ලිපිය ලබාගත්තේ:"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:174
+#: library.py:94
 msgid "Article name"
 msgstr "ලිපියේ නම"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:182
-msgid "Find article"
-msgstr "ලිපිය සොයාගැනීම"
+#: library.py:100
+msgid "Search"
+msgstr ""
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:191
-msgid "Publish selected articles"
-msgstr "තෝරාගත් ලිපි ප්‍රසිද්ධකිරීම"
-
-#: /home/walter/Desktop/infoslicer-activity/library.py:216
+#: library.py:202
 msgid "Exists"
 msgstr "තිබෙනවා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" ලිපිය දැනුත් තිබෙනවා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:228
+#: library.py:224
+msgid "Publish selected articles"
+msgstr "තෝරාගත් ලිපි ප්‍රසිද්ධකිරීම"
+
+#: library.py:232
 msgid "English Wikipedia"
 msgstr "ඉංග්‍රීසි විකීපීඩියා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:229
+#: library.py:233
 msgid "Simple English Wikipedia"
 msgstr "සරල ඉංග්‍රීසි විකීපීඩියා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:230
+#: library.py:234
 msgid "German Wikipedia"
 msgstr "ජර්මන් විකීපීඩියා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#: library.py:235
 msgid "Spanish Wikipedia"
 msgstr "ස්පාඤ්ඤ විකීපීඩියා"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:232
+#: library.py:236
 msgid "French Wikipedia"
 msgstr ""
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "ලිපිය ප්‍රසිද්ධ කිරීමට සූදානම්"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
-msgid "Create new article"
-msgstr "නව ලිපියක් සාදනවා"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
-msgid "Delete current article"
-msgstr "දැනට ඇති ලිපිය මකනවා "
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
-msgid "Move article downward"
-msgstr "ලිපිය පහලට ගමන්කරනවා"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
-msgid "Move article upward"
-msgstr "ලිපිය ඉහලට ගමන්කරනවා"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
-msgid "New article"
-msgstr "නව ලිපිය"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:54
-msgid "Library"
-msgstr "පුස්තකාල"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:55
-msgid "Edit"
-msgstr "සකස්කරනවා"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" බාගතකරමින් පවතින..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "සැකසෙමින් \"%s\"..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr " රූප බාගතකරමින් \"%s\" ..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (ගෙන් %s)"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" සාර්ථකලෙස බාගතවිය"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" සොයාගත නොහැක"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "බාගතවීම දෝෂසහිතයි \"%s\"; ඔබේ සබඳතාව පරීක්ෂාකරන්න"
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:210
+#: book.py:213
 msgid "Lion (from en.wikipedia.org)"
 msgstr "සිංහයා (ගෙන් en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:211
+#: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "කොටියා (ගෙන් en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:212
+#: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "ජිරාෆ් (ගෙන් en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:213
+#: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "සීබ්‍රා (ගෙන් en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:220
+#: book.py:223
 msgid "Giraffe"
 msgstr "ජිරාෆ්"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:38
-msgid "Nothing to publish"
-msgstr "ප්‍රසිද්ධ කිරීමට කිසිවක් නැත"
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "පුස්තකාල"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "ලිපියේ සලකුණු කරන්න \"Custom\" panel and try again."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "සකස්කරනවා"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "තිබෙන කට්ටලය මත ලියනවාද?"
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+#: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
 msgstr "හදිසියෙන් තෝරාගැනීමට"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+#: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
 msgstr "කිසිවක් නැත"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
 msgstr "වාක්‍ය"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
 msgstr "ඡේද"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
 msgstr "කොටස්"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
 msgstr "ලිපිය"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
 msgstr "මෙම ලිපියේ කිසිම රූපයක් නොමැත"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "කරුණාකර ඉහත මෙනුවෙන් විකීපීඩියා ලිපිය තෝරන්න"
+
+#~ msgid "Find article"
+#~ msgstr "ලිපිය සොයාගැනීම"
 
 #~ msgid "Create"
 #~ msgstr "සාදනවා"
