@@ -34,46 +34,131 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 11:04+0000\n"
-"PO-Revision-Date: 2010-08-03 23:23+0200\n"
-"Last-Translator: தங்கமணி <thangam.arunx@gmail.com>\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-07-31 04:36+0200\n"
+"Last-Translator: Thangamani <thangam.arunx@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ta\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "தகவல் தருவோன்"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" பதிவிறக்கம் நடைபெறுகிறது..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "\"%s\"செயல் படுத்தப் படுகின்றது..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "\"%s\" படம் பதிவிறக்கம் ..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (இலிருந்து %s)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" வெற்றிகரமாக பதிவிறக்கப்பட்டுள்ளது"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\"கண்டு பிடிக்கப் முடியவில்லை"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "பதிவிறக்கத்தில் பிழைகளுள்ளன \"%s\"; உங்கள் இணைப்பை சரி பாருங்ஙள்"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "பிரசுரிப்பதற்கு விடயங்கள் எதுவுமில்லை"
+
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr ""
+"\"வழமை\" தட்டில் இருந்து மீண்டும் விடயம் ஒன்றை ஆரம்பிக்க முயற்சி செய்யவும்"
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "ஏற்கனவே உள்ளதை கட்டு"
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "கட்டானது ஏற்கனவே %s பெயரால் உள்ளது. தயவு செய்து. "
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "ஏற்கனவே உள்ள கட்டினை அழித்து விட்டு அதன் மேலிடு"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "ஏற்கனவே தற்போதய குறிக் கோளுக்காக ஒரு கட்டு உருவாக்கப்பட்டுள்ளது "
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "விடயங்கள் பிரசுரிப்பதற்கு ஆயத்தமாக உள்ளன"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "புதிய கட்டுரையை உருவாக்கு"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "தற்போதய கட்டுரையை அழி"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "கீழ் நோக்கி கட்டுரையை அசை"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "மேல் நோக்கி கட்டுரையை அசை"
+
+#: bookview.py:169
+msgid "New article"
+msgstr "புதிய கட்டுரை"
+
+#: edit.py:58
 msgid "Text"
 msgstr "உரை"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+#: edit.py:63
 msgid "Images"
 msgstr "படங்கள்"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki"
 msgstr "விக்கி(Wiki)"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki articles"
 msgstr "விக்கி(Wiki) கட்டுரைகள்"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom"
 msgstr "வழமை"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom articles"
 msgstr "வழமையான கட்டுரைகள்"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:76
+#: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -81,211 +166,127 @@ msgstr ""
 "விக்கி(Wiki) கட்டுரைகள்  \n"
 "   பதிவிறக்கத்திற்கு \" விடயப் பெயர்\" ஐ உள்ளீடு செய்து சொடுக்கு"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:77
+#: library.py:72
 msgid "button on the top \"Library\" panel"
 msgstr "\"நூலகம்\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:79
+#: library.py:74
 msgid "To create custom article click"
 msgstr "வழமையான கட்டுரைகளை உருவாக்குவதற்கு சொடுக்கு"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:80
+#: library.py:75
 msgid "button on the left \"Custom\" panel"
 msgstr "இடது \"வழமை\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:165
+#: library.py:83
 msgid "Get article from:"
 msgstr "கட்டுரைகளை இங்கிருந்து பெறு"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:174
+#: library.py:94
 msgid "Article name"
 msgstr "கட்டுரைகளின் தலைப்பு"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:182
-msgid "Find article"
-msgstr "கட்டுரைகளை கண்டுபிடி"
+#: library.py:100
+msgid "Search"
+msgstr "தேடு"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:191
-msgid "Publish selected articles"
-msgstr "தெரிவு செய்த கட்டுரைகளை பிரசுரி"
-
-#: /home/walter/Desktop/infoslicer-activity/library.py:216
+#: library.py:202
 msgid "Exists"
 msgstr "ஏற்கனவே உள்ளன"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" மான கட்டுரைகளை  ஏற்கனவே உள்ளன"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:228
+#: library.py:224
+msgid "Publish selected articles"
+msgstr "தெரிவு செய்த கட்டுரைகளை பிரசுரி"
+
+#: library.py:232
 msgid "English Wikipedia"
 msgstr "ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:229
+#: library.py:233
 msgid "Simple English Wikipedia"
 msgstr "எளிய ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:230
+#: library.py:234
 msgid "German Wikipedia"
 msgstr "ஜெர்மனிய விக்கிபீடியா- கலைக் களஞ்சியம்"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#: library.py:235
 msgid "Spanish Wikipedia"
 msgstr "ஸ்பேனிஷ் விக்கிபீடியா- கலைக் களஞ்சியம் (Spanish Wikipedia)"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:232
+#: library.py:236
 msgid "French Wikipedia"
 msgstr "பிரெஞ்சு விக்கிபீடியா-கலைக் களஞ்சியம்"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "விடயங்கள் பிரசுரிப்பதற்கு ஆயத்தமாக உள்ளன"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
-msgid "Create new article"
-msgstr "புதிய கட்டுரையை உருவாக்கு"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
-msgid "Delete current article"
-msgstr "தற்போதய கட்டுரையை அழி"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
-msgid "Move article downward"
-msgstr "கீழ் நோக்கி கட்டுரையை அசை"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
-msgid "Move article upward"
-msgstr "மேல் நோக்கி கட்டுரையை அசை"
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
-msgid "New article"
-msgstr "புதிய கட்டுரை"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:54
-msgid "Library"
-msgstr "நூலகம்"
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:55
-msgid "Edit"
-msgstr "திருத்தம்"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" பதிவிறக்கம் நடைபெறுகிறது..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "\"%s\"செயல் படுத்தப் படுகின்றது..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "\"%s\" படம் பதிவிறக்கம் ..."
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr "(இலிருந்து %s)"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" வெற்றிகரமாக பதிவிறக்கப்பட்டுள்ளது"
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\"கண்டு பிடிக்கப் முடியவில்லை "
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "பதிவிறக்கத்தில் பிழைகளுள்ளன \"%s\"; உங்கள் இணைப்பை சரி பாருங்ஙள்"
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:210
+#: book.py:213
 msgid "Lion (from en.wikipedia.org)"
 msgstr "சிங்கம் (en.wikipedia.org இலிருந்து)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:211
+#: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "புலி (en.wikipedia.org இலிருந்து)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:212
+#: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "ஒட்டகச் சிவிங்கி (en.wikipedia.org இலிருந்து)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:213
+#: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "வரிக்குதிரை (en.wikipedia.org இலிருந்து)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:220
+#: book.py:223
 msgid "Giraffe"
-msgstr "ஒட்டகச் சிவிங்கி "
+msgstr "ஒட்டகச் சிவிங்கி"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:38
-msgid "Nothing to publish"
-msgstr "பிரசுரிப்பதற்கு விடயங்கள் எதுவுமில்லை"
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "நூலகம்"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
-"\"வழமை\" தட்டில் இருந்து மீண்டும் விடயம் ஒன்றை ஆரம்பிக்க முயற்சி செய்யவும்"
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "திருத்தம்"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:60
-msgid "Bundle exists"
-msgstr "ஏற்கனவே உள்ளதை கட்டு"
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "கட்டானது ஏற்கனவே %s பெயரால் உள்ளது. தயவு செய்து. "
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "ஏற்கனவே உள்ள கட்டினை அழித்து விட்டு அதன் மேலிடு"
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "ஏற்கனவே தற்போதய குறிக் கோளுக்காக ஒரு கட்டு உருவாக்கப்பட்டுள்ளது"
-
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+#: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
 msgstr "தெரிவு செய்ததைக் கொண்டு போ:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+#: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
 msgstr "ஒன்றுமில்லை"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
 msgstr "வசனங்கள்"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
 msgstr "பந்திகள்"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
 msgstr "பகுதிகள்"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
 msgstr "கட்டுரை"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
 msgstr "இந்தக் கட்டுரையில் எந்த படங்களும் இல்லை"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "மேலுள்ள பட்டியலிலிருந்து விக்கிபீடியா கட்டுரையை தெரிவு செய்"
+
+#~ msgid "Find article"
+#~ msgstr "கட்டுரைகளை கண்டுபிடி"
 
 #~ msgid "Create"
 #~ msgstr "உருவாக்கு"
