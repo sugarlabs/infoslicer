@@ -26,16 +26,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 15:55-0300\n"
-"PO-Revision-Date: 2011-07-29 19:41+0200\n"
-"Last-Translator:  <anush.mkrtchyan@ca1492.com>\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-12-22 14:49+0200\n"
+"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
@@ -64,7 +64,7 @@ msgstr " ( %s- ից )"
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" հաջողակ բեռնված է"
+msgstr "\"%s\" բեռնումը կատարվեց հաջողությամբ"
 
 #: net.py:51
 #, python-format
@@ -82,7 +82,7 @@ msgstr "Հրապարակելու ոչինչ չկա"
 
 #: xol.py:39
 msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Նշեք հոդվածները \"Custom\" վահանակից, եւ փորձեք կրկին"
+msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
 
 #: xol.py:60
 msgid "Bundle exists"
@@ -95,7 +95,7 @@ msgstr "\"%s\" անվանմամբ փաթեթ արդեն գոյություն ո�
 
 #: xol.py:68
 msgid "Overwrite existed bundle?"
-msgstr "Գոյություն ունեցող փաթեթի վրայով գրե՞լ"
+msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթը"
 
 #: xol.py:69
 msgid "A bundle for current object was already created. "
@@ -103,7 +103,7 @@ msgstr "Ընթացիկ առարկայի համար փաթեթ արդեն ստե�
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
-msgstr "Հոդվածները պաատրաստ են հրատարակմանը"
+msgstr "Հոդվածները պատրաստ են հրատարակման"
 
 #: bookview.py:84
 msgid "Create new article"
@@ -155,19 +155,19 @@ msgid ""
 "type \"Article name\" and click"
 msgstr ""
 "Վիկի հոդված բեռնելու համար \n"
-"տպել \"Հոդվածի վերնագիրը\" և քլիք"
+"տպել \"Հոդվածի վերնագիրը\" և սեղմել"
 
 #: library.py:72
 msgid "button on the top \"Library\" panel"
-msgstr "սեղմակը \"Գրադարան\" պանելի վերևում"
+msgstr "\"Գրադարան\" վահանակի վերին մասի կոճակը"
 
 #: library.py:74
 msgid "To create custom article click"
-msgstr "Հարմարեցրած հոդված ստեղծելու համար քլիք"
+msgstr "Հարմարեցրած հոդված ստեղծելու համար` սեղմել"
 
 #: library.py:75
 msgid "button on the left \"Custom\" panel"
-msgstr "սեղմակը \"Հարմարեցնել\" պանելի ձախում"
+msgstr "\"Հարմարեցնել\" վահանակի ձախ մասի կոճակը"
 
 #: library.py:83
 msgid "Get article from:"
