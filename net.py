@@ -82,7 +82,9 @@ def image_handler(root, uid, document):
             image_title = path.rsplit("/", 1)[-1]
             # attempt to fix incomplete paths
             if (not path.startswith("http://")) and document.source != None and document.source.has_key("href"):
-                if path.startswith("/"):
+                if path.startswith("//upload"):
+                    path = 'http:' + path
+                elif path.startswith("/"):
                     path = document.source['href'].rsplit("/", 1)[0] + path
                 else:
                     path = document.source['href'].rsplit("/", 1)[0] + "/" + path
