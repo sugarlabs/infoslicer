@@ -35,19 +35,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2011-08-23 17:11+0200\n"
+"PO-Revision-Date: 2012-03-11 15:53+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "program InfoSlicer"
 
 #: net.py:37
 #, python-format
@@ -57,22 +57,22 @@ msgstr "\"%s\" กำลังดาวน์โหลด..."
 #: net.py:40
 #, python-format
 msgid "Processing \"%s\"..."
-msgstr ""
+msgstr "process \"%s\" กำลังประมวลผล..."
 
 #: net.py:44
 #, python-format
 msgid "Downloading \"%s\" images..."
-msgstr ""
+msgstr "กำลังดาวน์โหลดภาพ \"%s\"..."
 
 #: net.py:45
 #, python-format
 msgid " (from %s)"
-msgstr ""
+msgstr " จาก %s"
 
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr ""
+msgstr "ดาวน์โหลด %s สำเร็จ"
 
 #: net.py:51
 #, python-format
@@ -82,56 +82,56 @@ msgstr "ไม่พบ \"%s\""
 #: net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
+msgstr "การดาวน์โหลด  %s ไม่สำเร็จ ; ตรวจสอบการเชื่อมต่อ"
 
 #: xol.py:38
 msgid "Nothing to publish"
-msgstr ""
+msgstr "ไม่มีอะไรที่จะเผยแพร่"
 
 #: xol.py:39
 msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
+msgstr "ทำเครื่องหมายจาก \"Custom\" แล้วลองอีกครั้ง"
 
 #: xol.py:60
 msgid "Bundle exists"
-msgstr ""
+msgstr "มี Bundle อยู่"
 
 #: xol.py:61
 #, python-format
 msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
+msgstr "มี Bundle ชื่อ %s อยู่แล้ว. ขอความกรุณา "
 
 #: xol.py:68
 msgid "Overwrite existed bundle?"
-msgstr ""
+msgstr "เขียนทับ bundle ที่มีอยู่หรือไม่"
 
 #: xol.py:69
 msgid "A bundle for current object was already created. "
-msgstr ""
+msgstr "ณ ขณะนี้ วัตถุ bundle ได้ถูกสร้างขึ้นแล้ว "
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
-msgstr ""
+msgstr "บทความพร้อมที่จะถูกเผยแพร่"
 
 #: bookview.py:84
 msgid "Create new article"
-msgstr ""
+msgstr "สร้างบทความใหม่"
 
 #: bookview.py:95
 msgid "Delete current article"
-msgstr ""
+msgstr "ลบบทความปัจจุบัน"
 
 #: bookview.py:103
 msgid "Move article downward"
-msgstr ""
+msgstr "ย้ายบทความลง"
 
 #: bookview.py:108
 msgid "Move article upward"
-msgstr ""
+msgstr "ย้ายบทความขึ้น"
 
 #: bookview.py:169
 msgid "New article"
-msgstr ""
+msgstr "บทความใหม่"
 
 #: edit.py:58
 msgid "Text"
@@ -142,46 +142,49 @@ msgid "Images"
 msgstr "ภาพต่าง ๆ"
 
 #: library.py:49
+#, fuzzy
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: library.py:49
 msgid "Wiki articles"
-msgstr ""
+msgstr "บทความของ Wiki"
 
 #: library.py:51
 msgid "Custom"
-msgstr "กำหนดเอง"
+msgstr "ที่กำหนดเอง"
 
 #: library.py:51
 msgid "Custom articles"
-msgstr ""
+msgstr "บทความที่กำหนดเอง"
 
 #: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"เมื่อต้องการดาวน์โหลดบทความของ Wiki\n"
+"ประเภท \"ชื่อบทความ\"และคลิก"
 
 #: library.py:72
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "ปุ่มที่อยู่บนแผง \"ห้องสมุด\""
 
 #: library.py:74
 msgid "To create custom article click"
-msgstr ""
+msgstr "เมื่อต้องการสร้างการคลิกของบทความที่กำหนดเอง"
 
 #: library.py:75
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "ปุ่มที่อยู่ใต้แผง \"ที่กำหนดเอง\""
 
 #: library.py:83
 msgid "Get article from:"
-msgstr ""
+msgstr "ได้รับบทความมาจาก:"
 
 #: library.py:94
 msgid "Article name"
-msgstr ""
+msgstr "ชื่อบทความ"
 
 #: library.py:100
 msgid "Search"
@@ -189,60 +192,60 @@ msgstr "ค้นหา"
 
 #: library.py:202
 msgid "Exists"
-msgstr ""
+msgstr "ที่มีอยู่"
 
 #: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "มีบทความ %s อยู่แล้ว"
 
 #: library.py:224
 msgid "Publish selected articles"
-msgstr ""
+msgstr "เผยแพร่บทความที่ถูกเลือก"
 
 #: library.py:232
 msgid "English Wikipedia"
-msgstr ""
+msgstr "วิกิพีเดียภาษาอังกฤษ"
 
 #: library.py:233
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "ตัวอย่างวิกิพีเดียภาษาอังกฤษ"
 
 #: library.py:234
 msgid "German Wikipedia"
-msgstr ""
+msgstr "วิกิพีเดียภาษาเยอรมัน"
 
 #: library.py:235
 msgid "Spanish Wikipedia"
-msgstr ""
+msgstr "วิกิพีเดียภาษาสเปน"
 
 #: library.py:236
 msgid "French Wikipedia"
-msgstr ""
+msgstr "วิกิพีเดียภาษาฝรั่งเศส"
 
 #: book.py:213
 msgid "Lion (from en.wikipedia.org)"
-msgstr ""
+msgstr "สิงโต(จาก en.wikipedia.org )"
 
 #: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
+msgstr "เสือ(จาก en.wikipedia.org)"
 
 #: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
+msgstr "ยีราฟ(จาก en.wikipedia.org)"
 
 #: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
+msgstr "ม้าลาย(จาก en.wikipedia.org)"
 
 #: book.py:223
 msgid "Giraffe"
-msgstr ""
+msgstr "ยีราฟ"
 
 #: activity.py:70 activity.py:85
 msgid "Library"
-msgstr ""
+msgstr "ห้องสมุด"
 
 #: activity.py:71 activity.py:93
 msgid "Edit"
@@ -250,15 +253,15 @@ msgstr "แก้ไข"
 
 #: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
-msgstr ""
+msgstr "คัดลอกไปยัง:"
 
 #: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
-msgstr ""
+msgstr "ไม่มีอะไร"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
-msgstr ""
+msgstr "ประโยค"
 
 #: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
@@ -272,12 +275,12 @@ msgstr "หัวข้อต่าง ๆ"
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
 #: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "บทความ:"
 
 #: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "บทความนี้เป็นบทความที่ไม่มีรูปภาพ"
 
 #: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "กรุณาเลือกบทความวิกิพีเดียจากเมนูข้างบน"
