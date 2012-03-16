@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2012-03-15 05:21+0200\n"
+"PO-Revision-Date: 2012-03-16 08:08+0200\n"
 "Last-Translator: Meechai <malaku38@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: th\n"
@@ -99,7 +99,7 @@ msgstr "รวมชุดอยู่"
 #: xol.py:61
 #, python-format
 msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "รวมชุดโดย \"%s\" ชื่อมีอยู่แล้ว. กรุณา "
+msgstr "รวมชุดโดย \"%s\" ชื่อมีอยู่แล้ว กรุณา "
 
 #: xol.py:68
 msgid "Overwrite existed bundle?"
