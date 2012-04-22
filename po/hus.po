@@ -2,254 +2,258 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 15:55-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-08-29 03:07+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "InfoSlicer"
 
 #: net.py:37
 #, python-format
 msgid "\"%s\" download in progress..."
-msgstr ""
+msgstr "Ka pa'ba' ti \"%s\" in áy..."
 
 #: net.py:40
 #, python-format
 msgid "Processing \"%s\"..."
-msgstr ""
+msgstr "Álim ts'ejkom \"%s\"..."
 
 #: net.py:44
 #, python-format
 msgid "Downloading \"%s\" images..."
-msgstr ""
+msgstr "In pa'bál an t'iplab ti \"%s\"..."
 
 #: net.py:45
 #, python-format
 msgid " (from %s)"
-msgstr ""
+msgstr " (ti %s)"
 
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr ""
+msgstr "\"%s\" putun ti pa'íl léj alwa'"
 
 #: net.py:51
 #, python-format
 msgid "\"%s\" could not be found"
-msgstr ""
+msgstr "\"%s\" ibáj ejtidh ka ela'"
 
 #: net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
+msgstr "Uk'pin kin pa'ba' \"%s\"; ka met'a' in ts'ajlíl ts'ot'k'oxtaláb"
 
 #: xol.py:38
 msgid "Nothing to publish"
-msgstr ""
+msgstr "Xant'oj jawa' kin ona'"
 
 #: xol.py:39
 msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
+msgstr "Ka takuy an kaw ti metnib \"Kwetemk'ej\" ani ka ts'ab t'aja'."
 
 #: xol.py:60
 msgid "Bundle exists"
-msgstr ""
+msgstr "T'i'él xi wa'tsits"
 
 #: xol.py:61
 #, python-format
 msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
+msgstr "Juni t'i'él tin bij \"%s\" nix wa'tsis. K'ali alwa'taláb "
 
 #: xol.py:68
 msgid "Overwrite existed bundle?"
-msgstr ""
+msgstr "¿Ka tsabdhucha' ti t'iél xi k'wajtits?"
 
 #: xol.py:69
 msgid "A bundle for current object was already created. "
-msgstr ""
+msgstr "Juni t'i'él abal ax'é xi eyextaláb k'wajat ts'ejkadhits. "
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
-msgstr ""
+msgstr "An dhuchlab alwa'its abal ka kaldháj"
 
 #: bookview.py:84
 msgid "Create new article"
-msgstr ""
+msgstr "Ka ts'ejka' juni ít dhuchlab"
 
 #: bookview.py:95
 msgid "Delete current article"
-msgstr ""
+msgstr "Ka pakuw an dhuchlab xi eynal"
 
 #: bookview.py:103
 msgid "Move article downward"
-msgstr ""
+msgstr "Ka wat'ba' an dhuchlab abal alál"
 
 #: bookview.py:108
 msgid "Move article upward"
-msgstr ""
+msgstr "Ka wat'ba' an dhuchlab abal ebal"
 
 #: bookview.py:169
 msgid "New article"
-msgstr ""
+msgstr "Ít dhuchlab"
 
 #: edit.py:58
 msgid "Text"
-msgstr ""
+msgstr "Dhuchlab"
 
 #: edit.py:63
 msgid "Images"
-msgstr ""
+msgstr "T'iplabchik"
 
 #: library.py:49
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: library.py:49
 msgid "Wiki articles"
-msgstr ""
+msgstr "An dhuchlab xi ti wiki"
 
 #: library.py:51
 msgid "Custom"
-msgstr ""
+msgstr "Kwetemk'ej"
 
 #: library.py:51
 msgid "Custom articles"
-msgstr ""
+msgstr "Dhuchlab kwetembedhach"
 
 #: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"Abal ka pa'ba' an dhuchlab ti Wiki\n"
+"ka dhucha' \"In bij an dhuchlab\" ani ka t'ajchij klik"
 
 #: library.py:72
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "ni'ab ti ok'nom mét'nib \"Dháykol dhuchlab\""
 
 #: library.py:74
 msgid "To create custom article click"
-msgstr ""
+msgstr "Abal ka ts'ejka' juni dhuchlab kwetemk'ej ka t'aja' klik ti"
 
 #: library.py:75
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "ni'ab ti ok'nom met'nib \"Kwetemk'ej\" xi k'watab"
 
 #: library.py:83
 msgid "Get article from:"
-msgstr ""
+msgstr "Ka bats'uw an dhuchlab xi:"
 
 #: library.py:94
 msgid "Article name"
-msgstr ""
+msgstr "In bij an dhuchlab"
 
 #: library.py:100
 msgid "Search"
-msgstr ""
+msgstr "Aliy"
 
 #: library.py:202
 msgid "Exists"
-msgstr ""
+msgstr "Wa'tsits"
 
 #: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "An dhuchlab \"%s\" wa'tsits"
 
 #: library.py:224
 msgid "Publish selected articles"
-msgstr ""
+msgstr "Ka tejwa'medha' an dhuchlab xi tákudh"
 
 #: library.py:232
 msgid "English Wikipedia"
-msgstr ""
+msgstr "Wikimedia ti Inglés"
 
 #: library.py:233
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "Wikipedia ti Inglés yab k'ibat"
 
 #: library.py:234
 msgid "German Wikipedia"
-msgstr ""
+msgstr "Wikipedia ti Alemán"
 
 #: library.py:235
 msgid "Spanish Wikipedia"
-msgstr ""
+msgstr "Wikipedia ti Labkáw"
 
 #: library.py:236
 msgid "French Wikipedia"
-msgstr ""
+msgstr "Wikipedia ti Francés"
 
 #: book.py:213
 msgid "Lion (from en.wikipedia.org)"
-msgstr ""
+msgstr "Tsój (pel ti.wikipedia.org)"
 
 #: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
+msgstr "Padhum (pel ti.wikipedia.org)"
 
 #: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
+msgstr "Nakatnuk' (pel ti.wikipedia.org)"
 
 #: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
+msgstr "Kilmadh ch'uri' (pel ti.wikipedia.org)"
 
 #: book.py:223
 msgid "Giraffe"
-msgstr ""
+msgstr "Nakatnuk'"
 
 #: activity.py:70 activity.py:85
 msgid "Library"
-msgstr ""
+msgstr "Dhaykom dhuchlab"
 
 #: activity.py:71 activity.py:93
 msgid "Edit"
-msgstr ""
+msgstr "Jalk'uy"
 
 #: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
-msgstr ""
+msgstr "T'ojojoy/bolidh an takuxtaláb ti:"
 
 #: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
-msgstr ""
+msgstr "Yab janto'j"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
-msgstr ""
+msgstr "Putudhtsalap"
 
 #: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
-msgstr ""
+msgstr "Kwneldhuchlab"
 
 #: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
-msgstr ""
+msgstr "Pejechik"
 
 #: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
 #: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "Dhuchlab:"
 
 #: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "Axi dhuchlab ibáj in kwa'al i t'iplab"
 
 #: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
 msgstr ""
+"T'ajchij an alwa'talab abal ka takuy an dhuchlab ti Wikipedia ti ál an "
+"k'elab xi ebál"

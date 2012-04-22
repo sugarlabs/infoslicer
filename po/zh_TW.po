@@ -34,252 +34,255 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 11:04+0000\n"
-"PO-Revision-Date: 2009-08-02 05:48-0400\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-08-10 00:29+0200\n"
 "Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: zh_TW\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "資訊片段"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" 正在下載中..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "處理 \"%s\" 中..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "下載 \"%s\" 圖片中..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (來自 %s)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" 已成功下載"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" 找不到"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "下載 \"%s\" 時發生錯誤; 請檢查您的連線狀態"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "無文章可發布"
+
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "請由\"自訂\"面板標記文章後，再試一遍。"
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "包裹已存在"
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "名為 \"%s\" 的包裹已存在，請 "
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "覆蓋已存在的包裹？"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "由目前物件所構成的包裹已存在。"
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "文章已準備完成可以發佈"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "新增文章"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "删除目前文章"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "文章下移"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "文章上移"
+
+#: bookview.py:169
+msgid "New article"
+msgstr "新文章"
+
+#: edit.py:58
 msgid "Text"
-msgstr ""
+msgstr "文字"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+#: edit.py:63
 msgid "Images"
-msgstr ""
+msgstr "圖片"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki"
-msgstr ""
+msgstr "維基"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki articles"
-msgstr ""
+msgstr "維基文章"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom"
-msgstr ""
+msgstr "自訂"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom articles"
-msgstr ""
+msgstr "自訂文章"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:76
+#: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"下載維基文章\n"
+"請輸入\"文章名稱\""
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:77
+#: library.py:72
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "點選上方\"文庫\"面板的按鈕"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:79
+#: library.py:74
 msgid "To create custom article click"
-msgstr ""
+msgstr "建立自訂文章"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:80
+#: library.py:75
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "請點選左方\"自訂\"面板的按鈕"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:165
+#: library.py:83
 msgid "Get article from:"
-msgstr ""
+msgstr "取得文章自:"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:174
+#: library.py:94
 msgid "Article name"
-msgstr ""
+msgstr "文章名稱"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:182
-msgid "Find article"
-msgstr ""
+#: library.py:100
+msgid "Search"
+msgstr "搜尋"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:191
-msgid "Publish selected articles"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/library.py:216
+#: library.py:202
 msgid "Exists"
-msgstr ""
+msgstr "已存在"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "\"%s\" 文章已存在"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:228
+#: library.py:224
+msgid "Publish selected articles"
+msgstr "發佈選擇的文章"
+
+#: library.py:232
 msgid "English Wikipedia"
-msgstr ""
+msgstr "英文維基百科"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:229
+#: library.py:233
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "簡易英文維基百科"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:230
+#: library.py:234
 msgid "German Wikipedia"
-msgstr ""
+msgstr "德文維基百科"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#: library.py:235
 msgid "Spanish Wikipedia"
-msgstr ""
+msgstr "西班牙文維基百科"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:232
+#: library.py:236
 msgid "French Wikipedia"
-msgstr ""
+msgstr "法文維基百科"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
-msgid "Articles are ready to be published"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
-msgid "Create new article"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
-msgid "Delete current article"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
-msgid "Move article downward"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
-msgid "Move article upward"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
-msgid "New article"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:54
-msgid "Library"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:55
-msgid "Edit"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:210
+#: book.py:213
 msgid "Lion (from en.wikipedia.org)"
-msgstr ""
+msgstr "Lion (來自 en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:211
+#: book.py:214
 msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
+msgstr "Tiger (來自 en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:212
+#: book.py:215
 msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
+msgstr "Giraffe (來自 en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:213
+#: book.py:216
 msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
+msgstr "Zebra (來自 en.wikipedia.org)"
 
-#: /home/walter/Desktop/infoslicer-activity/book.py:220
+#: book.py:223
 msgid "Giraffe"
-msgstr ""
+msgstr "長頸鹿"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:38
-msgid "Nothing to publish"
-msgstr ""
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "文庫"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "編輯"
 
-#: /home/walter/Desktop/infoslicer-activity/xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+#: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
-msgstr ""
+msgstr "快速選擇:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+#: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
-msgstr ""
+msgstr "無"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
-msgstr ""
+msgstr "文句"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
-msgstr ""
+msgstr "段落"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
-msgstr ""
+msgstr "小節"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "文章:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "此文章不含任何圖片"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "請自上方選單中選取維基百科文章"
+
+#~ msgid "Find article"
+#~ msgstr "尋找文章"

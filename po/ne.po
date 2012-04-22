@@ -34,11 +34,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 11:04+0000\n"
-"PO-Revision-Date: 2011-04-12 05:28+0200\n"
+"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"PO-Revision-Date: 2011-07-15 03:46+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ne\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,239 +47,242 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr ""
+msgstr "इन्फोस्लाइसर"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:60
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" डाउनलोड हुदैछ"
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "काम हुदैछ \"%s\"..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "डाउन्लोड हुदैछ \"%s\" images..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (%s बाट)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" डाउनलोड सफल भयो"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" भेटिएन"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "डाउनलोडमा त्रुटि आयो \"%s\", जडान हेर्नुहोस्"
+
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "छाप्नलाई केहि छैन"
+
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "\"कस्टम\" प्यानलबाट लेखमा निशान लगाएर पुन: प्रयाश गर्नुहोस्"
+
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "समुह छ"
+
+#: xol.py:61
+#, python-format
+msgid "A bundle by \"%s\" name already exists. Please "
+msgstr "\"%s\" नामको समुह पहिलेदेखि छ। क्रिपया "
+
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "रहिरहेको समुहमाथि लेख्ने?"
+
+#: xol.py:69
+msgid "A bundle for current object was already created. "
+msgstr "यो बस्तुलाई समुह पहिलेनै बनाईएको थियो "
+
+#: bookview.py:53
+msgid "Articles are ready to be published"
+msgstr "लेखहरु छापको लागि तयार छ"
+
+#: bookview.py:84
+msgid "Create new article"
+msgstr "नया लेख बनाऊ"
+
+#: bookview.py:95
+msgid "Delete current article"
+msgstr "यो लेख मेटाउ"
+
+#: bookview.py:103
+msgid "Move article downward"
+msgstr "लेख तल सार"
+
+#: bookview.py:108
+msgid "Move article upward"
+msgstr "लेख माथी सार"
+
+#: bookview.py:169
+msgid "New article"
+msgstr "नया लेख"
+
+#: edit.py:58
 msgid "Text"
 msgstr "पाठ"
 
-#: /home/walter/Desktop/infoslicer-activity/edit.py:65
+#: edit.py:63
 msgid "Images"
-msgstr ""
+msgstr "चित्र"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki"
-msgstr ""
+msgstr "विकि"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:52
+#: library.py:49
 msgid "Wiki articles"
-msgstr ""
+msgstr "विकि लेखहरु"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom"
-msgstr ""
+msgstr "कस्टम"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:55
+#: library.py:51
 msgid "Custom articles"
-msgstr ""
+msgstr "कस्टम लेख"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:76
+#: library.py:71
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"विकि लेखहरु डाउनलोड गर्नका\n"
+"लागि \"लेखको नाम\" टाइप गरेर क्लिक गर्नुहोस्"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:77
+#: library.py:72
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "बटन \"लाइब्रेरी\" पेनल को टुप्पोमा छ"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:79
+#: library.py:74
 msgid "To create custom article click"
-msgstr ""
+msgstr "कस्टम लेख लेख्नलाई क्लिक गर्नुहोस"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:80
+#: library.py:75
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "बटन बायाँ \"कस्टम\" प्यानलमा"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:165
+#: library.py:83
 msgid "Get article from:"
-msgstr ""
+msgstr "लेख एताबाट पाउ:"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:174
+#: library.py:94
 msgid "Article name"
-msgstr ""
+msgstr "लेखको नाम"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:182
-msgid "Find article"
-msgstr ""
+#: library.py:100
+msgid "Search"
+msgstr "खोज"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:191
-msgid "Publish selected articles"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/library.py:216
+#: library.py:202
 msgid "Exists"
-msgstr ""
+msgstr "छ"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:217
+#: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "\"%s\" लेखहरु पहिलेदेखि छ"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:228
+#: library.py:224
+msgid "Publish selected articles"
+msgstr "चुनिएको लेखहरु छाप"
+
+#: library.py:232
 msgid "English Wikipedia"
-msgstr ""
+msgstr "अङ्ग्रेजी विकीपीडिया"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:229
+#: library.py:233
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "सरल अङ्ग्रेजी विकीपीडिया"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:230
+#: library.py:234
 msgid "German Wikipedia"
-msgstr ""
+msgstr "जर्मन विकीपीडिया"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:231
+#: library.py:235
 msgid "Spanish Wikipedia"
-msgstr ""
+msgstr "स्पेनी विकीपीडिया"
 
-#: /home/walter/Desktop/infoslicer-activity/library.py:232
+#: library.py:236
 msgid "French Wikipedia"
-msgstr ""
+msgstr "फ्रान्सेली विकीपीडिया"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:53
-msgid "Articles are ready to be published"
-msgstr ""
+#: book.py:213
+msgid "Lion (from en.wikipedia.org)"
+msgstr "सिँह (en.wikipedia.org बाट)"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:84
-msgid "Create new article"
-msgstr ""
+#: book.py:214
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "बाघ (en.wikipedia.org बाट)"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:95
-msgid "Delete current article"
-msgstr ""
+#: book.py:215
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "जिराफ (en.wikipedia.org बाट)"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:103
-msgid "Move article downward"
-msgstr ""
+#: book.py:216
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "जेब्रा (en.wikipedia.org बाट)"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:108
-msgid "Move article upward"
-msgstr ""
+#: book.py:223
+msgid "Giraffe"
+msgstr "जिराफ"
 
-#: /home/walter/Desktop/infoslicer-activity/bookview.py:170
-msgid "New article"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/activity.py:54
+#: activity.py:70 activity.py:85
 msgid "Library"
-msgstr ""
+msgstr "पुस्तकालय"
 
-#: /home/walter/Desktop/infoslicer-activity/activity.py:55
+#: activity.py:71 activity.py:93
 msgid "Edit"
 msgstr "सम्पादन"
 
-#: /home/walter/Desktop/infoslicer-activity/net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:210
-msgid "Lion (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:211
-msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:212
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:213
-msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/book.py:220
-msgid "Giraffe"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:38
-msgid "Nothing to publish"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:63
+#: infoslicer/widgets/Edit_Pane.py:51
 msgid "Snap selection to:"
-msgstr ""
+msgstr "मा छानिएकोलाई स्न्याप गर:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:64
+#: infoslicer/widgets/Edit_Pane.py:52
 msgid "Nothing"
-msgstr ""
+msgstr "केहि न केहि"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:65
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Sentences"
-msgstr ""
+msgstr "वाक्यहरु"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:66
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Paragraphs"
-msgstr ""
+msgstr "अनुच्छेदहरु"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:67
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sections"
-msgstr ""
+msgstr "भाग"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:96
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Edit_Pane.py:104
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Format_Pane.py:52
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:56
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
 msgid "Article:"
-msgstr ""
+msgstr "लेख:"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr ""
+msgstr "यस लेखमा कुनै चित्र छैन"
 
-#: /home/walter/Desktop/infoslicer-activity/infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "क्रिपया मेनुबाट कुनै विकिपेडियाको लेख छान्नुहोस्"
+
+#~ msgid "Find article"
+#~ msgstr "लेख खोज"

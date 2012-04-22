@@ -38,7 +38,7 @@ msgstr ""
 "PO-Revision-Date: 2012-01-19 23:44+0200\n"
 "Last-Translator: FRKS <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: pl\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -98,7 +98,8 @@ msgid "Bundle exists"
 msgstr "Pakiet istnieje"
 
 #: xol.py:61
-#, python-format, 
+#, python-format
+#, python-format,
 msgid "A bundle by \"%s\" name already exists. Please "
 msgstr "Pakiet o nazwie \"%s\" już istnieje. Proszę "
 

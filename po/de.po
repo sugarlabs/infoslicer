@@ -59,15 +59,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2011-08-15 00:17+0200\n"
-"Last-Translator: Markus <m.slg@gmx.de>\n"
+"PO-Revision-Date: 2011-10-15 04:36+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: de\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
@@ -96,21 +96,21 @@ msgstr " (von %s)"
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" erfolgreich heruntergeladen."
+msgstr "\"%s\" erfolgreich heruntergeladen"
 
 #: net.py:51
 #, python-format
 msgid "\"%s\" could not be found"
-msgstr "\"%s\" konnte nicht gefunden werden."
+msgstr "\"%s\" konnte nicht gefunden werden"
 
 #: net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
-msgstr "Fehler beim Herunterladen von \"%s\"; überprüfe deine Verbindung."
+msgstr "Fehler beim Herunterladen von \"%s\"; überprüfe deine Verbindung"
 
 #: xol.py:38
 msgid "Nothing to publish"
-msgstr "Nichts zu veröffentlichen."
+msgstr "Nichts zu veröffentlichen"
 
 #: xol.py:39
 msgid "Mark arcticles from \"Custom\" panel and try again."
@@ -119,7 +119,7 @@ msgstr ""
 
 #: xol.py:60
 msgid "Bundle exists"
-msgstr "Das Paket existiert."
+msgstr "Das Paket existiert"
 
 #: xol.py:61
 #, python-format
@@ -136,7 +136,7 @@ msgstr "Ein Paket für die aktuellen Objekte wurde bereits erstellt. "
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
-msgstr "Die Artikel sind bereit zur Veröffentlichung."
+msgstr "Die Artikel sind bereit zur Veröffentlichung"
 
 #: bookview.py:84
 msgid "Create new article"
@@ -188,7 +188,7 @@ msgid ""
 "type \"Article name\" and click"
 msgstr ""
 "Um einen Wiki-Artikel herunterzuladen,\n"
-"tippe den \"Artikelnamen\" ein und klicke."
+"tippe den \"Artikelnamen\" ein und klicke"
 
 #: library.py:72
 msgid "button on the top \"Library\" panel"
@@ -196,7 +196,7 @@ msgstr "Knopf auf dem oberen \"Library\" panel"
 
 #: library.py:74
 msgid "To create custom article click"
-msgstr "Klicke hier, um einen eigenen Artikel zu verfassen."
+msgstr "Klicke hier, um einen eigenen Artikel zu verfassen"
 
 #: library.py:75
 msgid "button on the left \"Custom\" panel"
@@ -216,12 +216,12 @@ msgstr "Suchen"
 
 #: library.py:202
 msgid "Exists"
-msgstr "Existiert bereits."
+msgstr "Existiert bereits"
 
 #: library.py:203
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr "\"%s\" Artikel ist bereits vorhanden."
+msgstr "\"%s\" Artikel ist bereits vorhanden"
 
 #: library.py:224
 msgid "Publish selected articles"
@@ -303,11 +303,11 @@ msgstr "Artikel:"
 
 #: infoslicer/widgets/Image_Pane.py:77
 msgid "This article does not have any images"
-msgstr "Der Artikel enthält keine Bilder."
+msgstr "Der Artikel enthält keine Bilder"
 
 #: infoslicer/widgets/Image_Pane.py:80
 msgid "Please select a Wikipedia article from the menu above"
-msgstr "Wähle bitte einen Wikipediaartikel aus obigem Menü aus."
+msgstr "Wähle bitte einen Wikipediaartikel aus obigem Menü aus"
 
 #~ msgid "Find article"
 #~ msgstr "Artikel finden"
