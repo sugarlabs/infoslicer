@@ -65,9 +65,6 @@ class ToolbarBuilder():
             [self.txt_toggle, self.img_toggle])
         toolbar.insert(self.img_toggle, -1)
 
-        self.separator = gtk.SeparatorToolItem()
-        toolbar.insert(self.separator, -1)
-
         for tab in TABS:
             for i in tab.toolitems:
                 toolbar.insert(i, -1)

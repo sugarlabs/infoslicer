@@ -96,7 +96,9 @@ class InfoslicerActivity(SharedActivity):
             self._toolbar.insert(edit_button, -1)
             self._toolbar.insert(gtk.SeparatorToolItem(), -1)
             self.edit_bar = edit.ToolbarBuilder(self.edit, self._toolbar)
-            self.library_bar = library.ToolbarBuilder(self.library, self._toolbar)
+            self.library_bar = library.ToolbarBuilder(self.library,
+                                                      activity_button)
+            self.library_bar.publish.show()
 
         edit_fake = gtk.EventBox()
 

@@ -223,8 +223,11 @@ class ToolbarBuilder():
         self.publish = ToolButton('export-to-journal',
                 tooltip=_('Publish selected articles'))
         self.publish.connect("clicked", self._publish_clicked_cb)
-        toolbar.insert(self.publish, -1)
 
+        if hasattr(toolbar, 'insert'):  # Add button to the main toolbar...
+            toolbar.insert(self.publish, -1)
+        else:  # ...or a secondary toolbar.
+            toolbar.props.page.insert(self.publish, -1)
 
     def _publish_clicked_cb(self, widget):
         xol.publish(self.activity)
