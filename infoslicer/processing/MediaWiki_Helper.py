@@ -70,7 +70,7 @@ class MediaWiki_Helper:
             return title
         #if there is a redirect, recursively follow the chain
         else:
-            return self.resolveTitle(redirectList[0].attributes["to"].value)
+            return self.resolveTitle(redirectList[0].attributes["to"].value, wiki=wiki)
     
     def resolveRevision(self, revision, wiki=defaultWiki):
         """ get an article by revision number.
