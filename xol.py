@@ -93,9 +93,9 @@ def publish(activity, force=False):
 """
 @author: Matthew Bailey
 
-This class deals with the creation of content packages, comprised of articles from 
-themes, with are zipped up and installed in the relevant OS specific location. From 
-here they can be distributed to the consumers 
+This class deals with the creation of content packages, comprised of articles from
+themes, with are zipped up and installed in the relevant OS specific location. From
+here they can be distributed to the consumers
 """
 def _publish(title, jobject):
     zipfilename = '/tmp/infoslicer.xol'
@@ -109,7 +109,7 @@ def _publish(title, jobject):
     _info_file(zip, uid, title)
     _index_redirect(zip, uid)
     _dita_management(zip, uid, title)
-    
+
     zip.close()
 
     jobject.set_file_path(zipfilename)
@@ -124,7 +124,7 @@ def _dita_management(zip, uid, title):
                     '"ibm-map.dtd">',\
             '<?xml-stylesheet type="text/xsl" href="mapstylesheet.xsl"?>',\
             '<map title="%s">' % title ]
-    
+
     images = {}
 
     for entry in book.custom.index:
@@ -175,7 +175,7 @@ def _index_redirect(zip, uid):
             '<body>',\
             '</body>',\
             '</html>']
-    
+
     zipstr(zip, os.path.join(uid, 'index.html'), "\n".join(html))
 
 def _info_file(zip, uid, title):
@@ -196,7 +196,7 @@ def _info_file(zip, uid, title):
                    'icon = book.png',\
                    'activity = Web',\
                    'activity_start = index.html']
-    
+
     zipstr(zip, os.path.join(uid, 'library', 'library.info'),
             "\n".join(libraryfile))
 
