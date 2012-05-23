@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-05-17 00:33-0400\n"
 "PO-Revision-Date: 2012-01-09 08:26+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,65 +53,33 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "信息片段"
 
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" 正在下载中..."
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "文库"
 
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "正在处理 \"%s\"..."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "编辑"
 
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "下载 \"%s\" 图像中..."
+#: book.py:213
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Lion (来自 en.wikipedia.org)"
 
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " （来自 %s）"
+#: book.py:214
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tiger (来自 en.wikipedia.org)"
 
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" 下载成功"
+#: book.py:215
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Giraffe (来自 en.wikipedia.org)"
 
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "不能找到 \"%s\""
+#: book.py:216
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (来自 en.wikipedia.org)"
 
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "下载 \"%s\" 出错： 请检查你的连接"
-
-#: xol.py:38
-msgid "Nothing to publish"
-msgstr "没有文章可以发布"
-
-#: xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "请在“自定义”面板标记文章后，重试一次。"
-
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "包已存在"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "包 \"%s\" 已存在。請 "
-
-#: xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "是否覆盖已存在的包？"
-
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "已创建当前对象的包。"
+#: book.py:223
+msgid "Giraffe"
+msgstr "长颈鹿"
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
@@ -144,6 +112,40 @@ msgstr "文本"
 #: edit.py:63
 msgid "Images"
 msgstr "图像"
+
+#: infoslicer/widgets/Edit_Pane.py:51
+msgid "Snap selection to:"
+msgstr "快速选择："
+
+#: infoslicer/widgets/Edit_Pane.py:52
+msgid "Nothing"
+msgstr "无"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Sentences"
+msgstr "句子"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Paragraphs"
+msgstr "段落"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sections"
+msgstr "章节"
+
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "文章："
+
+#: infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "该文章不含任何图像"
+
+#: infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "请从上面的菜单中选择维基百科的文章"
 
 #: library.py:49
 msgid "Wiki"
@@ -206,84 +208,93 @@ msgstr "文章 \"%s\" 已存在"
 msgid "Publish selected articles"
 msgstr "发布选中的文章"
 
-#: library.py:232
+#: library.py:235
 msgid "English Wikipedia"
 msgstr "英文维基百科"
 
-#: library.py:233
+#: library.py:236
 msgid "Simple English Wikipedia"
 msgstr "简易英文维基百科"
 
-#: library.py:234
+#: library.py:237
 msgid "German Wikipedia"
 msgstr "德文维基百科"
 
-#: library.py:235
+#: library.py:238
 msgid "Spanish Wikipedia"
 msgstr "西班牙文维基百科"
 
-#: library.py:236
+#: library.py:239
 msgid "French Wikipedia"
 msgstr "法文维基百科"
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Lion (来自 en.wikipedia.org)"
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" 正在下载中..."
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tiger (来自 en.wikipedia.org)"
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "正在处理 \"%s\"..."
 
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Giraffe (来自 en.wikipedia.org)"
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "下载 \"%s\" 图像中..."
 
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (来自 en.wikipedia.org)"
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " （来自 %s）"
 
-#: book.py:223
-msgid "Giraffe"
-msgstr "长颈鹿"
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" 下载成功"
 
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "文库"
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "不能找到 \"%s\""
 
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "编辑"
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "下载 \"%s\" 出错： 请检查你的连接"
 
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "快速选择："
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "没有文章可以发布"
 
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "无"
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "请在“自定义”面板标记文章后，重试一次。"
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "句子"
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "包已存在"
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "段落"
+#: xol.py:61
+#, python-format
+msgid ""
+"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+"Journal. You can click \"Publish\" again afterwards."
+msgstr ""
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "章节"
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "是否覆盖已存在的包？"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "文章："
+#: xol.py:69
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
 
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "该文章不含任何图像"
+#, python-format
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "包 \"%s\" 已存在。請 "
 
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "请从上面的菜单中选择维基百科的文章"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "已创建当前对象的包。"
