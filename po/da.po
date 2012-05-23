@@ -6,81 +6,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2011-08-25 02:46+0200\n"
+"POT-Creation-Date: 2012-05-17 00:33-0400\n"
+"PO-Revision-Date: 2012-05-22 21:45+0200\n"
 "Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSkærer"
 
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" nedlastning er i gang..."
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "Bibliotek"
 
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Behandler \"%s\"..."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "Redigér"
 
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Henter \"%s\" billeder..."
+#: book.py:213
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Løve (fra en.wikipedia.org)"
 
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (fra %s)"
+#: book.py:214
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tiger (fra en.wikipedia.org)"
 
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" blev hentet med succes"
+#: book.py:215
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Giraf (fra en.wikipedia.org)"
 
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" blev ikke fundet"
+#: book.py:216
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (fra en.wikipedia.org)"
 
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
-
-#: xol.py:38
-msgid "Nothing to publish"
-msgstr "Intet at publicere"
-
-# puncspacing checked
-#: xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
-
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Bundt eksisterer"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Et bundt med navnet \"%s\" eksisterer allerede. Venligst "
-
-#: xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "Overskriv eksisterende bundt?"
-
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Der er allerede oprettet et bundt for nuværende objekt. "
+#: book.py:223
+msgid "Giraffe"
+msgstr "Giraf"
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
@@ -113,6 +80,40 @@ msgstr "Tekst"
 #: edit.py:63
 msgid "Images"
 msgstr "Billeder"
+
+#: infoslicer/widgets/Edit_Pane.py:51
+msgid "Snap selection to:"
+msgstr "Snup markering til:"
+
+#: infoslicer/widgets/Edit_Pane.py:52
+msgid "Nothing"
+msgstr "Ingenting"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Sentences"
+msgstr "Sætninger"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Paragraphs"
+msgstr "Paragrafer"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sections"
+msgstr "Sektioner"
+
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Artikel:"
+
+#: infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "Denne artikel har ingen billeder"
+
+#: infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Vælg venligst en Wikipedia-artikel fra menuen ovenfor"
 
 #: library.py:49
 msgid "Wiki"
@@ -178,87 +179,101 @@ msgstr "\"%s\"-artikel eksisterer allerede"
 msgid "Publish selected articles"
 msgstr "Publicér markerede artikler"
 
-#: library.py:232
+#: library.py:235
 msgid "English Wikipedia"
 msgstr "Engelsk Wikipedia"
 
-#: library.py:233
+#: library.py:236
 msgid "Simple English Wikipedia"
 msgstr "Simpel Engelsk Wikipedia"
 
-#: library.py:234
+#: library.py:237
 msgid "German Wikipedia"
 msgstr "Tysk Wikipedia"
 
-#: library.py:235
+#: library.py:238
 msgid "Spanish Wikipedia"
 msgstr "Spansk Wikipedia"
 
-#: library.py:236
+#: library.py:239
 msgid "French Wikipedia"
 msgstr "Fransk Wikipedia"
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Løve (fra en.wikipedia.org)"
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" nedlastning er i gang..."
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tiger (fra en.wikipedia.org)"
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Behandler \"%s\"..."
 
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Giraf (fra en.wikipedia.org)"
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Henter \"%s\" billeder..."
 
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (fra en.wikipedia.org)"
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (fra %s)"
 
-#: book.py:223
-msgid "Giraffe"
-msgstr "Giraf"
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" blev hentet med succes"
 
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Bibliotek"
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" blev ikke fundet"
 
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Redigér"
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
 
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Snup markering til:"
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "Intet at publicere"
 
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Ingenting"
+# puncspacing checked
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Sætninger"
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "Bundt eksisterer"
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Paragrafer"
+#: xol.py:61
+#, python-format
+msgid ""
+"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+"Journal. You can click \"Publish\" again afterwards."
+msgstr ""
+"Der eksisterer allerede et bundt med navnet \"%s\". Klik venligst \"Udvisk\" i "
+"Journal. Du kan klikke \"Udgiv\" igen efterfølgende."
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Sektioner"
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "Overskriv eksisterende bundt?"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Artikel:"
+#: xol.py:69
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
+"Der er allerede oprettet et bundt for det aktuelle objekt. Klik \"OK\" for at "
+"overskrive det."
 
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Denne artikel har ingen billeder"
+#, python-format
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Et bundt med navnet \"%s\" eksisterer allerede. Venligst "
 
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Vælg venligst en Wikipedia-artikel fra menuen ovenfor"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Der er allerede oprettet et bundt for nuværende objekt. "
 
 #~ msgid "Find article"
 #~ msgstr "Find artikel"

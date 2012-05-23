@@ -158,11 +158,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2012-01-29 06:21+0200\n"
+"POT-Creation-Date: 2012-05-17 00:33-0400\n"
+"PO-Revision-Date: 2012-05-23 17:55+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,65 +173,33 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "Descarga de \"%s\" en progreso..."
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "Biblioteca"
 
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Procesando \"%s\"..."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "Editar"
 
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Descargando las imágenes de \"%s\"..."
+#: book.py:213
+msgid "Lion (from en.wikipedia.org)"
+msgstr "León (de en.wikipedia.org)"
 
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (de %s)"
+#: book.py:214
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tigre (de en.wikipedia.org)"
 
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" fue descargado con éxito"
+#: book.py:215
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Jirafa (de en.wikipedia.org)"
 
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" no se pudo encontrar"
+#: book.py:216
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Cebra (de en.wikipedia.org)"
 
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Error descargando \"%s\"; verifique su conexión"
-
-#: xol.py:38
-msgid "Nothing to publish"
-msgstr "Nada para publicar"
-
-#: xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Marcar artículos del panel \"Personalizado\" e intentar de nuevo."
-
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Paquete existe"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Un paquete de nombre \"%s\" ya existe. Por favor "
-
-#: xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "¿Sobreescribir paquete existente?"
-
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Un paquete para el objeto actual ya fue creado. "
+#: book.py:223
+msgid "Giraffe"
+msgstr "Jirafa"
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
@@ -264,6 +232,40 @@ msgstr "Texto"
 #: edit.py:63
 msgid "Images"
 msgstr "Imágenes"
+
+#: infoslicer/widgets/Edit_Pane.py:51
+msgid "Snap selection to:"
+msgstr "Ajustar/alinear la selección a:"
+
+#: infoslicer/widgets/Edit_Pane.py:52
+msgid "Nothing"
+msgstr "Nada"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Sentences"
+msgstr "Oraciones"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Paragraphs"
+msgstr "Párrafos"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sections"
+msgstr "Secciones"
+
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Artículo:"
+
+#: infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "Este artículo no tiene ninguna imagen"
+
+#: infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Por favor seleccione un artículo de Wikipedia del menú de arriba"
 
 #: library.py:49
 msgid "Wiki"
@@ -326,87 +328,100 @@ msgstr "El artículo \"%s\" ya existe"
 msgid "Publish selected articles"
 msgstr "Publicar artículos seleccionados"
 
-#: library.py:232
+#: library.py:235
 msgid "English Wikipedia"
 msgstr "Wikipedia en inglés"
 
-#: library.py:233
+#: library.py:236
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia en inglés sencillo"
 
-#: library.py:234
+#: library.py:237
 msgid "German Wikipedia"
 msgstr "Wikipedia en alemán"
 
-#: library.py:235
+#: library.py:238
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
 
-#: library.py:236
+#: library.py:239
 msgid "French Wikipedia"
 msgstr "Wikipedia en francés"
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "León (de en.wikipedia.org)"
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "Descarga de \"%s\" en progreso..."
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tigre (de en.wikipedia.org)"
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Procesando \"%s\"..."
 
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Jirafa (de en.wikipedia.org)"
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Descargando las imágenes de \"%s\"..."
 
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Cebra (de en.wikipedia.org)"
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (de %s)"
 
-#: book.py:223
-msgid "Giraffe"
-msgstr "Jirafa"
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" fue descargado con éxito"
 
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Biblioteca"
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" no se pudo encontrar"
 
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Editar"
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Error descargando \"%s\"; verifique su conexión"
 
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Ajustar/alinear la selección a:"
+#: xol.py:38
+msgid "Nothing to publish"
+msgstr "Nada para publicar"
 
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Nada"
+#: xol.py:39
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Marcar artículos del panel \"Personalizado\" e intentar de nuevo."
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Oraciones"
+#: xol.py:60
+msgid "Bundle exists"
+msgstr "Paquete existe"
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Párrafos"
+#: xol.py:61
+#, python-format
+msgid ""
+"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+"Journal. You can click \"Publish\" again afterwards."
+msgstr ""
+"Un paquete con nombre \"%s\" ya existe. Por favor, haga clic en \"Borrar\" en el "
+"Diario. Puede hacer clic en \"Publicar\" de nuevo después."
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Secciones"
+#: xol.py:68
+msgid "Overwrite existed bundle?"
+msgstr "¿Sobreescribir paquete existente?"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Artículo:"
+#: xol.py:69
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
+"Un paquete para el objeto actual ya se ha creado. Haz click en \"OK\" para "
+"sobreescribirlo."
 
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Este artículo no tiene ninguna imagen"
+#, python-format
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Un paquete de nombre \"%s\" ya existe. Por favor "
 
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Por favor seleccione un artículo de Wikipedia del menú de arriba"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Un paquete para el objeto actual ya fue creado. "
 
 #~ msgid "Find article"
 #~ msgstr "Encontrar artículo"
