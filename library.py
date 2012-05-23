@@ -119,7 +119,7 @@ class View(gtk.EventBox):
         wiki_box.pack_start(wiki)
         wiki_box.pack_start(self.progress, False)
         wiki_box.set_size_request(gtk.gdk.screen_width()/4*3,
-                gtk.gdk.screen_height()/2)
+                gtk.gdk.screen_height()/2 - style.GRID_CELL_SIZE / 2)
 
         custom_widget = Reading_View()
         custom = gtk.Notebook()
@@ -127,8 +127,10 @@ class View(gtk.EventBox):
         custom.props.show_tabs = False
         custom.append_page(custom_stub)
         custom.append_page(custom_widget)
+        # custom.set_size_request(gtk.gdk.screen_width()/4*3,
+        #         gtk.gdk.screen_height()/2 - 55)
         custom.set_size_request(gtk.gdk.screen_width()/4*3,
-                gtk.gdk.screen_height()/2)
+                gtk.gdk.screen_height()/2 - style.GRID_CELL_SIZE / 2)
 
         # workspace
 
