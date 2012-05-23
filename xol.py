@@ -19,6 +19,7 @@ import gtk
 import zipfile
 import uuid
 import logging
+import parse
 from glob import glob
 from gettext import gettext as _
 
@@ -152,6 +153,8 @@ def _dita_management(zip, uid, title):
                 'href="ditastylesheet.xsl"?>')
         zipstr(zip, os.path.join(uid, 'slicecontent', '%s.dita' % auid),
                 content.prettify())
+        zipstr(zip, os.path.join(uid, 'slicecontent', '%s.html' % auid),
+                parse.parse_dita(content.prettify()))
 
         map.append('<topicref href="%s.dita" navtitle="%s">' % (auid, atitle))
         map.append('</topicref>')
@@ -159,12 +162,14 @@ def _dita_management(zip, uid, title):
     map.append('</map>')
     zipstr(zip, os.path.join(uid, 'slicecontent', 'librarymap.ditamap'),
             "\n".join(map))
+    zipstr(zip, os.path.join(uid, 'slicecontent', 'librarymap.html'),
+            parse.parse_ditamap("\n".join(map)))
 
 def _index_redirect(zip, uid):
     """
         Creates the redirecting index.html
     """
-    redirect_loc = 'slicecontent/librarymap.ditamap'
+    redirect_loc = 'slicecontent/librarymap.html'
 
     html = ['<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">',\
             '<html>',\
