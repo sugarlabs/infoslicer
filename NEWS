@@ -4,7 +4,8 @@ ENHANCEMENT:
 * New translations
 
 BUG FIX:
-* Export content as HTML SL (#3608) (patch by Manual Kaufmann)
+* Export content as HTML SL (#3608) (patch by Manuel Kaufmann)
+* Avoid screen overlapping SL (#3632) (patch by Manuel Kaufmann)
 
 14
 
