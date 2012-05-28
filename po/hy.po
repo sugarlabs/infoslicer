@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-05-24 00:34-0400\n"
 "PO-Revision-Date: 2011-12-22 21:06+0200\n"
 "Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,65 +41,34 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "ԻնֆոՇերտող"
 
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" բեռնումն ընթացքի մեջ է...."
+#: activity.py:70 activity.py:85
+msgid "Library"
+msgstr "Գրադարան"
 
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Մշակում \"%s\"..."
+#: activity.py:71 activity.py:93
+msgid "Edit"
+msgstr "Խմբագրել"
 
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Ներբեռնում պատկերներ \"%s\"..."
+#: book.py:213
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Առյուծ (en.wikipedia.org)-ից"
 
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " ( %s- ից )"
+#: book.py:214
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Վագր (en.wikipedia.org)-ից"
 
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" բեռնումը կատարվեց հաջողությամբ"
+#: book.py:215
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Ընձուղտ (en.wikipedia.org-ից)"
 
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" չի գտնվել"
+# Վագրաձի
+#: book.py:216
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Զեբր (en.wikipedia.org-ից)"
 
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Բեռնման ձախողում \"%s\"; Ստուգեք ձեր միացումը"
-
-#: xol.py:38
-msgid "Nothing to publish"
-msgstr "Հրապարակելու ոչինչ չկա"
-
-#: xol.py:39
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
-
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Փաթեթը գոյություն ունի"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "\"%s\" անվանմամբ փաթեթ արդեն գոյություն ունի: Խնդրեմ... "
-
-#: xol.py:68
-msgid "Overwrite existed bundle?"
-msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթի վրա:"
-
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Ընթացիկ օբյեկտի համար փաթեթ արդեն ստեղծվել է "
+#: book.py:223
+msgid "Giraffe"
+msgstr "Ընձուղտ"
 
 #: bookview.py:53
 msgid "Articles are ready to be published"
@@ -132,6 +101,40 @@ msgstr "Տեքստ"
 #: edit.py:63
 msgid "Images"
 msgstr "Պատկերներ"
+
+#: infoslicer/widgets/Edit_Pane.py:51
+msgid "Snap selection to:"
+msgstr "Ընտրածը հարմարեցրնել."
+
+#: infoslicer/widgets/Edit_Pane.py:52
+msgid "Nothing"
+msgstr "Ոչինչ"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Sentences"
+msgstr "Նախադասություններ"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Paragraphs"
+msgstr "Պարբերություններ"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sections"
+msgstr "Բաժիններ"
+
+#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
+#: infoslicer/widgets/Image_Pane.py:87
+msgid "Article:"
+msgstr "Հոդված."
+
+#: infoslicer/widgets/Image_Pane.py:77
+msgid "This article does not have any images"
+msgstr "Այս հոդվածում որևէ նկար չկա"
+
+#: infoslicer/widgets/Image_Pane.py:80
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Խնդրեմ, վերը ներկայացվող ցուցակից ընտրեք Վիքիպեդիայի որեւէ հոդված"
 
 #: library.py:49
 msgid "Wiki"
@@ -181,102 +184,114 @@ msgstr "Հոդվածի վերնագիր"
 msgid "Search"
 msgstr "Որոնել"
 
-#: library.py:202
+#: library.py:204
 msgid "Exists"
 msgstr "Առկա Է"
 
-#: library.py:203
+#: library.py:205
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" հոդվածն արդեն առկա Է"
 
-#: library.py:224
+#: library.py:226
 msgid "Publish selected articles"
 msgstr "Հրատարակել ընտրված հոդվածները"
 
 # Wikipedia
-#: library.py:232
+#: library.py:237
 msgid "English Wikipedia"
 msgstr "Անգլերեն Վիկիպեդիա"
 
-#: library.py:233
+#: library.py:238
 msgid "Simple English Wikipedia"
 msgstr "Պարզ Անգլերեն Վիկիպեդիա"
 
-#: library.py:234
+#: library.py:239
 msgid "German Wikipedia"
 msgstr "Գերմաներեն Վիկիպեդիա"
 
-#: library.py:235
+#: library.py:240
 msgid "Spanish Wikipedia"
 msgstr "Իսպաներեն Վիկիպեդիա"
 
-#: library.py:236
+#: library.py:241
 msgid "French Wikipedia"
 msgstr "Ֆրանսերեն Վիկիպեդիա"
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Առյուծ (en.wikipedia.org)-ից"
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" բեռնումն ընթացքի մեջ է...."
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Վագր (en.wikipedia.org)-ից"
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Մշակում \"%s\"..."
 
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Ընձուղտ (en.wikipedia.org-ից)"
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Ներբեռնում պատկերներ \"%s\"..."
 
-# Վագրաձի
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Զեբր (en.wikipedia.org-ից)"
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " ( %s- ից )"
 
-#: book.py:223
-msgid "Giraffe"
-msgstr "Ընձուղտ"
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" բեռնումը կատարվեց հաջողությամբ"
 
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Գրադարան"
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" չի գտնվել"
 
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Խմբագրել"
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Բեռնման ձախողում \"%s\"; Ստուգեք ձեր միացումը"
 
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Ընտրածը հարմարեցրնել."
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
 
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Ոչինչ"
+#: xol.py:39
+msgid "Nothing to publish"
+msgstr "Հրապարակելու ոչինչ չկա"
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Նախադասություններ"
+#: xol.py:40
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Պարբերություններ"
+#: xol.py:61
+msgid "Bundle exists"
+msgstr "Փաթեթը գոյություն ունի"
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Բաժիններ"
+#: xol.py:62
+#, python-format
+msgid ""
+"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+"Journal. You can click \"Publish\" again afterwards."
+msgstr ""
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Հոդված."
+#: xol.py:69
+msgid "Overwrite existed bundle?"
+msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթի վրա:"
 
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Այս հոդվածում որևէ նկար չկա"
+#: xol.py:70
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
 
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Խնդրեմ, վերը ներկայացվող ցուցակից ընտրեք Վիքիպեդիայի որեւէ հոդված"
+#, python-format
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "\"%s\" անվանմամբ փաթեթ արդեն գոյություն ունի: Խնդրեմ... "
+
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Ընթացիկ օբյեկտի համար փաթեթ արդեն ստեղծվել է "
 
 #~ msgid "Find article"
 #~ msgstr "Գտնել հոդված"
