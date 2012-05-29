@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 00:33-0400\n"
-"PO-Revision-Date: 2012-05-22 21:45+0200\n"
+"POT-Creation-Date: 2012-05-24 00:34-0400\n"
+"PO-Revision-Date: 2012-05-29 07:21+0200\n"
 "Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
@@ -165,37 +165,37 @@ msgstr "Artikelnavn"
 msgid "Search"
 msgstr "Søg"
 
-#: library.py:202
+#: library.py:204
 msgid "Exists"
 msgstr "Eksisterer"
 
 # puncspacing checked
-#: library.py:203
+#: library.py:205
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\"-artikel eksisterer allerede"
 
-#: library.py:224
+#: library.py:226
 msgid "Publish selected articles"
 msgstr "Publicér markerede artikler"
 
-#: library.py:235
+#: library.py:237
 msgid "English Wikipedia"
 msgstr "Engelsk Wikipedia"
 
-#: library.py:236
+#: library.py:238
 msgid "Simple English Wikipedia"
 msgstr "Simpel Engelsk Wikipedia"
 
-#: library.py:237
+#: library.py:239
 msgid "German Wikipedia"
 msgstr "Tysk Wikipedia"
 
-#: library.py:238
+#: library.py:240
 msgid "Spanish Wikipedia"
 msgstr "Spansk Wikipedia"
 
-#: library.py:239
+#: library.py:241
 msgid "French Wikipedia"
 msgstr "Fransk Wikipedia"
 
@@ -234,20 +234,24 @@ msgstr "\"%s\" blev ikke fundet"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr "Gå tilbage til indeks"
+
+#: xol.py:39
 msgid "Nothing to publish"
 msgstr "Intet at publicere"
 
 # puncspacing checked
-#: xol.py:39
+#: xol.py:40
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
 
-#: xol.py:60
+#: xol.py:61
 msgid "Bundle exists"
 msgstr "Bundt eksisterer"
 
-#: xol.py:61
+#: xol.py:62
 #, python-format
 msgid ""
 "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
@@ -256,11 +260,11 @@ msgstr ""
 "Der eksisterer allerede et bundt med navnet \"%s\". Klik venligst \"Udvisk\" i "
 "Journal. Du kan klikke \"Udgiv\" igen efterfølgende."
 
-#: xol.py:68
+#: xol.py:69
 msgid "Overwrite existed bundle?"
 msgstr "Overskriv eksisterende bundt?"
 
-#: xol.py:69
+#: xol.py:70
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
