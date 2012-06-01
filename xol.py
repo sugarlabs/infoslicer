@@ -91,6 +91,10 @@ def publish(activity, force=False):
 
     book.custom.sync_index()
 
+    activity.notify_alert(_('Book published to your Journal'),
+                          _('You can read the book in Browse or ' \
+                                'access the .xol file from your Journal'))
+
 """
 @author: Matthew Bailey
 
