@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 00:33-0400\n"
-"PO-Revision-Date: 2012-05-17 09:30+0200\n"
+"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"PO-Revision-Date: 2012-06-07 17:24+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_US\n"
@@ -187,36 +187,36 @@ msgstr "Article name"
 msgid "Search"
 msgstr "Search"
 
-#: library.py:202
+#: library.py:204
 msgid "Exists"
 msgstr "Exists"
 
-#: library.py:203
+#: library.py:205
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" article already exists"
 
-#: library.py:224
+#: library.py:226
 msgid "Publish selected articles"
 msgstr "Publish selected articles"
 
-#: library.py:235
+#: library.py:237
 msgid "English Wikipedia"
 msgstr "English Wikipedia"
 
-#: library.py:236
+#: library.py:238
 msgid "Simple English Wikipedia"
 msgstr "Simple English Wikipedia"
 
-#: library.py:237
+#: library.py:239
 msgid "German Wikipedia"
 msgstr "German Wikipedia"
 
-#: library.py:238
+#: library.py:240
 msgid "Spanish Wikipedia"
 msgstr "Spanish Wikipedia"
 
-#: library.py:239
+#: library.py:241
 msgid "French Wikipedia"
 msgstr "French Wikipedia"
 
@@ -255,19 +255,23 @@ msgstr "\"%s\" could not be found"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Error downloading \"%s\"; check your connection"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr "Return to index"
+
+#: xol.py:39
 msgid "Nothing to publish"
 msgstr "Nothing to publish"
 
-#: xol.py:39
+#: xol.py:40
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Mark arcticles from \"Custom\" panel and try again."
 
-#: xol.py:60
+#: xol.py:61
 msgid "Bundle exists"
 msgstr "Bundle exists"
 
-#: xol.py:61
+#: xol.py:62
 #, python-format
 msgid ""
 "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
@@ -276,16 +280,26 @@ msgstr ""
 "A bundle by \"%s\" name already exists. Please click \"Erase\" in the Journal. "
 "You can click \"Publish\" again afterwards."
 
-#: xol.py:68
+#: xol.py:69
 msgid "Overwrite existed bundle?"
 msgstr "Overwrite existed bundle?"
 
-#: xol.py:69
+#: xol.py:70
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
 msgstr ""
 "A bundle for current object was already created. Click \"OK\" to overwrite it."
+
+#: xol.py:94
+msgid "Book published to your Journal"
+msgstr "Book published to your Journal"
+
+#: xol.py:95
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+"You can read the book in Browse or access the .xol file from your Journal"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
