@@ -158,9 +158,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 00:33-0400\n"
-"PO-Revision-Date: 2012-05-23 17:55+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"PO-Revision-Date: 2012-06-07 22:47+0200\n"
+"Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -315,36 +315,36 @@ msgstr "Nombre del artículo"
 msgid "Search"
 msgstr "Buscar"
 
-#: library.py:202
+#: library.py:204
 msgid "Exists"
 msgstr "Existe"
 
-#: library.py:203
+#: library.py:205
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "El artículo \"%s\" ya existe"
 
-#: library.py:224
+#: library.py:226
 msgid "Publish selected articles"
 msgstr "Publicar artículos seleccionados"
 
-#: library.py:235
+#: library.py:237
 msgid "English Wikipedia"
 msgstr "Wikipedia en inglés"
 
-#: library.py:236
+#: library.py:238
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia en inglés sencillo"
 
-#: library.py:237
+#: library.py:239
 msgid "German Wikipedia"
 msgstr "Wikipedia en alemán"
 
-#: library.py:238
+#: library.py:240
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
 
-#: library.py:239
+#: library.py:241
 msgid "French Wikipedia"
 msgstr "Wikipedia en francés"
 
@@ -383,19 +383,23 @@ msgstr "\"%s\" no se pudo encontrar"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Error descargando \"%s\"; verifique su conexión"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr "Regresar al índice"
+
+#: xol.py:39
 msgid "Nothing to publish"
 msgstr "Nada para publicar"
 
-#: xol.py:39
+#: xol.py:40
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Marcar artículos del panel \"Personalizado\" e intentar de nuevo."
 
-#: xol.py:60
+#: xol.py:61
 msgid "Bundle exists"
 msgstr "Paquete existe"
 
-#: xol.py:61
+#: xol.py:62
 #, python-format
 msgid ""
 "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
@@ -404,17 +408,27 @@ msgstr ""
 "Un paquete con nombre \"%s\" ya existe. Por favor, haga clic en \"Borrar\" en el "
 "Diario. Puede hacer clic en \"Publicar\" de nuevo después."
 
-#: xol.py:68
+#: xol.py:69
 msgid "Overwrite existed bundle?"
 msgstr "¿Sobreescribir paquete existente?"
 
-#: xol.py:69
+#: xol.py:70
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
 msgstr ""
 "Un paquete para el objeto actual ya se ha creado. Haz click en \"OK\" para "
 "sobreescribirlo."
+
+#: xol.py:94
+msgid "Book published to your Journal"
+msgstr "Libro publicado en tu Diario"
+
+#: xol.py:95
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+"Puedes leer el libro en Navegar o acceder al archivo .xol desde tu Diario"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
