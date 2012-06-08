@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-24 00:34-0400\n"
-"PO-Revision-Date: 2012-05-29 07:21+0200\n"
+"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"PO-Revision-Date: 2012-06-08 04:35+0200\n"
 "Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
@@ -271,6 +271,15 @@ msgid ""
 msgstr ""
 "Der er allerede oprettet et bundt for det aktuelle objekt. Klik \"OK\" for at "
 "overskrive det."
+
+#: xol.py:94
+msgid "Book published to your Journal"
+msgstr "Bog publiceret i din Journal"
+
+#: xol.py:95
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr "Du kan læse bogen i Gennemse eller tilgå .xol-filen fra din journal"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
