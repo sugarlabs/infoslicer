@@ -21,7 +21,6 @@ from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 from sugar.activity.activity import get_bundle_path, get_activity_root
 from sugar.graphics.style import *
-from port.widgets import ToolWidget, ToolButton
 
 logger = logging.getLogger('infoslicer')
 
@@ -55,9 +54,15 @@ class BookView(gtk.VBox):
             check_box = gtk.HBox()
             check_box.set_size_request(50, -1)
             check_box.pack_start(self._check, True, False)
-            title.insert(ToolWidget(check_box), -1)
+            tool_item = gtk.ToolItem()
+            tool_item.add(check_box)
+            tool_item.show()
+            title.insert(tool_item, -1)
         else:
-            title.insert(ToolWidget(gtk.Label('  ')), -1)
+            tool_item = gtk.ToolItem()
+            tool_item.add(gtk.Label('  '))
+            tool_item.show()
+            title.insert(tool_item, -1)
 
         # title caption
 
@@ -69,7 +74,12 @@ class BookView(gtk.VBox):
         caption = gtk.EventBox()
         caption.add(caption_box)
         caption.modify_bg(gtk.STATE_NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
-        title.insert(ToolWidget(caption), -1)
+
+        tool_item = gtk.ToolItem()
+        tool_item.add(caption)
+        tool_item.show()
+
+        title.insert(tool_item, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.props.draw = False
@@ -79,9 +89,8 @@ class BookView(gtk.VBox):
         # create article button
 
         if custom:
-            create = ToolButton('add',
-                    padding=0,
-                    tooltip=_('Create new article'))
+            create = ToolButton('add')
+            create.set_tooltip(_('Create new article'))
             create.connect('clicked', self._create_cb)
             title.insert(create, -1)
         else:
@@ -90,22 +99,20 @@ class BookView(gtk.VBox):
 
         # delete article button
 
-        delete = ToolButton('edit-delete',
-                padding=0,
-                tooltip=_('Delete current article'))
+        delete = ToolButton('edit-delete')
+        delete.set_tooltip(_('Delete current article'))
         delete.connect('clicked', self._delete_cb)
         title.insert(delete, -1)
 
         # move buttons
 
-        downward = ToolButton('down',
-                padding=0,
-                tooltip=_('Move article downward'))
+        downward = ToolButton('down')
+        downward.set_tooltip(_('Move article downward'))
         downward.connect('clicked', self._swap_cb, +1)
         title.insert(downward, -1)
-        upward = ToolButton('up',
-                padding=0,
-                tooltip=_('Move article upward'))
+
+        upward = ToolButton('up')
+        upward.set_tooltip(_('Move article upward'))
         upward.connect('clicked', self._swap_cb, -1)
         title.insert(upward, -1)
 

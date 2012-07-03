@@ -18,6 +18,8 @@ from gettext import gettext as _
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.activity.activity import ActivityToolbox
+from sugar.activity import activity
+
 OLD_TOOLBAR = False
 try:
     from sugar.graphics.toolbarbox import ToolbarBox, ToolbarButton
@@ -26,7 +28,6 @@ try:
     from sugar.activity.widgets import ActivityToolbarButton
 except ImportError:
     OLD_TOOLBAR = True
-from port.activity import SharedActivity
 
 import library
 import edit
@@ -35,14 +36,20 @@ import book
 gtk.gdk.threads_init()
 gtk.gdk.threads_enter()
 
-class InfoslicerActivity(SharedActivity):
+
+class InfoslicerActivity(activity.Activity):
     def __init__(self, handle):
         self.notebook = gtk.Notebook()
         self.notebook.show()
         self.notebook.props.show_border = False
         self.notebook.props.show_tabs = False
 
-        SharedActivity.__init__(self, self.notebook, 'SERVICE', handle)
+        activity.Activity.__init__(self, handle)
+
+        self.max_participants = 1
+
+        self.set_canvas(self.notebook)
+        self.instance()
 
     def instance(self):
         book.wiki = book.WikiBook()

@@ -26,7 +26,6 @@ from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.icon import Icon
 from sugar.datastore import datastore
 import sugar.graphics.style as style
-from port.widgets import ToolWidget
 
 import xol
 import net
