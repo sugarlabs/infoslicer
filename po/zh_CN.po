@@ -38,11 +38,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 00:33-0400\n"
-"PO-Revision-Date: 2012-01-09 08:26+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"PO-Revision-Date: 2012-07-03 12:50+0200\n"
+"Last-Translator: athurg <feng@jianbo.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -195,36 +195,36 @@ msgstr "文章名"
 msgid "Search"
 msgstr "搜索"
 
-#: library.py:202
+#: library.py:204
 msgid "Exists"
 msgstr "已存在"
 
-#: library.py:203
+#: library.py:205
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "文章 \"%s\" 已存在"
 
-#: library.py:224
+#: library.py:226
 msgid "Publish selected articles"
 msgstr "发布选中的文章"
 
-#: library.py:235
+#: library.py:237
 msgid "English Wikipedia"
 msgstr "英文维基百科"
 
-#: library.py:236
+#: library.py:238
 msgid "Simple English Wikipedia"
 msgstr "简易英文维基百科"
 
-#: library.py:237
+#: library.py:239
 msgid "German Wikipedia"
 msgstr "德文维基百科"
 
-#: library.py:238
+#: library.py:240
 msgid "Spanish Wikipedia"
 msgstr "西班牙文维基百科"
 
-#: library.py:239
+#: library.py:241
 msgid "French Wikipedia"
 msgstr "法文维基百科"
 
@@ -263,34 +263,47 @@ msgstr "不能找到 \"%s\""
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "下载 \"%s\" 出错： 请检查你的连接"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr "返回首页"
+
+#: xol.py:39
 msgid "Nothing to publish"
 msgstr "没有文章可以发布"
 
-#: xol.py:39
+#: xol.py:40
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "请在“自定义”面板标记文章后，重试一次。"
 
-#: xol.py:60
+#: xol.py:61
 msgid "Bundle exists"
 msgstr "包已存在"
 
-#: xol.py:61
+#: xol.py:62
 #, python-format
 msgid ""
 "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
 "Journal. You can click \"Publish\" again afterwards."
-msgstr ""
+msgstr "名为“%s”已经存在，请点击Journal中的“擦除”按钮。随后你可以再次点击“发布”。"
 
-#: xol.py:68
+#: xol.py:69
 msgid "Overwrite existed bundle?"
 msgstr "是否覆盖已存在的包？"
 
-#: xol.py:69
+#: xol.py:70
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
-msgstr ""
+msgstr "当前对象已经创建这个包了，请点“OK”覆盖掉。"
+
+#: xol.py:94
+msgid "Book published to your Journal"
+msgstr "书籍已发布到Journal中"
+
+#: xol.py:95
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr "你可以在浏览器中阅读书籍，或者通过Journal访问对应的.xol文件。"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
