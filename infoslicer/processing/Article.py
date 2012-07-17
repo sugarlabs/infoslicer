@@ -1,8 +1,8 @@
 # Copyright (C) IBM Corporation 2008
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+from gi.repository import Gtk
+from gi.repository import GdkPixbuf
+
 from random import Random
 from Article_Data import *
 from Section import *
@@ -35,9 +35,9 @@ class Article:
     """ 
     Created by Jonathan Mace
 
-    The Article class maintains a concrete representation of the article, in the form of a gtk.TextBuffer
+    The Article class maintains a concrete representation of the article, in the form of a Gtk.TextBuffer
 
-    Positions within the text are represented by gtk.TextIter
+    Positions within the text are represented by Gtk.TextIter
 
     The class contains methods for inserting and deleting new sentences, paragraphs and sections.
 
@@ -56,7 +56,7 @@ class Article:
         """
         Create default text buffer and set to empty 
         """
-        self.__buf = gtk.TextBuffer()
+        self.__buf = Gtk.TextBuffer()
         self.__buf.set_text("")
         insertionpoint = self.__buf.get_end_iter()
         insertionmark = self.__buf.create_mark(None, insertionpoint, False)        
@@ -149,7 +149,7 @@ class Article:
             nextsection = self.__sections[i+1]
             
             if section.getStart().compare(nextsection.getStart()) == -1:
-                text = self.__buf.get_slice(section.getStart(), nextsection.getStart())
+                text = self.__buf.get_slice(section.getStart(), nextsection.getStart(), True)
                 if len(text) > 2 and text[-2] != "\n":
                     nextsection.paragraphs = section.paragraphs + nextsection.paragraphs
                 else:
@@ -468,7 +468,7 @@ class Article:
         
     def getBuffer(self):
         """
-        This method simply returns the gtk.TextBuffer being maintained by this instance of the Article class.
+        This method simply returns the Gtk.TextBuffer being maintained by this instance of the Article class.
         """
         return self.__buf
 
@@ -638,8 +638,10 @@ class Article:
         self.markmark = self.__buf.create_mark(None, lociter, True)
         self.__buf.insert(lociter, " ")
         lociter = self.__buf.get_iter_at_mark(self.markmark)        
-        arrow = gtk.gdk.pixbuf_new_from_xpm_data(arrow_xpm)
-        self.__buf.insert_pixbuf(lociter, arrow)
+        # FIXME: I don't know what the arrow_xpm type should be
+        # https://bugzilla.gnome.org/show_bug.cgi?id=651962
+        # arrow = GdkPixbuf.Pixbuf.new_from_xpm_data(arrow_xpm)
+        # self.__buf.insert_pixbuf(lociter, arrow)
         
         
     def clearArrow(self):

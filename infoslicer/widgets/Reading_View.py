@@ -1,14 +1,15 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import GObject
 from Readonly_Textbox import Readonly_Textbox
 import logging
 
 logger = logging.getLogger('infoslicer')
 elogger = logging.getLogger('infoslicer::except')
 
-class Reading_View( gtk.VBox ):
+class Reading_View( Gtk.VBox ):
     """ 
     Created by Jonathan Mace
     
@@ -21,11 +22,11 @@ class Reading_View( gtk.VBox ):
     """
      
     def __init__(self):
-        gtk.VBox.__init__(self)
+        GObject.GObject.__init__(self)
         
-        self.articlewindow = gtk.ScrolledWindow()
-        self.articlewindow.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
-        self.pack_start(self.articlewindow)
+        self.articlewindow = Gtk.ScrolledWindow()
+        self.articlewindow.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.pack_start(self.articlewindow, True, True, 0)
         self.articlewindow.show()
         
         self.textbox = Readonly_Textbox()

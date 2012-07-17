@@ -1,9 +1,9 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
-import pango
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Pango
 import cPickle
+import logging
 from Textbox import Textbox
 
 SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
@@ -24,7 +24,8 @@ class Readonly_Textbox( Textbox ):
         self.use_as_drag_source = use_as_drag_source
         self.set_mode(SELECT_SENTENCE)
         self.block = True
-        self.modify_font(pango.FontDescription('arial 9'))
+        self.modify_font(Pango.FontDescription('arial 9'))
+        self.MANUEL = 0
         
     
     def set_mode(self, mode):
@@ -41,15 +42,17 @@ class Readonly_Textbox( Textbox ):
             self.event_handlers.append(self.connect("motion-notify-event", self.motion_notify, None))
             self.event_handlers.append(self.connect("move-cursor", self.move_cursor, None))
             self.event_handlers.append(self.connect("button-release-event", self.unclicked_event, None))
-            self.event_handlers.append(self.connect("drag_data_get", self.drag_data_get_event, None))
+            self.event_handlers.append(self.connect("drag-data-get", self.drag_data_get_event, None))
+            logging.debug('------------------------ SIGNALS ; %s', id(self))
         self.event_handlers.append(self.connect("drag-motion", self.drag_motion, None))
         
     def drag_motion(self, widget, context, x, y, timestamp, data):
-        context.drag_status(gtk.gdk.ACTION_COPY, timestamp)
+        logging.debug('############ Readonly_Textbox.drag_motion')
+        Gdk.drag_status(context, Gdk.DragAction.COPY, timestamp)
         return True
         
     def clicked_event(self, widget, event, data):
-        if event.type == gtk.gdk._2BUTTON_PRESS or event.type == gtk.gdk._3BUTTON_PRESS:
+        if event.type == Gdk.EventType._2BUTTON_PRESS or event.type == Gdk.EventType._3BUTTON_PRESS:
             self.stop_emission("button_press_event")
             return
         if event.button == 3:
@@ -114,7 +117,13 @@ class Readonly_Textbox( Textbox ):
             if self.block == True:
                 self.stop_emission("motion-notify-event")
                 self.block = False
-                self.emit("motion-notify-event", event)
+                logging.debug('FIXME: this is a workaround due '
+                              'https://bugzilla.gnome.org/show_bug.cgi?id=679795')
+                # I was getting this error:
+                #   TypeError: could not convert type EventMotion
+                #   to GdkEvent required for parameter 0
+                # self.emit("motion-notify-event", event)
+                self.emit("motion-notify-event", Gdk.Event())
                 
                 buf = self.get_buffer()            
                 mouseiter = self.get_mouse_iter(int(event.x), int(event.y))
@@ -139,7 +148,7 @@ class Readonly_Textbox( Textbox ):
                     if self.selectionmode == SELECT_SECTION:
                         selectionstart = article.getSection(mouseiter).getStart()
                         selectionend = article.getSection(self.selectionstart).getEnd()
-                self.scroll_to_iter(mouseiter, 0)
+                self.scroll_to_iter(mouseiter, 0, False, 0.5, 0.5)
                 article.highlight(selectionstart, selectionend)                
                     
             else:
@@ -152,18 +161,20 @@ class Readonly_Textbox( Textbox ):
         self.stop_emission("button-release-event")
         
     def drag_data_get_event(self, widget, context, selection_data, info, time, data):
-        
+        logging.debug('######## Readonly_Textbox.drag_data_get_event')
+        logging.debug('############################## %s', self.MANUEL)
         a = self.article
         
         if self.selectionmode == SELECT_SENTENCE:
-            atom = gtk.gdk.atom_intern("sentence")
+            atom = Gdk.atom_intern("sentence", only_if_exists=False)
         if self.selectionmode == SELECT_PARAGRAPH:
-            atom = gtk.gdk.atom_intern("paragraph")
+            atom = Gdk.atom_intern("paragraph", only_if_exists=False)
         if self.selectionmode == SELECT_SECTION:
-            atom = gtk.gdk.atom_intern("section")
+            atom = Gdk.atom_intern("section", only_if_exists=False)
             
         string = cPickle.dumps(a.getSelection())
         selection_data.set(atom, 8, string)
         self.stop_emission("drag-data-get")
         self.set_editable(False)
+        self.MANUEL += 1
         

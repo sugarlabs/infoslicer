@@ -13,75 +13,74 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
+from gi.repository import Gtk
 import logging
-import gobject
+from gi.repository import GObject
 from gettext import gettext as _
 
-from sugar.graphics.toolbutton import ToolButton
-from sugar.activity.activity import get_bundle_path, get_activity_root
-from sugar.graphics.style import *
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.activity.activity import get_bundle_path, get_activity_root
+from sugar3.graphics.style import *
 
 logger = logging.getLogger('infoslicer')
 
 PUBLISH  = 0
 TITLE    = 1
 
-class BookView(gtk.VBox):
+class BookView(Gtk.VBox):
     def sync(self):
         if not self._changing:
             return
-        gobject.source_remove(self._changing)
+        GObject.source_remove(self._changing)
         index, column = self.tree.get_cursor()
         self._cursor_changed(index)
 
     def __init__(self, book, name, tooltip, custom):
-        gtk.VBox.__init__(self)
+        GObject.GObject.__init__(self)
         self.book = book
         self._changing = None
         self._check = None
 
-        title = gtk.Toolbar()
+        title = Gtk.Toolbar()
 
         # title checkbox
 
         if custom:
-            self._check = gtk.CheckButton()
+            self._check = Gtk.CheckButton()
             self._check.props.can_focus = False
             self._check.props.tooltip_text = \
                     _('Articles are ready to be published')
             self._check.connect('toggled', self._check_toggled_cb)
-            check_box = gtk.HBox()
+            check_box = Gtk.HBox()
             check_box.set_size_request(50, -1)
-            check_box.pack_start(self._check, True, False)
-            tool_item = gtk.ToolItem()
+            check_box.pack_start(self._check, True, False, 0)
+            tool_item = Gtk.ToolItem()
             tool_item.add(check_box)
             tool_item.show()
             title.insert(tool_item, -1)
         else:
-            tool_item = gtk.ToolItem()
-            tool_item.add(gtk.Label('  '))
+            tool_item = Gtk.ToolItem()
+            tool_item.add(Gtk.Label(label='  '))
             tool_item.show()
             title.insert(tool_item, -1)
 
         # title caption
 
-        caption_label = gtk.Label(name)
+        caption_label = Gtk.Label(label=name)
         caption_label.props.tooltip_text = tooltip
-        caption_label.modify_fg(gtk.STATE_NORMAL, COLOR_WHITE.get_gdk_color())
-        caption_box = gtk.HBox()
-        caption_box.pack_start(caption_label, False)
-        caption = gtk.EventBox()
+        caption_label.modify_fg(Gtk.StateType.NORMAL, COLOR_WHITE.get_gdk_color())
+        caption_box = Gtk.HBox()
+        caption_box.pack_start(caption_label, False, False, 0)
+        caption = Gtk.EventBox()
         caption.add(caption_box)
-        caption.modify_bg(gtk.STATE_NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
+        caption.modify_bg(Gtk.StateType.NORMAL, COLOR_TOOLBAR_GREY.get_gdk_color())
 
-        tool_item = gtk.ToolItem()
+        tool_item = Gtk.ToolItem()
         tool_item.add(caption)
         tool_item.show()
-
         title.insert(tool_item, -1)
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         title.insert(separator, -1)
@@ -118,36 +117,52 @@ class BookView(gtk.VBox):
 
         # tree
 
-        self.store = gtk.ListStore(bool, str)
-        self.tree = gtk.TreeView(self.store)
+        self.store = Gtk.ListStore(bool, str)
+        self.tree = Gtk.TreeView(self.store)
         self.tree.props.headers_visible = False
         self.tree.connect('cursor-changed', self._cursor_changed_cb)
 
-        cell = gtk.CellRendererToggle()
+        cell = Gtk.CellRendererToggle()
         cell.connect('toggled', self._cell_toggled_cb)
         cell.props.activatable = True
 
-        column = self.tree.insert_column_with_attributes(0, '', cell, active=0)
-        column.props.sizing = gtk.TREE_VIEW_COLUMN_FIXED
+        # FIXME: insert_column_with_attributes does not exist on pygobject
+        # column = self.tree.insert_column_with_attributes(0, '', cell, active=0)
+
+        logging.debug('TODO: this is a workaround due '
+                      'https://bugzilla.gnome.org/show_bug.cgi?id=679415')
+
+        column = Gtk.TreeViewColumn('Wiki', cell)
+        column.props.sizing = Gtk.TreeViewColumnSizing.FIXED
         column.props.fixed_width = 50
         column.props.visible = custom
 
-        cell = gtk.CellRendererText()
+        self.tree.insert_column(column, 0)
+
+        cell = Gtk.CellRendererText()
         cell.connect('edited', self._cell_edited_cb)
         cell.props.editable = True
-        self.tree.insert_column_with_attributes(1, '', cell, text=1)
+
+        # FIXME: insert_column_with_attributes does not exist on pygobject
+        # self.tree.insert_column_with_attributes(1, '', cell, text=1)
+
+        logging.debug('TODO: this is a workaround due '
+                      'https://bugzilla.gnome.org/show_bug.cgi?id=679415')
+
+        column = Gtk.TreeViewColumn('Custom', cell, text=1)
+        self.tree.insert_column(column, 1)
 
         for i in self.book.index:
             self.store.append((i['ready'], i['title']))
 
         # scrolled tree
 
-        tree_scroll = gtk.ScrolledWindow()
-        tree_scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        tree_scroll = Gtk.ScrolledWindow()
+        tree_scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         tree_scroll.add(self.tree)
 
-        self.pack_start(title, False)
-        self.pack_start(tree_scroll)
+        self.pack_start(title, False, False, 0)
+        self.pack_start(tree_scroll, True, True, 0)
 
         if len(self.store):
             self.tree.set_cursor(0, self.tree.get_column(1), False)
@@ -170,7 +185,7 @@ class BookView(gtk.VBox):
             return find_name(list, prefix, uniq+1)
 
         if self._changing:
-            gobject.source_remove(self._changing)
+            GObject.source_remove(self._changing)
             self._changing = None
 
         name = find_name(self.store, _('New article'), 0)
@@ -183,38 +198,45 @@ class BookView(gtk.VBox):
         index, column = self.tree.get_cursor()
         if not index:
             return
-        index = index[0]
 
-        if self._changing:
-            gobject.source_remove(self._changing)
-            self._changing = None
+        logging.debug('TODO: This is not working because of the port to Gtk3. '
+                      'TreePath object does not support indexing')
 
-        self.book.remove(self.store[index][TITLE])
-        self.store.remove(self.tree.props.model.get_iter(index))
+        # index = index[0]
 
-        if len(self.store):
-            if index >= len(self.store):
-                index -= 1
-            self.tree.set_cursor(index, self.tree.get_column(1), False)
-            self._update_check(self.store[index][PUBLISH])
+        # if self._changing:
+        #     GObject.source_remove(self._changing)
+        #     self._changing = None
+
+        # self.book.remove(self.store[index][TITLE])
+        # self.store.remove(self.tree.props.model.get_iter(index))
+
+        # if len(self.store):
+        #     if index >= len(self.store):
+        #         index -= 1
+        #     self.tree.set_cursor(index, self.tree.get_column(1), False)
+        #     self._update_check(self.store[index][PUBLISH])
 
     def _swap_cb(self, widget, delta):
         old_index, column = self.tree.get_cursor()
         if not old_index:
             return
 
-        old_index = old_index[0]
-        new_index = old_index + delta
+        logging.debug('TODO: This is not working because of the port to Gtk3. '
+                      'TreePath object does not support indexing')
 
-        if new_index < 0:
-            new_index = len(self.store)-1
-        elif new_index >= len(self.store):
-            new_index = 0
+        # old_index = old_index[0]
+        # new_index = old_index + delta
 
-        self.book.index[old_index], self.book.index[new_index] = \
-                self.book.index[new_index], self.book.index[old_index]
-        self.store.swap(self.tree.props.model.get_iter(old_index),
-                self.tree.props.model.get_iter(new_index))
+        # if new_index < 0:
+        #     new_index = len(self.store)-1
+        # elif new_index >= len(self.store):
+        #     new_index = 0
+
+        # self.book.index[old_index], self.book.index[new_index] = \
+        #         self.book.index[new_index], self.book.index[old_index]
+        # self.store.swap(self.tree.props.model.get_iter(old_index),
+        #         self.tree.props.model.get_iter(new_index))
 
     def _check_toggled_cb(self, widget):
         for i, entry in enumerate(self.store):
@@ -241,12 +263,12 @@ class BookView(gtk.VBox):
 
     def _cursor_changed_cb(self, widget):
         if self._changing:
-            gobject.source_remove(self._changing)
+            GObject.source_remove(self._changing)
 
         index, column = self.tree.get_cursor()
 
         if index != None:
-            self._changing = gobject.timeout_add(500, self._cursor_changed,
+            self._changing = GObject.timeout_add(500, self._cursor_changed,
                     index)
 
     def _cursor_changed(self, index):

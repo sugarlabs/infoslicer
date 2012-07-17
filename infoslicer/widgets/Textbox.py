@@ -1,13 +1,15 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import Pango
 import cPickle
 import pango
 
 SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
 
-class Textbox( gtk.TextView ):
+class Textbox( Gtk.TextView ):
     """ 
     Created by Jonathan Mace
     The Textbox class is the base class for our own custom textboxes which implement
@@ -19,13 +21,13 @@ class Textbox( gtk.TextView ):
     
     
     def __init__(self): 
-        gtk.TextView.__init__(self)
+        GObject.GObject.__init__(self)
         self.set_border_width(1)
         self.event_handlers = []
-        self.set_wrap_mode(gtk.WRAP_WORD)
+        self.set_wrap_mode(Gtk.WrapMode.WORD)
         self.set_cursor_visible(False)
         self.set_editable(False)  
-        self.modify_font(pango.FontDescription('arial 9'))
+        self.modify_font(Pango.FontDescription('arial 9'))
         self.article = None
         self.set_property("left-margin", 5)
         
@@ -37,7 +39,7 @@ class Textbox( gtk.TextView ):
         return self.article
         
     def show(self):
-        gtk.TextView.show(self)  
+        Gtk.TextView.show(self)  
         
     def clear(self):
         self.article.delete()     
@@ -51,6 +53,6 @@ class Textbox( gtk.TextView ):
         
     def get_mouse_iter(self, x, y):
         # Convenience method to get the iter in the buffer of x, y coords.
-        click_coords = self.window_to_buffer_coords(gtk.TEXT_WINDOW_TEXT, x, y)
+        click_coords = self.window_to_buffer_coords(Gtk.TextWindowType.TEXT, x, y)
         mouseClickPositionIter = self.get_iter_at_location(click_coords[0], click_coords[1])
         return mouseClickPositionIter

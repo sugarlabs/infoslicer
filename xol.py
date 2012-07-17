@@ -15,7 +15,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
+from gi.repository import Gtk
 import zipfile
 import uuid
 import logging
@@ -23,9 +23,10 @@ import parse
 from glob import glob
 from gettext import gettext as _
 
-from sugar.activity.activity import get_bundle_path, get_activity_root, get_bundle_name
-from sugar.datastore import datastore
-from sugar import activity
+from sugar3.activity.activity import get_bundle_path, get_activity_root, get_bundle_name
+from sugar3.datastore import datastore
+from sugar3 import activity
+from sugar3.graphics.alert import NotifyAlert, ConfirmationAlert
 
 from infoslicer.processing.NewtifulSoup import NewtifulStoneSoup \
         as BeautifulStoneSoup
@@ -33,11 +34,25 @@ import book
 
 logger = logging.getLogger('infoslicer')
 
+
+def __alert_notify_response_cb(alert, response_id, activity):
+    activity.remove_alert(alert)
+
+
+def __alert_response_cb(alert, response_id, activity, force):
+    activity.remove_alert(alert)
+    publish(activity, force)
+
+
 def publish(activity, force=False):
     if not [i for i in book.custom.index if i['ready']]:
-        activity.notify_alert(
-                _('Nothing to publish'),
-                _('Mark arcticles from "Custom" panel and try again.'))
+        alert = NotifyAlert(5)
+        alert.props.title = _('Nothing to publish')
+        alert.props.msg = _('Mark arcticles from "Custom" '
+                            'panel and try again.')
+        alert.connect('response', __alert_notify_response_cb, activity)
+        activity.add_alert(alert)
+        alert.show()
         return
 
     title = activity.metadata['title']
@@ -52,24 +67,13 @@ def publish(activity, force=False):
         if force:
             jobject = jobject[0]
         else:
-            try:
-                # check for 0.84 code
-                from jarabe import config
-            except:
-                # 0.82 couldn't override .xol bundles
-                activity.notify_alert(
-                        _('Bundle exists'),
-                        _('A bundle by "%s" name already exists. Please ' \
-                        'click "Erase" in the Journal. You can click ' \
-                        '"Publish" again afterwards.') % \
-                        jobject[0].metadata['title'])
-                return
-
-            activity.confirmation_alert(
-                    _('Overwrite existed bundle?'),
-                    _('A bundle for current object was already created. ' \
-                          'Click "OK" to overwrite it.'),
-                    publish, activity, True)
+            alert = ConfirmationAlert()
+            alert.props.title = _('Overwrite existed bundle?')
+            alert.props.msg = _('A bundle for current object was already created. '
+                                'Click "OK" to overwrite it.')
+            alert.connect('response', __alert_response_cb, activity, True)
+            activity.add_alert(alert)
+            alert.show()
             jobject[0].destroy()
             return
     else:
@@ -91,9 +95,13 @@ def publish(activity, force=False):
 
     book.custom.sync_index()
 
-    activity.notify_alert(_('Book published to your Journal'),
-                          _('You can read the book in Browse or ' \
-                                'access the .xol file from your Journal'))
+    alert = NotifyAlert()
+    alert.props.title = _('Book published to your Journal')
+    alert.props.msg = _('You can read the book in Browse or '
+                        'access the .xol file from your Journal')
+    alert.connect('response', __alert_notify_response_cb, activity)
+    activity.add_alert(alert)
+    alert.show()
 
 """
 @author: Matthew Bailey

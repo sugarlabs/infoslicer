@@ -12,12 +12,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import gtk
+from gi.repository import Gtk
+from gi.repository import GObject
 from gettext import gettext as _
 
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.toggletoolbutton import ToggleToolButton
-from sugar.activity.activity import ActivityToolbox
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.toggletoolbutton import ToggleToolButton
 
 from infoslicer.widgets.Edit_Pane import Edit_Pane
 from infoslicer.widgets.Format_Pane import Format_Pane
@@ -28,14 +28,14 @@ TABS = (Edit_Pane(),
         Image_Pane(),
         Format_Pane())
 
-class View(gtk.Notebook):
+class View(Gtk.Notebook):
     def __init__(self):
-        gtk.Notebook.__init__(self)
+        GObject.GObject.__init__(self)
         self.props.show_border = False
         self.props.show_tabs = False
 
         for i in TABS:
-            self.append_page(i)
+            self.append_page(i, None)
             i.show()
 
         self.connect('map', self._map_cb)

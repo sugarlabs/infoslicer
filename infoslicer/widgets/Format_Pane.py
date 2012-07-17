@@ -1,7 +1,7 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 from gettext import gettext as _
 
 from Editing_View import Editing_View
@@ -22,22 +22,22 @@ class Format_Pane(Editing_View):
         self.toolitems = []
         
         """
-        self.combocontainer = gtk.ToolItem()
+        self.combocontainer = Gtk.ToolItem()
         self.combocontainer.add(self.combobox)
         self.toolbar.insert(self.combocontainer, -1)
         self.combocontainer.show()
         
-        self.boldbutton = gtk.ToolButton(gtk.STOCK_BOLD)
+        self.boldbutton = Gtk.ToolButton(Gtk.STOCK_BOLD)
         self.boldbutton.set_expand(False)
         self.toolbar.insert(self.boldbutton, -1)
         self.boldbutton.show()
         
-        self.italicbutton = gtk.ToolButton(gtk.STOCK_ITALIC)
+        self.italicbutton = Gtk.ToolButton(Gtk.STOCK_ITALIC)
         self.italicbutton.set_expand(False)
         self.toolbar.insert(self.italicbutton, -1)
         self.italicbutton.show()
         
-        self.underlinebutton = gtk.ToolButton(gtk.STOCK_UNDERLINE)
+        self.underlinebutton = Gtk.ToolButton(Gtk.STOCK_UNDERLINE)
         self.underlinebutton.set_expand(False)
         self.toolbar.insert(self.underlinebutton, -1)
         self.underlinebutton.show()

@@ -214,7 +214,7 @@ class RawSection:
     def mark(self):
         markiter = self.getStart()
         self.markmark = self.buf.create_mark(None, markiter, True)
-        arrow = gtk.gdk.pixbuf_new_from_xpm_data(arrow_xpm)
+        arrow = GdkPixbuf.Pixbuf.new_from_xpm_data(arrow_xpm)
         self.buf.insert_pixbuf(markiter, arrow)
         
     def unmark(self):
@@ -260,7 +260,7 @@ class RawSection:
             nextparagraph = self.paragraphs[i+1]
             
             if paragraph.getStart().compare(nextparagraph.getStart()) == -1:
-                text = self.buf.get_slice(paragraph.getStart(), nextparagraph.getStart())
+                text = self.buf.get_slice(paragraph.getStart(), nextparagraph.getStart(), True)
                 if len(text) > 0 and text[-1] != "\n":
                     logger.debug("concatenating paragraphs")
                     nextparagraph.sentences = paragraph.sentences + nextparagraph.sentences

@@ -1,11 +1,13 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
 import logging
 from gettext import gettext as _
 
-from sugar.graphics.toolcombobox import ToolComboBox
+from sugar3.graphics.toolcombobox import ToolComboBox
 
 from Reading_View import Reading_View
 from Editing_View import Editing_View
@@ -13,7 +15,7 @@ from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')
 
-class Edit_Pane(gtk.HBox):
+class Edit_Pane(Gtk.HBox):
     """
     Created by Jonathan Mace
     
@@ -30,23 +32,23 @@ class Edit_Pane(gtk.HBox):
     """
     
     def __init__(self):
-        gtk.HBox.__init__(self)
+        GObject.GObject.__init__(self)
         self.toolitems = []
 
-        readarticle_box = gtk.VBox()
+        readarticle_box = Gtk.VBox()
         readarticle_box.show()
 
-        labeleb = gtk.EventBox()
-        labeleb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("#EEEEEE"))
+        labeleb = Gtk.EventBox()
+        labeleb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#EEEEEE"))
         readarticle_box.pack_start(labeleb, False, False, 0)
         labeleb.show()
         
-        self.articletitle = gtk.Label()
-        self.articletitle.set_justify(gtk.JUSTIFY_CENTER)
+        self.articletitle = Gtk.Label()
+        self.articletitle.set_justify(Gtk.Justification.CENTER)
         labeleb.add(self.articletitle)
         self.articletitle.show()
 
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
 
         snap = ToolComboBox(label_text=_('Snap selection to:'))
         snap.combo.append_item(0, _("Nothing"))
@@ -54,21 +56,21 @@ class Edit_Pane(gtk.HBox):
         snap.combo.append_item(2, _("Paragraphs"))
         snap.combo.append_item(3, _("Sections"))
         snap.combo.set_active(1)
-        vbox.pack_start(snap, False)
+        vbox.pack_start(snap, False, False, 0)
 
         """
         Create reading and editing panels
         """
         self.readarticle = Reading_View()  
-        self.readarticle.set_size_request(gtk.gdk.screen_width()/2, -1)
+        self.readarticle.set_size_request(Gdk.Screen.width()/2, -1)
         self.readarticle.show()
-        readarticle_box.pack_start(self.readarticle)
-        vbox.pack_start(readarticle_box)
+        readarticle_box.pack_start(self.readarticle, True, True, 0)
+        vbox.pack_start(readarticle_box, True, True, 0)
 
-        self.pack_start(vbox, False)
+        self.pack_start(vbox, False, False, 0)
 
         self.editarticle = Editing_View()
-        self.pack_start(self.editarticle)
+        self.pack_start(self.editarticle, True, True, 0)
         self.editarticle.show()
 
         snap.combo.connect("changed", self.selection_mode_changed, None)

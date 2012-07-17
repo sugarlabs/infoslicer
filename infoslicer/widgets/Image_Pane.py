@@ -1,7 +1,9 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
 import logging
 from gettext import gettext as _
 
@@ -11,7 +13,7 @@ from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')
 
-class Image_Pane(gtk.HBox):
+class Image_Pane(Gtk.HBox):
     """
     Created by Christopher Leonard
     
@@ -23,29 +25,29 @@ class Image_Pane(gtk.HBox):
     """
     
     def __init__(self):
-        gtk.HBox.__init__(self)
+        GObject.GObject.__init__(self)
         self.toolitems = []
         
-        gallery_box = gtk.VBox()
+        gallery_box = Gtk.VBox()
         gallery_box.show()
 
-        labeleb = gtk.EventBox()
-        labeleb.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse("#EEEEEE"))
+        labeleb = Gtk.EventBox()
+        labeleb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#EEEEEE"))
         gallery_box.pack_start(labeleb, False, False, 0)
         labeleb.show()
         
-        self.articletitle = gtk.Label()
-        self.articletitle.set_justify(gtk.JUSTIFY_CENTER)
+        self.articletitle = Gtk.Label()
+        self.articletitle.set_justify(Gtk.Justification.CENTER)
         labeleb.add(self.articletitle)
         self.articletitle.show()
         
         self.gallery = Gallery_View()
-        self.gallery.set_size_request(gtk.gdk.screen_width()/2, -1)
-        gallery_box.pack_start(self.gallery)
+        self.gallery.set_size_request(Gdk.Screen.width()/2, -1)
+        gallery_box.pack_start(self.gallery, True, True, 0)
 
-        self.pack_start(gallery_box, False)
+        self.pack_start(gallery_box, False, False, 0)
         self.editarticle = Editing_View()
-        self.pack_start(self.editarticle)
+        self.pack_start(self.editarticle, True, True, 0)
         self.editarticle.show_all()
 
         self.gallery._source_article = None

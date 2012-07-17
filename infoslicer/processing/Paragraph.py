@@ -152,7 +152,7 @@ class RawParagraph:
     def mark(self):
         markiter = self.getStart()
         self.markmark = self.buf.create_mark(None, markiter, True)
-        arrow = gtk.gdk.pixbuf_new_from_xpm_data(arrow_xpm)
+        arrow = GdkPixbuf.Pixbuf.new_from_xpm_data(arrow_xpm)
         self.buf.insert_pixbuf(markiter, arrow)
         
     def unmark(self):
@@ -165,7 +165,7 @@ class RawParagraph:
         return self.sentences
     
     def getText(self):
-        return self.buf.get_slice(self.getStart(), self.getEnd())
+        return self.buf.get_slice(self.getStart(), self.getEnd(), True)
     
     def clean(self):
         if len(self.sentences) > 1:

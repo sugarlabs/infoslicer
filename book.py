@@ -13,17 +13,15 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
-import gtk
 import uuid
 import logging
-import gobject
+from gi.repository import GObject
 import cjson
 import shutil
 import zipfile
-from gobject import SIGNAL_RUN_FIRST, TYPE_PYOBJECT
 from gettext import gettext as _
 
-from sugar.activity.activity import get_bundle_path, get_activity_root
+from sugar3.activity.activity import get_bundle_path, get_activity_root
 
 import net
 from infoslicer.processing.Article import Article
@@ -36,11 +34,11 @@ custom = None
 
 image_root = os.path.join(get_activity_root(), 'data', 'book')
 
-class Book(gobject.GObject):
+class Book(GObject.GObject):
     __gsignals__ = {
-        'article-selected' : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]),
-        'article-added'    : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]),
-        'article-deleted'  : (SIGNAL_RUN_FIRST, None, [TYPE_PYOBJECT]) } 
+        'article-selected' : (GObject.SignalFlags.RUN_FIRST, None, [object]),
+        'article-added'    : (GObject.SignalFlags.RUN_FIRST, None, [object]),
+        'article-deleted'  : (GObject.SignalFlags.RUN_FIRST, None, [object])}
 
     def get_article(self):
         return self._article
@@ -71,9 +69,9 @@ class Book(gobject.GObject):
 
         self._article.uid = entry['uid']
         self._article.article_title = title
-        gobject.idle_add(self._emit_article_selected)
+        GObject.idle_add(self._emit_article_selected)
 
-    article = gobject.property(type=object,
+    article = GObject.property(type=object,
             getter=get_article, setter=set_article)
 
     def _emit_article_selected(self):
@@ -132,7 +130,7 @@ class Book(gobject.GObject):
         self.sync_index()
 
     def __init__(self, preinstalled, root):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
         self.root = root
         self.index = []
         self.uid = None

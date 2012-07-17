@@ -1,9 +1,10 @@
 # Copyright (C) IBM Corporation 2008
 
-import pygtk
-pygtk.require('2.0')
+import gi
+gi.require_version('Gtk', '3.0')
 import os
-import gtk
+from gi.repository import Gtk
+from gi.repository import GdkPixbuf
 import logging
 
 from Article_Data import *
@@ -83,10 +84,10 @@ class RawSentence:
         return data
     
     def getText(self):
-        return self.buf.get_slice(self.getStart(), self.getEnd())
+        return self.buf.get_slice(self.getStart(), self.getEnd(), True)
     
     def checkIntegrity(self, nextiter):
-        text = unicode(self.buf.get_slice(self.getStart(), nextiter))
+        text = unicode(self.buf.get_slice(self.getStart(), nextiter, True))
         lines = text.splitlines(True)
         sentencestartoffset = self.getStart().get_offset()
         sentences = []
@@ -159,7 +160,7 @@ class Picture( RawSentence ):
         leftmark = buf.create_mark(None, insertioniter, False)
         
         if os.path.isfile(picture_data.text):
-            pixbuf = gtk.gdk.pixbuf_new_from_file(picture_data.text) 
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file(picture_data.text) 
             buf.insert_pixbuf(insertioniter, pixbuf)
         else:
             logger.warning('cannot open image %s' % picture_data.text)

@@ -18,7 +18,7 @@ import urllib
 import logging
 from gettext import gettext as _
 
-from sugar.activity.activity import get_bundle_path
+from sugar3.activity.activity import get_bundle_path
 
 import book
 from infoslicer.processing.NewtifulSoup import NewtifulStoneSoup \

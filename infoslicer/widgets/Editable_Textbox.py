@@ -1,11 +1,15 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import Pango
 import cPickle
-import pango
 import copy
 from Textbox import Textbox
+
+import logging
 
 SNAP_SENTENCE, SNAP_PARAGRAPH, SNAP_SECTION, SNAP_NONE = range(4)
 
@@ -18,11 +22,11 @@ class Editable_Textbox( Textbox ):
     """
     
     def __init__(self): 
-        gtk.TextView.__init__(self)
+        GObject.GObject.__init__(self)
         self.set_border_width(1)
         self.set_cursor_visible(True)
         self.set_editable(True)  
-        self.set_wrap_mode(gtk.WRAP_WORD)
+        self.set_wrap_mode(Gtk.WrapMode.WORD)
         self.article = None
         self.set_mode(SNAP_SENTENCE)
         self.changed = False
@@ -30,11 +34,17 @@ class Editable_Textbox( Textbox ):
         
         self.selecting = False
         self.handlers = []
-        self.modify_font(pango.FontDescription('arial 9'))
+        self.modify_font(Pango.FontDescription('arial 9'))
         self.ignore_snap_self = True
         self.drag_source = False
         self.edited = False
         self.set_property("left-margin", 5)
+
+        logging.debug('########### Editable_Textbox.drag_dest_set')
+        self.drag_dest_set(Gtk.DestDefaults.ALL, [], Gdk.DragAction.COPY)
+        self.drag_dest_set_target_list(None)
+        self.drag_dest_add_text_targets()
+        self.drag_dest_add_image_targets()
 
     def set_article(self, article):
         self.article = article
@@ -47,7 +57,7 @@ class Editable_Textbox( Textbox ):
         self.article.delete()
         
     def get_mouse_iter(self, x, y):
-        click_coords = self.window_to_buffer_coords(gtk.TEXT_WINDOW_TEXT, x, y)
+        click_coords = self.window_to_buffer_coords(Gtk.TextWindowType.TEXT, x, y)
         mouseClickPositionIter = self.get_iter_at_location(click_coords[0], click_coords[1])
         return mouseClickPositionIter
     
@@ -59,19 +69,19 @@ class Editable_Textbox( Textbox ):
             self.disconnect(handler)
         
         buffer.connect("changed", self.text_changed, None)
-        gtk.TextView.set_buffer(self, buffer)
+        Gtk.TextView.set_buffer(self, buffer)
         
         self.handlers = []
         
         self.handlers.append(self.connect("button-press-event", self.clicked_event, None))
         self.handlers.append(self.connect("button-release-event", self.unclicked_event, None))
-        self.handlers.append(self.connect("drag_data_get", self.drag_data_get_event, None))
-        self.handlers.append(self.connect("drag_begin", self.drag_begin_event, None))
+        self.handlers.append(self.connect("drag-data-get", self.drag_data_get_event, None))
+        self.handlers.append(self.connect("drag-begin", self.drag_begin_event, None))
         self.handlers.append(self.connect("drag-motion", self.drag_motion_event, None))
         self.handlers.append(self.connect("drag-drop", self.drag_drop_event, None))
         self.handlers.append(self.connect("drag-leave", self.drag_leave_event, None))
         self.handlers.append(self.connect("drag-data-delete", self.drag_data_delete_event, None))
-        self.handlers.append(self.connect("drag_data_received", self.drag_data_received_event, None))
+        self.handlers.append(self.connect("drag-data-received", self.drag_data_received_event, None))
         self.handlers.append(self.connect("drag-end", self.drag_end_event, None))
         self.handlers.append(self.connect("motion-notify-event", self.motion_notify, None))
         self.handlers.append(self.connect("focus-out-event", self.leave_notify, None))
@@ -143,7 +153,7 @@ class Editable_Textbox( Textbox ):
                 self.block = True
         
     def clicked_event(self, widget, event, data):
-        if event.type == gtk.gdk._2BUTTON_PRESS or event.type == gtk.gdk._3BUTTON_PRESS:
+        if event.type == Gdk.EventType._2BUTTON_PRESS or event.type == Gdk.EventType._3BUTTON_PRESS:
             self.stop_emission("button_press_event")
             return
         if event.button == 3:
@@ -202,6 +212,7 @@ class Editable_Textbox( Textbox ):
             return False
         
     def drag_begin_event(self, widget, context, data):
+        logging.debug('############ Editable_Textbox.drag_begin_event')
         self.grab_focus()
         if self.snapto != SNAP_NONE:
             a = self.article
@@ -256,11 +267,12 @@ class Editable_Textbox( Textbox ):
             self.changed = False
         
     def drag_data_received_event(self, widget, context, x, y, selection_data, info, time, data):
+        logging.debug('################ Editable_Textbox.drag_data_received_event')
         if self.snapto != SNAP_NONE and not self.ignore_snap_self or (not self.drag_source and self.ignore_snap_self):    
             a = self.article
             insert_loc = self.get_mouse_iter(x, y)
-            data_received_type = str(selection_data.type)    
-            data = cPickle.loads(str(selection_data.data))
+            data_received_type = str(selection_data.get_data_type())    
+            data = cPickle.loads(str(selection_data.get_data()))
             
             if data_received_type == "sentence":
                 bestpoint = insert_loc  
@@ -276,15 +288,16 @@ class Editable_Textbox( Textbox ):
             self.grab_focus()
         
     def drag_data_get_event(self, widget, context, selection_data, info, time, data):
+        logging.debug('############### Editable_Textbox.drag_data_get_event')
         if not self.ignore_snap_self and self.snapto != SNAP_NONE:
             a = self.article
             
             if self.snapto == SNAP_SENTENCE:
-                atom = gtk.gdk.atom_intern("sentence")
+                atom = Gdk.atom_intern("sentence", only_if_exists=False)
             if self.snapto == SNAP_PARAGRAPH:
-                atom = gtk.gdk.atom_intern("paragraph")
+                atom = Gdk.atom_intern("paragraph", only_if_exists=False)
             if self.snapto == SNAP_SECTION:
-                atom = gtk.gdk.atom_intern("section")
+                atom = Gdk.atom_intern("section", only_if_exists=False)
                 
             string = cPickle.dumps(a.getSelection())
             selection_data.set(atom, 8, string)

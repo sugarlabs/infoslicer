@@ -1,7 +1,8 @@
 # Copyright (C) IBM Corporation 2008 
-import pygtk
-pygtk.require('2.0')
-import gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GObject
+from gi.repository import GdkPixbuf
 import os
 import cPickle
 import logging
@@ -13,7 +14,7 @@ import book
 
 logger = logging.getLogger('infoslicer')
 
-class Gallery_View( gtk.HBox ): 
+class Gallery_View( Gtk.HBox ): 
     """ 
     Created by Christopher Leonard
     Drag-and-drop methods added by Jonathan Mace
@@ -33,52 +34,57 @@ class Gallery_View( gtk.HBox ):
     
     def __init__(self):
         self.image_list = []
-        gtk.HBox.__init__(self)
+        GObject.GObject.__init__(self)
         
         self.current_index = -1
         
-        left_button = gtk.Button(label="\n\n << \n\n")
+        left_button = Gtk.Button(label="\n\n << \n\n")
         
-        right_button = gtk.Button(label="\n\n >> \n\n")
+        right_button = Gtk.Button(label="\n\n >> \n\n")
         
-        self.imagenumberlabel = gtk.Label()
+        self.imagenumberlabel = Gtk.Label()
         
-        self.image = gtk.Image()
+        self.image = Gtk.Image()
         
-        self.imagebox = gtk.EventBox()
+        self.imagebox = Gtk.EventBox()
         self.imagebox.add(self.image)
         
-        self.imagebox.drag_source_set(gtk.gdk.BUTTON1_MASK, [("text/plain", gtk.TARGET_SAME_APP, 80)], gtk.gdk.ACTION_COPY)
+        self.imagebox.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
+                                      [],
+                                      Gdk.DragAction.COPY)
+        self.imagebox.drag_source_add_image_targets()
         self.imagebox.connect("drag-begin", self.drag_begin_event, None)
+        logging.debug('##################### Galler_View.connect')
         self.imagebox.connect("drag-data-get", self.drag_data_get_event, None)
         
-        self.caption = gtk.Label("")
+        self.caption = Gtk.Label(label="")
         self.caption.set_line_wrap(True)
         
-        self.image_drag_container = gtk.VBox()
-        self.image_drag_container.pack_start(self.imagenumberlabel, expand = False)
-        self.image_drag_container.pack_start(self.imagebox, expand=False)
-        self.image_drag_container.pack_start(self.caption, expand=False)
+        self.image_drag_container = Gtk.VBox()
+        self.image_drag_container.pack_start(self.imagenumberlabel, expand=False,
+                                             fill=False, padding=0)
+        self.image_drag_container.pack_start(self.imagebox, False, True, 0)
+        self.image_drag_container.pack_start(self.caption, False, True, 0)
         
-        image_container = gtk.VBox()
-        image_container.pack_start(gtk.Label(" "))
-        image_container.pack_start(self.image_drag_container, expand=False)
-        image_container.pack_start(gtk.Label(" "))
+        image_container = Gtk.VBox()
+        image_container.pack_start(Gtk.Label(" "), True, True, 0)
+        image_container.pack_start(self.image_drag_container, False, True, 0)
+        image_container.pack_start(Gtk.Label(" "), True, True, 0)
         
-        left_button_container = gtk.VBox()
-        left_button_container.pack_start(gtk.Label(" "))
-        left_button_container.pack_start(left_button, expand=False)
-        left_button_container.pack_start(gtk.Label(" "))
+        left_button_container = Gtk.VBox()
+        left_button_container.pack_start(Gtk.Label(" "), True, True, 0)
+        left_button_container.pack_start(left_button, False, True, 0)
+        left_button_container.pack_start(Gtk.Label(" "), True, True, 0)
         
-        right_button_container = gtk.VBox()
-        right_button_container.pack_start(gtk.Label(" "))
-        right_button_container.pack_start(right_button, expand=False)
-        right_button_container.pack_start(gtk.Label(" "))
+        right_button_container = Gtk.VBox()
+        right_button_container.pack_start(Gtk.Label(" "), True, True, 0)
+        right_button_container.pack_start(right_button, False, True, 0)
+        right_button_container.pack_start(Gtk.Label(" "), True, True, 0)
 
         
-        self.pack_start(left_button_container, expand=False)
-        self.pack_start(image_container)
-        self.pack_start(right_button_container, expand=False)
+        self.pack_start(left_button_container, False, True, 0)
+        self.pack_start(image_container, True, True, 0)
+        self.pack_start(right_button_container, False, True, 0)
    
         self._source_article = None
         self.show_all()
@@ -99,7 +105,7 @@ class Gallery_View( gtk.HBox ):
         self.current_index += 1
         if self.current_index == len(self.image_list):
             self.current_index = 0
-        self.imagebuf = gtk.gdk.pixbuf_new_from_file(self.image_list[self.current_index][0])
+        self.imagebuf = GdkPixbuf.Pixbuf.new_from_file(self.image_list[self.current_index][0])
         self.image.set_from_pixbuf(self.imagebuf)
         self.caption.set_text("\n" + self.image_list[self.current_index][1])
         self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))   
@@ -115,7 +121,7 @@ class Gallery_View( gtk.HBox ):
         if self.current_index == 0:
             self.current_index = len(self.image_list)
         self.current_index -= 1
-        self.imagebuf = gtk.gdk.pixbuf_new_from_file(self.image_list[self.current_index][0])
+        self.imagebuf = GdkPixbuf.Pixbuf.new_from_file(self.image_list[self.current_index][0])
         self.image.set_from_pixbuf(self.imagebuf)
         self.caption.set_text("\n" + self.image_list[self.current_index][1])
         self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))   
@@ -129,7 +135,7 @@ class Gallery_View( gtk.HBox ):
             self.image.clear()
             return        
         self.current_index = 0
-        self.imagebuf = gtk.gdk.pixbuf_new_from_file(self.image_list[self.current_index][0])
+        self.imagebuf = GdkPixbuf.Pixbuf.new_from_file(self.image_list[self.current_index][0])
         self.image.set_from_pixbuf(self.imagebuf)
         self.caption.set_text("\n" + self.image_list[self.current_index][1])    
         logger.debug("setting text to:")
@@ -143,11 +149,12 @@ class Gallery_View( gtk.HBox ):
         logger.debug(self.image_list)
         
     def drag_begin_event(self, widget, context, data):
+        logging.debug('########### Gallery_View.drag_begin_event called')
         self.imagebox.drag_source_set_icon_pixbuf(self.imagebuf)
         
     def drag_data_get_event(self, widget, context, selection_data, info, timestamp, data):
-        logger.debug("getting data")
-        atom = gtk.gdk.atom_intern("section")
+        logger.debug('############# Gallery_View.drag_data_get_event')
+        atom = Gdk.atom_intern("section", only_if_exists=False)
         imagedata = Picture_Data(self.source_article_id,
                 self.image_list[self.current_index][0],
                 self.image_list[self.current_index][2])
