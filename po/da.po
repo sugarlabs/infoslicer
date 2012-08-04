@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2012-06-08 04:35+0200\n"
 "Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,55 +21,55 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "InfoSkærer"
 
-#: activity.py:70 activity.py:85
+#: activity.py:67
 msgid "Library"
 msgstr "Bibliotek"
 
-#: activity.py:71 activity.py:93
+#: activity.py:75
 msgid "Edit"
 msgstr "Redigér"
 
-#: book.py:213
+#: book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Løve (fra en.wikipedia.org)"
 
-#: book.py:214
+#: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tiger (fra en.wikipedia.org)"
 
-#: book.py:215
+#: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Giraf (fra en.wikipedia.org)"
 
-#: book.py:216
+#: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Zebra (fra en.wikipedia.org)"
 
-#: book.py:223
+#: book.py:221
 msgid "Giraffe"
 msgstr "Giraf"
 
-#: bookview.py:53
+#: bookview.py:52
 msgid "Articles are ready to be published"
 msgstr "Artikler er klar til at blive publiceret"
 
-#: bookview.py:84
+#: bookview.py:92
 msgid "Create new article"
 msgstr "Opret ny artikel"
 
-#: bookview.py:95
+#: bookview.py:102
 msgid "Delete current article"
 msgstr "Slet nuværende artikel"
 
-#: bookview.py:103
+#: bookview.py:109
 msgid "Move article downward"
 msgstr "Flyt artikel ned"
 
-#: bookview.py:108
+#: bookview.py:114
 msgid "Move article upward"
 msgstr "Flyt artikel op"
 
-#: bookview.py:169
+#: bookview.py:191
 msgid "New article"
 msgstr "Ny artikel"
 
@@ -81,57 +81,57 @@ msgstr "Tekst"
 msgid "Images"
 msgstr "Billeder"
 
-#: infoslicer/widgets/Edit_Pane.py:51
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
 msgstr "Snup markering til:"
 
-#: infoslicer/widgets/Edit_Pane.py:52
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
 msgstr "Ingenting"
 
-#: infoslicer/widgets/Edit_Pane.py:53
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
 msgstr "Sætninger"
 
-#: infoslicer/widgets/Edit_Pane.py:54
+#: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
 msgstr "Paragrafer"
 
-#: infoslicer/widgets/Edit_Pane.py:55
+#: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
 msgstr "Sektioner"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
 msgstr "Artikel:"
 
-#: infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
 msgstr "Denne artikel har ingen billeder"
 
-#: infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "Vælg venligst en Wikipedia-artikel fra menuen ovenfor"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki"
 msgstr "Wiki"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki articles"
 msgstr "Wiki-artikler"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom"
 msgstr "Brugerdefineret"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom articles"
 msgstr "Brugerdefinerede artikler"
 
-#: library.py:71
+#: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -140,62 +140,62 @@ msgstr ""
 "så tast \"Artikelnavn\" og klik"
 
 # puncspacing checked
-#: library.py:72
+#: library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "knappen i toppen af \"Bibliotek\"-panel"
 
-#: library.py:74
+#: library.py:75
 msgid "To create custom article click"
 msgstr "For at oprette en brugerdefineret artikel, så klik"
 
 # puncspacing  checked
-#: library.py:75
+#: library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "knappen på venstre \"Brugerdefineret\"-panel"
 
-#: library.py:83
+#: library.py:84
 msgid "Get article from:"
 msgstr "Hent artikel fra:"
 
-#: library.py:94
+#: library.py:95
 msgid "Article name"
 msgstr "Artikelnavn"
 
-#: library.py:100
+#: library.py:101
 msgid "Search"
 msgstr "Søg"
 
-#: library.py:204
+#: library.py:205
 msgid "Exists"
 msgstr "Eksisterer"
 
 # puncspacing checked
-#: library.py:205
+#: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\"-artikel eksisterer allerede"
 
-#: library.py:226
+#: library.py:228
 msgid "Publish selected articles"
 msgstr "Publicér markerede artikler"
 
-#: library.py:237
+#: library.py:239
 msgid "English Wikipedia"
 msgstr "Engelsk Wikipedia"
 
-#: library.py:238
+#: library.py:240
 msgid "Simple English Wikipedia"
 msgstr "Simpel Engelsk Wikipedia"
 
-#: library.py:239
+#: library.py:241
 msgid "German Wikipedia"
 msgstr "Tysk Wikipedia"
 
-#: library.py:240
+#: library.py:242
 msgid "Spanish Wikipedia"
 msgstr "Spansk Wikipedia"
 
-#: library.py:241
+#: library.py:243
 msgid "French Wikipedia"
 msgstr "Fransk Wikipedia"
 
@@ -238,33 +238,20 @@ msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
 msgid "Return to index"
 msgstr "Gå tilbage til indeks"
 
-#: xol.py:39
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Intet at publicere"
 
 # puncspacing checked
-#: xol.py:40
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
 
-#: xol.py:61
-msgid "Bundle exists"
-msgstr "Bundt eksisterer"
-
-#: xol.py:62
-#, python-format
-msgid ""
-"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
-"Journal. You can click \"Publish\" again afterwards."
-msgstr ""
-"Der eksisterer allerede et bundt med navnet \"%s\". Klik venligst \"Udvisk\" i "
-"Journal. Du kan klikke \"Udgiv\" igen efterfølgende."
-
-#: xol.py:69
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Overskriv eksisterende bundt?"
 
-#: xol.py:70
+#: xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
@@ -272,14 +259,25 @@ msgstr ""
 "Der er allerede oprettet et bundt for det aktuelle objekt. Klik \"OK\" for at "
 "overskrive det."
 
-#: xol.py:94
+#: xol.py:99
 msgid "Book published to your Journal"
 msgstr "Bog publiceret i din Journal"
 
-#: xol.py:95
+#: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr "Du kan læse bogen i Gennemse eller tilgå .xol-filen fra din journal"
+
+#~ msgid "Bundle exists"
+#~ msgstr "Bundt eksisterer"
+
+#, python-format
+#~ msgid ""
+#~ "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+#~ "Journal. You can click \"Publish\" again afterwards."
+#~ msgstr ""
+#~ "Der eksisterer allerede et bundt med navnet \"%s\". Klik venligst \"Udvisk\" i "
+#~ "Journal. Du kan klikke \"Udgiv\" igen efterfølgende."
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
