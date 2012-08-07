@@ -26,11 +26,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-24 00:34-0400\n"
-"PO-Revision-Date: 2011-12-22 21:06+0200\n"
-"Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"PO-Revision-Date: 2012-08-06 16:10+0200\n"
+"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,56 +41,56 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "ԻնֆոՇերտող"
 
-#: activity.py:70 activity.py:85
+#: activity.py:67
 msgid "Library"
 msgstr "Գրադարան"
 
-#: activity.py:71 activity.py:93
+#: activity.py:75
 msgid "Edit"
 msgstr "Խմբագրել"
 
-#: book.py:213
+#: book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Առյուծ (en.wikipedia.org)-ից"
 
-#: book.py:214
+#: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Վագր (en.wikipedia.org)-ից"
 
-#: book.py:215
+#: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Ընձուղտ (en.wikipedia.org-ից)"
 
 # Վագրաձի
-#: book.py:216
+#: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Զեբր (en.wikipedia.org-ից)"
 
-#: book.py:223
+#: book.py:221
 msgid "Giraffe"
 msgstr "Ընձուղտ"
 
-#: bookview.py:53
+#: bookview.py:52
 msgid "Articles are ready to be published"
 msgstr "Հոդվածները պատրաստ են հրատարակման"
 
-#: bookview.py:84
+#: bookview.py:92
 msgid "Create new article"
 msgstr "Ստեղծել նոր Հոդված"
 
-#: bookview.py:95
+#: bookview.py:102
 msgid "Delete current article"
 msgstr "Ջնջել ներկա Հոդվածը"
 
-#: bookview.py:103
+#: bookview.py:109
 msgid "Move article downward"
 msgstr "Շարժել հոդվածը ներքև"
 
-#: bookview.py:108
+#: bookview.py:114
 msgid "Move article upward"
 msgstr "Շարժել հոդվածը վերև"
 
-#: bookview.py:169
+#: bookview.py:191
 msgid "New article"
 msgstr "Նոր Հոդված"
 
@@ -102,57 +102,57 @@ msgstr "Տեքստ"
 msgid "Images"
 msgstr "Պատկերներ"
 
-#: infoslicer/widgets/Edit_Pane.py:51
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
 msgstr "Ընտրածը հարմարեցրնել."
 
-#: infoslicer/widgets/Edit_Pane.py:52
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
 msgstr "Ոչինչ"
 
-#: infoslicer/widgets/Edit_Pane.py:53
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
 msgstr "Նախադասություններ"
 
-#: infoslicer/widgets/Edit_Pane.py:54
+#: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
 msgstr "Պարբերություններ"
 
-#: infoslicer/widgets/Edit_Pane.py:55
+#: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
 msgstr "Բաժիններ"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
 msgstr "Հոդված."
 
-#: infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
 msgstr "Այս հոդվածում որևէ նկար չկա"
 
-#: infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "Խնդրեմ, վերը ներկայացվող ցուցակից ընտրեք Վիքիպեդիայի որեւէ հոդված"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki"
 msgstr "Wiki"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki articles"
 msgstr "Wiki հոդվածներ"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom"
 msgstr "Հարմարեցնել"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom articles"
 msgstr "Հարմարեցված հոդվածներ"
 
-#: library.py:71
+#: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -160,61 +160,61 @@ msgstr ""
 "Wiki հոդված բեռնելու համար \n"
 "տպել Հոդվածի վերնագիրը և` քլիք:"
 
-#: library.py:72
+#: library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "\"Գրադարան\" վահանակի վերին մասի կոճակը"
 
-#: library.py:74
+#: library.py:75
 msgid "To create custom article click"
 msgstr "Հարմարեցված հոդված ստեղծելու համար` քլիք"
 
-#: library.py:75
+#: library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "\"Հարմարեցնել\" վահանակի ձախ մասի կոճակը"
 
-#: library.py:83
+#: library.py:84
 msgid "Get article from:"
 msgstr "Ստանալ հոդված ....-ից"
 
-#: library.py:94
+#: library.py:95
 msgid "Article name"
 msgstr "Հոդվածի վերնագիր"
 
-#: library.py:100
+#: library.py:101
 msgid "Search"
 msgstr "Որոնել"
 
-#: library.py:204
+#: library.py:205
 msgid "Exists"
 msgstr "Առկա Է"
 
-#: library.py:205
+#: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" հոդվածն արդեն առկա Է"
 
-#: library.py:226
+#: library.py:228
 msgid "Publish selected articles"
 msgstr "Հրատարակել ընտրված հոդվածները"
 
 # Wikipedia
-#: library.py:237
+#: library.py:239
 msgid "English Wikipedia"
 msgstr "Անգլերեն Վիկիպեդիա"
 
-#: library.py:238
+#: library.py:240
 msgid "Simple English Wikipedia"
 msgstr "Պարզ Անգլերեն Վիկիպեդիա"
 
-#: library.py:239
+#: library.py:241
 msgid "German Wikipedia"
 msgstr "Գերմաներեն Վիկիպեդիա"
 
-#: library.py:240
+#: library.py:242
 msgid "Spanish Wikipedia"
 msgstr "Իսպաներեն Վիկիպեդիա"
 
-#: library.py:241
+#: library.py:243
 msgid "French Wikipedia"
 msgstr "Ֆրանսերեն Վիկիպեդիա"
 
@@ -255,36 +255,38 @@ msgstr "Բեռնման ձախողում \"%s\"; Ստուգեք ձեր միացո
 
 #: parse.py:18
 msgid "Return to index"
-msgstr ""
+msgstr "Վերադառնալ ցուցիչին"
 
-#: xol.py:39
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Հրապարակելու ոչինչ չկա"
 
-#: xol.py:40
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
 
-#: xol.py:61
-msgid "Bundle exists"
-msgstr "Փաթեթը գոյություն ունի"
-
-#: xol.py:62
-#, python-format
-msgid ""
-"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
-"Journal. You can click \"Publish\" again afterwards."
-msgstr ""
-
-#: xol.py:69
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթի վրա:"
 
-#: xol.py:70
+#: xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
 msgstr ""
+"Այս առարկայի փաթեթը արդոն ստեղծվել է: Ընտրիր \"OK\" այն վերագրանցելու համար:"
+
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr "Քո մատյանում հրատարակված գիրք"
+
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+
+#~ msgid "Bundle exists"
+#~ msgstr "Փաթեթը գոյություն ունի"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
