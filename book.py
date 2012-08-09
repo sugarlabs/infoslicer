@@ -16,7 +16,7 @@ import os
 import uuid
 import logging
 from gi.repository import GObject
-import cjson
+import json
 import shutil
 import zipfile
 from gettext import gettext as _
@@ -122,7 +122,7 @@ class Book(GObject.GObject):
                  'revision' : self.revision }
 
         index = file(os.path.join(self.root, 'index'), 'w')
-        index.write(cjson.encode(data))
+        index.write(json.dumps(data))
         index.close()
 
     def sync(self):
@@ -140,7 +140,7 @@ class Book(GObject.GObject):
         if os.path.exists(self.root):
             try:
                 index = file(os.path.join(self.root, 'index'), 'r')
-                data = cjson.decode(index.read())
+                data = json.loads(index.read())
                 self.uid = data['uid']
                 self.index = data['index']
                 self.revision = data['revision']
