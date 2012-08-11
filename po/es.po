@@ -158,7 +158,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2012-06-07 22:47+0200\n"
 "Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,55 +173,55 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
-#: activity.py:70 activity.py:85
+#: activity.py:67
 msgid "Library"
 msgstr "Biblioteca"
 
-#: activity.py:71 activity.py:93
+#: activity.py:75
 msgid "Edit"
 msgstr "Editar"
 
-#: book.py:213
+#: book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "León (de en.wikipedia.org)"
 
-#: book.py:214
+#: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tigre (de en.wikipedia.org)"
 
-#: book.py:215
+#: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Jirafa (de en.wikipedia.org)"
 
-#: book.py:216
+#: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Cebra (de en.wikipedia.org)"
 
-#: book.py:223
+#: book.py:221
 msgid "Giraffe"
 msgstr "Jirafa"
 
-#: bookview.py:53
+#: bookview.py:52
 msgid "Articles are ready to be published"
 msgstr "Los artículos están listos para ser publicados"
 
-#: bookview.py:84
+#: bookview.py:92
 msgid "Create new article"
 msgstr "Crear un nuevo artículo"
 
-#: bookview.py:95
+#: bookview.py:102
 msgid "Delete current article"
 msgstr "Borrar artículo en uso"
 
-#: bookview.py:103
+#: bookview.py:109
 msgid "Move article downward"
 msgstr "Mover artículo hacia abajo"
 
-#: bookview.py:108
+#: bookview.py:114
 msgid "Move article upward"
 msgstr "Mover artículo hacia arriba"
 
-#: bookview.py:169
+#: bookview.py:191
 msgid "New article"
 msgstr "Nuevo artículo"
 
@@ -233,57 +233,57 @@ msgstr "Texto"
 msgid "Images"
 msgstr "Imágenes"
 
-#: infoslicer/widgets/Edit_Pane.py:51
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
 msgstr "Ajustar/alinear la selección a:"
 
-#: infoslicer/widgets/Edit_Pane.py:52
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
 msgstr "Nada"
 
-#: infoslicer/widgets/Edit_Pane.py:53
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
 msgstr "Oraciones"
 
-#: infoslicer/widgets/Edit_Pane.py:54
+#: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
 msgstr "Párrafos"
 
-#: infoslicer/widgets/Edit_Pane.py:55
+#: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
 msgstr "Secciones"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
 msgstr "Artículo:"
 
-#: infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
 msgstr "Este artículo no tiene ninguna imagen"
 
-#: infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "Por favor seleccione un artículo de Wikipedia del menú de arriba"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki"
 msgstr "Wiki"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki articles"
 msgstr "Artículos de la wiki"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom"
 msgstr "Personalizado"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom articles"
 msgstr "Artículos personalizados"
 
-#: library.py:71
+#: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -291,60 +291,60 @@ msgstr ""
 "Para descargar artículo de la Wiki\n"
 "escriba \"Nombre de artículo\" y haga clic"
 
-#: library.py:72
+#: library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "botón sobre el panel \"Biblioteca\""
 
-#: library.py:74
+#: library.py:75
 msgid "To create custom article click"
 msgstr "Para crear un artículo personalizado haga clic en"
 
-#: library.py:75
+#: library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "botón en el panel \"Personalizado\" de la izquierda"
 
-#: library.py:83
+#: library.py:84
 msgid "Get article from:"
 msgstr "Obtener artículo de:"
 
-#: library.py:94
+#: library.py:95
 msgid "Article name"
 msgstr "Nombre del artículo"
 
-#: library.py:100
+#: library.py:101
 msgid "Search"
 msgstr "Buscar"
 
-#: library.py:204
+#: library.py:205
 msgid "Exists"
 msgstr "Existe"
 
-#: library.py:205
+#: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "El artículo \"%s\" ya existe"
 
-#: library.py:226
+#: library.py:228
 msgid "Publish selected articles"
 msgstr "Publicar artículos seleccionados"
 
-#: library.py:237
+#: library.py:239
 msgid "English Wikipedia"
 msgstr "Wikipedia en inglés"
 
-#: library.py:238
+#: library.py:240
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia en inglés sencillo"
 
-#: library.py:239
+#: library.py:241
 msgid "German Wikipedia"
 msgstr "Wikipedia en alemán"
 
-#: library.py:240
+#: library.py:242
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
 
-#: library.py:241
+#: library.py:243
 msgid "French Wikipedia"
 msgstr "Wikipedia en francés"
 
@@ -387,32 +387,19 @@ msgstr "Error descargando \"%s\"; verifique su conexión"
 msgid "Return to index"
 msgstr "Regresar al índice"
 
-#: xol.py:39
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Nada para publicar"
 
-#: xol.py:40
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Marcar artículos del panel \"Personalizado\" e intentar de nuevo."
 
-#: xol.py:61
-msgid "Bundle exists"
-msgstr "Paquete existe"
-
-#: xol.py:62
-#, python-format
-msgid ""
-"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
-"Journal. You can click \"Publish\" again afterwards."
-msgstr ""
-"Un paquete con nombre \"%s\" ya existe. Por favor, haga clic en \"Borrar\" en el "
-"Diario. Puede hacer clic en \"Publicar\" de nuevo después."
-
-#: xol.py:69
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "¿Sobreescribir paquete existente?"
 
-#: xol.py:70
+#: xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
@@ -420,15 +407,26 @@ msgstr ""
 "Un paquete para el objeto actual ya se ha creado. Haz click en \"OK\" para "
 "sobreescribirlo."
 
-#: xol.py:94
+#: xol.py:99
 msgid "Book published to your Journal"
 msgstr "Libro publicado en tu Diario"
 
-#: xol.py:95
+#: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
 "Puedes leer el libro en Navegar o acceder al archivo .xol desde tu Diario"
+
+#~ msgid "Bundle exists"
+#~ msgstr "Paquete existe"
+
+#, python-format
+#~ msgid ""
+#~ "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+#~ "Journal. You can click \"Publish\" again afterwards."
+#~ msgstr ""
+#~ "Un paquete con nombre \"%s\" ya existe. Por favor, haga clic en \"Borrar\" en el "
+#~ "Diario. Puede hacer clic en \"Publicar\" de nuevo después."
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
