@@ -5,7 +5,6 @@ from gi.repository import Gtk
 from gi.repository import GObject
 from gi.repository import Pango
 import cPickle
-import pango
 
 SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
 
