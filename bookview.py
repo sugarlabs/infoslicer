@@ -195,48 +195,44 @@ class BookView(Gtk.VBox):
         self._update_check(self.store[-1][PUBLISH])
 
     def _delete_cb(self, widget):
-        index, column = self.tree.get_cursor()
-        if not index:
+        path, focus_column = self.tree.get_cursor()
+
+        if not path:
             return
 
-        logging.debug('TODO: This is not working because of the port to Gtk3. '
-                      'TreePath object does not support indexing')
+        if self._changing:
+            GObject.source_remove(self._changing)
+            self._changing = None
 
-        # index = index[0]
+        index = path.get_indices()[0]
 
-        # if self._changing:
-        #     GObject.source_remove(self._changing)
-        #     self._changing = None
+        self.book.remove(self.store[index][TITLE])
+        self.store.remove(self.tree.props.model.get_iter(index))
 
-        # self.book.remove(self.store[index][TITLE])
-        # self.store.remove(self.tree.props.model.get_iter(index))
-
-        # if len(self.store):
-        #     if index >= len(self.store):
-        #         index -= 1
-        #     self.tree.set_cursor(index, self.tree.get_column(1), False)
-        #     self._update_check(self.store[index][PUBLISH])
+        if len(self.store):
+            if index >= len(self.store):
+                index -= 1
+            self.tree.set_cursor(index, self.tree.get_column(1), False)
+            self._update_check(self.store[index][PUBLISH])
 
     def _swap_cb(self, widget, delta):
-        old_index, column = self.tree.get_cursor()
-        if not old_index:
+        path, focus_column = self.tree.get_cursor()
+
+        if not path:
             return
 
-        logging.debug('TODO: This is not working because of the port to Gtk3. '
-                      'TreePath object does not support indexing')
+        old_index = path.get_indices()[0]
+        new_index = old_index + delta
 
-        # old_index = old_index[0]
-        # new_index = old_index + delta
+        if new_index < 0:
+            new_index = len(self.store) - 1
+        elif new_index >= len(self.store):
+            new_index = 0
 
-        # if new_index < 0:
-        #     new_index = len(self.store)-1
-        # elif new_index >= len(self.store):
-        #     new_index = 0
-
-        # self.book.index[old_index], self.book.index[new_index] = \
-        #         self.book.index[new_index], self.book.index[old_index]
-        # self.store.swap(self.tree.props.model.get_iter(old_index),
-        #         self.tree.props.model.get_iter(new_index))
+        self.book.index[old_index], self.book.index[new_index] = \
+                self.book.index[new_index], self.book.index[old_index]
+        self.store.swap(self.tree.props.model.get_iter(old_index),
+                self.tree.props.model.get_iter(new_index))
 
     def _check_toggled_cb(self, widget):
         for i, entry in enumerate(self.store):
