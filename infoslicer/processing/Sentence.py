@@ -87,7 +87,7 @@ class RawSentence:
         return self.buf.get_slice(self.getStart(), self.getEnd(), True)
     
     def checkIntegrity(self, nextiter):
-        text = unicode(self.buf.get_slice(self.getStart(), nextiter, True))
+        text = self.buf.get_slice(self.getStart(), nextiter, True)
         lines = text.splitlines(True)
         sentencestartoffset = self.getStart().get_offset()
         sentences = []
@@ -135,7 +135,7 @@ class Sentence( RawSentence ):
                 
         rightmark = buf.create_mark(None, insertioniter, True)
         leftmark = buf.create_mark(None, insertioniter, False)
-        buf.insert(insertioniter, unicode(sentence_data.text))
+        buf.insert(insertioniter, sentence_data.text)
         left = buf.get_iter_at_mark(rightmark)
         right = buf.get_iter_at_mark(leftmark)
         buf.move_mark(leftmark, left)

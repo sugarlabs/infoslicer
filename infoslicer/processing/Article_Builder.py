@@ -41,7 +41,7 @@ def get_article_from_dita(image_path, dita):
             source_article_id = article_id
             text = ph.renderContents().replace("\n", "").replace("&amp;#160;", "").strip() + " "
             if text[0:5] == "Satur":
-                logger.debug(unicode(text))
+                logger.debug(text)
             sentence_data = Sentence_Data(id, source_article_id, source_section_id, source_paragraph_id, source_sentence_id, text)
             sentence_data_list.append(sentence_data)
         paragraph_data.append(Paragraph_Data("shortdesc", article_id, "shortdesc", "shortdesc", sentence_data_list))
