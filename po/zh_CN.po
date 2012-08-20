@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-02 00:33-0400\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2012-07-03 12:50+0200\n"
 "Last-Translator: athurg <feng@jianbo.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,55 +53,55 @@ msgstr ""
 msgid "InfoSlicer"
 msgstr "信息片段"
 
-#: activity.py:70 activity.py:85
+#: activity.py:67
 msgid "Library"
 msgstr "文库"
 
-#: activity.py:71 activity.py:93
+#: activity.py:75
 msgid "Edit"
 msgstr "编辑"
 
-#: book.py:213
+#: book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Lion (来自 en.wikipedia.org)"
 
-#: book.py:214
+#: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tiger (来自 en.wikipedia.org)"
 
-#: book.py:215
+#: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Giraffe (来自 en.wikipedia.org)"
 
-#: book.py:216
+#: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Zebra (来自 en.wikipedia.org)"
 
-#: book.py:223
+#: book.py:221
 msgid "Giraffe"
 msgstr "长颈鹿"
 
-#: bookview.py:53
+#: bookview.py:52
 msgid "Articles are ready to be published"
 msgstr "文章已准备完成，可以发布"
 
-#: bookview.py:84
+#: bookview.py:92
 msgid "Create new article"
 msgstr "新建文章"
 
-#: bookview.py:95
+#: bookview.py:102
 msgid "Delete current article"
 msgstr "删除当前文章"
 
-#: bookview.py:103
+#: bookview.py:109
 msgid "Move article downward"
 msgstr "向下移动文章"
 
-#: bookview.py:108
+#: bookview.py:114
 msgid "Move article upward"
 msgstr "向上移动文章"
 
-#: bookview.py:169
+#: bookview.py:191
 msgid "New article"
 msgstr "新文章"
 
@@ -113,57 +113,57 @@ msgstr "文本"
 msgid "Images"
 msgstr "图像"
 
-#: infoslicer/widgets/Edit_Pane.py:51
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
 msgstr "快速选择："
 
-#: infoslicer/widgets/Edit_Pane.py:52
+#: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
 msgstr "无"
 
-#: infoslicer/widgets/Edit_Pane.py:53
+#: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
 msgstr "句子"
 
-#: infoslicer/widgets/Edit_Pane.py:54
+#: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
 msgstr "段落"
 
-#: infoslicer/widgets/Edit_Pane.py:55
+#: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
 msgstr "章节"
 
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
 msgstr "文章："
 
-#: infoslicer/widgets/Image_Pane.py:77
+#: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
 msgstr "该文章不含任何图像"
 
-#: infoslicer/widgets/Image_Pane.py:80
+#: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "请从上面的菜单中选择维基百科的文章"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki"
 msgstr "维基百科"
 
-#: library.py:49
+#: library.py:50
 msgid "Wiki articles"
 msgstr "维基百科文章"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom"
 msgstr "自定义"
 
-#: library.py:51
+#: library.py:52
 msgid "Custom articles"
 msgstr "自定义文章"
 
-#: library.py:71
+#: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -171,60 +171,60 @@ msgstr ""
 "下载维基百科文章\n"
 "请输入“文章名”后点击"
 
-#: library.py:72
+#: library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "上方“文库”面板的按钮"
 
-#: library.py:74
+#: library.py:75
 msgid "To create custom article click"
 msgstr "点击后创建自定义的文章"
 
-#: library.py:75
+#: library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "左边“自定义”面板的按钮"
 
-#: library.py:83
+#: library.py:84
 msgid "Get article from:"
 msgstr "文章获取自："
 
-#: library.py:94
+#: library.py:95
 msgid "Article name"
 msgstr "文章名"
 
-#: library.py:100
+#: library.py:101
 msgid "Search"
 msgstr "搜索"
 
-#: library.py:204
+#: library.py:205
 msgid "Exists"
 msgstr "已存在"
 
-#: library.py:205
+#: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "文章 \"%s\" 已存在"
 
-#: library.py:226
+#: library.py:228
 msgid "Publish selected articles"
 msgstr "发布选中的文章"
 
-#: library.py:237
+#: library.py:239
 msgid "English Wikipedia"
 msgstr "英文维基百科"
 
-#: library.py:238
+#: library.py:240
 msgid "Simple English Wikipedia"
 msgstr "简易英文维基百科"
 
-#: library.py:239
+#: library.py:241
 msgid "German Wikipedia"
 msgstr "德文维基百科"
 
-#: library.py:240
+#: library.py:242
 msgid "Spanish Wikipedia"
 msgstr "西班牙文维基百科"
 
-#: library.py:241
+#: library.py:243
 msgid "French Wikipedia"
 msgstr "法文维基百科"
 
@@ -267,43 +267,41 @@ msgstr "下载 \"%s\" 出错： 请检查你的连接"
 msgid "Return to index"
 msgstr "返回首页"
 
-#: xol.py:39
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "没有文章可以发布"
 
-#: xol.py:40
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "请在“自定义”面板标记文章后，重试一次。"
 
-#: xol.py:61
-msgid "Bundle exists"
-msgstr "包已存在"
-
-#: xol.py:62
-#, python-format
-msgid ""
-"A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
-"Journal. You can click \"Publish\" again afterwards."
-msgstr "名为“%s”已经存在，请点击Journal中的“擦除”按钮。随后你可以再次点击“发布”。"
-
-#: xol.py:69
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "是否覆盖已存在的包？"
 
-#: xol.py:70
+#: xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
 msgstr "当前对象已经创建这个包了，请点“OK”覆盖掉。"
 
-#: xol.py:94
+#: xol.py:99
 msgid "Book published to your Journal"
 msgstr "书籍已发布到Journal中"
 
-#: xol.py:95
+#: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr "你可以在浏览器中阅读书籍，或者通过Journal访问对应的.xol文件。"
+
+#~ msgid "Bundle exists"
+#~ msgstr "包已存在"
+
+#, python-format
+#~ msgid ""
+#~ "A bundle by \"%s\" name already exists. Please click \"Erase\" in the "
+#~ "Journal. You can click \"Publish\" again afterwards."
+#~ msgstr "名为“%s”已经存在，请点击Journal中的“擦除”按钮。随后你可以再次点击“发布”。"
 
 #, python-format
 #~ msgid "A bundle by \"%s\" name already exists. Please "
