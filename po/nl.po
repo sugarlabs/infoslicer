@@ -38,11 +38,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
-"PO-Revision-Date: 2011-10-28 11:08+0200\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"PO-Revision-Date: 2012-08-12 23:03+0200\n"
 "Last-Translator: whe <heppew@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,6 +52,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSnijder"
+
+#: activity.py:67
+msgid "Library"
+msgstr "Bibliotheek"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "Bewerk"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Leeuw (uit en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tijger (uit en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Giraf (uit en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (uit en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "Giraf"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Artikelen zijn klaar om uit te geven"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "Maak nieuw artikel"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "Verwijder dit artikel"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "Verplaats artikel lager"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "Verplaats artikel hoger"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "Nieuw artikel"
+
+#: edit.py:58
+msgid "Text"
+msgstr "Tekst"
+
+#: edit.py:63
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Klik selectie aan:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Niets"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Zinnen"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Alinea's"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Secties"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "Artikel:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Dit artikel heeft geen afbeeldingen"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Selecteer aub een Wikipedia artikel uit bovenstaand menu"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "Wiki artikelen"
+
+#: library.py:52
+msgid "Custom"
+msgstr "Aangepast"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "Aangepaste artikelen"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Om Wiki artikelen te downloaden\n"
+"type \"Artikel naam\" en klik"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "knop aan de bovenkant van \"Bibliotheek\" paneel"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "Om aangepast artikel aan te maken klik"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "knop aan de linkerkant \"Aangepast\" paneel"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "Neem artikel van:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "Artikel naam"
+
+#: library.py:101
+msgid "Search"
+msgstr "Zoek"
+
+#: library.py:205
+msgid "Exists"
+msgstr "Bestaat"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "\"%s\" artikel bestaat al"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "Publiceer geselecteerde artikelen"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "Engelse Wikipedia"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "Eenvoudige Engelse Wikipedia"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "Duitse Wikipedia"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "Spaanse Wikipedia"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "Franse Wikipedia"
 
 #: net.py:37
 #, python-format
@@ -88,205 +263,49 @@ msgstr "\"%s\" niet gevonden"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Fout downloaden \"%s\", controleer je verbinding"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr "Keer terug naar index"
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Niets uit te geven"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Markeer artikelen van \"Aangepast\" paneel en probeer opnieuw."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Bundel bestaat"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Een bundel door \"%s\" naam bestaat al. Aub "
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Overschrijf bestaande bundel?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Een bundel voor dit voorwerp is al aangemaakt. "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Artikelen zijn klaar om uit te geven"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "Maak nieuw artikel"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "Verwijder dit artikel"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "Verplaats artikel lager"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "Verplaats artikel hoger"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "Nieuw artikel"
-
-#: edit.py:58
-msgid "Text"
-msgstr "Tekst"
-
-#: edit.py:63
-msgid "Images"
-msgstr "Afbeeldingen"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "Wiki"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "Wiki artikelen"
-
-#: library.py:51
-msgid "Custom"
-msgstr "Aangepast"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "Aangepaste artikelen"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
-"Om Wiki artikelen te downloaden\n"
-"type \"Artikel naam\" en klik"
+"Er werd reeds een bundel voor het huidige object gemaakt. Klik op \"OK\" om "
+"het te overschrijven."
 
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "knop aan de bovenkant van \"Bibliotheek\" paneel"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr "Boek gepubliceerd bij jouw Journal"
 
-#: library.py:74
-msgid "To create custom article click"
-msgstr "Om aangepast artikel aan te maken klik"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+"Je kunt het boek lezen in Blader or benader het .xol bestand met je Journal"
 
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "knop aan de linkerkant \"Aangepast\" paneel"
+#~ msgid "Bundle exists"
+#~ msgstr "Bundel bestaat"
 
-#: library.py:83
-msgid "Get article from:"
-msgstr "Neem artikel van:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "Artikel naam"
-
-#: library.py:100
-msgid "Search"
-msgstr "Zoek"
-
-#: library.py:202
-msgid "Exists"
-msgstr "Bestaat"
-
-#: library.py:203
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" artikel bestaat al"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Een bundel door \"%s\" naam bestaat al. Aub "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "Publiceer geselecteerde artikelen"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "Engelse Wikipedia"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "Eenvoudige Engelse Wikipedia"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "Duitse Wikipedia"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "Spaanse Wikipedia"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr "Franse Wikipedia"
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Leeuw (uit en.wikipedia.org)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tijger (uit en.wikipedia.org)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Giraf (uit en.wikipedia.org)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (uit en.wikipedia.org)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "Giraf"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Bibliotheek"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Bewerk"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Klik selectie aan:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Niets"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Zinnen"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Alinea's"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Secties"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Artikel:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Dit artikel heeft geen afbeeldingen"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Selecteer aub een Wikipedia artikel uit bovenstaand menu"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Een bundel voor dit voorwerp is al aangemaakt. "
 
 #~ msgid "Find article"
 #~ msgstr "Zoek artikel"
