@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+
+#: activity/activity.info:2
+msgid "InfoSlicer"
+msgstr "TopeMōhiohio"
+
+#: activity.py:67
+msgid "Library"
+msgstr "Puna"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "Whakatika"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Raiona (mai i en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Taika (mai i en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Kakīroa (mai i en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Tēpara (mai i en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "Kakīroa"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Kua reri ngā tuhipānui hei tā"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "Waihanga tuhipānui hōu"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "Muku tuhipānui o nāianei"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "Neke whakararo i te tuhipānui"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "Neke whakarunga i te tuhipānui"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "Tuhipānui hōu"
+
+#: edit.py:58
+msgid "Text"
+msgstr "Kupu"
+
+#: edit.py:63
+msgid "Images"
+msgstr "Ngā Atahanga"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Hopu tīpakohanga ki:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Korenoa"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Ngā Rerenga"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Ngā Kōwae"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Ngā Wāhanga"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "Tuhinga:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Kāore i tēnei tuhipānui ngā atahanga"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Kōwhiria tētahi tuhipānui Wikipedia mai i te tahu o runga"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "Tuhipānui wiki"
+
+#: library.py:52
+msgid "Custom"
+msgstr "Ritenga"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "Tuhipānui ritenga"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Hei tikiake tuhipānui Wiki\n"
+"patongia \"Inoga tuhipānui\" ka pāwhiri"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "i te pātene kei te paepae \"Puna\" runga"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "Hei waihanga tuhipānui ritenga pāwhiri"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "i te pātene kei te paepae \"Ritenga\" mauī"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "Tiki tuhipānui mai i:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "Ingoa tuhipānui"
+
+#: library.py:101
+msgid "Search"
+msgstr "Rapu"
+
+#: library.py:205
+msgid "Exists"
+msgstr "Tīari"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "Kei te tīari kē te tuhipānui \"%s\""
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "Whakaputa i ngā tuhipānui kua tīpakohia"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "Wikipedia Ingarihi"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "Wikipedia Ingarihi Mataiti"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "Wikipedia Tiamana"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "Wikipedia Paniora"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "Wikipedia Wīwī"
+
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" e tikiake ana..."
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "E tukatuka ana \"%s\"..."
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Tikiake ana i ngā atahanga \"%s\"..."
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (mai i %s)"
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" kua tikiake tikahia"
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" kāore i kitea"
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "I hapa te tikiake \"%s\"; taki i tō hononga"
+
+#: parse.py:18
+msgid "Return to index"
+msgstr "Hoki ki taupū"
+
+#: xol.py:50
+msgid "Nothing to publish"
+msgstr "Kāore he mea hei whakaputa"
+
+#: xol.py:51
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Tohua ngā tuhipānui mai i te pae \"Ritenga\" ka ngana anō."
+
+#: xol.py:71
+msgid "Overwrite existed bundle?"
+msgstr "Tuhirua i te pūkai tīari?"
+
+#: xol.py:72
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
+"I waihanga kētia tētahi pūkai mō te ahanoa o nāianei. Pāwhiri i te \"ĀE\" hei "
+"tuhirua."
+
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr "Pukapuka kua whakaputa ki tō Tuhitaka"
+
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+"E taea ana te pānui pukapuka ki te Tirotiro, ka taea rānei te whakaāhei i te "
+"kōnae .xol mai i tō Tuhitaka"
