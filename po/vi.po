@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2010-04-28 14:21+0200\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "Cắt ra Thông tin"
+
+#: activity.py:67
+msgid "Library"
+msgstr "Thư viện"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "Sửa"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Sư tử (từ en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Hổ (từ en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Hươu cao cổ (từ en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Ngựa vằn (từ en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "Hươu cao cổ"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Bài báo sắp sửa xuất bản"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "Tạo bài mới"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "Xoá bài đang sửa"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "Đem bài xuống"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "Đem bài lên"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "Bài mới"
+
+#: edit.py:58
+msgid "Text"
+msgstr "Văn bản"
+
+#: edit.py:63
+msgid "Images"
+msgstr "Ảnh"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Đính vùng chọn tới:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Không gì"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Câu"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Đoạn văn"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Phần"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "Bài:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Bài này không có ảnh nào"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Hãy chọn một bài báo Wikipedia trong trình đơn trên"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "Bài Wiki"
+
+#: library.py:52
+msgid "Custom"
+msgstr "Tự chọn"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "Bài tự chọn"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Để tải về bài Wiki, gõ\n"
+"« tên bài » và nhấn nút"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "trên bảng « Thư viện » ở đầu"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "Để tạo bài tự chọn, nhấn nút"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "trên bảng « Tự chọn » bên trái"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "Lấy bài từ :"
+
+#: library.py:95
+msgid "Article name"
+msgstr "Tên bài"
+
+#: library.py:101
+msgid "Search"
+msgstr ""
+
+#: library.py:205
+msgid "Exists"
+msgstr "Đã có"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "Bài « %s » đã có"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "Xuất các bài được chọn"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "Wikipedia tiếng Anh"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "Wikipedia tiếng Anh đơn giản"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "Wikipedia tiếng Đức"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "Wikipedia tiếng Tây Ban Nha"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr ""
 
 #: net.py:37
 #, python-format
@@ -84,205 +259,46 @@ msgstr "Không tìm thấy « %s »"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Gặp lỗi khi tải về « %s »: hãy kiểm tra lại sự kết nối"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Không có gì cần xuất bản"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Đánh dấu bài trên bảng « Tự chọn », và thử lại."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Bó đã có"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Một bó tên « %s » đã có. Hãy "
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Ghi đè lên bó đã có ?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Một bó cho đối tượng hiện thời đã được tạo về trước. "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Bài báo sắp sửa xuất bản"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "Tạo bài mới"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "Xoá bài đang sửa"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "Đem bài xuống"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "Đem bài lên"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "Bài mới"
-
-#: edit.py:58
-msgid "Text"
-msgstr "Văn bản"
-
-#: edit.py:63
-msgid "Images"
-msgstr "Ảnh"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "Wiki"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "Bài Wiki"
-
-#: library.py:51
-msgid "Custom"
-msgstr "Tự chọn"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "Bài tự chọn"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"Để tải về bài Wiki, gõ\n"
-"« tên bài » và nhấn nút"
-
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "trên bảng « Thư viện » ở đầu"
-
-#: library.py:74
-msgid "To create custom article click"
-msgstr "Để tạo bài tự chọn, nhấn nút"
-
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "trên bảng « Tự chọn » bên trái"
-
-#: library.py:83
-msgid "Get article from:"
-msgstr "Lấy bài từ :"
-
-#: library.py:94
-msgid "Article name"
-msgstr "Tên bài"
-
-#: library.py:100
-msgid "Search"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
 
-#: library.py:202
-msgid "Exists"
-msgstr "Đã có"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr ""
 
-#: library.py:203
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+
+#~ msgid "Bundle exists"
+#~ msgstr "Bó đã có"
+
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "Bài « %s » đã có"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Một bó tên « %s » đã có. Hãy "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "Xuất các bài được chọn"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "Wikipedia tiếng Anh"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "Wikipedia tiếng Anh đơn giản"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "Wikipedia tiếng Đức"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "Wikipedia tiếng Tây Ban Nha"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr ""
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Sư tử (từ en.wikipedia.org)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Hổ (từ en.wikipedia.org)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Hươu cao cổ (từ en.wikipedia.org)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Ngựa vằn (từ en.wikipedia.org)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "Hươu cao cổ"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Thư viện"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Sửa"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Đính vùng chọn tới:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Không gì"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Câu"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Đoạn văn"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Phần"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Bài:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Bài này không có ảnh nào"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Hãy chọn một bài báo Wikipedia trong trình đơn trên"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Một bó cho đối tượng hiện thời đã được tạo về trước. "
 
 #~ msgid "Find article"
 #~ msgstr "Tìm bài"
