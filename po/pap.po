@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2010-11-13 21:23+0200\n"
 "Last-Translator: Jiehua <jiehuahe@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,182 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#: activity.py:67
+msgid "Library"
+msgstr "Biblioteka"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "Editá"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Leon (for di en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tiger (for di en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Girafa (for di en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (for di en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "Zjiraf"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Artíkulonan ta kla pa publiká"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "Krea artíkulo nobo nobo"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "Kita artíkulo aktual"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "Move artíkulo bai abou"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "Move artíkulo ariba"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "Artíkulo nobo"
+
+#: edit.py:58
+msgid "Text"
+msgstr "Teksto"
+
+#: edit.py:63
+msgid "Images"
+msgstr "Imagen"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Hiba/Move selekshon pa:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Nada"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Frasenan"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Paragrafnan"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "sekshonnan"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "Artikulo:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "E artíkulo aki no tin ningun imagen"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Por fabor selekta un artikulo di wikipedia for di e menu ariba"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "Artikulonan di wiki"
+
+#: library.py:52
+msgid "Custom"
+msgstr "uzo"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "Artikuloan usual"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Pa download Wiki article\n"
+" taip \"Nòmber di artíkulo\" i klek"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "tekla te ariba di panel di \"Biblioteka\""
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "Pa krea artíkulo usual klek"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "Tekla na man robès ta pa panel \"Üsual\""
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "Buska artíkulo for di:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "Nòmber di artíkulo"
+
+#: library.py:101
+msgid "Search"
+msgstr ""
+
+#: library.py:205
+msgid "Exists"
+msgstr "Ta eksistí"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "artíkulo \"%s\" ta eksistí kaba"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "Publiká artíkulo selekshoná"
+
+# ingles, aleman ets.aki ta usa manera adhetivo, i na Papiamentu adhetivo no ta haña lèter kapital
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "Wikipedia ingles"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "Wikipedia ingles simpel"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "Wikipedia aleman"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "Wikipedia spañó"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "Wikipedia franses"
 
 #: net.py:37
 #, python-format
@@ -85,207 +261,47 @@ msgstr " no por a lokalisá \"%s\""
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Eror bahando \"%s\", chèk bo konekshon"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Nada pa publika"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Marka artíkulo for di pènel \"uzo\" anto purba atrobe."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Pakete ta  eksistí"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Un pakete yamá \"%s\" ta eksistí kaba. Por fabor "
-
 # E frase original na inlges no ta korekto. E mester ta "existing" na logá di "existed"
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Remplasá e pakete aktual?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "A krea un pakete pa e opheto aki kaba. "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Artíkulonan ta kla pa publiká"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "Krea artíkulo nobo nobo"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "Kita artíkulo aktual"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "Move artíkulo bai abou"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "Move artíkulo ariba"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "Artíkulo nobo"
-
-#: edit.py:58
-msgid "Text"
-msgstr "Teksto"
-
-#: edit.py:63
-msgid "Images"
-msgstr "Imagen"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "Wiki"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "Artikulonan di wiki"
-
-#: library.py:51
-msgid "Custom"
-msgstr "uzo"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "Artikuloan usual"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"Pa download Wiki article\n"
-" taip \"Nòmber di artíkulo\" i klek"
-
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "tekla te ariba di panel di \"Biblioteka\""
-
-#: library.py:74
-msgid "To create custom article click"
-msgstr "Pa krea artíkulo usual klek"
-
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "Tekla na man robès ta pa panel \"Üsual\""
-
-#: library.py:83
-msgid "Get article from:"
-msgstr "Buska artíkulo for di:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "Nòmber di artíkulo"
-
-#: library.py:100
-msgid "Search"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
 
-#: library.py:202
-msgid "Exists"
-msgstr "Ta eksistí"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr ""
 
-#: library.py:203
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+
+#~ msgid "Bundle exists"
+#~ msgstr "Pakete ta  eksistí"
+
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "artíkulo \"%s\" ta eksistí kaba"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Un pakete yamá \"%s\" ta eksistí kaba. Por fabor "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "Publiká artíkulo selekshoná"
-
-# ingles, aleman ets.aki ta usa manera adhetivo, i na Papiamentu adhetivo no ta haña lèter kapital
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "Wikipedia ingles"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "Wikipedia ingles simpel"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "Wikipedia aleman"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "Wikipedia spañó"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr "Wikipedia franses"
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Leon (for di en.wikipedia.org)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tiger (for di en.wikipedia.org)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Girafa (for di en.wikipedia.org)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (for di en.wikipedia.org)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "Zjiraf"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Biblioteka"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Editá"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Hiba/Move selekshon pa:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Nada"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Frasenan"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Paragrafnan"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "sekshonnan"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Artikulo:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "E artíkulo aki no tin ningun imagen"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Por fabor selekta un artikulo di wikipedia for di e menu ariba"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "A krea un pakete pa e opheto aki kaba. "
 
 #~ msgid "Find article"
 #~ msgstr "Deskubrí artíkulo"

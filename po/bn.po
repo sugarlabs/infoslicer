@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: honey VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2010-03-29 03:18+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -52,6 +52,182 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#: activity.py:67
+msgid "Library"
+msgstr "লাইব্রেরী"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "সম্পাদনা করো"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "সিংহ (en.wikipedia.org থেকে)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "বাঘ (en.wikipedia.org থেকে)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "জিরাফ (en.wikipedia.org থেকে)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "জেব্রা (en.wikipedia.org থেকে)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "জিরাফ"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "রচনা প্রকাশ করার জন্য প্রস্তুত"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "নতুন রচনা তৈরি করো"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "বর্তমান রচনাটি মুছে ফেলো"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "রচনাটি নিচের দিকে সরাও"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "রচনাটি উপরের দিকে সরাও"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "নতুন রচনা"
+
+#: edit.py:58
+msgid "Text"
+msgstr "টেক্সট"
+
+#: edit.py:63
+msgid "Images"
+msgstr "চিত্র"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "বেছে নেয়া অংশ য়ার সাথে জুড়ে দেয়া হবে:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "কিছুই নয়"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "বাক্য"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "অনুচ্ছেদ"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "অংশ"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "রচনা:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "এই রচনাটির কোনো চিত্র নেই"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "উপরের মেনু থেকে একটি উইকিপিডিয়া রচনা নির্বাচন করো"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "উইকি"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "উইকির রচনা"
+
+#: library.py:52
+msgid "Custom"
+msgstr "পছন্দসই"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "পছন্দসই রচনা"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"উইকির রচনা ডাউনলোড করার জন্য\n"
+"\"রচনার নাম\" লেখ এবং ক্লিক করো"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "উপরের \"লাইব্রেরী\" প্যানেলের বোতাম"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "নিজের পছন্দসই রচনা তৈরি করার জন্য ক্লিক করো"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "বাম \"পছন্দসই\" প্যানেলের বোতাম"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "যেখাণ থেকে রচনা পাওয়া যাবে:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "রচনার নাম"
+
+#: library.py:101
+msgid "Search"
+msgstr ""
+
+#: library.py:205
+msgid "Exists"
+msgstr "উপস্থিত রয়েছে"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "\"%s\" ইতোমধ্যেই উপস্থিত রচনা"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "নির্বাচিত রচনা প্রকাশ করো"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "ইংরেজী উইকিপিডিয়া"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "সহজ ইংরেজী উইকিপিডিয়া"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "জার্মান উইকিপিডিয়া"
+
+#: library.py:242
+#, fuzzy
+msgid "Spanish Wikipedia"
+msgstr "ইংরেজী উইকিপিডিয়া"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr ""
 
 #: net.py:37
 #, python-format
@@ -89,206 +265,39 @@ msgstr "\"%s\" খুঁজে পাওয়া যায়নি"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "\"%s\" ডাউনলোড করার সময় ত্রুটি; তোমার নেটওয়ার্ক সংযোগ পরীক্ষা করো"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "প্রকাশনার জন্য কিছু নেই"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "\"পছন্দসই\" প্যানেল থেকে রচনাটি চিহ্নিত করো এবং আবার চেষ্টা করো।"
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "বিদ্যমান সমষ্টির উপরিলেখ করতে চাও?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "বর্তমান বস্তুর সমষ্টি ইতোমধ্যেই তৈরি করা হয়েছে। "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "রচনা প্রকাশ করার জন্য প্রস্তুত"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "নতুন রচনা তৈরি করো"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "বর্তমান রচনাটি মুছে ফেলো"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "রচনাটি নিচের দিকে সরাও"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "রচনাটি উপরের দিকে সরাও"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "নতুন রচনা"
-
-#: edit.py:58
-msgid "Text"
-msgstr "টেক্সট"
-
-#: edit.py:63
-msgid "Images"
-msgstr "চিত্র"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "উইকি"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "উইকির রচনা"
-
-#: library.py:51
-msgid "Custom"
-msgstr "পছন্দসই"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "পছন্দসই রচনা"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"উইকির রচনা ডাউনলোড করার জন্য\n"
-"\"রচনার নাম\" লেখ এবং ক্লিক করো"
-
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "উপরের \"লাইব্রেরী\" প্যানেলের বোতাম"
-
-#: library.py:74
-msgid "To create custom article click"
-msgstr "নিজের পছন্দসই রচনা তৈরি করার জন্য ক্লিক করো"
-
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "বাম \"পছন্দসই\" প্যানেলের বোতাম"
-
-#: library.py:83
-msgid "Get article from:"
-msgstr "যেখাণ থেকে রচনা পাওয়া যাবে:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "রচনার নাম"
-
-#: library.py:100
-msgid "Search"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
 
-#: library.py:202
-msgid "Exists"
-msgstr "উপস্থিত রয়েছে"
-
-#: library.py:203
-#, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" ইতোমধ্যেই উপস্থিত রচনা"
-
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "নির্বাচিত রচনা প্রকাশ করো"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "ইংরেজী উইকিপিডিয়া"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "সহজ ইংরেজী উইকিপিডিয়া"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "জার্মান উইকিপিডিয়া"
-
-#: library.py:235
-#, fuzzy
-msgid "Spanish Wikipedia"
-msgstr "ইংরেজী উইকিপিডিয়া"
-
-#: library.py:236
-msgid "French Wikipedia"
+#: xol.py:99
+msgid "Book published to your Journal"
 msgstr ""
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "সিংহ (en.wikipedia.org থেকে)"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "বাঘ (en.wikipedia.org থেকে)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "জিরাফ (en.wikipedia.org থেকে)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "জেব্রা (en.wikipedia.org থেকে)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "জিরাফ"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "লাইব্রেরী"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "সম্পাদনা করো"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "বেছে নেয়া অংশ য়ার সাথে জুড়ে দেয়া হবে:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "কিছুই নয়"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "বাক্য"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "অনুচ্ছেদ"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "অংশ"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "রচনা:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "এই রচনাটির কোনো চিত্র নেই"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "উপরের মেনু থেকে একটি উইকিপিডিয়া রচনা নির্বাচন করো"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "বর্তমান বস্তুর সমষ্টি ইতোমধ্যেই তৈরি করা হয়েছে। "
 
 #~ msgid "Find article"
 #~ msgstr "রচনা খোঁজো"

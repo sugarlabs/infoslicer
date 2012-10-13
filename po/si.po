@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: olpc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2011-09-28 08:28+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: sinhala <LL@li.org>\n"
@@ -49,6 +49,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#: activity.py:67
+msgid "Library"
+msgstr "පුස්තකාල"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "සකස්කරනවා"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "සිංහයා (ගෙන් en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "කොටියා (ගෙන් en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "ජිරාෆ් (ගෙන් en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "සීබ්‍රා (ගෙන් en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "ජිරාෆ්"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "ලිපිය ප්‍රසිද්ධ කිරීමට සූදානම්"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "නව ලිපියක් සාදනවා"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "දැනට ඇති ලිපිය මකනවා"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "ලිපිය පහලට ගමන්කරනවා"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "ලිපිය ඉහලට ගමන්කරනවා"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "නව ලිපිය"
+
+#: edit.py:58
+msgid "Text"
+msgstr "අකුරු"
+
+#: edit.py:63
+msgid "Images"
+msgstr "රූප"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "හදිසියෙන් තෝරාගැනීමට"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "කිසිවක් නැත"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "වාක්‍ය"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "ඡේද"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "කොටස්"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "ලිපිය"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "මෙම ලිපියේ කිසිම රූපයක් නොමැත"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "කරුණාකර ඉහත මෙනුවෙන් විකීපීඩියා ලිපිය තෝරන්න"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "විකි"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "විකියේ ලිපි"
+
+#: library.py:52
+msgid "Custom"
+msgstr "රිසිසේ සැකසීම"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "ලිපි රිසිසේ සැකසීම"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"විකි ලිපි බාගතකිරීමට\n"
+"type \"Article name\" and click"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr ""
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr ""
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "button on the left \"Custom\" panel"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "ලිපිය ලබාගත්තේ:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "ලිපියේ නම"
+
+#: library.py:101
+msgid "Search"
+msgstr ""
+
+#: library.py:205
+msgid "Exists"
+msgstr "තිබෙනවා"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "\"%s\" ලිපිය දැනුත් තිබෙනවා"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "තෝරාගත් ලිපි ප්‍රසිද්ධකිරීම"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "ඉංග්‍රීසි විකීපීඩියා"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "සරල ඉංග්‍රීසි විකීපීඩියා"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "ජර්මන් විකීපීඩියා"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "ස්පාඤ්ඤ විකීපීඩියා"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr ""
 
 #: net.py:37
 #, python-format
@@ -85,205 +260,36 @@ msgstr "\"%s\" සොයාගත නොහැක"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "බාගතවීම දෝෂසහිතයි \"%s\"; ඔබේ සබඳතාව පරීක්ෂාකරන්න"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "ප්‍රසිද්ධ කිරීමට කිසිවක් නැත"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "ලිපියේ සලකුණු කරන්න \"Custom\" panel and try again."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "තිබෙන කට්ටලය මත ලියනවාද?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr ""
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "ලිපිය ප්‍රසිද්ධ කිරීමට සූදානම්"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "නව ලිපියක් සාදනවා"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "දැනට ඇති ලිපිය මකනවා"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "ලිපිය පහලට ගමන්කරනවා"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "ලිපිය ඉහලට ගමන්කරනවා"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "නව ලිපිය"
-
-#: edit.py:58
-msgid "Text"
-msgstr "අකුරු"
-
-#: edit.py:63
-msgid "Images"
-msgstr "රූප"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "විකි"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "විකියේ ලිපි"
-
-#: library.py:51
-msgid "Custom"
-msgstr "රිසිසේ සැකසීම"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "ලිපි රිසිසේ සැකසීම"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"විකි ලිපි බාගතකිරීමට\n"
-"type \"Article name\" and click"
-
-#: library.py:72
-msgid "button on the top \"Library\" panel"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
 
-#: library.py:74
-msgid "To create custom article click"
+#: xol.py:99
+msgid "Book published to your Journal"
 msgstr ""
 
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "button on the left \"Custom\" panel"
-
-#: library.py:83
-msgid "Get article from:"
-msgstr "ලිපිය ලබාගත්තේ:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "ලිපියේ නම"
-
-#: library.py:100
-msgid "Search"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
-
-#: library.py:202
-msgid "Exists"
-msgstr "තිබෙනවා"
-
-#: library.py:203
-#, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" ලිපිය දැනුත් තිබෙනවා"
-
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "තෝරාගත් ලිපි ප්‍රසිද්ධකිරීම"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "ඉංග්‍රීසි විකීපීඩියා"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "සරල ඉංග්‍රීසි විකීපීඩියා"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "ජර්මන් විකීපීඩියා"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "ස්පාඤ්ඤ විකීපීඩියා"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr ""
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "සිංහයා (ගෙන් en.wikipedia.org)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "කොටියා (ගෙන් en.wikipedia.org)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "ජිරාෆ් (ගෙන් en.wikipedia.org)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "සීබ්‍රා (ගෙන් en.wikipedia.org)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "ජිරාෆ්"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "පුස්තකාල"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "සකස්කරනවා"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "හදිසියෙන් තෝරාගැනීමට"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "කිසිවක් නැත"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "වාක්‍ය"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "ඡේද"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "කොටස්"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "ලිපිය"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "මෙම ලිපියේ කිසිම රූපයක් නොමැත"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "කරුණාකර ඉහත මෙනුවෙන් විකීපීඩියා ලිපිය තෝරන්න"
 
 #~ msgid "Find article"
 #~ msgstr "ලිපිය සොයාගැනීම"

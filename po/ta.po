@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2011-07-31 04:36+0200\n"
 "Last-Translator: Thangamani <thangam.arunx@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "தகவல் தருவோன்"
+
+#: activity.py:67
+msgid "Library"
+msgstr "நூலகம்"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "திருத்தம்"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "சிங்கம் (en.wikipedia.org இலிருந்து)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "புலி (en.wikipedia.org இலிருந்து)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "ஒட்டகச் சிவிங்கி (en.wikipedia.org இலிருந்து)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "வரிக்குதிரை (en.wikipedia.org இலிருந்து)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "ஒட்டகச் சிவிங்கி"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "விடயங்கள் பிரசுரிப்பதற்கு ஆயத்தமாக உள்ளன"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "புதிய கட்டுரையை உருவாக்கு"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "தற்போதய கட்டுரையை அழி"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "கீழ் நோக்கி கட்டுரையை அசை"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "மேல் நோக்கி கட்டுரையை அசை"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "புதிய கட்டுரை"
+
+#: edit.py:58
+msgid "Text"
+msgstr "உரை"
+
+#: edit.py:63
+msgid "Images"
+msgstr "படங்கள்"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "தெரிவு செய்ததைக் கொண்டு போ:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "ஒன்றுமில்லை"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "வசனங்கள்"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "பந்திகள்"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "பகுதிகள்"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "கட்டுரை"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "இந்தக் கட்டுரையில் எந்த படங்களும் இல்லை"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "மேலுள்ள பட்டியலிலிருந்து விக்கிபீடியா கட்டுரையை தெரிவு செய்"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "விக்கி(Wiki)"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "விக்கி(Wiki) கட்டுரைகள்"
+
+#: library.py:52
+msgid "Custom"
+msgstr "வழமை"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "வழமையான கட்டுரைகள்"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"விக்கி(Wiki) கட்டுரைகள்  \n"
+"   பதிவிறக்கத்திற்கு \" விடயப் பெயர்\" ஐ உள்ளீடு செய்து சொடுக்கு"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "\"நூலகம்\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "வழமையான கட்டுரைகளை உருவாக்குவதற்கு சொடுக்கு"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "இடது \"வழமை\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "கட்டுரைகளை இங்கிருந்து பெறு"
+
+#: library.py:95
+msgid "Article name"
+msgstr "கட்டுரைகளின் தலைப்பு"
+
+#: library.py:101
+msgid "Search"
+msgstr "தேடு"
+
+#: library.py:205
+msgid "Exists"
+msgstr "ஏற்கனவே உள்ளன"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "\"%s\" மான கட்டுரைகளை  ஏற்கனவே உள்ளன"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "தெரிவு செய்த கட்டுரைகளை பிரசுரி"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "எளிய ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "ஜெர்மனிய விக்கிபீடியா- கலைக் களஞ்சியம்"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "ஸ்பேனிஷ் விக்கிபீடியா- கலைக் களஞ்சியம் (Spanish Wikipedia)"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "பிரெஞ்சு விக்கிபீடியா-கலைக் களஞ்சியம்"
 
 #: net.py:37
 #, python-format
@@ -84,206 +259,47 @@ msgstr "\"%s\"கண்டு பிடிக்கப் முடியவி�
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "பதிவிறக்கத்தில் பிழைகளுள்ளன \"%s\"; உங்கள் இணைப்பை சரி பாருங்ஙள்"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "பிரசுரிப்பதற்கு விடயங்கள் எதுவுமில்லை"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr ""
 "\"வழமை\" தட்டில் இருந்து மீண்டும் விடயம் ஒன்றை ஆரம்பிக்க முயற்சி செய்யவும்"
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "ஏற்கனவே உள்ளதை கட்டு"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "கட்டானது ஏற்கனவே %s பெயரால் உள்ளது. தயவு செய்து. "
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "ஏற்கனவே உள்ள கட்டினை அழித்து விட்டு அதன் மேலிடு"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "ஏற்கனவே தற்போதய குறிக் கோளுக்காக ஒரு கட்டு உருவாக்கப்பட்டுள்ளது "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "விடயங்கள் பிரசுரிப்பதற்கு ஆயத்தமாக உள்ளன"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "புதிய கட்டுரையை உருவாக்கு"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "தற்போதய கட்டுரையை அழி"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "கீழ் நோக்கி கட்டுரையை அசை"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "மேல் நோக்கி கட்டுரையை அசை"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "புதிய கட்டுரை"
-
-#: edit.py:58
-msgid "Text"
-msgstr "உரை"
-
-#: edit.py:63
-msgid "Images"
-msgstr "படங்கள்"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "விக்கி(Wiki)"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "விக்கி(Wiki) கட்டுரைகள்"
-
-#: library.py:51
-msgid "Custom"
-msgstr "வழமை"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "வழமையான கட்டுரைகள்"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
-"விக்கி(Wiki) கட்டுரைகள்  \n"
-"   பதிவிறக்கத்திற்கு \" விடயப் பெயர்\" ஐ உள்ளீடு செய்து சொடுக்கு"
 
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "\"நூலகம்\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr ""
 
-#: library.py:74
-msgid "To create custom article click"
-msgstr "வழமையான கட்டுரைகளை உருவாக்குவதற்கு சொடுக்கு"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
 
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "இடது \"வழமை\" சட்டத்தின் மேல் பொத்தான் உள்ளது"
+#~ msgid "Bundle exists"
+#~ msgstr "ஏற்கனவே உள்ளதை கட்டு"
 
-#: library.py:83
-msgid "Get article from:"
-msgstr "கட்டுரைகளை இங்கிருந்து பெறு"
-
-#: library.py:94
-msgid "Article name"
-msgstr "கட்டுரைகளின் தலைப்பு"
-
-#: library.py:100
-msgid "Search"
-msgstr "தேடு"
-
-#: library.py:202
-msgid "Exists"
-msgstr "ஏற்கனவே உள்ளன"
-
-#: library.py:203
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" மான கட்டுரைகளை  ஏற்கனவே உள்ளன"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "கட்டானது ஏற்கனவே %s பெயரால் உள்ளது. தயவு செய்து. "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "தெரிவு செய்த கட்டுரைகளை பிரசுரி"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "எளிய ஆங்கில விக்கிபீடியா- கலைக் களஞ்சியம் (English Wikipedia)"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "ஜெர்மனிய விக்கிபீடியா- கலைக் களஞ்சியம்"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "ஸ்பேனிஷ் விக்கிபீடியா- கலைக் களஞ்சியம் (Spanish Wikipedia)"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr "பிரெஞ்சு விக்கிபீடியா-கலைக் களஞ்சியம்"
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "சிங்கம் (en.wikipedia.org இலிருந்து)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "புலி (en.wikipedia.org இலிருந்து)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "ஒட்டகச் சிவிங்கி (en.wikipedia.org இலிருந்து)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "வரிக்குதிரை (en.wikipedia.org இலிருந்து)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "ஒட்டகச் சிவிங்கி"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "நூலகம்"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "திருத்தம்"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "தெரிவு செய்ததைக் கொண்டு போ:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "ஒன்றுமில்லை"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "வசனங்கள்"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "பந்திகள்"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "பகுதிகள்"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "கட்டுரை"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "இந்தக் கட்டுரையில் எந்த படங்களும் இல்லை"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "மேலுள்ள பட்டியலிலிருந்து விக்கிபீடியா கட்டுரையை தெரிவு செய்"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "ஏற்கனவே தற்போதய குறிக் கோளுக்காக ஒரு கட்டு உருவாக்கப்பட்டுள்ளது "
 
 #~ msgid "Find article"
 #~ msgstr "கட்டுரைகளை கண்டுபிடி"

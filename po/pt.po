@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2012-04-13 11:05+0200\n"
 "Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#: activity.py:67
+msgid "Library"
+msgstr "Biblioteca"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "Editar"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Leão (de en.wikipedia.org)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tigre (de en.wikipedia.org)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Girafa (de en.wikipedia.org)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Zebra (de en.wikipedia.org)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "Girafa"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Os artigos estão prontos para ser publicados"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "Criar novo artigo"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "Apagar artigo atual"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "Mover artigo para baixo"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "Mover artigo para cima"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "Novo artigo"
+
+#: edit.py:58
+msgid "Text"
+msgstr "Texto"
+
+#: edit.py:63
+msgid "Images"
+msgstr "Imagens"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Prender seleção a:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Nada"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Frases"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Parágrafos"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Secções"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "Artigo:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Este artigo não tem qualquer imagem"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Por favor escolhe um artigo da Wikipédia no menu acima"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "Artigos Wiki"
+
+#: library.py:52
+msgid "Custom"
+msgstr "Personalizado"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "Artigos Personalizados"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Para transferir artigos Wiki\n"
+"escreve \"Nome do artigo\" e clica"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "no botão do painel \"Biblioteca\" no topo"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "Para criar um artigo personalizado clica"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "no botão do painel \"Personalizado\" à esquerda"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "Obter artigo de:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "Nome do artigo"
+
+#: library.py:101
+msgid "Search"
+msgstr "Procurar"
+
+#: library.py:205
+msgid "Exists"
+msgstr "Existe"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "Artigo \"%s\" já existe"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "Publicar artigos selecionados"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "Wikipédia Inglês"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "Wikipédia Inglês Simples"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "Wikipédia Alemão"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "Wikipédia Espanhol"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "Wikipédia Francês"
 
 #: net.py:37
 #, python-format
@@ -84,202 +259,43 @@ msgstr "Não foi possível encontrar \"%s\""
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "Erro a transferir \"%s\"; verifica a tua ligação"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "Nada a publicar"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Marca artigos do painel \"Personalizado\" e tenta novamente."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "Pacote já existe"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "Um pacote com o nome \"%s\" já existe: Por favor "
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Substituir pacote existente?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "Já foi criado um pacote para o objeto atual. "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "Os artigos estão prontos para ser publicados"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "Criar novo artigo"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "Apagar artigo atual"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "Mover artigo para baixo"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "Mover artigo para cima"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "Novo artigo"
-
-#: edit.py:58
-msgid "Text"
-msgstr "Texto"
-
-#: edit.py:63
-msgid "Images"
-msgstr "Imagens"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "Wiki"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "Artigos Wiki"
-
-#: library.py:51
-msgid "Custom"
-msgstr "Personalizado"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "Artigos Personalizados"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
-"Para transferir artigos Wiki\n"
-"escreve \"Nome do artigo\" e clica"
 
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "no botão do painel \"Biblioteca\" no topo"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr ""
 
-#: library.py:74
-msgid "To create custom article click"
-msgstr "Para criar um artigo personalizado clica"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
 
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "no botão do painel \"Personalizado\" à esquerda"
+#~ msgid "Bundle exists"
+#~ msgstr "Pacote já existe"
 
-#: library.py:83
-msgid "Get article from:"
-msgstr "Obter artigo de:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "Nome do artigo"
-
-#: library.py:100
-msgid "Search"
-msgstr "Procurar"
-
-#: library.py:202
-msgid "Exists"
-msgstr "Existe"
-
-#: library.py:203
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "Artigo \"%s\" já existe"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "Um pacote com o nome \"%s\" já existe: Por favor "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "Publicar artigos selecionados"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "Wikipédia Inglês"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "Wikipédia Inglês Simples"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "Wikipédia Alemão"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "Wikipédia Espanhol"
-
-#: library.py:236
-msgid "French Wikipedia"
-msgstr "Wikipédia Francês"
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Leão (de en.wikipedia.org)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tigre (de en.wikipedia.org)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Girafa (de en.wikipedia.org)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (de en.wikipedia.org)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "Girafa"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "Biblioteca"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "Editar"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "Prender seleção a:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "Nada"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "Frases"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "Parágrafos"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "Secções"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "Artigo:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "Este artigo não tem qualquer imagem"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Por favor escolhe um artigo da Wikipédia no menu acima"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "Já foi criado um pacote para o objeto atual. "

@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2011-11-30 09:00+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,183 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "इन्फ़ो-स्लाइसर"
+
+#: activity.py:67
+msgid "Library"
+msgstr "लाइब्रेरी"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "संपादन"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "शेर (en.wikipedia.org से)"
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "शेर (en.wikipedia.org से)"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "जिराफ़ (en.wikipedia.org से)"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "जेब्रा (en.wikipedia.org से)"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "जिराफ़"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "आलेख छपने के लिए तैयार है"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "नए आलेख बनाएँ"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "वर्तमान आलेख मिटाएँ"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "आलेख नीचे खिसकाएँ"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "आलेख ऊपर खिसकाएँ"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "नया आलेख"
+
+#: edit.py:58
+msgid "Text"
+msgstr "पाठ"
+
+#: edit.py:63
+msgid "Images"
+msgstr "फ़ोटो"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "चयन यहाँ स्नैप करें:"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "कुछ नहीं"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "वाक्य"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "पैराग्राफ"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "खण्ड"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "आलेख:"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "इस आलेख में कोई भी फ़ोटो नहीं है"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "ऊपर दिए मेन्यू से कृपया कोई विकिपीडिया लेख चुनें"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "विकि"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "विकि आलेख"
+
+#: library.py:52
+msgid "Custom"
+msgstr "मनपसंद"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "मनपसंद आलेख"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"विकि आलेख डाउनलोड करने के लिए\n"
+" \"आलेख नाम\" टाइप करें तथा क्लिक करें"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "शीर्ष \"लाइब्रेरी\" पैनल के बटन पर"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "मनपसंद आलेख तैयार करने के लिए क्लिक करें"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "\"मनपसंद\" पैनल के बाएँ बटन पर"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "आलेख यहाँ से लाएँ:"
+
+#: library.py:95
+msgid "Article name"
+msgstr "आलेख नाम"
+
+#: library.py:101
+#, fuzzy
+msgid "Search"
+msgstr "खोजें"
+
+#: library.py:205
+msgid "Exists"
+msgstr "मौजूद है"
+
+#: library.py:206
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "आलेख \"%s\" पहले ही मौजूद है"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "चयनित आलेखों को प्रकाशित करें"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "अंग्रेज़ी विकिपीडिया"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "साधारण अंग्रेज़ी विकिपीडिया"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "जर्मन विकिपीडिया"
+
+#: library.py:242
+msgid "Spanish Wikipedia"
+msgstr "स्पेनिश विकिपीडिया"
+
+#: library.py:243
+#, fuzzy
+msgid "French Wikipedia"
+msgstr "फ्रेंच विकिपीडिया"
 
 #: net.py:37
 #, python-format
@@ -84,207 +261,46 @@ msgstr "\"%s\" नहीं मिला"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "\"%s\" को डाउनलोड करने में त्रुटि; अपना कनेक्शन जाँचें"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "प्रकाशित करने के लिए कुछ भी नहीं"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "\"मनपसंद\" पैनल से कोई आलेख चिह्नित करें और फिर से आजमाएँ."
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr "बंडल मौजूद है"
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr "\"%s\" नाम का बंडल पहले ही मौजूद है. कृपया "
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "मौजूदा बंडल को मिटाकर लिखें?"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "वर्तमान वस्तु का एक बंडल पहले ही बनाया जा चुका है. "
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "आलेख छपने के लिए तैयार है"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "नए आलेख बनाएँ"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "वर्तमान आलेख मिटाएँ"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "आलेख नीचे खिसकाएँ"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "आलेख ऊपर खिसकाएँ"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "नया आलेख"
-
-#: edit.py:58
-msgid "Text"
-msgstr "पाठ"
-
-#: edit.py:63
-msgid "Images"
-msgstr "फ़ोटो"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "विकि"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "विकि आलेख"
-
-#: library.py:51
-msgid "Custom"
-msgstr "मनपसंद"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "मनपसंद आलेख"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
-"विकि आलेख डाउनलोड करने के लिए\n"
-" \"आलेख नाम\" टाइप करें तथा क्लिक करें"
 
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "शीर्ष \"लाइब्रेरी\" पैनल के बटन पर"
+#: xol.py:99
+msgid "Book published to your Journal"
+msgstr ""
 
-#: library.py:74
-msgid "To create custom article click"
-msgstr "मनपसंद आलेख तैयार करने के लिए क्लिक करें"
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
 
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "\"मनपसंद\" पैनल के बाएँ बटन पर"
+#~ msgid "Bundle exists"
+#~ msgstr "बंडल मौजूद है"
 
-#: library.py:83
-msgid "Get article from:"
-msgstr "आलेख यहाँ से लाएँ:"
-
-#: library.py:94
-msgid "Article name"
-msgstr "आलेख नाम"
-
-#: library.py:100
-#, fuzzy
-msgid "Search"
-msgstr "खोजें"
-
-#: library.py:202
-msgid "Exists"
-msgstr "मौजूद है"
-
-#: library.py:203
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "आलेख \"%s\" पहले ही मौजूद है"
+#~ msgid "A bundle by \"%s\" name already exists. Please "
+#~ msgstr "\"%s\" नाम का बंडल पहले ही मौजूद है. कृपया "
 
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "चयनित आलेखों को प्रकाशित करें"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "अंग्रेज़ी विकिपीडिया"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "साधारण अंग्रेज़ी विकिपीडिया"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "जर्मन विकिपीडिया"
-
-#: library.py:235
-msgid "Spanish Wikipedia"
-msgstr "स्पेनिश विकिपीडिया"
-
-#: library.py:236
-#, fuzzy
-msgid "French Wikipedia"
-msgstr "फ्रेंच विकिपीडिया"
-
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "शेर (en.wikipedia.org से)"
-
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "शेर (en.wikipedia.org से)"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "जिराफ़ (en.wikipedia.org से)"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "जेब्रा (en.wikipedia.org से)"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "जिराफ़"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "लाइब्रेरी"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "संपादन"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "चयन यहाँ स्नैप करें:"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "कुछ नहीं"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "वाक्य"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "पैराग्राफ"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "खण्ड"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "आलेख:"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "इस आलेख में कोई भी फ़ोटो नहीं है"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "ऊपर दिए मेन्यू से कृपया कोई विकिपीडिया लेख चुनें"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "वर्तमान वस्तु का एक बंडल पहले ही बनाया जा चुका है. "
 
 #~ msgid "Find article"
 #~ msgstr "आलेख ढूंढें"

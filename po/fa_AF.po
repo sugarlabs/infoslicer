@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-04 13:17-0300\n"
+"POT-Creation-Date: 2012-07-21 01:22-0400\n"
 "PO-Revision-Date: 2011-08-14 06:49+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,181 @@ msgstr ""
 #: activity/activity.info:2
 msgid "InfoSlicer"
 msgstr "قسمت کننده معلومات"
+
+#: activity.py:67
+msgid "Library"
+msgstr "کتابخانه"
+
+#: activity.py:75
+msgid "Edit"
+msgstr "تنظیم کردن"
+
+#: book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "شیر از "
+
+#: book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "پلنگ از"
+
+#: book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "زرافه از"
+
+#: book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "گور خر از"
+
+#: book.py:221
+msgid "Giraffe"
+msgstr "زرافه"
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "مقالات برای نشرکردن آماده هستند"
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr "مقاله جدید ایجاد کن"
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr "مقاله فعلی را حذف کن"
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr "مقاله را به طرف پایین حرکت بده"
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr "مقاله را رو به بالا حرکت بده"
+
+#: bookview.py:191
+msgid "New article"
+msgstr "مقاله جدید"
+
+#: edit.py:58
+msgid "Text"
+msgstr "متن"
+
+#: edit.py:63
+msgid "Images"
+msgstr "تصاویر"
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "انتخاب ناگهانی به"
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "هیچ چیز"
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "جملات"
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "پاراگراف ها"
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "بخش ها"
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr "مقاله"
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "مقاله هیچ تصویری ندارد"
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "لطفا یک مقاله ویکیپیدیا را از لیست بالا انتخاب کن"
+
+#: library.py:50
+msgid "Wiki"
+msgstr "ویکی"
+
+#: library.py:50
+msgid "Wiki articles"
+msgstr "مقالات ویکی"
+
+#: library.py:52
+msgid "Custom"
+msgstr "عادت"
+
+#: library.py:52
+msgid "Custom articles"
+msgstr "مقالات عادتی"
+
+#: library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr "برای بارگیری مقاله ویکی نام مقاله را نوشته و کلیک کنید"
+
+#: library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "دکمه در قسمت بالای صفحه کتابخانه"
+
+#: library.py:75
+msgid "To create custom article click"
+msgstr "برای ایجاد کلیک مقاله عادتی"
+
+#: library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "دکمه درقسمت چپ صفحه عادتی"
+
+#: library.py:84
+msgid "Get article from:"
+msgstr "مقاله را به دست آرید از"
+
+#: library.py:95
+msgid "Article name"
+msgstr "نام مقاله"
+
+#: library.py:101
+msgid "Search"
+msgstr ""
+
+#: library.py:205
+msgid "Exists"
+msgstr "موجود است"
+
+#: library.py:206
+#, python-format
+#, python-format, fuzzy
+msgid "\"%s\" article already exists"
+msgstr "مقاله قبلا موجود است"
+
+#: library.py:228
+msgid "Publish selected articles"
+msgstr "مقالات انتخاب شده را نشر کن"
+
+#: library.py:239
+msgid "English Wikipedia"
+msgstr "ویکیپیدیا انگلیسی"
+
+#: library.py:240
+msgid "Simple English Wikipedia"
+msgstr "ویکیپیدیای انگلیسی ساده"
+
+#: library.py:241
+msgid "German Wikipedia"
+msgstr "ویکیپیدیای جرمنی"
+
+#: library.py:242
+#, fuzzy
+msgid "Spanish Wikipedia"
+msgstr "ویکیپیدیا انگلیسی"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr ""
 
 #: net.py:37
 #, python-format
@@ -91,205 +266,39 @@ msgstr "پیدا شده نمیتواند"
 msgid "Error downloading \"%s\"; check your connection"
 msgstr "برای بار گیری اتصال تان را بررسی نمایید"
 
-#: xol.py:38
+#: parse.py:18
+msgid "Return to index"
+msgstr ""
+
+#: xol.py:50
 msgid "Nothing to publish"
 msgstr "چیزی برای نشر نیست"
 
-#: xol.py:39
+#: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "مقالات را از صفحه/عادتی/ بساز و دو باره کوشش کن"
 
-#: xol.py:60
-msgid "Bundle exists"
-msgstr ""
-
-#: xol.py:61
-#, python-format
-msgid "A bundle by \"%s\" name already exists. Please "
-msgstr ""
-
-#: xol.py:68
+#: xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "مجموعه موجود را چندین بار بنویسد؟"
 
-#: xol.py:69
-msgid "A bundle for current object was already created. "
-msgstr "یک مجموعه برای شیٔ فعلی قبلا ایجاد گردیده است"
-
-#: bookview.py:53
-msgid "Articles are ready to be published"
-msgstr "مقالات برای نشرکردن آماده هستند"
-
-#: bookview.py:84
-msgid "Create new article"
-msgstr "مقاله جدید ایجاد کن"
-
-#: bookview.py:95
-msgid "Delete current article"
-msgstr "مقاله فعلی را حذف کن"
-
-#: bookview.py:103
-msgid "Move article downward"
-msgstr "مقاله را به طرف پایین حرکت بده"
-
-#: bookview.py:108
-msgid "Move article upward"
-msgstr "مقاله را رو به بالا حرکت بده"
-
-#: bookview.py:169
-msgid "New article"
-msgstr "مقاله جدید"
-
-#: edit.py:58
-msgid "Text"
-msgstr "متن"
-
-#: edit.py:63
-msgid "Images"
-msgstr "تصاویر"
-
-#: library.py:49
-msgid "Wiki"
-msgstr "ویکی"
-
-#: library.py:49
-msgid "Wiki articles"
-msgstr "مقالات ویکی"
-
-#: library.py:51
-msgid "Custom"
-msgstr "عادت"
-
-#: library.py:51
-msgid "Custom articles"
-msgstr "مقالات عادتی"
-
-#: library.py:71
+#: xol.py:72
 msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr "برای بارگیری مقاله ویکی نام مقاله را نوشته و کلیک کنید"
-
-#: library.py:72
-msgid "button on the top \"Library\" panel"
-msgstr "دکمه در قسمت بالای صفحه کتابخانه"
-
-#: library.py:74
-msgid "To create custom article click"
-msgstr "برای ایجاد کلیک مقاله عادتی"
-
-#: library.py:75
-msgid "button on the left \"Custom\" panel"
-msgstr "دکمه درقسمت چپ صفحه عادتی"
-
-#: library.py:83
-msgid "Get article from:"
-msgstr "مقاله را به دست آرید از"
-
-#: library.py:94
-msgid "Article name"
-msgstr "نام مقاله"
-
-#: library.py:100
-msgid "Search"
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
 msgstr ""
 
-#: library.py:202
-msgid "Exists"
-msgstr "موجود است"
-
-#: library.py:203
-#, python-format
-#, python-format, fuzzy
-msgid "\"%s\" article already exists"
-msgstr "مقاله قبلا موجود است"
-
-#: library.py:224
-msgid "Publish selected articles"
-msgstr "مقالات انتخاب شده را نشر کن"
-
-#: library.py:232
-msgid "English Wikipedia"
-msgstr "ویکیپیدیا انگلیسی"
-
-#: library.py:233
-msgid "Simple English Wikipedia"
-msgstr "ویکیپیدیای انگلیسی ساده"
-
-#: library.py:234
-msgid "German Wikipedia"
-msgstr "ویکیپیدیای جرمنی"
-
-#: library.py:235
-#, fuzzy
-msgid "Spanish Wikipedia"
-msgstr "ویکیپیدیا انگلیسی"
-
-#: library.py:236
-msgid "French Wikipedia"
+#: xol.py:99
+msgid "Book published to your Journal"
 msgstr ""
 
-#: book.py:213
-msgid "Lion (from en.wikipedia.org)"
-msgstr "شیر از "
+#: xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
 
-#: book.py:214
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "پلنگ از"
-
-#: book.py:215
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "زرافه از"
-
-#: book.py:216
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "گور خر از"
-
-#: book.py:223
-msgid "Giraffe"
-msgstr "زرافه"
-
-#: activity.py:70 activity.py:85
-msgid "Library"
-msgstr "کتابخانه"
-
-#: activity.py:71 activity.py:93
-msgid "Edit"
-msgstr "تنظیم کردن"
-
-#: infoslicer/widgets/Edit_Pane.py:51
-msgid "Snap selection to:"
-msgstr "انتخاب ناگهانی به"
-
-#: infoslicer/widgets/Edit_Pane.py:52
-msgid "Nothing"
-msgstr "هیچ چیز"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Sentences"
-msgstr "جملات"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Paragraphs"
-msgstr "پاراگراف ها"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sections"
-msgstr "بخش ها"
-
-#: infoslicer/widgets/Edit_Pane.py:101 infoslicer/widgets/Edit_Pane.py:109
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:56
-#: infoslicer/widgets/Image_Pane.py:87
-msgid "Article:"
-msgstr "مقاله"
-
-#: infoslicer/widgets/Image_Pane.py:77
-msgid "This article does not have any images"
-msgstr "مقاله هیچ تصویری ندارد"
-
-#: infoslicer/widgets/Image_Pane.py:80
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "لطفا یک مقاله ویکیپیدیا را از لیست بالا انتخاب کن"
+#~ msgid "A bundle for current object was already created. "
+#~ msgstr "یک مجموعه برای شیٔ فعلی قبلا ایجاد گردیده است"
 
 #~ msgid "Find article"
 #~ msgstr "مقاله را پیدا کن"

@@ -2,190 +2,159 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-21 01:22-0400\n"
-"PO-Revision-Date: 2010-07-24 13:29+0200\n"
-"Last-Translator: Mattias Ohlsson <mattias_oh@yahoo.com>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
 
 #: activity/activity.info:2
 msgid "InfoSlicer"
-msgstr "InfoSlicer"
+msgstr ""
 
 #: activity.py:67
 msgid "Library"
-msgstr "Bibliotek"
+msgstr ""
 
 #: activity.py:75
 msgid "Edit"
-msgstr "Redigera"
+msgstr ""
 
 #: book.py:211
 msgid "Lion (from en.wikipedia.org)"
-msgstr "Lejon (från en.wikipedia.org)"
+msgstr ""
 
 #: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tiger (från en.wikipedia.org)"
+msgstr ""
 
 #: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Giraff (från en.wikipedia.org)"
+msgstr ""
 
 #: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (från en.wikipedia.org)"
+msgstr ""
 
 #: book.py:221
 msgid "Giraffe"
-msgstr "Giraff"
+msgstr ""
 
 #: bookview.py:52
 msgid "Articles are ready to be published"
-msgstr "Artiklar som är klara för publicering"
+msgstr ""
 
 #: bookview.py:92
 msgid "Create new article"
-msgstr "Skapa ny artikel"
+msgstr ""
 
 #: bookview.py:102
 msgid "Delete current article"
-msgstr "Radera nuvarande artikel"
+msgstr ""
 
 #: bookview.py:109
 msgid "Move article downward"
-msgstr "Flytta ner artikel"
+msgstr ""
 
 #: bookview.py:114
 msgid "Move article upward"
-msgstr "Flytta upp artikel"
+msgstr ""
 
 #: bookview.py:191
 msgid "New article"
-msgstr "Ny artikel"
+msgstr ""
 
 #: edit.py:58
 msgid "Text"
-msgstr "Text"
+msgstr ""
 
 #: edit.py:63
 msgid "Images"
-msgstr "Bilder"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
-msgstr "Fäst markering vid:"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
-msgstr "Ingenting"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
-msgstr "Meningar"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
-msgstr "Stycken"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
-msgstr "Sektioner"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
-msgstr "Artikel:"
+msgstr ""
 
 #: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
-msgstr "Den här artikeln innehåller inga bilder"
+msgstr ""
 
 #: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
-msgstr "Vänligen välj en Wikipedia artikel från menyn ovan"
+msgstr ""
 
 #: library.py:50
 msgid "Wiki"
-msgstr "Wiki"
+msgstr ""
 
 #: library.py:50
 msgid "Wiki articles"
-msgstr "Wikiartiklar"
+msgstr ""
 
 #: library.py:52
 msgid "Custom"
-msgstr "Anpassad"
+msgstr ""
 
 #: library.py:52
 msgid "Custom articles"
-msgstr "Anpassade artiklar"
+msgstr ""
 
 #: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
-"För att hämta Wikiartikel\n"
-"skriv \"Artikelnamn\" och klicka"
 
 #: library.py:73
 msgid "button on the top \"Library\" panel"
-msgstr "knappen på den översta \"Biblioteks\" panelen"
+msgstr ""
 
 #: library.py:75
 msgid "To create custom article click"
-msgstr "För att skapa en anpassad artikel, klicka"
+msgstr ""
 
 #: library.py:76
 msgid "button on the left \"Custom\" panel"
-msgstr "knappen på den vänstra \"Anpassa\" panelen"
+msgstr ""
 
 #: library.py:84
 msgid "Get article from:"
-msgstr "Hämta artikel från:"
+msgstr ""
 
 #: library.py:95
 msgid "Article name"
-msgstr "Artikelnamn"
+msgstr ""
 
 #: library.py:101
 msgid "Search"
@@ -193,71 +162,71 @@ msgstr ""
 
 #: library.py:205
 msgid "Exists"
-msgstr "Finns"
+msgstr ""
 
 #: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr "\"%s\" artikel finns redan"
+msgstr ""
 
 #: library.py:228
 msgid "Publish selected articles"
-msgstr "Publicera valda artiklar"
+msgstr ""
 
 #: library.py:239
 msgid "English Wikipedia"
-msgstr "Engelska Wikipedia"
+msgstr ""
 
 #: library.py:240
 msgid "Simple English Wikipedia"
-msgstr "Wikipedia på förenklad Engelska"
+msgstr ""
 
 #: library.py:241
 msgid "German Wikipedia"
-msgstr "Tyska Wikipedia"
+msgstr ""
 
 #: library.py:242
 msgid "Spanish Wikipedia"
-msgstr "Spanska Wikipedia"
+msgstr ""
 
 #: library.py:243
 msgid "French Wikipedia"
-msgstr "Franska Wikipedia"
+msgstr ""
 
 #: net.py:37
 #, python-format
 msgid "\"%s\" download in progress..."
-msgstr "\"%s\" hämtas..."
+msgstr ""
 
 #: net.py:40
 #, python-format
 msgid "Processing \"%s\"..."
-msgstr "Processar \"%s\"..."
+msgstr ""
 
 #: net.py:44
 #, python-format
 msgid "Downloading \"%s\" images..."
-msgstr "Hämtar \"%s\" bilder..."
+msgstr ""
 
 #: net.py:45
 #, python-format
 msgid " (from %s)"
-msgstr " (från %s)"
+msgstr ""
 
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" hämtad"
+msgstr ""
 
 #: net.py:51
 #, python-format
 msgid "\"%s\" could not be found"
-msgstr "\"%s\" kunde inte hittas"
+msgstr ""
 
 #: net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
-msgstr "Fel vid hämtning av \"%s\"; kontrollera din anslutning"
+msgstr ""
 
 #: parse.py:18
 msgid "Return to index"
@@ -265,15 +234,15 @@ msgstr ""
 
 #: xol.py:50
 msgid "Nothing to publish"
-msgstr "Ingenting att publicera"
+msgstr ""
 
 #: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Markera artiklar i \"Anpassad\" panelen och försök igen"
+msgstr ""
 
 #: xol.py:71
 msgid "Overwrite existed bundle?"
-msgstr "Skriv över existerande paket?"
+msgstr ""
 
 #: xol.py:72
 msgid ""
@@ -289,16 +258,3 @@ msgstr ""
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
-
-#~ msgid "Bundle exists"
-#~ msgstr "Paket finns redan"
-
-#, python-format
-#~ msgid "A bundle by \"%s\" name already exists. Please "
-#~ msgstr "Ett paket av \"%s\" finns redan. Vänligen "
-
-#~ msgid "A bundle for current object was already created. "
-#~ msgstr "Ett paket för detta objekt har redan skapats. "
-
-#~ msgid "Find article"
-#~ msgstr "Sök artikel"
