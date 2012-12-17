@@ -135,8 +135,7 @@ def get_article_from_dita(image_path, dita):
                     sentence_data_list.insert(0, picture_data)
             
     article_title = input.find("title").renderContents().replace("\n", "").strip()
-    
-    # XXX: image_list are built here!!!
+
     image_list = []
     imglist_tag = input.find(True, attrs={"id" : "imagelist"})
     if imglist_tag != None:
@@ -151,7 +150,7 @@ def get_article_from_dita(image_path, dita):
             else:
                 image_list.append((img['href'], caption, img['orig_href']))
 
-    data = Article_Data(article_id, article_id, article_title, "theme", section_data_list, image_list)   
+    data = Article_Data(article_id, article_id, article_title, "theme", section_data_list, image_list)
 
     return data
 
