@@ -19,6 +19,9 @@ from gettext import gettext as _
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
 
+from sugar3 import mime
+from sugar3.graphics.objectchooser import ObjectChooser
+
 from infoslicer.widgets.Edit_Pane import Edit_Pane
 from infoslicer.widgets.Format_Pane import Format_Pane
 from infoslicer.widgets.Image_Pane import Image_Pane
@@ -57,6 +60,7 @@ class ToolbarBuilder():
 
         self.txt_toggle = ToggleToolButton('ascii')
         self.img_toggle = ToggleToolButton('image')
+        self.jimg_chooser_toggle = ToolButton('image')
         self.jimg_toggle = ToggleToolButton('image')
 
         self.txt_toggle.set_tooltip(_('Text'))
@@ -68,6 +72,10 @@ class ToolbarBuilder():
         self.img_toggle.connect('toggled', self._toggle_cb,
             [self.txt_toggle, self.img_toggle, self.jimg_toggle])
         toolbar.insert(self.img_toggle, -1)
+
+        self.jimg_chooser_toggle.set_tooltip(_('Choose Journal Images'))
+        self.jimg_chooser_toggle.connect('clicked', self._toggle_image_chooser)
+        toolbar.insert(self.jimg_chooser_toggle, -1)
 
         self.jimg_toggle.set_tooltip(_('Journal Images'))
         self.jimg_toggle.connect('toggled', self._toggle_cb,
@@ -90,6 +98,16 @@ class ToolbarBuilder():
         self.txt_toggle.set_sensitive(False)
         self.img_toggle.set_sensitive(False)
         self.jimg_toggle.set_sensitive(False)
+
+    def _toggle_image_chooser(self, widget):
+        chooser = ObjectChooser(what_filter=mime.GENERIC_TYPE_IMAGE)
+        result = chooser.run()
+        if result == Gtk.ResponseType.ACCEPT:
+            jobject = chooser.get_selected_object()
+            if jobject and jobject.file_path:
+                title = str(jobject.metadata['title'])
+                path = str(jobject.file_path)
+                TABS[2].gallery.add_image(path, title)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:

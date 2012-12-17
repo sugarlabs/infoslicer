@@ -47,7 +47,7 @@ class Journal_Gallery_View( Gtk.HBox ):
     """
     
     def __init__(self):
-        self.image_list = journal.get_starred_images()
+        self.image_list = []
         GObject.GObject.__init__(self)
         self.current_index = -1
         self.source_article_id = -1
@@ -133,7 +133,7 @@ class Journal_Gallery_View( Gtk.HBox ):
         if self.image_list == []:
             self.caption.set_text("No images were found in the journal.")
             self.image.clear()
-            return        
+            return
         self.current_index = 0
         self.imagebuf = GdkPixbuf.Pixbuf.new_from_file(self.image_list[self.current_index][0])
         self.imagebuf = self.imagebuf.scale_simple(IMG_WIDTH, IMG_HEIGHT,
@@ -160,3 +160,9 @@ class Journal_Gallery_View( Gtk.HBox ):
         sectionsdata = [Section_Data(0, self.source_article_id, 0, [paragraph1data, paragraph2data])]
         string = cPickle.dumps(sectionsdata)
         selection_data.set(atom, 8, string)
+
+    def add_image(self, image_path, title):
+        logger.debug('############# Journal_Journal_Gallery_View.add_image')
+        self.image_list.append((image_path, title))
+        logger.debug(self.image_list)
+        self.get_first_item()
