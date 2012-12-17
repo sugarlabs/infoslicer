@@ -97,7 +97,7 @@ class ToolbarBuilder():
                 i.hide()
 
         if not widget.get_active():
-            index = 2
+            index = 3
         else:
             for t in range(0, len(toggles)):
                 if toggles[t] != widget:
