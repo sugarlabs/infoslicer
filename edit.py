@@ -22,10 +22,13 @@ from sugar3.graphics.toggletoolbutton import ToggleToolButton
 from infoslicer.widgets.Edit_Pane import Edit_Pane
 from infoslicer.widgets.Format_Pane import Format_Pane
 from infoslicer.widgets.Image_Pane import Image_Pane
+from infoslicer.widgets.Journal_Image_Pane import Journal_Image_Pane
+
 import book
 
 TABS = (Edit_Pane(),
         Image_Pane(),
+        Journal_Image_Pane(),
         Format_Pane())
 
 class View(Gtk.Notebook):
@@ -54,16 +57,23 @@ class ToolbarBuilder():
 
         self.txt_toggle = ToggleToolButton('ascii')
         self.img_toggle = ToggleToolButton('image')
+        self.jimg_toggle = ToggleToolButton('image')
 
         self.txt_toggle.set_tooltip(_('Text'))
         self.txt_toggle.connect('toggled', self._toggle_cb,
-            [self.txt_toggle, self.img_toggle])
+            [self.txt_toggle, self.img_toggle, self.jimg_toggle])
         toolbar.insert(self.txt_toggle, -1)
 
         self.img_toggle.set_tooltip(_('Images'))
         self.img_toggle.connect('toggled', self._toggle_cb,
-            [self.txt_toggle, self.img_toggle])
+            [self.txt_toggle, self.img_toggle, self.jimg_toggle])
         toolbar.insert(self.img_toggle, -1)
+
+        self.jimg_toggle.set_tooltip(_('Journal Images'))
+        self.jimg_toggle.connect('toggled', self._toggle_cb,
+            [self.txt_toggle, self.img_toggle, self.jimg_toggle])
+        toolbar.insert(self.jimg_toggle, -1)
+
 
         for tab in TABS:
             for i in tab.toolitems:
@@ -74,10 +84,12 @@ class ToolbarBuilder():
     def sensitize_all(self):
         self.txt_toggle.set_sensitive(True)
         self.img_toggle.set_sensitive(True)
+        self.jimg_toggle.set_sensitive(True)
 
     def unsensitize_all(self):
         self.txt_toggle.set_sensitive(False)
         self.img_toggle.set_sensitive(False)
+        self.jimg_toggle.set_sensitive(False)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:
@@ -87,14 +99,17 @@ class ToolbarBuilder():
         if not widget.get_active():
             index = 2
         else:
-            another = toggles[0] == widget and 1 or 0
-            toggles[another].set_active(False)
-            index = int(not another)
+            for t in range(0, len(toggles)):
+                if toggles[t] != widget:
+                    toggles[t].set_active(False)
+                else:
+                    index = t
 
         for i in TABS[index].toolitems:
             i.show()
 
-        if book.wiki.article:
+        # We don't require any article data to display jounal images
+        if book.wiki.article and index != 2:
             TABS[index].set_source_article(book.wiki.article)
         if book.custom.article:
             TABS[index].set_working_article(book.custom.article)
