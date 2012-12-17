@@ -16,6 +16,7 @@ from gi.repository import GObject
 from gi.repository import GdkPixbuf
 import os
 import cPickle
+import pickle
 import logging
 
 from Editable_Textbox import Editable_Textbox
@@ -152,13 +153,10 @@ class Journal_Gallery_View( Gtk.HBox ):
         logger.debug('############# Journal_Journal_Gallery_View.drag_data_get_event')
         atom = Gdk.atom_intern("section", only_if_exists=False)
         imagedata = Picture_Data(self.source_article_id,
-                self.image_list[self.current_index][0], None)
+                                 self.image_list[self.current_index][0])
         captiondata = Sentence_Data(0, self.source_article_id, 0, 0, 0, self.image_list[self.current_index][1])
         paragraph1data = Paragraph_Data(0, self.source_article_id, 0, 0, [imagedata])
         paragraph2data = Paragraph_Data(0, self.source_article_id, 0, 0, [captiondata])
         sectionsdata = [Section_Data(0, self.source_article_id, 0, [paragraph1data, paragraph2data])]
-        print sectionsdata
-        string = cPickle.dumps(sectionsdata) #XXX: Here it generates a weird error.
-        # Even though sectionsdata is not a string, cPickle prints out "cannot pickle
-        # string objects"
+        string = cPickle.dumps(sectionsdata)
         selection_data.set(atom, 8, string)

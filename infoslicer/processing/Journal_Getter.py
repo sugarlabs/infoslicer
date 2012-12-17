@@ -24,6 +24,6 @@ def get_starred_images():
                 title = dsobj.metadata['title']
             else:
                 title = ''
-            images.append((dsobj.file_path, title))
+            images.append((str(dsobj.file_path), str(title)))
 
     return images
