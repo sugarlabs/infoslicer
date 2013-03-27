@@ -23,7 +23,7 @@ from Editable_Textbox import Editable_Textbox
 from infoslicer.processing.Article_Data import *
 from infoslicer.processing.Article import Article
 import book
-from infoslicer.processing import Journal_Getter as journal
+# from infoslicer.processing import Journal_Getter as journal
 
 logger = logging.getLogger('infoslicer')
 

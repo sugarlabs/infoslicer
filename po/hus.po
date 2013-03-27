@@ -273,6 +273,3 @@ msgstr ""
 
 #~ msgid "A bundle for current object was already created. "
 #~ msgstr "Juni t'i'él abal ax'é xi eyextaláb k'wajat ts'ejkadhits. "
-
-#~ msgid "Bundle exists"
-#~ msgstr "T'i'él xi wa'tsits"

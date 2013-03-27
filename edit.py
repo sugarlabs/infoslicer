@@ -32,10 +32,14 @@ from infoslicer.processing.Article import Article
 
 import book
 
+import logging
+
+
 TABS = (Edit_Pane(),
         Image_Pane(),
         Journal_Image_Pane(),
         Format_Pane())
+
 
 class View(Gtk.Notebook):
     def __init__(self):
@@ -60,6 +64,8 @@ class View(Gtk.Notebook):
 class ToolbarBuilder():
     def __init__(self, edit, toolbar):
         self.edit = edit
+        logging.debug('init edit toolbar')
+        logging.debug(self.edit)
 
         self.txt_toggle = ToggleToolButton('ascii')
         self.img_toggle = ToggleToolButton('image')
@@ -107,8 +113,8 @@ class ToolbarBuilder():
         self.jimg_toggle.set_sensitive(False)
 
     def _toggle_image_chooser(self, widget):
-        self._old_cursor = self.edit.get_window().get_cursor()
-        self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+        # self._old_cursor = self.edit.get_window().get_cursor()
+        # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
         GObject.idle_add(self.__image_chooser)
 
     def __image_chooser(self):
@@ -120,11 +126,11 @@ class ToolbarBuilder():
                 title = str(jobject.metadata['title'])
                 path = str(jobject.file_path)
                 TABS[2].gallery.add_image(path, title)
-        self.edit.get_window().set_cursor(self._old_cursor)
+        # self.edit.get_window().set_cursor(self._old_cursor)
 
     def _toggle_text_chooser(self, widget):
-        self._old_cursor = self.edit.get_window().get_cursor()
-        self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+        # self._old_cursor = self.edit.get_window().get_cursor()
+        # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
         GObject.idle_add(self.__text_chooser)
 
     def __text_chooser(self):
@@ -140,7 +146,7 @@ class ToolbarBuilder():
                 fp.close()
                 article_data = dehtml(text, title)
                 TABS[0].set_source_article(Article(article_data))
-        self.edit.get_window().set_cursor(self._old_cursor)
+        # self.edit.get_window().set_cursor(self._old_cursor)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:

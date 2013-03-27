@@ -30,6 +30,9 @@ import library
 import edit
 import book
 
+import logging
+
+
 class InfoslicerActivity(activity.Activity):
     def __init__(self, handle):
         self.notebook = Gtk.Notebook()
@@ -51,6 +54,9 @@ class InfoslicerActivity(activity.Activity):
 
         self.edit_page = 1
         self.edit = edit.View()
+
+        logging.debug(self.edit)
+
         self.library = library.View(self)
 
         toolbar_box = ToolbarBox()
