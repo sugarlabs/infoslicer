@@ -6,24 +6,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
-"PO-Revision-Date: 2011-11-26 04:47+0200\n"
+"POT-Creation-Date: 2012-11-15 00:33-0500\n"
+"PO-Revision-Date: 2013-03-12 22:56+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ayc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
+msgstr "InfoSlicer wakichata"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
 msgstr ""
+"¿Nayataki yatiñajataki panka jakiriktti? ¡Jïsa! Web taypita wakisiri "
+"yatiñanakama jikxatma ukampi InfoSlicer kunaymana wakichma."
 
 #: activity.py:67
 msgid "Library"
-msgstr ""
+msgstr "Pankanaka awatiña uta"
 
 #  "Editar"
 #: activity.py:75
@@ -32,47 +42,47 @@ msgstr "Chiqachaña"
 
 #: book.py:211
 msgid "Lion (from en.wikipedia.org)"
-msgstr ""
+msgstr "Liwuna (ukasti en.wikipedia.org)"
 
 #: book.py:212
 msgid "Tiger (from en.wikipedia.org)"
-msgstr ""
+msgstr "Tinri (ukasti en.wikipedia.org)"
 
 #: book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
-msgstr ""
+msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
 
 #: book.py:214
 msgid "Zebra (from en.wikipedia.org)"
-msgstr ""
+msgstr "Cebra uywa (ukasti en.wikipedia.org)"
 
 #: book.py:221
 msgid "Giraffe"
-msgstr ""
+msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
 
 #: bookview.py:52
 msgid "Articles are ready to be published"
-msgstr ""
+msgstr "Qillqatanakaxa wakichatawa qhanstayañataki"
 
 #: bookview.py:92
 msgid "Create new article"
-msgstr ""
+msgstr "Machaqa qillqata wakichaña"
 
 #: bookview.py:102
 msgid "Delete current article"
-msgstr ""
+msgstr "Qillqata ullata chhaqtayaña"
 
 #: bookview.py:109
 msgid "Move article downward"
-msgstr ""
+msgstr "Qillqata aynachäxaru wakichaña"
 
 #: bookview.py:114
 msgid "Move article upward"
-msgstr ""
+msgstr "Qillqata alayäxaru wakichaña"
 
 #: bookview.py:191
 msgid "New article"
-msgstr ""
+msgstr "Machaqa qillqata"
 
 #  "Texto"
 #: edit.py:58
@@ -81,83 +91,85 @@ msgstr "Qillqawi"
 
 #: edit.py:63
 msgid "Images"
-msgstr ""
+msgstr "Rixitanaka"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
-msgstr ""
+msgstr "Askichaña/ajllita chiqanchaña:"
 
 #: infoslicer/widgets/Edit_Pane.py:54
 msgid "Nothing"
-msgstr ""
+msgstr "Janiwa"
 
 #: infoslicer/widgets/Edit_Pane.py:55
 msgid "Sentences"
-msgstr ""
+msgstr "Amuyunaka"
 
 #: infoslicer/widgets/Edit_Pane.py:56
 msgid "Paragraphs"
-msgstr ""
+msgstr "Amuyunaka siqi"
 
 #: infoslicer/widgets/Edit_Pane.py:57
 msgid "Sections"
-msgstr ""
+msgstr "Amuyunaka kasta"
 
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
 msgid "Article:"
-msgstr ""
+msgstr "Qillqata:"
 
 #: infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
-msgstr ""
+msgstr "Akïri qillqata janiwa maya rixitanïkisa"
 
 #: infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
+msgstr "P'iqïxa wakichatanakana Wikipedia maya qillqata ajllma"
 
 #: library.py:50
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki wakichata"
 
 #: library.py:50
 msgid "Wiki articles"
-msgstr ""
+msgstr "Wiki qillqatanaka"
 
 #: library.py:52
 msgid "Custom"
-msgstr ""
+msgstr "Sapa jaqitaki wakichata"
 
 #: library.py:52
 msgid "Custom articles"
-msgstr ""
+msgstr "Sapa jaqitaki wakichata qillqatanaka"
 
 #: library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
 msgstr ""
+"Akïri wakichatata qillqata apaqañataki Wiki\n"
+"\"Qillqatana sutipa\" qillqantasa limt'ma"
 
 #: library.py:73
 msgid "button on the top \"Library\" panel"
-msgstr ""
+msgstr "\"Biblioteca\" wakichata pataru limt'aña"
 
 #: library.py:75
 msgid "To create custom article click"
-msgstr ""
+msgstr "Sapa jaqitaki wakisiri qillqata wakichañataki limt'ma"
 
 #: library.py:76
 msgid "button on the left \"Custom\" panel"
-msgstr ""
+msgstr "Ch'iqäxa \"Sapa jaqitaki wakichata\" limt'aña"
 
 #: library.py:84
 msgid "Get article from:"
-msgstr ""
+msgstr "Qillqata wakichata jakiña:"
 
 #: library.py:95
 msgid "Article name"
-msgstr ""
+msgstr "Qillqata wakichatana sutipa"
 
 #  "Buscar"
 #: library.py:101
@@ -166,99 +178,105 @@ msgstr "Thaqaña"
 
 #: library.py:205
 msgid "Exists"
-msgstr ""
+msgstr "Utji"
 
 #: library.py:206
 #, python-format
 msgid "\"%s\" article already exists"
-msgstr ""
+msgstr "Uka qillqataxa \"%s\" utjxiwa"
 
 #: library.py:228
 msgid "Publish selected articles"
-msgstr ""
+msgstr "Ajllita qillqatanaka qhanstayaña"
 
 #: library.py:239
 msgid "English Wikipedia"
-msgstr ""
+msgstr "Inglés aruta Wikipedia wakichata"
 
 #: library.py:240
 msgid "Simple English Wikipedia"
-msgstr ""
+msgstr "Inglés aruta phisna yatiña Wikipedia wakichata"
 
 #: library.py:241
 msgid "German Wikipedia"
-msgstr ""
+msgstr "Alemán aruta Wikipedia wakichata"
 
 #: library.py:242
 msgid "Spanish Wikipedia"
-msgstr ""
+msgstr "Español aruta Wikipedia wakichata"
 
 #: library.py:243
 msgid "French Wikipedia"
-msgstr ""
+msgstr "Francés aruta Wikipedia wakichata"
 
 #: net.py:37
 #, python-format
 msgid "\"%s\" download in progress..."
-msgstr ""
+msgstr "Apaqäwi \"%s\" saraskiwa..."
 
 #: net.py:40
 #, python-format
 msgid "Processing \"%s\"..."
-msgstr ""
+msgstr "Wakichaskiwa \"%s\"..."
 
 #: net.py:44
 #, python-format
 msgid "Downloading \"%s\" images..."
-msgstr ""
+msgstr "Rixitanaka apaqaski \"%s\"..."
 
 #: net.py:45
 #, python-format
 msgid " (from %s)"
-msgstr ""
+msgstr " (wakipa %s)"
 
 #: net.py:47
 #, python-format
 msgid "\"%s\" successfully downloaded"
-msgstr ""
+msgstr "\"%s\" suma qawayata apaqatawa"
 
 #: net.py:51
 #, python-format
 msgid "\"%s\" could not be found"
-msgstr ""
+msgstr "\"%s\" janiwa jakiyasiti"
 
 #: net.py:55
 #, python-format
 msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
+msgstr "Apaqkasina pantjatawa \"%s\"; uchañanaka uñakipma"
 
 #: parse.py:18
 msgid "Return to index"
-msgstr ""
+msgstr "Wakichata sutinakaru kuttaña"
 
 #: xol.py:50
 msgid "Nothing to publish"
-msgstr ""
+msgstr "Qhanstayañataki janiwa kunasa utjiti"
 
 #: xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr ""
+"Qillqañana wakichata qillqatanakaru chimpuña \"Sapa jaqitaki wakichata\" ukata "
+"mayampi yant'aña."
 
 #: xol.py:71
 msgid "Overwrite existed bundle?"
-msgstr ""
+msgstr "¿Wakichata jaqtasa qillqaña?"
 
 #: xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
 msgstr ""
+"Maya machaqa wakichatawa uñasi. Uka \"Walikiwa\" sata limt'ma qillqata jaqtasa "
+"qillqañataki."
 
 #: xol.py:99
 msgid "Book published to your Journal"
-msgstr ""
+msgstr "Sapüru luräwinakama taypiru qhanstayata"
 
 #: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
+"Uka panka wakichatanaka taypita ullasmawa jani ukaxa akïri wakichataru .xol "
+"Sapüru luräwima taypiru mantma"
