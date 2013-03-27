@@ -13,6 +13,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
 from gettext import gettext as _
 
@@ -26,6 +27,8 @@ from infoslicer.widgets.Edit_Pane import Edit_Pane
 from infoslicer.widgets.Format_Pane import Format_Pane
 from infoslicer.widgets.Image_Pane import Image_Pane
 from infoslicer.widgets.Journal_Image_Pane import Journal_Image_Pane
+from infoslicer.processing.HTML_strip import dehtml
+from infoslicer.processing.Article import Article
 
 import book
 
@@ -60,8 +63,9 @@ class ToolbarBuilder():
 
         self.txt_toggle = ToggleToolButton('ascii')
         self.img_toggle = ToggleToolButton('image')
-        self.jimg_chooser_toggle = ToolButton('image')
-        self.jimg_toggle = ToggleToolButton('image')
+        self.jimg_toggle = ToggleToolButton('journal-image')
+        self.jimg_chooser_toggle = ToolButton('load-image-from-journal')
+        self.jtext_chooser_toggle = ToolButton('load-text-from-journal')
 
         self.txt_toggle.set_tooltip(_('Text'))
         self.txt_toggle.connect('toggled', self._toggle_cb,
@@ -73,15 +77,18 @@ class ToolbarBuilder():
             [self.txt_toggle, self.img_toggle, self.jimg_toggle])
         toolbar.insert(self.img_toggle, -1)
 
-        self.jimg_chooser_toggle.set_tooltip(_('Choose Journal Images'))
-        self.jimg_chooser_toggle.connect('clicked', self._toggle_image_chooser)
-        toolbar.insert(self.jimg_chooser_toggle, -1)
-
         self.jimg_toggle.set_tooltip(_('Journal Images'))
         self.jimg_toggle.connect('toggled', self._toggle_cb,
             [self.txt_toggle, self.img_toggle, self.jimg_toggle])
         toolbar.insert(self.jimg_toggle, -1)
 
+        self.jimg_chooser_toggle.set_tooltip(_('Choose Journal Images'))
+        self.jimg_chooser_toggle.connect('clicked', self._toggle_image_chooser)
+        toolbar.insert(self.jimg_chooser_toggle, -1)
+
+        self.jtext_chooser_toggle.set_tooltip(_('Choose Journal Text'))
+        self.jtext_chooser_toggle.connect('clicked', self._toggle_text_chooser)
+        toolbar.insert(self.jtext_chooser_toggle, -1)
 
         for tab in TABS:
             for i in tab.toolitems:
@@ -100,6 +107,11 @@ class ToolbarBuilder():
         self.jimg_toggle.set_sensitive(False)
 
     def _toggle_image_chooser(self, widget):
+        self._old_cursor = self.edit.get_window().get_cursor()
+        self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+        GObject.idle_add(self.__image_chooser)
+
+    def __image_chooser(self):
         chooser = ObjectChooser(what_filter=mime.GENERIC_TYPE_IMAGE)
         result = chooser.run()
         if result == Gtk.ResponseType.ACCEPT:
@@ -108,6 +120,27 @@ class ToolbarBuilder():
                 title = str(jobject.metadata['title'])
                 path = str(jobject.file_path)
                 TABS[2].gallery.add_image(path, title)
+        self.edit.get_window().set_cursor(self._old_cursor)
+
+    def _toggle_text_chooser(self, widget):
+        self._old_cursor = self.edit.get_window().get_cursor()
+        self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+        GObject.idle_add(self.__text_chooser)
+
+    def __text_chooser(self):
+        chooser = ObjectChooser(what_filter=mime.GENERIC_TYPE_TEXT)
+        result = chooser.run()
+        if result == Gtk.ResponseType.ACCEPT:
+            jobject = chooser.get_selected_object()
+            if jobject and jobject.file_path:
+                title = str(jobject.metadata['title'])
+                path = str(jobject.file_path)
+                fp = open(path, 'r')
+                text = fp.read()
+                fp.close()
+                article_data = dehtml(text, title)
+                TABS[0].set_source_article(Article(article_data))
+        self.edit.get_window().set_cursor(self._old_cursor)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:

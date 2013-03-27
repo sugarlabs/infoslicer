@@ -236,8 +236,9 @@ class ToolbarBuilder():
     def _publish_clicked_cb(self, widget):
         xol.publish(self.activity)
 
-WIKI = { _("English Wikipedia")         : "en.wikipedia.org", 
-         _("Simple English Wikipedia")  : "simple.wikipedia.org", 
-         _("German Wikipedia")          : "de.wikipedia.org",
-         _("Spanish Wikipedia")         : "es.wikipedia.org",
-         _("French Wikipedia")          : "fr.wikipedia.org" }
+WIKI = { _('English Wikipedia')         : 'en.wikipedia.org', 
+         _('Simple English Wikipedia')  : 'simple.wikipedia.org', 
+         _('French Wikipedia')          : 'fr.wikipedia.org',
+         _('German Wikipedia')          : 'de.wikipedia.org',
+         _('Polish Wikipedia')         : 'pl.wikipedia.org',
+         _('Spanish Wikipedia')         : 'es.wikipedia.org'}
