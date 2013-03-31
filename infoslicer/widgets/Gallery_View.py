@@ -24,18 +24,16 @@ class Gallery_View( Gtk.HBox ):
     displays the images associated with that article, in a scrollable display.
     
     
-    Drag-and-drop methods have been added to set up the images as a drag
-    source.  
-    The data returned by drag-data-get will be a list containing
-    an Image_Data object and a Sentence_Data object.  
-    These correspond to the image
-    and caption respectively.
+    Drag-and-drop methods have been added to set up the images as a
+    drag source.  The data returned by drag-data-get will be a list
+    containing an Image_Data object and a Sentence_Data object.  These
+    correspond to the image and caption respectively.
     """
     
     def __init__(self):
         self.image_list = []
         GObject.GObject.__init__(self)
-        
+        self.set_size_request(int(Gdk.Screen.width() / 2), -1)
         self.current_index = -1
         
         left_button = Gtk.Button(label="\n\n << \n\n")
@@ -54,17 +52,19 @@ class Gallery_View( Gtk.HBox ):
                                       Gdk.DragAction.COPY)
         self.imagebox.drag_source_add_image_targets()
         self.imagebox.connect("drag-begin", self.drag_begin_event, None)
-        logging.debug('##################### Galler_View.connect')
+        logging.debug('##################### Gallery_View.connect')
         self.imagebox.connect("drag-data-get", self.drag_data_get_event, None)
         
         self.caption = Gtk.Label(label="")
+        self.caption.set_size_request(int(Gdk.Screen.width() / 3), -1)
         self.caption.set_line_wrap(True)
+        self.caption.set_max_width_chars(40)
         
         self.image_drag_container = Gtk.VBox()
         self.image_drag_container.pack_start(self.imagenumberlabel, expand=False,
                                              fill=False, padding=0)
-        self.image_drag_container.pack_start(self.imagebox, False, True, 0)
-        self.image_drag_container.pack_start(self.caption, False, True, 0)
+        self.image_drag_container.pack_start(self.imagebox, False, False, 0)
+        self.image_drag_container.pack_start(self.caption, False, False, 0)
         
         image_container = Gtk.VBox()
         image_container.pack_start(Gtk.Label(" "), True, True, 0)

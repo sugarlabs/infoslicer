@@ -61,11 +61,10 @@ class View(Gtk.Notebook):
         if book.custom.article:
             TABS[index].set_working_article(book.custom.article)
 
+
 class ToolbarBuilder():
     def __init__(self, edit, toolbar):
         self.edit = edit
-        logging.debug('init edit toolbar')
-        logging.debug(self.edit)
 
         self.txt_toggle = ToggleToolButton('ascii')
         self.img_toggle = ToggleToolButton('image')
