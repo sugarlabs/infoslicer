@@ -119,8 +119,9 @@ class View(Gtk.EventBox):
         wiki_box.pack_start(search_box, False, False, 0)
         wiki_box.pack_start(wiki, True, True, 0)
         wiki_box.pack_start(self.progress, False, False, 0)
-        wiki_box.set_size_request(Gdk.Screen.width()/4*3,
-                Gdk.Screen.height()/2 - style.GRID_CELL_SIZE / 2)
+        wiki_box.set_size_request(int(Gdk.Screen.width() * 3 / 4.),
+                                  int((Gdk.Screen.height() - \
+                                           style.GRID_CELL_SIZE) / 2))
 
         custom_widget = Reading_View()
         custom = Gtk.Notebook()
@@ -130,8 +131,9 @@ class View(Gtk.EventBox):
         custom.append_page(custom_widget, None)
         # custom.set_size_request(Gdk.Screen.width()/4*3,
         #         Gdk.Screen.height()/2 - 55)
-        custom.set_size_request(Gdk.Screen.width()/4*3,
-                Gdk.Screen.height()/2 - style.GRID_CELL_SIZE / 2)
+        custom.set_size_request(int(Gdk.Screen.width() * 3 / 4.),
+                                  int((Gdk.Screen.height() - \
+                                           style.GRID_CELL_SIZE) / 2))
 
         # workspace
 
