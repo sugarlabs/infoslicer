@@ -91,7 +91,7 @@ class View(Gtk.EventBox):
         search_box.pack_start(self.wikimenu, False, False, 0)
 
         self.searchentry = Gtk.Entry()
-        self.searchentry.set_size_request(int(Gdk.Screen.width() / 4), -1)
+        self.searchentry.set_size_request(int(Gdk.Screen.width() / 6), -1)
         self.searchentry.set_text(_("Article name"))
         self.searchentry.select_region(0, -1)
         self.searchentry.connect('activate', self._search_activate_cb)
@@ -119,6 +119,7 @@ class View(Gtk.EventBox):
         wiki_box.pack_start(search_box, False, False, 0)
         wiki_box.pack_start(wiki, True, True, 0)
         wiki_box.pack_start(self.progress, False, False, 0)
+        logging.debug(int(Gdk.Screen.width() * 3 / 4.))
         wiki_box.set_size_request(int(Gdk.Screen.width() * 3 / 4.),
                                   int((Gdk.Screen.height() - \
                                            style.GRID_CELL_SIZE) / 2))
