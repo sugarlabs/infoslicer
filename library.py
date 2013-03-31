@@ -37,15 +37,6 @@ from infoslicer.widgets.Reading_View import Reading_View
 
 logger = logging.getLogger('infoslicer')
 
-
-WIKI = { _('English Wikipedia')         : 'en.wikipedia.org', 
-         _('Simple English Wikipedia')  : 'simple.wikipedia.org', 
-         _('French Wikipedia')          : 'fr.wikipedia.org',
-         _('German Wikipedia')          : 'de.wikipedia.org',
-         _('Polish Wikipedia')         : 'pl.wikipedia.org',
-         _('Spanish Wikipedia')         : 'es.wikipedia.org'}
-
-
 class View(Gtk.EventBox):
     def sync(self):
         self.wiki.sync()
@@ -139,11 +130,14 @@ class View(Gtk.EventBox):
         custom.props.show_tabs = False
         custom.append_page(custom_stub, None)
         custom.append_page(custom_widget, None)
+        # custom.set_size_request(Gdk.Screen.width()/4*3,
+        #         Gdk.Screen.height()/2 - 55)
         custom.set_size_request(int(Gdk.Screen.width() * 3 / 4.),
                                   int((Gdk.Screen.height() - \
                                            style.GRID_CELL_SIZE) / 2))
 
         # workspace
+
         articles_box = Gtk.HBox()
         articles_box.pack_start(self.wiki, True, True, 0)
         articles_box.pack_start(Gtk.VSeparator(), False, False, 0)
@@ -162,6 +156,7 @@ class View(Gtk.EventBox):
         self.add(workspace)
 
         # init components
+
         book.wiki.connect('article-selected', self._article_selected_cb,
                 wiki_widget, [wiki, custom])
         book.wiki.connect('article-deleted', self._article_deleted_cb,
@@ -243,3 +238,10 @@ class ToolbarBuilder():
 
     def _publish_clicked_cb(self, widget):
         xol.publish(self.activity)
+
+WIKI = { _('English Wikipedia')         : 'en.wikipedia.org', 
+         _('Simple English Wikipedia')  : 'simple.wikipedia.org', 
+         _('French Wikipedia')          : 'fr.wikipedia.org',
+         _('German Wikipedia')          : 'de.wikipedia.org',
+         _('Polish Wikipedia')         : 'pl.wikipedia.org',
+         _('Spanish Wikipedia')         : 'es.wikipedia.org'}

@@ -236,27 +236,15 @@ msgstr "Mover artículo hacia arriba"
 msgid "New article"
 msgstr "Nuevo artículo"
 
-#: edit.py:70
+#: edit.py:58
 msgid "Text"
 msgstr "Texto"
 
-#: edit.py:75
+#: edit.py:63
 msgid "Images"
 msgstr "Imágenes"
 
-#: edit.py:80
-msgid "Journal Images"
-msgstr "Imágenes del Diario"
-
-#: edit.py:85
-msgid "Choose Journal Images"
-msgstr "Eliger las imágenes del Diario"
-
-#: edit.py:89
-msgid "Choose Journal Text"
-msgstr "Eliger el texto del Diario"
-
-#: Infoslicer/widgets/Edit_Pane.py:53
+#: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
 msgstr "Ajustar/alinear la selección a:"
 
@@ -360,20 +348,16 @@ msgid "Simple English Wikipedia"
 msgstr "Wikipedia en inglés sencillo"
 
 #: library.py:241
-msgid "French Wikipedia"
-msgstr "Wikipedia en francés"
-
-#: library.py:242
 msgid "German Wikipedia"
 msgstr "Wikipedia en alemán"
 
-#: library.py:243
-msgid "Polish Wikipedia"
-msgstr "Wikipedia en polaco"
-
-#: library.py:244
+#: library.py:242
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
+
+#: library.py:243
+msgid "French Wikipedia"
+msgstr "Wikipedia en francés"
 
 #: net.py:37
 #, python-format

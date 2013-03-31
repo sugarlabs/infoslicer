@@ -8,107 +8,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-27 08:46-0400\n"
+"POT-Creation-Date: 2012-11-15 00:33-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr ""
 
-#: activity/activity.info:3
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid ""
 "Is it possible to have my own encyclopedia? Yes! Find your favorite "
 "information on the web and package it with InfoSlicer creating incredible "
 "collections."
-msgstr ""
-
-#: edit.py:70
-msgid "Text"
-msgstr ""
-
-#: edit.py:75
-msgid "Images"
-msgstr ""
-
-#: edit.py:80
-msgid "Journal Images"
-msgstr ""
-
-#: edit.py:85
-msgid "Choose Journal Images"
-msgstr ""
-
-#: edit.py:89
-msgid "Choose Journal Text"
-msgstr ""
-
-#: parse.py:18
-msgid "Return to index"
-msgstr ""
-
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr ""
-
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr ""
-
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr ""
-
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr ""
-
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr ""
-
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr ""
-
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr ""
-
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr ""
-
-#: bookview.py:92
-msgid "Create new article"
-msgstr ""
-
-#: bookview.py:102
-msgid "Delete current article"
-msgstr ""
-
-#: bookview.py:109
-msgid "Move article downward"
-msgstr ""
-
-#: bookview.py:114
-msgid "Move article upward"
-msgstr ""
-
-#: bookview.py:191
-msgid "New article"
 msgstr ""
 
 #: activity.py:67
@@ -137,6 +54,72 @@ msgstr ""
 
 #: book.py:221
 msgid "Giraffe"
+msgstr ""
+
+#: bookview.py:52
+msgid "Articles are ready to be published"
+msgstr ""
+
+#: bookview.py:92
+msgid "Create new article"
+msgstr ""
+
+#: bookview.py:102
+msgid "Delete current article"
+msgstr ""
+
+#: bookview.py:109
+msgid "Move article downward"
+msgstr ""
+
+#: bookview.py:114
+msgid "Move article upward"
+msgstr ""
+
+#: bookview.py:191
+msgid "New article"
+msgstr ""
+
+#: edit.py:58
+msgid "Text"
+msgstr ""
+
+#: edit.py:63
+msgid "Images"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr ""
+
+#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
+#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
+#: infoslicer/widgets/Image_Pane.py:89
+msgid "Article:"
+msgstr ""
+
+#: infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr ""
+
+#: infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
 msgstr ""
 
 #: library.py:50
@@ -207,19 +190,54 @@ msgid "Simple English Wikipedia"
 msgstr ""
 
 #: library.py:241
-msgid "French Wikipedia"
-msgstr ""
-
-#: library.py:242
 msgid "German Wikipedia"
 msgstr ""
 
-#: library.py:243
-msgid "Polish Wikipedia"
+#: library.py:242
+msgid "Spanish Wikipedia"
 msgstr ""
 
-#: library.py:244
-msgid "Spanish Wikipedia"
+#: library.py:243
+msgid "French Wikipedia"
+msgstr ""
+
+#: net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr ""
+
+#: net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr ""
+
+#: net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr ""
+
+#: net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr ""
+
+#: net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr ""
+
+#: net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr ""
+
+#: net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr ""
+
+#: parse.py:18
+msgid "Return to index"
 msgstr ""
 
 #: xol.py:50
@@ -247,39 +265,4 @@ msgstr ""
 #: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
-msgstr ""
-
-#: infoslicer/widgets/Journal_Image_Pane.py:59
-#: infoslicer/widgets/Image_Pane.py:58 infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Edit_Pane.py:103
-#: infoslicer/widgets/Edit_Pane.py:111
-msgid "Article:"
-msgstr ""
-
-#: infoslicer/widgets/Image_Pane.py:79
-msgid "This article does not have any images"
-msgstr ""
-
-#: infoslicer/widgets/Image_Pane.py:82
-msgid "Please select a Wikipedia article from the menu above"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
 msgstr ""
