@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-15 00:33-0500\n"
-"PO-Revision-Date: 2013-03-12 22:56+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"PO-Revision-Date: 2013-04-16 13:46+0200\n"
+"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ayc\n"
 "MIME-Version: 1.0\n"
@@ -85,13 +85,25 @@ msgid "New article"
 msgstr "Machaqa qillqata"
 
 #  "Texto"
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Qillqawi"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Rixitanaka"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr "Rixitanaka panka"
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr "Journal rixitanaka katma"
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr "Sapüru wakichata qillqata katma"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -116,6 +128,7 @@ msgstr "Amuyunaka kasta"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Qillqata:"
 
@@ -176,38 +189,42 @@ msgstr "Qillqata wakichatana sutipa"
 msgid "Search"
 msgstr "Thaqaña"
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Utji"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "Uka qillqataxa \"%s\" utjxiwa"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Ajllita qillqatanaka qhanstayaña"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Inglés aruta Wikipedia wakichata"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Inglés aruta phisna yatiña Wikipedia wakichata"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Francés aruta Wikipedia wakichata"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Alemán aruta Wikipedia wakichata"
 
-#: library.py:242
+#: library.py:246
+msgid "Polish Wikipedia"
+msgstr "Inglés aruta Wikipedia wakichata"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Español aruta Wikipedia wakichata"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Francés aruta Wikipedia wakichata"
 
 #: net.py:37
 #, python-format
