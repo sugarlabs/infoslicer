@@ -26,9 +26,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-15 00:33-0500\n"
-"PO-Revision-Date: 2012-08-27 21:45+0200\n"
-"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"PO-Revision-Date: 2013-04-19 21:14+0200\n"
+"Last-Translator: anushnur <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,9 @@ msgid ""
 "information on the web and package it with InfoSlicer creating incredible "
 "collections."
 msgstr ""
+"Հնարավո՞ր է ունենալ իմ անձնական հանրագիտարանը. Այո, Գտիր քո նախընտրելի "
+"տեղեկատվությունը կայքում և փաթեթավորիր այն ԻնֆոՇերտող ծրագրով` ստեղծելով "
+"անկրկնելի հավաքածուներ:"
 
 #: activity.py:67
 msgid "Library"
@@ -102,13 +105,25 @@ msgstr "Շարժել հոդվածը վերև"
 msgid "New article"
 msgstr "Նոր Հոդված"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Տեքստ"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Պատկերներ"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr "Մատյանի Պատկերներ"
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr "Ընտրիր Մատյանի Պատկերները"
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr "Ընտրիր Մատյանի Տեքստը"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -133,6 +148,7 @@ msgstr "Բաժիններ"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Հոդված."
 
@@ -192,39 +208,44 @@ msgstr "Հոդվածի վերնագիր"
 msgid "Search"
 msgstr "Որոնել"
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Առկա Է"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" հոդվածն արդեն առկա Է"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Հրատարակել ընտրված հոդվածները"
 
 # Wikipedia
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Անգլերեն Վիկիպեդիա"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Պարզ Անգլերեն Վիկիպեդիա"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Ֆրանսերեն Վիկիպեդիա"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Գերմաներեն Վիկիպեդիա"
 
-#: library.py:242
+# Wikipedia
+#: library.py:246
+msgid "Polish Wikipedia"
+msgstr "Լեհական Վիկիպեդիա"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Իսպաներեն Վիկիպեդիա"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Ֆրանսերեն Վիկիպեդիա"
 
 #: net.py:37
 #, python-format
