@@ -158,8 +158,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-15 00:33-0500\n"
-"PO-Revision-Date: 2012-11-17 23:34+0200\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"PO-Revision-Date: 2013-04-19 09:11+0200\n"
 "Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -236,13 +236,25 @@ msgstr "Mover artículo hacia arriba"
 msgid "New article"
 msgstr "Nuevo artículo"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Texto"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Imágenes"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr "Imágenes del Diario"
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr "Elegir Imágenes del Diario"
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr "Elegir Texto del Diario"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -267,6 +279,7 @@ msgstr "Secciones"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Artículo:"
 
@@ -326,38 +339,42 @@ msgstr "Nombre del artículo"
 msgid "Search"
 msgstr "Buscar"
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Existe"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "El artículo \"%s\" ya existe"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Publicar artículos seleccionados"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Wikipedia en inglés"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia en inglés sencillo"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Wikipedia en francés"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Wikipedia en alemán"
 
-#: library.py:242
+#: library.py:246
+msgid "Polish Wikipedia"
+msgstr "Wikipedia en polaco"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia en español"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Wikipedia en francés"
 
 #: net.py:37
 #, python-format
