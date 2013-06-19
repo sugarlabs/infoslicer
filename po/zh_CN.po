@@ -38,9 +38,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
-"PO-Revision-Date: 2012-07-03 12:50+0200\n"
-"Last-Translator: athurg <feng@jianbo.de>\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"PO-Revision-Date: 2013-04-07 18:16+0200\n"
+"Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -49,9 +49,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "信息片段"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+msgstr "是否有可能有自己的百科全书？是的！在网络上寻找您最喜爱的信息，并用\"信息片段\"打包来创造不可思议的合集。"
 
 #: activity.py:67
 msgid "Library"
@@ -105,13 +113,25 @@ msgstr "向上移动文章"
 msgid "New article"
 msgstr "新文章"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "文本"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "图像"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr "日志图像"
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr "选择日志图像"
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr "选择日志文本"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -136,6 +156,7 @@ msgstr "章节"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "文章："
 
@@ -195,38 +216,42 @@ msgstr "文章名"
 msgid "Search"
 msgstr "搜索"
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "已存在"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "文章 \"%s\" 已存在"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "发布选中的文章"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "英文维基百科"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "简易英文维基百科"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "法文维基百科"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "德文维基百科"
 
-#: library.py:242
+#: library.py:246
+msgid "Polish Wikipedia"
+msgstr "波兰语维基百科"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "西班牙文维基百科"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "法文维基百科"
 
 #: net.py:37
 #, python-format
