@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: olpc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
 "PO-Revision-Date: 2011-09-28 08:28+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: sinhala <LL@li.org>\n"
@@ -46,9 +46,17 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Sinhalese\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+msgstr ""
 
 #: activity.py:67
 msgid "Library"
@@ -102,13 +110,25 @@ msgstr "ලිපිය ඉහලට ගමන්කරනවා"
 msgid "New article"
 msgstr "නව ලිපිය"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "අකුරු"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "රූප"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr ""
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr ""
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -133,6 +153,7 @@ msgstr "කොටස්"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "ලිපිය"
 
@@ -192,38 +213,43 @@ msgstr "ලිපියේ නම"
 msgid "Search"
 msgstr ""
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "තිබෙනවා"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" ලිපිය දැනුත් තිබෙනවා"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "තෝරාගත් ලිපි ප්‍රසිද්ධකිරීම"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "ඉංග්‍රීසි විකීපීඩියා"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "සරල ඉංග්‍රීසි විකීපීඩියා"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr ""
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "ජර්මන් විකීපීඩියා"
 
-#: library.py:242
+#: library.py:246
+#, fuzzy
+msgid "Polish Wikipedia"
+msgstr "ඉංග්‍රීසි විකීපීඩියා"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "ස්පාඤ්ඤ විකීපීඩියා"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr ""
 
 #: net.py:37
 #, python-format

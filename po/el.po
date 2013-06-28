@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
 "PO-Revision-Date: 2012-09-09 10:06+0200\n"
 "Last-Translator: Yannis <kiolalis@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,9 +49,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "Πληροφοριοκόπτης"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+msgstr ""
 
 #: activity.py:67
 msgid "Library"
@@ -105,13 +113,25 @@ msgstr "Μετακίνηση άρθρου προς τα πάνω"
 msgid "New article"
 msgstr "Νέο άρθρο"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Κείμενο"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Εικόνες"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr ""
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr ""
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -136,6 +156,7 @@ msgstr "Τμήματα"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Άρθρο:"
 
@@ -197,38 +218,43 @@ msgstr "Όνομα άρθρου"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Υπάρχει"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "Το άρθρο «%s» υπάρχει ήδη"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Δημοσίευση επιλεγμένων άρθρων"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Αγγλική Βικιπαίδεια"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Απλή Αγγλική Βικιπαίδεια"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Γαλλική Βικιπαίδεια"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Γερμανική Βικιπαίδεια"
 
-#: library.py:242
+#: library.py:246
+#, fuzzy
+msgid "Polish Wikipedia"
+msgstr "Αγγλική Βικιπαίδεια"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Ισπανική Βικιπαίδεια"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Γαλλική Βικιπαίδεια"
 
 #: net.py:37
 #, python-format

@@ -42,7 +42,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"POT-Creation-Date: 2013-06-24 02:17+0200\n"
 "PO-Revision-Date: 2013-04-06 21:10+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,275 +58,215 @@ msgid "InfoSlicer"
 msgstr "InfoSlicer"
 
 #. TRANS: "summary" option from activity.info file
+msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
+msgstr ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+
 #. TRANS: "description" option from activity.info file
-msgid ""
-"Is it possible to have my own encyclopedia? Yes! Find your favorite "
-"information on the web and package it with InfoSlicer creating incredible "
-"collections."
+msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
 msgstr ""
 "Is it possible to have my own encyclopedia? Yes! Find your favorite "
 "information on the web and package it with InfoSlicer creating incredible "
 "collections."
 
-#: activity.py:67
-msgid "Library"
-msgstr "Library"
+#~ msgid "Library"
+#~ msgstr "Library"
 
-#: activity.py:75
-msgid "Edit"
-msgstr "Edit"
+#~ msgid "Edit"
+#~ msgstr "Edit"
 
-#: book.py:211
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Lion (from en.wikipedia.org)"
+#~ msgid "Lion (from en.wikipedia.org)"
+#~ msgstr "Lion (from en.wikipedia.org)"
 
-#: book.py:212
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tiger (from en.wikipedia.org)"
+#~ msgid "Tiger (from en.wikipedia.org)"
+#~ msgstr "Tiger (from en.wikipedia.org)"
 
-#: book.py:213
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Giraffe (from en.wikipedia.org)"
+#~ msgid "Giraffe (from en.wikipedia.org)"
+#~ msgstr "Giraffe (from en.wikipedia.org)"
 
-#: book.py:214
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Zebra (from en.wikipedia.org)"
+#~ msgid "Zebra (from en.wikipedia.org)"
+#~ msgstr "Zebra (from en.wikipedia.org)"
 
-#: book.py:221
-msgid "Giraffe"
-msgstr "Giraffe"
+#~ msgid "Giraffe"
+#~ msgstr "Giraffe"
 
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr "Articles are ready to be published"
+#~ msgid "Articles are ready to be published"
+#~ msgstr "Articles are ready to be published"
 
-#: bookview.py:92
-msgid "Create new article"
-msgstr "Create new article"
+#~ msgid "Create new article"
+#~ msgstr "Create new article"
 
-#: bookview.py:102
-msgid "Delete current article"
-msgstr "Delete current article"
+#~ msgid "Delete current article"
+#~ msgstr "Delete current article"
 
-#: bookview.py:109
-msgid "Move article downward"
-msgstr "Move article downward"
+#~ msgid "Move article downward"
+#~ msgstr "Move article downward"
 
-#: bookview.py:114
-msgid "Move article upward"
-msgstr "Move article upward"
+#~ msgid "Move article upward"
+#~ msgstr "Move article upward"
 
-#: bookview.py:191
-msgid "New article"
-msgstr "New article"
+#~ msgid "New article"
+#~ msgstr "New article"
 
-#: edit.py:76
-msgid "Text"
-msgstr "Text"
+#~ msgid "Text"
+#~ msgstr "Text"
 
-#: edit.py:81
-msgid "Images"
-msgstr "Images"
+#~ msgid "Images"
+#~ msgstr "Images"
 
-#: edit.py:86
-msgid "Journal Images"
-msgstr "Journal Images"
+#~ msgid "Journal Images"
+#~ msgstr "Journal Images"
 
-#: edit.py:91
-msgid "Choose Journal Images"
-msgstr "Choose Journal Images"
+#~ msgid "Choose Journal Images"
+#~ msgstr "Choose Journal Images"
 
-#: edit.py:95
-msgid "Choose Journal Text"
-msgstr "Choose Journal Text"
+#~ msgid "Choose Journal Text"
+#~ msgstr "Choose Journal Text"
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr "Snap selection to:"
+#~ msgid "Snap selection to:"
+#~ msgstr "Snap selection to:"
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr "Nothing"
+#~ msgid "Nothing"
+#~ msgstr "Nothing"
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr "Sentences"
+#~ msgid "Sentences"
+#~ msgstr "Sentences"
 
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr "Paragraphs"
+#~ msgid "Paragraphs"
+#~ msgstr "Paragraphs"
 
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
-msgstr "Sections"
+#~ msgid "Sections"
+#~ msgstr "Sections"
 
-#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
-#: infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Journal_Image_Pane.py:59
-msgid "Article:"
-msgstr "Article:"
+#~ msgid "Article:"
+#~ msgstr "Article:"
 
-#: infoslicer/widgets/Image_Pane.py:79
-msgid "This article does not have any images"
-msgstr "This article does not have any images"
+#~ msgid "This article does not have any images"
+#~ msgstr "This article does not have any images"
 
-#: infoslicer/widgets/Image_Pane.py:82
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Please select a Wikipedia article from the menu above"
+#~ msgid "Please select a Wikipedia article from the menu above"
+#~ msgstr "Please select a Wikipedia article from the menu above"
 
-#: library.py:50
-msgid "Wiki"
-msgstr "Wiki"
+#~ msgid "Wiki"
+#~ msgstr "Wiki"
 
-#: library.py:50
-msgid "Wiki articles"
-msgstr "Wiki articles"
+#~ msgid "Wiki articles"
+#~ msgstr "Wiki articles"
 
-#: library.py:52
-msgid "Custom"
-msgstr "Custom"
+#~ msgid "Custom"
+#~ msgstr "Custom"
 
-#: library.py:52
-msgid "Custom articles"
-msgstr "Custom articles"
+#~ msgid "Custom articles"
+#~ msgstr "Custom articles"
 
-#: library.py:72
-msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
+#~ msgid ""
+#~ "To download Wiki article\n"
+#~ "type \"Article name\" and click"
+#~ msgstr ""
+#~ "To download Wiki article\n"
+#~ "type \"Article name\" and click"
 
-#: library.py:73
-msgid "button on the top \"Library\" panel"
-msgstr "button on the top \"Library\" panel"
+#~ msgid "button on the top \"Library\" panel"
+#~ msgstr "button on the top \"Library\" panel"
 
-#: library.py:75
-msgid "To create custom article click"
-msgstr "To create custom article click"
+#~ msgid "To create custom article click"
+#~ msgstr "To create custom article click"
 
-#: library.py:76
-msgid "button on the left \"Custom\" panel"
-msgstr "button on the left \"Custom\" panel"
+#~ msgid "button on the left \"Custom\" panel"
+#~ msgstr "button on the left \"Custom\" panel"
 
-#: library.py:84
-msgid "Get article from:"
-msgstr "Get article from:"
+#~ msgid "Get article from:"
+#~ msgstr "Get article from:"
 
-#: library.py:95
-msgid "Article name"
-msgstr "Article name"
+#~ msgid "Article name"
+#~ msgstr "Article name"
 
-#: library.py:101
-msgid "Search"
-msgstr "Search"
+#~ msgid "Search"
+#~ msgstr "Search"
 
-#: library.py:208
-msgid "Exists"
-msgstr "Exists"
+#~ msgid "Exists"
+#~ msgstr "Exists"
 
-#: library.py:209
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" article already exists"
+#~ msgid "\"%s\" article already exists"
+#~ msgstr "\"%s\" article already exists"
 
-#: library.py:231
-msgid "Publish selected articles"
-msgstr "Publish selected articles"
+#~ msgid "Publish selected articles"
+#~ msgstr "Publish selected articles"
 
-#: library.py:242
-msgid "English Wikipedia"
-msgstr "English Wikipedia"
+#~ msgid "English Wikipedia"
+#~ msgstr "English Wikipedia"
 
-#: library.py:243
-msgid "Simple English Wikipedia"
-msgstr "Simple English Wikipedia"
+#~ msgid "Simple English Wikipedia"
+#~ msgstr "Simple English Wikipedia"
 
-#: library.py:244
-msgid "French Wikipedia"
-msgstr "French Wikipedia"
+#~ msgid "French Wikipedia"
+#~ msgstr "French Wikipedia"
 
-#: library.py:245
-msgid "German Wikipedia"
-msgstr "German Wikipedia"
+#~ msgid "German Wikipedia"
+#~ msgstr "German Wikipedia"
 
-#: library.py:246
-msgid "Polish Wikipedia"
-msgstr "Polish Wikipedia"
+#~ msgid "Polish Wikipedia"
+#~ msgstr "Polish Wikipedia"
 
-#: library.py:247
-msgid "Spanish Wikipedia"
-msgstr "Spanish Wikipedia"
+#~ msgid "Spanish Wikipedia"
+#~ msgstr "Spanish Wikipedia"
 
-#: net.py:37
 #, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" download in progress..."
+#~ msgid "\"%s\" download in progress..."
+#~ msgstr "\"%s\" download in progress..."
 
-#: net.py:40
 #, python-format
-msgid "Processing \"%s\"..."
-msgstr "Processing \"%s\"..."
+#~ msgid "Processing \"%s\"..."
+#~ msgstr "Processing \"%s\"..."
 
-#: net.py:44
 #, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Downloading \"%s\" images..."
+#~ msgid "Downloading \"%s\" images..."
+#~ msgstr "Downloading \"%s\" images..."
 
-#: net.py:45
 #, python-format
-msgid " (from %s)"
-msgstr " (from %s)"
+#~ msgid " (from %s)"
+#~ msgstr " (from %s)"
 
-#: net.py:47
 #, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" successfully downloaded"
+#~ msgid "\"%s\" successfully downloaded"
+#~ msgstr "\"%s\" successfully downloaded"
 
-#: net.py:51
 #, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" could not be found"
+#~ msgid "\"%s\" could not be found"
+#~ msgstr "\"%s\" could not be found"
 
-#: net.py:55
 #, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Error downloading \"%s\"; check your connection"
+#~ msgid "Error downloading \"%s\"; check your connection"
+#~ msgstr "Error downloading \"%s\"; check your connection"
 
-#: parse.py:18
-msgid "Return to index"
-msgstr "Return to index"
+#~ msgid "Return to index"
+#~ msgstr "Return to index"
 
-#: xol.py:50
-msgid "Nothing to publish"
-msgstr "Nothing to publish"
+#~ msgid "Nothing to publish"
+#~ msgstr "Nothing to publish"
 
-#: xol.py:51
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Mark arcticles from \"Custom\" panel and try again."
+#~ msgid "Mark arcticles from \"Custom\" panel and try again."
+#~ msgstr "Mark arcticles from \"Custom\" panel and try again."
 
-#: xol.py:71
-msgid "Overwrite existed bundle?"
-msgstr "Overwrite existed bundle?"
+#~ msgid "Overwrite existed bundle?"
+#~ msgstr "Overwrite existed bundle?"
 
-#: xol.py:72
-msgid ""
-"A bundle for current object was already created. Click \"OK\" to overwrite "
-"it."
-msgstr ""
-"A bundle for current object was already created. Click \"OK\" to overwrite it."
+#~ msgid ""
+#~ "A bundle for current object was already created. Click \"OK\" to overwrite "
+#~ "it."
+#~ msgstr ""
+#~ "A bundle for current object was already created. Click \"OK\" to overwrite it."
 
-#: xol.py:99
-msgid "Book published to your Journal"
-msgstr "Book published to your Journal"
+#~ msgid "Book published to your Journal"
+#~ msgstr "Book published to your Journal"
 
-#: xol.py:100
-msgid ""
-"You can read the book in Browse or access the .xol file from your Journal"
-msgstr ""
-"You can read the book in Browse or access the .xol file from your Journal"
+#~ msgid ""
+#~ "You can read the book in Browse or access the .xol file from your Journal"
+#~ msgstr ""
+#~ "You can read the book in Browse or access the .xol file from your Journal"
 
 #~ msgid "Bundle exists"
 #~ msgstr "Bundle exists"

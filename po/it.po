@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
 "PO-Revision-Date: 2010-09-20 18:25+0200\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,9 +45,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.3\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+msgstr ""
 
 #: activity.py:67
 msgid "Library"
@@ -101,13 +109,25 @@ msgstr "Muovi l'articolo in alto"
 msgid "New article"
 msgstr "Nuovo articolo"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Testo"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Immagini"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr ""
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr ""
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -132,6 +152,7 @@ msgstr "Sezioni"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Articolo:"
 
@@ -191,38 +212,43 @@ msgstr "Nome della voce"
 msgid "Search"
 msgstr ""
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Esiste"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "la voce \"%s\" esiste già"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Pubblica le voci selezionate"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Wikipedia Inglese"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia Inglese semplificata"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Wikipedia in Francese"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Wikipedia Tedesca"
 
-#: library.py:242
+#: library.py:246
+#, fuzzy
+msgid "Polish Wikipedia"
+msgstr "Wikipedia Inglese"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Wikipedia in Spagnolo"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Wikipedia in Francese"
 
 #: net.py:37
 #, python-format

@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-21 01:22-0400\n"
+"POT-Creation-Date: 2013-04-01 00:31-0400\n"
 "PO-Revision-Date: 2010-07-24 13:29+0200\n"
 "Last-Translator: Mattias Ohlsson <mattias_oh@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,9 +45,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.3\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "InfoSlicer"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Is it possible to have my own encyclopedia? Yes! Find your favorite "
+"information on the web and package it with InfoSlicer creating incredible "
+"collections."
+msgstr ""
 
 #: activity.py:67
 msgid "Library"
@@ -101,13 +109,25 @@ msgstr "Flytta upp artikel"
 msgid "New article"
 msgstr "Ny artikel"
 
-#: edit.py:58
+#: edit.py:76
 msgid "Text"
 msgstr "Text"
 
-#: edit.py:63
+#: edit.py:81
 msgid "Images"
 msgstr "Bilder"
+
+#: edit.py:86
+msgid "Journal Images"
+msgstr ""
+
+#: edit.py:91
+msgid "Choose Journal Images"
+msgstr ""
+
+#: edit.py:95
+msgid "Choose Journal Text"
+msgstr ""
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -132,6 +152,7 @@ msgstr "Sektioner"
 #: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
 #: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
 #: infoslicer/widgets/Image_Pane.py:89
+#: infoslicer/widgets/Journal_Image_Pane.py:59
 msgid "Article:"
 msgstr "Artikel:"
 
@@ -191,38 +212,43 @@ msgstr "Artikelnamn"
 msgid "Search"
 msgstr ""
 
-#: library.py:205
+#: library.py:208
 msgid "Exists"
 msgstr "Finns"
 
-#: library.py:206
+#: library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\" artikel finns redan"
 
-#: library.py:228
+#: library.py:231
 msgid "Publish selected articles"
 msgstr "Publicera valda artiklar"
 
-#: library.py:239
+#: library.py:242
 msgid "English Wikipedia"
 msgstr "Engelska Wikipedia"
 
-#: library.py:240
+#: library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Wikipedia på förenklad Engelska"
 
-#: library.py:241
+#: library.py:244
+msgid "French Wikipedia"
+msgstr "Franska Wikipedia"
+
+#: library.py:245
 msgid "German Wikipedia"
 msgstr "Tyska Wikipedia"
 
-#: library.py:242
+#: library.py:246
+#, fuzzy
+msgid "Polish Wikipedia"
+msgstr "Engelska Wikipedia"
+
+#: library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Spanska Wikipedia"
-
-#: library.py:243
-msgid "French Wikipedia"
-msgstr "Franska Wikipedia"
 
 #: net.py:37
 #, python-format
