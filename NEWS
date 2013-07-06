@@ -1,3 +1,16 @@
+20
+
+BUG FIX:
+* Specify encoding to fix #4526
+
+19
+
+ENHANCEMENT:
+* New translations
+
+BUG FIX:
+* Fixed #4525: Infoslicer crash dragging text
+
 17
 
 ENHANCEMENTS:
