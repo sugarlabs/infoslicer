@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-01 00:31-0400\n"
+"POT-Creation-Date: 2013-07-06 05:33+0200\n"
 "PO-Revision-Date: 2013-04-19 21:14+0200\n"
 "Last-Translator: anushnur <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,279 +42,219 @@ msgid "InfoSlicer"
 msgstr "ԻնֆոՇերտող"
 
 #. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
-msgid ""
-"Is it possible to have my own encyclopedia? Yes! Find your favorite "
-"information on the web and package it with InfoSlicer creating incredible "
-"collections."
+msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
 msgstr ""
 "Հնարավո՞ր է ունենալ իմ անձնական հանրագիտարանը. Այո, Գտիր քո նախընտրելի "
 "տեղեկատվությունը կայքում և փաթեթավորիր այն ԻնֆոՇերտող ծրագրով` ստեղծելով "
 "անկրկնելի հավաքածուներ:"
 
-#: activity.py:67
-msgid "Library"
-msgstr "Գրադարան"
+#. TRANS: "description" option from activity.info file
+msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
+msgstr ""
+"Հնարավո՞ր է ունենալ իմ անձնական հանրագիտարանը. Այո, Գտիր քո նախընտրելի "
+"տեղեկատվությունը կայքում և փաթեթավորիր այն ԻնֆոՇերտող ծրագրով` ստեղծելով "
+"անկրկնելի հավաքածուներ:"
 
-#: activity.py:75
-msgid "Edit"
-msgstr "Խմբագրել"
+#~ msgid "Library"
+#~ msgstr "Գրադարան"
 
-#: book.py:211
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Առյուծ (en.wikipedia.org)-ից"
+#~ msgid "Edit"
+#~ msgstr "Խմբագրել"
 
-#: book.py:212
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Վագր (en.wikipedia.org)-ից"
+#~ msgid "Lion (from en.wikipedia.org)"
+#~ msgstr "Առյուծ (en.wikipedia.org)-ից"
 
-#: book.py:213
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Ընձուղտ (en.wikipedia.org-ից)"
+#~ msgid "Tiger (from en.wikipedia.org)"
+#~ msgstr "Վագր (en.wikipedia.org)-ից"
+
+#~ msgid "Giraffe (from en.wikipedia.org)"
+#~ msgstr "Ընձուղտ (en.wikipedia.org-ից)"
 
 # Վագրաձի
-#: book.py:214
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Զեբր (en.wikipedia.org-ից)"
+#~ msgid "Zebra (from en.wikipedia.org)"
+#~ msgstr "Զեբր (en.wikipedia.org-ից)"
 
-#: book.py:221
-msgid "Giraffe"
-msgstr "Ընձուղտ"
+#~ msgid "Giraffe"
+#~ msgstr "Ընձուղտ"
 
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr "Հոդվածները պատրաստ են հրատարակման"
+#~ msgid "Articles are ready to be published"
+#~ msgstr "Հոդվածները պատրաստ են հրատարակման"
 
-#: bookview.py:92
-msgid "Create new article"
-msgstr "Ստեղծել նոր Հոդված"
+#~ msgid "Create new article"
+#~ msgstr "Ստեղծել նոր Հոդված"
 
-#: bookview.py:102
-msgid "Delete current article"
-msgstr "Ջնջել ներկա Հոդվածը"
+#~ msgid "Delete current article"
+#~ msgstr "Ջնջել ներկա Հոդվածը"
 
-#: bookview.py:109
-msgid "Move article downward"
-msgstr "Շարժել հոդվածը ներքև"
+#~ msgid "Move article downward"
+#~ msgstr "Շարժել հոդվածը ներքև"
 
-#: bookview.py:114
-msgid "Move article upward"
-msgstr "Շարժել հոդվածը վերև"
+#~ msgid "Move article upward"
+#~ msgstr "Շարժել հոդվածը վերև"
 
-#: bookview.py:191
-msgid "New article"
-msgstr "Նոր Հոդված"
+#~ msgid "New article"
+#~ msgstr "Նոր Հոդված"
 
-#: edit.py:76
-msgid "Text"
-msgstr "Տեքստ"
+#~ msgid "Text"
+#~ msgstr "Տեքստ"
 
-#: edit.py:81
-msgid "Images"
-msgstr "Պատկերներ"
+#~ msgid "Images"
+#~ msgstr "Պատկերներ"
 
-#: edit.py:86
-msgid "Journal Images"
-msgstr "Մատյանի Պատկերներ"
+#~ msgid "Journal Images"
+#~ msgstr "Մատյանի Պատկերներ"
 
-#: edit.py:91
-msgid "Choose Journal Images"
-msgstr "Ընտրիր Մատյանի Պատկերները"
+#~ msgid "Choose Journal Images"
+#~ msgstr "Ընտրիր Մատյանի Պատկերները"
 
-#: edit.py:95
-msgid "Choose Journal Text"
-msgstr "Ընտրիր Մատյանի Տեքստը"
+#~ msgid "Choose Journal Text"
+#~ msgstr "Ընտրիր Մատյանի Տեքստը"
 
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr "Ընտրածը հարմարեցրնել."
+#~ msgid "Snap selection to:"
+#~ msgstr "Ընտրածը հարմարեցրնել."
 
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr "Ոչինչ"
+#~ msgid "Nothing"
+#~ msgstr "Ոչինչ"
 
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr "Նախադասություններ"
+#~ msgid "Sentences"
+#~ msgstr "Նախադասություններ"
 
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr "Պարբերություններ"
+#~ msgid "Paragraphs"
+#~ msgstr "Պարբերություններ"
 
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
-msgstr "Բաժիններ"
+#~ msgid "Sections"
+#~ msgstr "Բաժիններ"
 
-#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
-#: infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Journal_Image_Pane.py:59
-msgid "Article:"
-msgstr "Հոդված."
+#~ msgid "Article:"
+#~ msgstr "Հոդված."
 
-#: infoslicer/widgets/Image_Pane.py:79
-msgid "This article does not have any images"
-msgstr "Այս հոդվածում որևէ նկար չկա"
+#~ msgid "This article does not have any images"
+#~ msgstr "Այս հոդվածում որևէ նկար չկա"
 
-#: infoslicer/widgets/Image_Pane.py:82
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Խնդրեմ, վերը ներկայացվող ցուցակից ընտրեք Վիքիպեդիայի որեւէ հոդված"
+#~ msgid "Please select a Wikipedia article from the menu above"
+#~ msgstr "Խնդրեմ, վերը ներկայացվող ցուցակից ընտրեք Վիքիպեդիայի որեւէ հոդված"
 
-#: library.py:50
-msgid "Wiki"
-msgstr "Wiki"
+#~ msgid "Wiki"
+#~ msgstr "Wiki"
 
-#: library.py:50
-msgid "Wiki articles"
-msgstr "Wiki հոդվածներ"
+#~ msgid "Wiki articles"
+#~ msgstr "Wiki հոդվածներ"
 
-#: library.py:52
-msgid "Custom"
-msgstr "Հարմարեցնել"
+#~ msgid "Custom"
+#~ msgstr "Հարմարեցնել"
 
-#: library.py:52
-msgid "Custom articles"
-msgstr "Հարմարեցված հոդվածներ"
+#~ msgid "Custom articles"
+#~ msgstr "Հարմարեցված հոդվածներ"
 
-#: library.py:72
-msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"Wiki հոդված բեռնելու համար \n"
-"տպել Հոդվածի վերնագիրը և` քլիք:"
+#~ msgid ""
+#~ "To download Wiki article\n"
+#~ "type \"Article name\" and click"
+#~ msgstr ""
+#~ "Wiki հոդված բեռնելու համար \n"
+#~ "տպել Հոդվածի վերնագիրը և` քլիք:"
 
-#: library.py:73
-msgid "button on the top \"Library\" panel"
-msgstr "\"Գրադարան\" վահանակի վերին մասի կոճակը"
+#~ msgid "button on the top \"Library\" panel"
+#~ msgstr "\"Գրադարան\" վահանակի վերին մասի կոճակը"
 
-#: library.py:75
-msgid "To create custom article click"
-msgstr "Հարմարեցված հոդված ստեղծելու համար` քլիք"
+#~ msgid "To create custom article click"
+#~ msgstr "Հարմարեցված հոդված ստեղծելու համար` քլիք"
 
-#: library.py:76
-msgid "button on the left \"Custom\" panel"
-msgstr "\"Հարմարեցնել\" վահանակի ձախ մասի կոճակը"
+#~ msgid "button on the left \"Custom\" panel"
+#~ msgstr "\"Հարմարեցնել\" վահանակի ձախ մասի կոճակը"
 
-#: library.py:84
-msgid "Get article from:"
-msgstr "Ստանալ հոդված ....-ից"
+#~ msgid "Get article from:"
+#~ msgstr "Ստանալ հոդված ....-ից"
 
-#: library.py:95
-msgid "Article name"
-msgstr "Հոդվածի վերնագիր"
+#~ msgid "Article name"
+#~ msgstr "Հոդվածի վերնագիր"
 
-#: library.py:101
-msgid "Search"
-msgstr "Որոնել"
+#~ msgid "Search"
+#~ msgstr "Որոնել"
 
-#: library.py:208
-msgid "Exists"
-msgstr "Առկա Է"
+#~ msgid "Exists"
+#~ msgstr "Առկա Է"
 
-#: library.py:209
 #, python-format
-msgid "\"%s\" article already exists"
-msgstr "\"%s\" հոդվածն արդեն առկա Է"
+#~ msgid "\"%s\" article already exists"
+#~ msgstr "\"%s\" հոդվածն արդեն առկա Է"
 
-#: library.py:231
-msgid "Publish selected articles"
-msgstr "Հրատարակել ընտրված հոդվածները"
+#~ msgid "Publish selected articles"
+#~ msgstr "Հրատարակել ընտրված հոդվածները"
 
 # Wikipedia
-#: library.py:242
-msgid "English Wikipedia"
-msgstr "Անգլերեն Վիկիպեդիա"
+#~ msgid "English Wikipedia"
+#~ msgstr "Անգլերեն Վիկիպեդիա"
 
-#: library.py:243
-msgid "Simple English Wikipedia"
-msgstr "Պարզ Անգլերեն Վիկիպեդիա"
+#~ msgid "Simple English Wikipedia"
+#~ msgstr "Պարզ Անգլերեն Վիկիպեդիա"
 
-#: library.py:244
-msgid "French Wikipedia"
-msgstr "Ֆրանսերեն Վիկիպեդիա"
+#~ msgid "French Wikipedia"
+#~ msgstr "Ֆրանսերեն Վիկիպեդիա"
 
-#: library.py:245
-msgid "German Wikipedia"
-msgstr "Գերմաներեն Վիկիպեդիա"
+#~ msgid "German Wikipedia"
+#~ msgstr "Գերմաներեն Վիկիպեդիա"
 
 # Wikipedia
-#: library.py:246
-msgid "Polish Wikipedia"
-msgstr "Լեհական Վիկիպեդիա"
+#~ msgid "Polish Wikipedia"
+#~ msgstr "Լեհական Վիկիպեդիա"
 
-#: library.py:247
-msgid "Spanish Wikipedia"
-msgstr "Իսպաներեն Վիկիպեդիա"
+#~ msgid "Spanish Wikipedia"
+#~ msgstr "Իսպաներեն Վիկիպեդիա"
 
-#: net.py:37
 #, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" բեռնումն ընթացքի մեջ է...."
+#~ msgid "\"%s\" download in progress..."
+#~ msgstr "\"%s\" բեռնումն ընթացքի մեջ է...."
 
-#: net.py:40
 #, python-format
-msgid "Processing \"%s\"..."
-msgstr "Մշակում \"%s\"..."
+#~ msgid "Processing \"%s\"..."
+#~ msgstr "Մշակում \"%s\"..."
 
-#: net.py:44
 #, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Ներբեռնում պատկերներ \"%s\"..."
+#~ msgid "Downloading \"%s\" images..."
+#~ msgstr "Ներբեռնում պատկերներ \"%s\"..."
 
-#: net.py:45
 #, python-format
-msgid " (from %s)"
-msgstr " ( %s- ից )"
+#~ msgid " (from %s)"
+#~ msgstr " ( %s- ից )"
 
-#: net.py:47
 #, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" բեռնումը կատարվեց հաջողությամբ"
+#~ msgid "\"%s\" successfully downloaded"
+#~ msgstr "\"%s\" բեռնումը կատարվեց հաջողությամբ"
 
-#: net.py:51
 #, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" չի գտնվել"
+#~ msgid "\"%s\" could not be found"
+#~ msgstr "\"%s\" չի գտնվել"
 
-#: net.py:55
 #, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Բեռնման ձախողում \"%s\"; Ստուգեք ձեր միացումը"
+#~ msgid "Error downloading \"%s\"; check your connection"
+#~ msgstr "Բեռնման ձախողում \"%s\"; Ստուգեք ձեր միացումը"
 
-#: parse.py:18
-msgid "Return to index"
-msgstr "Վերադառնալ ցուցիչին"
+#~ msgid "Return to index"
+#~ msgstr "Վերադառնալ ցուցիչին"
 
-#: xol.py:50
-msgid "Nothing to publish"
-msgstr "Հրապարակելու ոչինչ չկա"
+#~ msgid "Nothing to publish"
+#~ msgstr "Հրապարակելու ոչինչ չկա"
 
-#: xol.py:51
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
+#~ msgid "Mark arcticles from \"Custom\" panel and try again."
+#~ msgstr "Նշեք հոդվածները \"Custom\" վահանակից, և փորձեք կրկին"
 
-#: xol.py:71
-msgid "Overwrite existed bundle?"
-msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթի վրա:"
+#~ msgid "Overwrite existed bundle?"
+#~ msgstr "Վերագրանցե՞լ գոյություն ունեցող փաթեթի վրա:"
 
-#: xol.py:72
-msgid ""
-"A bundle for current object was already created. Click \"OK\" to overwrite "
-"it."
-msgstr ""
-"Այս առարկայի փաթեթը արդոն ստեղծվել է: Ընտրիր \"OK\" այն վերագրանցելու համար:"
+#~ msgid ""
+#~ "A bundle for current object was already created. Click \"OK\" to overwrite "
+#~ "it."
+#~ msgstr ""
+#~ "Այս առարկայի փաթեթը արդոն ստեղծվել է: Ընտրիր \"OK\" այն վերագրանցելու համար:"
 
-#: xol.py:99
-msgid "Book published to your Journal"
-msgstr "Քո մատյանում հրատարակված գիրք"
+#~ msgid "Book published to your Journal"
+#~ msgstr "Քո մատյանում հրատարակված գիրք"
 
-#: xol.py:100
-msgid ""
-"You can read the book in Browse or access the .xol file from your Journal"
-msgstr ""
-"Դուք կարող եք ընթերցել գիրքը Զննարկիչում կամ մուտք գործել .xol ֆայլ քո "
-"մատյանից"
+#~ msgid ""
+#~ "You can read the book in Browse or access the .xol file from your Journal"
+#~ msgstr ""
+#~ "Դուք կարող եք ընթերցել գիրքը Զննարկիչում կամ մուտք գործել .xol ֆայլ քո "
+#~ "մատյանից"
 
 #~ msgid "Bundle exists"
 #~ msgstr "Փաթեթը գոյություն ունի"
