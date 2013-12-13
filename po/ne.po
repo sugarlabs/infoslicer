@@ -34,16 +34,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-01 00:31-0400\n"
-"PO-Revision-Date: 2011-07-15 03:46+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2013-07-07 00:32-0400\n"
+"PO-Revision-Date: 2013-11-26 08:56+0200\n"
+"Last-Translator: Ganesh <ganesh.ghimire@olenepal.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
@@ -56,6 +56,8 @@ msgid ""
 "information on the web and package it with InfoSlicer creating incredible "
 "collections."
 msgstr ""
+"मेरो आफ्नै विश्वकोष बनाउन सम्भव छ? छ! तिम्रो मनपर्ने जानकारीहरु वेबमा खोज र "
+"InfoSlicer मार्फत त्यसको प्याकेज बनाउ।"
 
 #: activity.py:67
 msgid "Library"
@@ -119,15 +121,15 @@ msgstr "चित्र"
 
 #: edit.py:86
 msgid "Journal Images"
-msgstr ""
+msgstr "पंजिका तस्विरहरु"
 
 #: edit.py:91
 msgid "Choose Journal Images"
-msgstr ""
+msgstr "पंजिकाका तस्विरहरु छान"
 
 #: edit.py:95
 msgid "Choose Journal Text"
-msgstr ""
+msgstr "पंजिकाका अक्षरहरु छान"
 
 #: infoslicer/widgets/Edit_Pane.py:53
 msgid "Snap selection to:"
@@ -242,9 +244,8 @@ msgid "German Wikipedia"
 msgstr "जर्मन विकीपीडिया"
 
 #: library.py:246
-#, fuzzy
 msgid "Polish Wikipedia"
-msgstr "अङ्ग्रेजी विकीपीडिया"
+msgstr "पोल्यान्डि विश्वकोष"
 
 #: library.py:247
 msgid "Spanish Wikipedia"
@@ -287,7 +288,7 @@ msgstr "डाउनलोडमा त्रुटि आयो \"%s\", जड�
 
 #: parse.py:18
 msgid "Return to index"
-msgstr ""
+msgstr "सूचिमा फर्क"
 
 #: xol.py:50
 msgid "Nothing to publish"
@@ -305,16 +306,18 @@ msgstr "रहिरहेको समुहमाथि लेख्ने?"
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
-msgstr ""
+msgstr "हालैको वस्तुका लागि एक बन्डल सिर्जना गरियो। Click \"OK\" to overwrite it."
 
 #: xol.py:99
 msgid "Book published to your Journal"
-msgstr ""
+msgstr "तिम्रो पंजिकामा किताब प्राकशित भयो"
 
 #: xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
+"तिमीले किताबलाई ब्राउजमा पढ्न सक्छौ अथवा .xol फाइललाई तिम्रो पंजिकाबाट पहुँच "
+"पाउन सक्छौ"
 
 #~ msgid "Bundle exists"
 #~ msgstr "समुह छ"
