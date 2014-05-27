@@ -57,10 +57,6 @@ msgstr "信息片段"
 msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
 msgstr "是否有可能有自己的百科全书？是的！在网络上寻找您最喜爱的信息，并用\"信息片段\"打包来创造不可思议的合集。"
 
-#. TRANS: "description" option from activity.info file
-msgid "Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections."
-msgstr "是否有可能有自己的百科全书？是的！在网络上寻找您最喜爱的信息，并用\"信息片段\"打包来创造不可思议的合集。"
-
 #~ msgid "Library"
 #~ msgstr "文库"
 
