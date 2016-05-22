@@ -6,23 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-07 00:32-0400\n"
-"PO-Revision-Date: 2013-04-16 13:46+0200\n"
-"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
+"POT-Creation-Date: 2014-12-22 18:55+0000\n"
+"PO-Revision-Date: 2015-06-19 10:26+0000\n"
+"Last-Translator: EdgarQuispeChambi <equispe7@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ayc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1434709562.000000\n"
 
-#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "InfoSlicer wakichata"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid ""
 "Is it possible to have my own encyclopedia? Yes! Find your favorite "
 "information on the web and package it with InfoSlicer creating incredible "
@@ -31,132 +29,214 @@ msgstr ""
 "¿Nayataki yatiñajataki panka jakiriktti? ¡Jïsa! Web taypita wakisiri "
 "yatiñanakama jikxatma ukampi InfoSlicer kunaymana wakichma."
 
-#: activity.py:67
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:211
+msgid "Lion (from en.wikipedia.org)"
+msgstr "Liwuna (ukasti en.wikipedia.org)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:212
+msgid "Tiger (from en.wikipedia.org)"
+msgstr "Tinri (ukasti en.wikipedia.org)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:213
+msgid "Giraffe (from en.wikipedia.org)"
+msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:214
+msgid "Zebra (from en.wikipedia.org)"
+msgstr "Cebra uywa (ukasti en.wikipedia.org)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:221
+msgid "Giraffe"
+msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/parse.py:18
+msgid "Return to index"
+msgstr "Wakichata sutinakaru kuttaña"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:50
+msgid "Nothing to publish"
+msgstr "Qhanstayañataki janiwa kunasa utjiti"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:51
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr ""
+"Qillqañana wakichata qillqatanakaru chimpuña \"Sapa jaqitaki wakichata\" "
+"ukata mayampi yant'aña."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:71
+msgid "Overwrite existed bundle?"
+msgstr "¿Wakichata jaqtasa qillqaña?"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:72
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
+"Maya machaqa wakichatawa uñasi. Uka \"Walikiwa\" sata limt'ma qillqata "
+"jaqtasa qillqañataki."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:99
+msgid "Book published to your Journal"
+msgstr "Sapüru luräwinakama taypiru qhanstayata"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr ""
+"Uka panka wakichatanaka taypita ullasmawa jani ukaxa akïri wakichataru .xol "
+"Sapüru luräwima taypiru mantma"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Format_Pane.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Journal_Image_Pane.py:59
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:58
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:89
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:103
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:111
+msgid "Article:"
+msgstr "Qillqata:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Akïri qillqata janiwa maya rixitanïkisa"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "P'iqïxa wakichatanakana Wikipedia maya qillqata ajllma"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Askichaña/ajllita chiqanchaña:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Janiwa"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Amuyunaka"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Amuyunaka siqi"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Amuyunaka kasta"
+
+#  "Texto"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:76
+msgid "Text"
+msgstr "Qillqawi"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:81
+msgid "Images"
+msgstr "Rixitanaka"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:86
+msgid "Journal Images"
+msgstr "Rixitanaka panka"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:91
+msgid "Choose Journal Images"
+msgstr "Journal rixitanaka katma"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:95
+msgid "Choose Journal Text"
+msgstr "Sapüru wakichata qillqata katma"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "Apaqäwi \"%s\" saraskiwa..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Wakichaskiwa \"%s\"..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Rixitanaka apaqaski \"%s\"..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (wakipa %s)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" suma qawayata apaqatawa"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" janiwa jakiyasiti"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Apaqkasina pantjatawa \"%s\"; uchañanaka uñakipma"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Qillqatanakaxa wakichatawa qhanstayañataki"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:92
+msgid "Create new article"
+msgstr "Machaqa qillqata wakichaña"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:102
+msgid "Delete current article"
+msgstr "Qillqata ullata chhaqtayaña"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:109
+msgid "Move article downward"
+msgstr "Qillqata aynachäxaru wakichaña"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:114
+msgid "Move article upward"
+msgstr "Qillqata alayäxaru wakichaña"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:191
+msgid "New article"
+msgstr "Machaqa qillqata"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:15
+msgid ""
+"This is only a test. Had this been a real string, it would need to be "
+"translated. Please ignore this string."
+msgstr ""
+"Aka wakichataxa qalltakiwa. Chiqpachana ukhamaspänaxa, jaqukipañaspänawa. "
+"Jani yäqamti, mira suma."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:69
 msgid "Library"
 msgstr "Pankanaka awatiña uta"
 
 #  "Editar"
-#: activity.py:75
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:77
 msgid "Edit"
 msgstr "Chiqachaña"
 
-#: book.py:211
-msgid "Lion (from en.wikipedia.org)"
-msgstr "Liwuna (ukasti en.wikipedia.org)"
-
-#: book.py:212
-msgid "Tiger (from en.wikipedia.org)"
-msgstr "Tinri (ukasti en.wikipedia.org)"
-
-#: book.py:213
-msgid "Giraffe (from en.wikipedia.org)"
-msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
-
-#: book.py:214
-msgid "Zebra (from en.wikipedia.org)"
-msgstr "Cebra uywa (ukasti en.wikipedia.org)"
-
-#: book.py:221
-msgid "Giraffe"
-msgstr "Jirafa uywa (ukasti en.wikipedia.org)"
-
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr "Qillqatanakaxa wakichatawa qhanstayañataki"
-
-#: bookview.py:92
-msgid "Create new article"
-msgstr "Machaqa qillqata wakichaña"
-
-#: bookview.py:102
-msgid "Delete current article"
-msgstr "Qillqata ullata chhaqtayaña"
-
-#: bookview.py:109
-msgid "Move article downward"
-msgstr "Qillqata aynachäxaru wakichaña"
-
-#: bookview.py:114
-msgid "Move article upward"
-msgstr "Qillqata alayäxaru wakichaña"
-
-#: bookview.py:191
-msgid "New article"
-msgstr "Machaqa qillqata"
-
-#  "Texto"
-#: edit.py:76
-msgid "Text"
-msgstr "Qillqawi"
-
-#: edit.py:81
-msgid "Images"
-msgstr "Rixitanaka"
-
-#: edit.py:86
-msgid "Journal Images"
-msgstr "Rixitanaka panka"
-
-#: edit.py:91
-msgid "Choose Journal Images"
-msgstr "Journal rixitanaka katma"
-
-#: edit.py:95
-msgid "Choose Journal Text"
-msgstr "Sapüru wakichata qillqata katma"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr "Askichaña/ajllita chiqanchaña:"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr "Janiwa"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr "Amuyunaka"
-
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr "Amuyunaka siqi"
-
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
-msgstr "Amuyunaka kasta"
-
-#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
-#: infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Journal_Image_Pane.py:59
-msgid "Article:"
-msgstr "Qillqata:"
-
-#: infoslicer/widgets/Image_Pane.py:79
-msgid "This article does not have any images"
-msgstr "Akïri qillqata janiwa maya rixitanïkisa"
-
-#: infoslicer/widgets/Image_Pane.py:82
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "P'iqïxa wakichatanakana Wikipedia maya qillqata ajllma"
-
-#: library.py:50
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
 msgid "Wiki"
 msgstr "Wiki wakichata"
 
-#: library.py:50
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
 msgid "Wiki articles"
 msgstr "Wiki qillqatanaka"
 
-#: library.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
 msgid "Custom"
 msgstr "Sapa jaqitaki wakichata"
 
-#: library.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
 msgid "Custom articles"
 msgstr "Sapa jaqitaki wakichata qillqatanaka"
 
-#: library.py:72
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -164,136 +244,64 @@ msgstr ""
 "Akïri wakichatata qillqata apaqañataki Wiki\n"
 "\"Qillqatana sutipa\" qillqantasa limt'ma"
 
-#: library.py:73
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "\"Biblioteca\" wakichata pataru limt'aña"
 
-#: library.py:75
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:75
 msgid "To create custom article click"
 msgstr "Sapa jaqitaki wakisiri qillqata wakichañataki limt'ma"
 
-#: library.py:76
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "Ch'iqäxa \"Sapa jaqitaki wakichata\" limt'aña"
 
-#: library.py:84
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:84
 msgid "Get article from:"
 msgstr "Qillqata wakichata jakiña:"
 
-#: library.py:95
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:95
 msgid "Article name"
 msgstr "Qillqata wakichatana sutipa"
 
 #  "Buscar"
-#: library.py:101
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:101
 msgid "Search"
 msgstr "Thaqaña"
 
-#: library.py:208
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:208
 msgid "Exists"
 msgstr "Utji"
 
-#: library.py:209
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "Uka qillqataxa \"%s\" utjxiwa"
 
-#: library.py:231
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:231
 msgid "Publish selected articles"
 msgstr "Ajllita qillqatanaka qhanstayaña"
 
-#: library.py:242
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:242
 msgid "English Wikipedia"
 msgstr "Inglés aruta Wikipedia wakichata"
 
-#: library.py:243
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Inglés aruta phisna yatiña Wikipedia wakichata"
 
-#: library.py:244
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:244
 msgid "French Wikipedia"
 msgstr "Francés aruta Wikipedia wakichata"
 
-#: library.py:245
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:245
 msgid "German Wikipedia"
 msgstr "Alemán aruta Wikipedia wakichata"
 
-#: library.py:246
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:246
 msgid "Polish Wikipedia"
 msgstr "Inglés aruta Wikipedia wakichata"
 
-#: library.py:247
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Español aruta Wikipedia wakichata"
-
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "Apaqäwi \"%s\" saraskiwa..."
-
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Wakichaskiwa \"%s\"..."
-
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Rixitanaka apaqaski \"%s\"..."
-
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (wakipa %s)"
-
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" suma qawayata apaqatawa"
-
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" janiwa jakiyasiti"
-
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Apaqkasina pantjatawa \"%s\"; uchañanaka uñakipma"
-
-#: parse.py:18
-msgid "Return to index"
-msgstr "Wakichata sutinakaru kuttaña"
-
-#: xol.py:50
-msgid "Nothing to publish"
-msgstr "Qhanstayañataki janiwa kunasa utjiti"
-
-#: xol.py:51
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr ""
-"Qillqañana wakichata qillqatanakaru chimpuña \"Sapa jaqitaki wakichata\" ukata "
-"mayampi yant'aña."
-
-#: xol.py:71
-msgid "Overwrite existed bundle?"
-msgstr "¿Wakichata jaqtasa qillqaña?"
-
-#: xol.py:72
-msgid ""
-"A bundle for current object was already created. Click \"OK\" to overwrite "
-"it."
-msgstr ""
-"Maya machaqa wakichatawa uñasi. Uka \"Walikiwa\" sata limt'ma qillqata jaqtasa "
-"qillqañataki."
-
-#: xol.py:99
-msgid "Book published to your Journal"
-msgstr "Sapüru luräwinakama taypiru qhanstayata"
-
-#: xol.py:100
-msgid ""
-"You can read the book in Browse or access the .xol file from your Journal"
-msgstr ""
-"Uka panka wakichatanaka taypita ullasmawa jani ukaxa akïri wakichataru .xol "
-"Sapüru luräwima taypiru mantma"
