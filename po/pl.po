@@ -34,9 +34,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-01 00:31-0400\n"
-"PO-Revision-Date: 2012-05-28 15:37+0200\n"
-"Last-Translator: Marcin <ulinski.marcin@gmail.com>\n"
+"POT-Creation-Date: 2014-12-22 18:55+0000\n"
+"PO-Revision-Date: 2016-05-21 14:58+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -44,265 +44,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1463842739.000000\n"
 
-#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "Dziennikarz"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid ""
 "Is it possible to have my own encyclopedia? Yes! Find your favorite "
 "information on the web and package it with InfoSlicer creating incredible "
 "collections."
 msgstr ""
+"Czy jest możliwe żebym miał własną encyklopedię? Tak! Znajdź swoje ulubione "
+"informacje w internecie i spakuj je z wykorzystaniem InfoSlicer tworząc "
+"niesamowite kolekcje."
 
-#: activity.py:67
-msgid "Library"
-msgstr "Biblioteka"
-
-#: activity.py:75
-msgid "Edit"
-msgstr "Edytuj"
-
-#: book.py:211
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Lew (z en.wikipedia.org)"
 
-#: book.py:212
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tygrys (z en.wikipedia.org)"
 
-#: book.py:213
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Żyrafa (z en.wikipedia.org)"
 
-#: book.py:214
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Zebra (z en.wikipedia.org)"
 
-#: book.py:221
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:221
 msgid "Giraffe"
 msgstr "Żyrafa"
 
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr "Artykuły są gotowe do publikacji"
-
-#: bookview.py:92
-msgid "Create new article"
-msgstr "Stwórz nowy artykuł"
-
-#: bookview.py:102
-msgid "Delete current article"
-msgstr "Usuń bieżący artykuł"
-
-#: bookview.py:109
-msgid "Move article downward"
-msgstr "Przesuń artykuł w dół"
-
-#: bookview.py:114
-msgid "Move article upward"
-msgstr "Przesuń artykuł w górę"
-
-#: bookview.py:191
-msgid "New article"
-msgstr "Nowy artykuł"
-
-#: edit.py:76
-msgid "Text"
-msgstr "Tekst"
-
-#: edit.py:81
-msgid "Images"
-msgstr "Obrazy"
-
-#: edit.py:86
-msgid "Journal Images"
-msgstr ""
-
-#: edit.py:91
-msgid "Choose Journal Images"
-msgstr ""
-
-#: edit.py:95
-msgid "Choose Journal Text"
-msgstr ""
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr "Dostosuj wybór do:"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr "Brak"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr "Zdania"
-
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr "Paragrafy"
-
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
-msgstr "Sekcje"
-
-#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
-#: infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Journal_Image_Pane.py:59
-msgid "Article:"
-msgstr "Artykuł:"
-
-#: infoslicer/widgets/Image_Pane.py:79
-msgid "This article does not have any images"
-msgstr "Ten artykuł nie posiada obrazów"
-
-#: infoslicer/widgets/Image_Pane.py:82
-msgid "Please select a Wikipedia article from the menu above"
-msgstr "Wybierz artykuł z Wikipedii z górnego menu"
-
-#: library.py:50
-msgid "Wiki"
-msgstr "Wiki"
-
-#: library.py:50
-msgid "Wiki articles"
-msgstr "Artykuły z wiki"
-
-#: library.py:52
-msgid "Custom"
-msgstr "Personalizacja"
-
-#: library.py:52
-msgid "Custom articles"
-msgstr "Dowolne artykuły"
-
-#: library.py:72
-msgid ""
-"To download Wiki article\n"
-"type \"Article name\" and click"
-msgstr ""
-"Aby pobrać artykuł z Wiki\n"
-"wpisz \"Nazwa artykułu\" i kliknij"
-
-#: library.py:73
-msgid "button on the top \"Library\" panel"
-msgstr "przycisk na górnym panelu \"Biblioteka\""
-
-#: library.py:75
-msgid "To create custom article click"
-msgstr "Kliknij aby stworzyć dowolny artykuł"
-
-#: library.py:76
-msgid "button on the left \"Custom\" panel"
-msgstr "przycisk na lewym panelu \"Dowolny\""
-
-#: library.py:84
-msgid "Get article from:"
-msgstr "Pobierz artykuł z:"
-
-#: library.py:95
-msgid "Article name"
-msgstr "Nazwa artykułu"
-
-#: library.py:101
-msgid "Search"
-msgstr "Wyszukiwanie"
-
-#: library.py:208
-msgid "Exists"
-msgstr "Istnieje"
-
-#: library.py:209
-#, python-format
-msgid "\"%s\" article already exists"
-msgstr "artykuł \"%s\" już istnieje"
-
-#: library.py:231
-msgid "Publish selected articles"
-msgstr "Publikuj wybrane artykuły"
-
-#: library.py:242
-msgid "English Wikipedia"
-msgstr "Wikipedia po angielsku"
-
-#: library.py:243
-msgid "Simple English Wikipedia"
-msgstr "Wikipedia w prostym angielskim"
-
-#: library.py:244
-msgid "French Wikipedia"
-msgstr "Wikipedia po francusku"
-
-#: library.py:245
-msgid "German Wikipedia"
-msgstr "Wikipedia po niemiecku"
-
-#: library.py:246
-#, fuzzy
-msgid "Polish Wikipedia"
-msgstr "Wikipedia po angielsku"
-
-#: library.py:247
-msgid "Spanish Wikipedia"
-msgstr "Wikipedia po hiszpańsku"
-
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "Pobieranie \"%s\" trwa..."
-
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Postęp \"%s\"..."
-
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Pobieranie \"%s\" obrazów..."
-
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (z %s)"
-
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "Pobieranie \"%s\" zakończone powodzeniem"
-
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" nie zostało znalezione"
-
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Błąd pobierania \"%s\"; sprawdź swoje połączenie"
-
-#: parse.py:18
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/parse.py:18
 msgid "Return to index"
 msgstr "Powróć do indeksu"
 
-#: xol.py:50
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:50
 msgid "Nothing to publish"
 msgstr "Brak elementów do publikacji"
 
-#: xol.py:51
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:51
 msgid "Mark arcticles from \"Custom\" panel and try again."
 msgstr "Zaznacz artykuły z panelu \"Personalizacja\" i spróbuj ponownie."
 
-#: xol.py:71
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:71
 msgid "Overwrite existed bundle?"
 msgstr "Zastąpić istniejący pakiet?"
 
-#: xol.py:72
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:72
 msgid ""
 "A bundle for current object was already created. Click \"OK\" to overwrite "
 "it."
@@ -310,14 +103,233 @@ msgstr ""
 "Pakiet dla bieżącego obiektu już został stworzony. Kliknij \"OK\", aby go "
 "nadpisać."
 
-#: xol.py:99
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:99
 msgid "Book published to your Journal"
-msgstr ""
+msgstr "Książki opublikowane do Dziennika"
 
-#: xol.py:100
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:100
 msgid ""
 "You can read the book in Browse or access the .xol file from your Journal"
 msgstr ""
+"Możesz czytać książki w Przeglądarce lub otworzyć plik .xol ze swojego "
+"Dziennika."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Format_Pane.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Journal_Image_Pane.py:59
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:58
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:89
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:103
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:111
+msgid "Article:"
+msgstr "Artykuł:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:79
+msgid "This article does not have any images"
+msgstr "Ten artykuł nie posiada obrazów"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:82
+msgid "Please select a Wikipedia article from the menu above"
+msgstr "Wybierz artykuł z Wikipedii z górnego menu"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Dostosuj wybór do:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Brak"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Zdania"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Paragrafy"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Sekcje"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:76
+msgid "Text"
+msgstr "Tekst"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:81
+msgid "Images"
+msgstr "Obrazy"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:86
+msgid "Journal Images"
+msgstr "Obrazy Dziennika"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:91
+msgid "Choose Journal Images"
+msgstr "Wybierz obrazy Dziennika"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:95
+msgid "Choose Journal Text"
+msgstr "Wybierz tekst Dziennika"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "Pobieranie \"%s\" trwa..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Postęp \"%s\"..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Pobieranie \"%s\" obrazów..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (z %s)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "Pobieranie \"%s\" zakończone powodzeniem"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" nie zostało znalezione"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Błąd pobierania \"%s\"; sprawdź swoje połączenie"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Artykuły są gotowe do publikacji"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:92
+msgid "Create new article"
+msgstr "Stwórz nowy artykuł"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:102
+msgid "Delete current article"
+msgstr "Usuń bieżący artykuł"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:109
+msgid "Move article downward"
+msgstr "Przesuń artykuł w dół"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:114
+msgid "Move article upward"
+msgstr "Przesuń artykuł w górę"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:191
+msgid "New article"
+msgstr "Nowy artykuł"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:15
+msgid ""
+"This is only a test. Had this been a real string, it would need to be "
+"translated. Please ignore this string."
+msgstr ""
+"To jest tylko test. Ten tekst był prawdziwym tekstem, ale wymaga "
+"przetłumaczenia. Proszę zignorować ten tekst."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:69
+msgid "Library"
+msgstr "Biblioteka"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:77
+msgid "Edit"
+msgstr "Edytuj"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
+msgid "Wiki"
+msgstr "Wiki"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
+msgid "Wiki articles"
+msgstr "Artykuły z wiki"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
+msgid "Custom"
+msgstr "Personalizacja"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
+msgid "Custom articles"
+msgstr "Dowolne artykuły"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:72
+msgid ""
+"To download Wiki article\n"
+"type \"Article name\" and click"
+msgstr ""
+"Aby pobrać artykuł z Wiki\n"
+"wpisz \"Nazwa artykułu\" i kliknij"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:73
+msgid "button on the top \"Library\" panel"
+msgstr "przycisk na górnym panelu \"Biblioteka\""
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:75
+msgid "To create custom article click"
+msgstr "Kliknij aby stworzyć dowolny artykuł"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:76
+msgid "button on the left \"Custom\" panel"
+msgstr "przycisk na lewym panelu \"Dowolny\""
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:84
+msgid "Get article from:"
+msgstr "Pobierz artykuł z:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:95
+msgid "Article name"
+msgstr "Nazwa artykułu"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:101
+msgid "Search"
+msgstr "Wyszukiwanie"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:208
+msgid "Exists"
+msgstr "Istnieje"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:209
+#, python-format
+msgid "\"%s\" article already exists"
+msgstr "artykuł \"%s\" już istnieje"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:231
+msgid "Publish selected articles"
+msgstr "Publikuj wybrane artykuły"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:242
+msgid "English Wikipedia"
+msgstr "Wikipedia po angielsku"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:243
+msgid "Simple English Wikipedia"
+msgstr "Wikipedia w prostym angielskim"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:244
+msgid "French Wikipedia"
+msgstr "Wikipedia po francusku"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:245
+msgid "German Wikipedia"
+msgstr "Wikipedia po niemiecku"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:246
+msgid "Polish Wikipedia"
+msgstr "Polska Wikipedia"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:247
+msgid "Spanish Wikipedia"
+msgstr "Wikipedia po hiszpańsku"
 
 #~ msgid "Bundle exists"
 #~ msgstr "Pakiet istnieje"
