@@ -6,23 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-07 00:32-0400\n"
-"PO-Revision-Date: 2013-04-10 13:40+0200\n"
-"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
+"POT-Creation-Date: 2014-12-22 18:55+0000\n"
+"PO-Revision-Date: 2016-10-13 09:41+0000\n"
+"Last-Translator: dark159123 <r.j.hansen@protonmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1476351682.000000\n"
 
-#. TRANS: "name" option from activity.info file
 msgid "InfoSlicer"
 msgstr "InfoSkærer"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
 msgid ""
 "Is it possible to have my own encyclopedia? Yes! Find your favorite "
 "information on the web and package it with InfoSlicer creating incredible "
@@ -31,130 +29,209 @@ msgstr ""
 "Er det muligt at få min eget leksikon? Ja! Din din favoritviden på nettet - "
 "pak den med InfoSkærer og skab fantastiske samlinger."
 
-#: activity.py:67
-msgid "Library"
-msgstr "Bibliotek"
-
-#: activity.py:75
-msgid "Edit"
-msgstr "Redigér"
-
-#: book.py:211
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:211
 msgid "Lion (from en.wikipedia.org)"
 msgstr "Løve (fra en.wikipedia.org)"
 
-#: book.py:212
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:212
 msgid "Tiger (from en.wikipedia.org)"
 msgstr "Tiger (fra en.wikipedia.org)"
 
-#: book.py:213
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:213
 msgid "Giraffe (from en.wikipedia.org)"
 msgstr "Giraf (fra en.wikipedia.org)"
 
-#: book.py:214
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:214
 msgid "Zebra (from en.wikipedia.org)"
 msgstr "Zebra (fra en.wikipedia.org)"
 
-#: book.py:221
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/book.py:221
 msgid "Giraffe"
 msgstr "Giraf"
 
-#: bookview.py:52
-msgid "Articles are ready to be published"
-msgstr "Artikler er klar til at blive publiceret"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/parse.py:18
+msgid "Return to index"
+msgstr "Gå tilbage til indeks"
 
-#: bookview.py:92
-msgid "Create new article"
-msgstr "Opret ny artikel"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:50
+msgid "Nothing to publish"
+msgstr "Intet at publicere"
 
-#: bookview.py:102
-msgid "Delete current article"
-msgstr "Slet nuværende artikel"
+# puncspacing checked
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:51
+msgid "Mark arcticles from \"Custom\" panel and try again."
+msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
 
-#: bookview.py:109
-msgid "Move article downward"
-msgstr "Flyt artikel ned"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:71
+msgid "Overwrite existed bundle?"
+msgstr "Overskriv eksisterende bundt?"
 
-#: bookview.py:114
-msgid "Move article upward"
-msgstr "Flyt artikel op"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:72
+msgid ""
+"A bundle for current object was already created. Click \"OK\" to overwrite "
+"it."
+msgstr ""
+"Der er allerede oprettet et bundt for det aktuelle objekt. Klik \"OK\" for "
+"at overskrive det."
 
-#: bookview.py:191
-msgid "New article"
-msgstr "Ny artikel"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:99
+msgid "Book published to your Journal"
+msgstr "Bog publiceret i din Journal"
 
-#: edit.py:76
-msgid "Text"
-msgstr "Tekst"
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/xol.py:100
+msgid ""
+"You can read the book in Browse or access the .xol file from your Journal"
+msgstr "Du kan læse bogen i Gennemse eller tilgå .xol-filen fra din journal"
 
-#: edit.py:81
-msgid "Images"
-msgstr "Billeder"
-
-#: edit.py:86
-msgid "Journal Images"
-msgstr "Journal-billeder"
-
-#: edit.py:91
-msgid "Choose Journal Images"
-msgstr "Vælg journal-billeder"
-
-#: edit.py:95
-msgid "Choose Journal Text"
-msgstr "Vælg journal-tekst"
-
-#: infoslicer/widgets/Edit_Pane.py:53
-msgid "Snap selection to:"
-msgstr "Snup markering til:"
-
-#: infoslicer/widgets/Edit_Pane.py:54
-msgid "Nothing"
-msgstr "Ingenting"
-
-#: infoslicer/widgets/Edit_Pane.py:55
-msgid "Sentences"
-msgstr "Sætninger"
-
-#: infoslicer/widgets/Edit_Pane.py:56
-msgid "Paragraphs"
-msgstr "Paragrafer"
-
-#: infoslicer/widgets/Edit_Pane.py:57
-msgid "Sections"
-msgstr "Sektioner"
-
-#: infoslicer/widgets/Edit_Pane.py:103 infoslicer/widgets/Edit_Pane.py:111
-#: infoslicer/widgets/Format_Pane.py:52 infoslicer/widgets/Image_Pane.py:58
-#: infoslicer/widgets/Image_Pane.py:89
-#: infoslicer/widgets/Journal_Image_Pane.py:59
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Format_Pane.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Journal_Image_Pane.py:59
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:58
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:89
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:103
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:111
 msgid "Article:"
 msgstr "Artikel:"
 
-#: infoslicer/widgets/Image_Pane.py:79
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:79
 msgid "This article does not have any images"
 msgstr "Denne artikel har ingen billeder"
 
-#: infoslicer/widgets/Image_Pane.py:82
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Image_Pane.py:82
 msgid "Please select a Wikipedia article from the menu above"
 msgstr "Vælg venligst en Wikipedia-artikel fra menuen ovenfor"
 
-#: library.py:50
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:53
+msgid "Snap selection to:"
+msgstr "Snup markering til:"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:54
+msgid "Nothing"
+msgstr "Ingenting"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:55
+msgid "Sentences"
+msgstr "Sætninger"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:56
+msgid "Paragraphs"
+msgstr "Paragrafer"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/infoslicer/widgets/Edit_Pane.py:57
+msgid "Sections"
+msgstr "Sektioner"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:76
+msgid "Text"
+msgstr "Tekst"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:81
+msgid "Images"
+msgstr "Billeder"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:86
+msgid "Journal Images"
+msgstr "Journal-billeder"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:91
+msgid "Choose Journal Images"
+msgstr "Vælg journal-billeder"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/edit.py:95
+msgid "Choose Journal Text"
+msgstr "Vælg journal-tekst"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:37
+#, python-format
+msgid "\"%s\" download in progress..."
+msgstr "\"%s\" nedlastning er i gang..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:40
+#, python-format
+msgid "Processing \"%s\"..."
+msgstr "Behandler \"%s\"..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:44
+#, python-format
+msgid "Downloading \"%s\" images..."
+msgstr "Henter \"%s\" billeder..."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:45
+#, python-format
+msgid " (from %s)"
+msgstr " (fra %s)"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:47
+#, python-format
+msgid "\"%s\" successfully downloaded"
+msgstr "\"%s\" blev hentet med succes"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:51
+#, python-format
+msgid "\"%s\" could not be found"
+msgstr "\"%s\" blev ikke fundet"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/net.py:55
+#, python-format
+msgid "Error downloading \"%s\"; check your connection"
+msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:52
+msgid "Articles are ready to be published"
+msgstr "Artikler er klar til at blive publiceret"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:92
+msgid "Create new article"
+msgstr "Opret ny artikel"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:102
+msgid "Delete current article"
+msgstr "Slet nuværende artikel"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:109
+msgid "Move article downward"
+msgstr "Flyt artikel ned"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:114
+msgid "Move article upward"
+msgstr "Flyt artikel op"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/bookview.py:191
+msgid "New article"
+msgstr "Ny artikel"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:15
+msgid ""
+"This is only a test. Had this been a real string, it would need to be "
+"translated. Please ignore this string."
+msgstr ""
+"Dette er en test. Havde det været en rigtig tekststreng, skulle den have "
+"været oversat. Ignorer denne tekststreng."
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:69
+msgid "Library"
+msgstr "Bibliotek"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/activity.py:77
+msgid "Edit"
+msgstr "Redigér"
+
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
 msgid "Wiki"
 msgstr "Wiki"
 
-#: library.py:50
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:50
 msgid "Wiki articles"
 msgstr "Wiki-artikler"
 
-#: library.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
 msgid "Custom"
 msgstr "Brugerdefineret"
 
-#: library.py:52
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:52
 msgid "Custom articles"
 msgstr "Brugerdefinerede artikler"
 
-#: library.py:72
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:72
 msgid ""
 "To download Wiki article\n"
 "type \"Article name\" and click"
@@ -163,137 +240,68 @@ msgstr ""
 "så tast \"Artikelnavn\" og klik"
 
 # puncspacing checked
-#: library.py:73
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:73
 msgid "button on the top \"Library\" panel"
 msgstr "knappen i toppen af \"Bibliotek\"-panel"
 
-#: library.py:75
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:75
 msgid "To create custom article click"
 msgstr "For at oprette en brugerdefineret artikel, så klik"
 
 # puncspacing  checked
-#: library.py:76
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:76
 msgid "button on the left \"Custom\" panel"
 msgstr "knappen på venstre \"Brugerdefineret\"-panel"
 
-#: library.py:84
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:84
 msgid "Get article from:"
 msgstr "Hent artikel fra:"
 
-#: library.py:95
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:95
 msgid "Article name"
 msgstr "Artikelnavn"
 
-#: library.py:101
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:101
 msgid "Search"
 msgstr "Søg"
 
-#: library.py:208
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:208
 msgid "Exists"
 msgstr "Eksisterer"
 
 # puncspacing checked
-#: library.py:209
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:209
 #, python-format
 msgid "\"%s\" article already exists"
 msgstr "\"%s\"-artikel eksisterer allerede"
 
-#: library.py:231
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:231
 msgid "Publish selected articles"
 msgstr "Publicér markerede artikler"
 
-#: library.py:242
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:242
 msgid "English Wikipedia"
 msgstr "Engelsk Wikipedia"
 
-#: library.py:243
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:243
 msgid "Simple English Wikipedia"
 msgstr "Simpel Engelsk Wikipedia"
 
-#: library.py:244
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:244
 msgid "French Wikipedia"
 msgstr "Fransk Wikipedia"
 
-#: library.py:245
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:245
 msgid "German Wikipedia"
 msgstr "Tysk Wikipedia"
 
-#: library.py:246
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:246
 msgid "Polish Wikipedia"
 msgstr "Polsk Wikipedia"
 
-#: library.py:247
+#: /var/www/pootle/sugarlabs/clones/InfoSlicer/library.py:247
 msgid "Spanish Wikipedia"
 msgstr "Spansk Wikipedia"
-
-#: net.py:37
-#, python-format
-msgid "\"%s\" download in progress..."
-msgstr "\"%s\" nedlastning er i gang..."
-
-#: net.py:40
-#, python-format
-msgid "Processing \"%s\"..."
-msgstr "Behandler \"%s\"..."
-
-#: net.py:44
-#, python-format
-msgid "Downloading \"%s\" images..."
-msgstr "Henter \"%s\" billeder..."
-
-#: net.py:45
-#, python-format
-msgid " (from %s)"
-msgstr " (fra %s)"
-
-#: net.py:47
-#, python-format
-msgid "\"%s\" successfully downloaded"
-msgstr "\"%s\" blev hentet med succes"
-
-#: net.py:51
-#, python-format
-msgid "\"%s\" could not be found"
-msgstr "\"%s\" blev ikke fundet"
-
-#: net.py:55
-#, python-format
-msgid "Error downloading \"%s\"; check your connection"
-msgstr "Fejl under hentning af \"%s\"; tjek din forbindelse"
-
-#: parse.py:18
-msgid "Return to index"
-msgstr "Gå tilbage til indeks"
-
-#: xol.py:50
-msgid "Nothing to publish"
-msgstr "Intet at publicere"
-
-# puncspacing checked
-#: xol.py:51
-msgid "Mark arcticles from \"Custom\" panel and try again."
-msgstr "Markér artikler fra panelet \"Brugerdefineret\" og forsøg igen."
-
-#: xol.py:71
-msgid "Overwrite existed bundle?"
-msgstr "Overskriv eksisterende bundt?"
-
-#: xol.py:72
-msgid ""
-"A bundle for current object was already created. Click \"OK\" to overwrite "
-"it."
-msgstr ""
-"Der er allerede oprettet et bundt for det aktuelle objekt. Klik \"OK\" for at "
-"overskrive det."
-
-#: xol.py:99
-msgid "Book published to your Journal"
-msgstr "Bog publiceret i din Journal"
-
-#: xol.py:100
-msgid ""
-"You can read the book in Browse or access the .xol file from your Journal"
-msgstr "Du kan læse bogen i Gennemse eller tilgå .xol-filen fra din journal"
 
 #~ msgid "Bundle exists"
 #~ msgstr "Bundt eksisterer"
