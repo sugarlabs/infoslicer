@@ -41,8 +41,6 @@ class Editable_Textbox( Textbox ):
         self.set_property("left-margin", 5)
 
         logging.debug('########### Editable_Textbox.drag_dest_set')
-        self.drag_dest_set(Gtk.DestDefaults.ALL, [],
-                           Gdk.DragAction.COPY)
         self.drag_dest_set_target_list(Gtk.TargetList.new([]))
         self.drag_dest_add_text_targets()
         self.drag_dest_add_image_targets()
