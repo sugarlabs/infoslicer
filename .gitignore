@@ -1,4 +1,6 @@
 *.pyc
 *~
 *.pyo
+dist
+locale
 
