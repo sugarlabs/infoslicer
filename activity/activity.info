@@ -1,12 +1,11 @@
 [Activity]
 name = InfoSlicer
 activity_version = 25
-host_version = 1
+license = GPLv2+;GPLv3+
 icon = slicelogo
 bundle_id = org.sugarlabs.InfoSlicer
 exec = sugar-activity activity.InfoslicerActivity
 show_launcher = yes
-license = GPLv2+
 summary = Is it possible to have my own encyclopedia? Yes! Find your favorite information on the web and package it with InfoSlicer creating incredible collections.
-repository = https://github.com/walterbender/infoslicer
-
+tags = Tools;Internet
+repository = https://github.com/sugarlabs/infoslicer
