@@ -14,7 +14,7 @@
 
 import os
 import shutil
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import logging
 from gettext import gettext as _
 
@@ -46,11 +46,11 @@ def download_wiki_article(title, wiki, progress):
 
         progress.set_label(_('"%s" successfully downloaded') % title)
 
-    except PageNotFoundError, e:
+    except PageNotFoundError as e:
         elogger.debug('download_and_add: %s' % e)
         progress.set_label(_('"%s" could not be found') % title)
 
-    except Exception, e:
+    except Exception as e:
         elogger.debug('download_and_add: %s' % e)
         progress.set_label(_('Error downloading "%s"; check your connection') % title)
 
@@ -68,7 +68,7 @@ def image_handler(root, uid, document):
     logger.debug('image_handler: %s' % dir_path)
 
     if not os.path.exists(dir_path):
-        os.makedirs(dir_path, 0777)
+        os.makedirs(dir_path, 0o777)
 
     for image in document.findAll("image"):
         fail = False
@@ -81,7 +81,7 @@ def image_handler(root, uid, document):
         else:
             image_title = path.rsplit("/", 1)[-1]
             # attempt to fix incomplete paths
-            if (not path.startswith("http://")) and document.source != None and document.source.has_key("href"):
+            if (not path.startswith("http://")) and document.source != None and "href" in document.source:
                 if path.startswith("//upload"):
                     path = 'http:' + path
                 elif path.startswith("/"):
@@ -109,19 +109,19 @@ def _open_url(url):
     """
         retrieves content from specified url
     """
-    urllib._urlopener = _new_url_opener()
+    urllib.request._urlopener = _new_url_opener()
     try:
         logger.debug("opening " + url)
         logger.debug("proxies: " + str(proxies))
-        doc = urllib.urlopen(url, proxies=proxies)
+        doc = urllib.request.urlopen(url, proxies=proxies)
         output = doc.read()
         doc.close()
         logger.debug("url opened succesfully")
         return output
-    except IOError, e:
+    except IOError as e:
         elogger.debug('_open_url: %s' % e)
 
-class _new_url_opener(urllib.FancyURLopener):
+class _new_url_opener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1b2)" \
               "Gecko/20081218 Gentoo Iceweasel/3.1b2"
 
