@@ -1,7 +1,7 @@
 [Activity]
 name = InfoSlicer
 activity_version = 25
-license = GPLv2+;GPLv3+
+license = GPLv2+;GPLv3+;BSD
 icon = slicelogo
 bundle_id = org.sugarlabs.InfoSlicer
 exec = sugar-activity activity.InfoslicerActivity
