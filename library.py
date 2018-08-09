@@ -1,3 +1,5 @@
+# Copyright (C) IBM Corporation 2008
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -239,8 +241,8 @@ class ToolbarBuilder():
     def _publish_clicked_cb(self, widget):
         xol.publish(self.activity)
 
-WIKI = { _('English Wikipedia')         : 'en.wikipedia.org', 
-         _('Simple English Wikipedia')  : 'simple.wikipedia.org', 
+WIKI = { _('English Wikipedia')         : 'en.wikipedia.org',
+         _('Simple English Wikipedia')  : 'simple.wikipedia.org',
          _('French Wikipedia')          : 'fr.wikipedia.org',
          _('German Wikipedia')          : 'de.wikipedia.org',
          _('Polish Wikipedia')         : 'pl.wikipedia.org',
