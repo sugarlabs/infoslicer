@@ -8,13 +8,16 @@ articles. You can then publish the articles as a mini website.
 How to use?
 ===========
 
-InfoSlicer is part of the Sugar desktop.  Please refer to;
+InfoSlicer is not part of the Sugar desktop, but can be added.  Please refer to;
 
 * [How to Get Sugar on sugarlabs.org](https://sugarlabs.org/),
 * [How to use Sugar](https://help.sugarlabs.org/),
+* [Download InfoSlicer using Browse](https://activities.sugarlabs.org/), search for `InfoSlicer`, then download, and;
 * [How to use InfoSlicer](https://help.sugarlabs.org/info_slicer.html)
 
----
+Copyright and License
+=====================
+
 Copyright (C) IBM Corporation 2008
 
 This program is free software; you can redistribute it and/or modify
