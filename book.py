@@ -18,6 +18,7 @@ import os
 import uuid
 import logging
 from gi.repository import GObject
+from gi.repository import GLib
 import json
 import shutil
 import zipfile
@@ -71,9 +72,9 @@ class Book(GObject.GObject):
 
         self._article.uid = entry['uid']
         self._article.article_title = title
-        GObject.idle_add(self._emit_article_selected)
+        GLib.idle_add(self._emit_article_selected)
 
-    article = GObject.property(type=object,
+    article = GObject.Property(type=object,
             getter=get_article, setter=set_article)
 
     def _emit_article_selected(self):

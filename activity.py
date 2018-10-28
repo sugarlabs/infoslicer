@@ -17,10 +17,10 @@
 import gi
 gi.require_version('Gtk','3.0')
 from gi.repository import Gtk
-from gi.repository import GObject
+from gi.repository import GLib
 from gettext import gettext as _
 
-GObject.threads_init()
+GLib.threads_init()
 
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toggletoolbutton import ToggleToolButton
