@@ -18,6 +18,7 @@ import os
 from gi.repository import Gtk
 import logging
 from gi.repository import GObject
+from gi.repository import GLib
 from gettext import gettext as _
 
 from sugar3.graphics.toolbutton import ToolButton
@@ -33,7 +34,7 @@ class BookView(Gtk.VBox):
     def sync(self):
         if not self._changing:
             return
-        GObject.source_remove(self._changing)
+        GLib.source_remove(self._changing)
         index, column = self.tree.get_cursor()
         self._cursor_changed(index)
 
@@ -187,7 +188,7 @@ class BookView(Gtk.VBox):
             return find_name(list, prefix, uniq+1)
 
         if self._changing:
-            GObject.source_remove(self._changing)
+            GLib.source_remove(self._changing)
             self._changing = None
 
         name = find_name(self.store, _('New article'), 0)
@@ -203,7 +204,7 @@ class BookView(Gtk.VBox):
             return
 
         if self._changing:
-            GObject.source_remove(self._changing)
+            GLib.source_remove(self._changing)
             self._changing = None
 
         index = path.get_indices()[0]
@@ -261,12 +262,12 @@ class BookView(Gtk.VBox):
 
     def _cursor_changed_cb(self, widget):
         if self._changing:
-            GObject.source_remove(self._changing)
+            GLib.source_remove(self._changing)
 
         index, column = self.tree.get_cursor()
 
         if index != None:
-            self._changing = GObject.timeout_add(500, self._cursor_changed,
+            self._changing = GLib.timeout_add(500, self._cursor_changed,
                     index)
 
     def _cursor_changed(self, index):

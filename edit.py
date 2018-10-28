@@ -17,6 +17,7 @@
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import GLib
 from gettext import gettext as _
 
 from sugar3.graphics.toolbutton import ToolButton
@@ -117,7 +118,7 @@ class ToolbarBuilder():
     def _toggle_image_chooser(self, widget):
         # self._old_cursor = self.edit.get_window().get_cursor()
         # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-        GObject.idle_add(self.__image_chooser)
+        GLib.idle_add(self.__image_chooser)
 
     def __image_chooser(self):
         chooser = ObjectChooser(what_filter=mime.GENERIC_TYPE_IMAGE)
@@ -133,7 +134,7 @@ class ToolbarBuilder():
     def _toggle_text_chooser(self, widget):
         # self._old_cursor = self.edit.get_window().get_cursor()
         # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-        GObject.idle_add(self.__text_chooser)
+        GLib.idle_add(self.__text_chooser)
 
     def __text_chooser(self):
         chooser = ObjectChooser(what_filter=mime.GENERIC_TYPE_TEXT)
