@@ -28,7 +28,7 @@ class Textbox( Gtk.TextView ):
         self.set_editable(False)  
         self.modify_font(Pango.FontDescription('arial 9'))
         self.article = None
-        self.set_property("left-margin", 5)
+        self.set_property("left-margin", 2)
         
     def set_article(self, article):
         self.article = article

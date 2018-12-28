@@ -38,7 +38,7 @@ class Editable_Textbox( Textbox ):
         self.ignore_snap_self = True
         self.drag_source = False
         self.edited = False
-        self.set_property("left-margin", 5)
+        self.set_property("left-margin", 2)
 
         logging.debug('########### Editable_Textbox.drag_dest_set')
         self.drag_dest_set_target_list(Gtk.TargetList.new([]))
