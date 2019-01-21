@@ -30,7 +30,7 @@ class ButtonItem(Gtk.ToolButton):
     def __init__(self, icon_name, size=Gtk.IconSize.SMALL_TOOLBAR, **kwargs):
         GObject.GObject.__init__(self, **kwargs)
 
-        icon = Icon(icon_name=icon_name, icon_size=size)
+        icon = Icon(icon_name=icon_name, pixel_size=size)
         # The alignment is a hack to work around Gtk.ToolButton code
         # that sets the icon_size when the icon_widget is a Gtk.Image
         alignment = Gtk.Alignment.new(0.5, 0.5)
