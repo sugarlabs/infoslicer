@@ -60,7 +60,7 @@ class View(Gtk.EventBox):
             head_label_a = Gtk.Alignment.new(0.5, 1, 0, 0)
             head_label_a.add(head_label)
             icon = Icon(icon_name=icon_name,
-                    icon_size=Gtk.IconSize.LARGE_TOOLBAR)
+                    pixel_size=Gtk.IconSize.LARGE_TOOLBAR)
             tail_label = Gtk.Label(label=tail_text)
             tail_label_a = Gtk.Alignment.new(0.5, 0, 0, 0)
             tail_label_a.add(tail_label)
