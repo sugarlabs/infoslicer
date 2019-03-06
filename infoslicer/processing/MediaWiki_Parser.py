@@ -1,6 +1,6 @@
 # Copyright (C) IBM Corporation 2008
 
-from HTML_Parser import HTML_Parser
+from HTML_Parser import HTML_Parser, NoDocException
 import re
 import logging
 
