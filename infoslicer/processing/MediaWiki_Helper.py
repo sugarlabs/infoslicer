@@ -86,44 +86,6 @@ class MediaWiki_Helper:
         else:
             raise PageNotFoundError("The article with revision id '%s' could not be found on wiki '%s'" % (revision, wiki))
         
-    def getArticleAsWikiTextByTitle(self, title, wiki=defaultWiki):
-        """Gets the wiki markup of an article by its title from the wiki specified.
-        
-        @param title: title of article to retrieve
-        @param wiki: optional. Defaults to default wiki
-        @return: article content in wiki markup
-        @rtype: string"""
-        #resolve the article title 
-        title = self.resolveTitle(title)
-        #create the API request string
-        path = "http://%s/w/api.php?action=query&prop=revisions&titles=%s&rvprop=content&format=xml" % (wiki, title)
-        #remove xml tags around article
-        return self.stripTags(getDoc(path), "rev")
-        
-    def getArticleAsWikiTextByURL(self, url):
-        """Gets the wiki markup of an article by its title from the wiki specified.
-        
-        @param url: url of article to retrieve
-        @param wiki: optional. Defaults to default wiki
-        @return: article content in wiki markup
-        @rtype: string"""
-        args = self.breakdownURL(url)
-        if len(args) == 3:
-            return self.getArticleAsWikiTextByRevision(args[2], args[0])
-        else:
-            return self.getArticleAsWikiTextByTitle(args[1], args[0])
-        
-    def getArticleAsWikiTextByRevision(self, revision, wiki=defaultWiki):
-        """Gets the wiki markup of an article by its revision id from the wiki specified.
-        
-        @param revision: revision id of article to retrieve
-        @param wiki: optional. Defaults to default wiki
-        @return: article content in wiki markup
-        @rtype: string"""
-        self.resolveRevision(revision, wiki)
-        path = "http://%s/w/api.php?action=query&prop=revisions&revids=%s&rvprop=content&format=xml" % (wiki, revision)
-        return self.stripTags(getDoc(path), "rev")
-        
     def getArticleAsHTMLByTitle(self, title, wiki=defaultWiki):
         """Gets the HTML markup of an article by its title from the wiki specified.
         
@@ -138,49 +100,7 @@ class MediaWiki_Helper:
         #remove xml tags around article and fix HTML tags and quotes
         #return fixHTML(stripTags(getDoc(path), "text"))
         return self.fixHTML(self.getDoc(path)), path
-        
-    def getArticleAsHTMLByURL(self, url):
-        """Gets the HTML markup of an article by its title from the wiki specified.
-        
-        @param url: url of article to retrieve
-        @param wiki: optional. Defaults to default wiki
-        @return: article content in HTML markup
-        @rtype: string"""
-        args = self.breakdownURL(url)
-        if len(args) == 3:
-            return self.getArticleAsHTMLByRevision(args[2], args[0])
-        else:
-            return self.getArticleAsHTMLByTitle(args[1], args[0])
-    
-    def getArticleAsHTMLByRevision(self, revision, wiki=defaultWiki):
-        """Gets the HTML markup of an article by its revision id from the wiki specified.
-        
-        @param revision: revision id of article to retrieve
-        @param wiki: optional. Defaults to default wiki
-        @return: article content in HTML markup
-        @rtype: string"""
-        self.resolveRevision(revision, wiki)
-        path = "http://%s/w/api.php?action=parse&oldid=%s&format=xml" % (wiki,revision)
-        #remove xml tags around article and fix HTML tags and quotes
-        return self.fixHTML(stripTags(getDoc(path), "text"))
-    
-    def breakdownURL(self, url):
-        """pulls out wiki address, title and revision id from a wiki URL
-        
-        @param url: url to process
-        @return: information from url
-        @rtype: list"""
-        outputlist = []
-        url = url.replace("http://", "")
-        outputlist.append(url.split("/")[0])
-        if ("title=" in url):
-            outputlist.append(url.split("title=")[-1].split("&")[0])
-        if ("oldid=" in url):
-            outputlist.append(url.split("oldid=")[-1].split("&")[0])
-        else:
-            outputlist.append(url.split("/")[-1])
-        return outputlist
-        
+
     def getDoc(self, path):
         """opens a remote file by http and retrieves data
         
@@ -244,11 +164,11 @@ class MediaWiki_Helper:
         """returns a list of the URLs of every image on the specified page on the (optional) specified wiki
         @deprecated: This task is now performed at the saving stage
         """
-        imglist = getImageURLs(title, wiki)
+        imglist = self.getImageURLs(title, wiki)
         outputlist = []  
         if imglist !=[]:
             for i in imglist:
-                outputlist.append(getDoc(i))
+                outputlist.append(self.getDoc(i))
         return outputlist
     
     def searchWiki(self, search, wiki=defaultWiki):
