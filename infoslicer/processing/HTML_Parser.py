@@ -78,9 +78,9 @@ class HTML_Parser:
             too_small = False
             image_path = img['src']    
             alt_text = ""
-            if img.has_key("width") and img.has_key("height") and int(img['width']) <= 70 and int(img['height']) <= 70:
+            if "width" in img and "height" in img and int(img['width']) <= 70 and int(img['height']) <= 70
                 too_small = True
-            if img.has_key("alt") and img['alt'] != "":
+            if "alt" in img and img['alt'] != "":
                 alt_text = img['alt']
             else:
                 alt_text = image_path.split("/")[-1]
@@ -213,7 +213,7 @@ class HTML_Parser:
             @param attrs: Optional, attributes to add to tag
             @return: new Tag object
         """
-        if self.ids.has_key(tag) and attrs == []:
+        if tag in self.ids and attrs == []:
             self.ids[tag] += 1
             attrs = [("id", str(self.ids[tag]))]
         if attrs != []:
@@ -232,7 +232,7 @@ class HTML_Parser:
         """
         for child in tag.findChildren(True, recursive=False):
             self.unTag(child)
-        if (self.remove_classes_regexp != "") and (tag.has_key("class") and (re.match(self.remove_classes_regexp, tag["class"]) != None)):
+        if (self.remove_classes_regexp != "") and ("class" in tag and (re.match(self.remove_classes_regexp, tag["class"]) != None)):
             tag.extract()
         elif tag.name in self.keep_tags:
             new_tag = Tag(self.input, tag.name)

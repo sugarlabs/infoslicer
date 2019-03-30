@@ -5,13 +5,13 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
-import cPickle
+import pickle
 import copy
 from Textbox import Textbox
 
 import logging
 
-SNAP_SENTENCE, SNAP_PARAGRAPH, SNAP_SECTION, SNAP_NONE = range(4)
+SNAP_SENTENCE, SNAP_PARAGRAPH, SNAP_SECTION, SNAP_NONE = list(range(4))
 
 class Editable_Textbox( Textbox ):
     """
@@ -277,7 +277,7 @@ class Editable_Textbox( Textbox ):
             a = self.article
             insert_loc = self.get_mouse_iter(x, y)
             data_received_type = str(selection_data.get_data_type())    
-            data = cPickle.loads(str(selection_data.get_data()))
+            data = pickle.loads(str(selection_data.get_data()))
             
             if data_received_type == "sentence":
                 bestpoint = insert_loc  
@@ -304,7 +304,7 @@ class Editable_Textbox( Textbox ):
             if self.snapto == SNAP_SECTION:
                 atom = Gdk.atom_intern("section", only_if_exists=False)
                 
-            string = cPickle.dumps(a.getSelection())
+            string = pickle.dumps(a.getSelection())
             selection_data.set(atom, 8, string)
             self.stop_emission("drag-data-get")
             

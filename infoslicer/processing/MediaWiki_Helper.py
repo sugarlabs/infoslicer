@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) IBM Corporation 2008
 
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from xml.dom import minidom
 import logging
 
@@ -14,7 +14,7 @@ logger = logging.getLogger('infoslicer')
 """
 Extend urllib class to spoof user-agent
 """
-class NewURLopener(urllib.FancyURLopener):
+class NewURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11"
 
 class PageNotFoundError(Exception):
@@ -61,7 +61,7 @@ class MediaWiki_Helper:
         #check page exists, return None if it doesn't
         page = xmldoc.getElementsByTagName("page")
         if (page != []):
-            if ("missing" in page[0].attributes.keys()):
+            if ("missing" in list(page[0].attributes.keys())):
                 raise PageNotFoundError("The article with title '%s' could not be found on wiki '%s'" % (title, wiki))
         #check if there are any redirection tags defined
         redirectList = xmldoc.getElementsByTagName("r")
@@ -107,12 +107,12 @@ class MediaWiki_Helper:
         @param path: location of remote file 
         @return: page contents
         @rtype: string"""
-        urllib._urlopener = NewURLopener()
+        urllib.request._urlopener = NewURLopener()
         logger.debug("opening " + path)
         logger.debug("proxies: " + str(self.proxies))
         pathencoded = self.urlEncodeNonAscii(path)
         logger.debug("pathencoded " + pathencoded)
-        doc = urllib.urlopen(pathencoded, proxies=self.proxies)
+        doc = urllib.request.urlopen(pathencoded, proxies=self.proxies)
         output = doc.read()
         doc.close()
         logger.debug("url opened successfully")
@@ -151,7 +151,7 @@ class MediaWiki_Helper:
             xmldoc = minidom.parseString(self.getDoc(path))
             imglist = xmldoc.getElementsByTagName("im")
             outputlist = []
-            for i in xrange(len(imglist)):
+            for i in range(len(imglist)):
                 #create the API request string
                 path = "http://%s/w/api.php?action=query&titles=%s&prop=imageinfo&iiprop=url&format=xml" % (wiki, imglist[i].attributes["title"].value.replace(" ","_"))
                 xmldoc2 = minidom.parseString(self.getDoc(path))
