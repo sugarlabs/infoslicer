@@ -55,9 +55,5 @@ class Textbox( Gtk.TextView ):
         click_coords = self.window_to_buffer_coords(Gtk.TextWindowType.TEXT, x, y)
         mouseClickPositionIter = self.get_iter_at_location(click_coords[0], click_coords[1])
         if Gtk.check_version(3, 19, 8) is None:
-            if not mouseClickPositionIter[0]:
-                return False
-
             mouseClickPositionIter = mouseClickPositionIter[1]
-
         return mouseClickPositionIter
