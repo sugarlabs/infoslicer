@@ -54,18 +54,7 @@ class Editable_Textbox( Textbox ):
         
     def clear(self):
         self.article.delete()
-        
-    def get_mouse_iter(self, x, y):
-        click_coords = self.window_to_buffer_coords(Gtk.TextWindowType.TEXT, x, y)
-        mouseClickPositionIter = self.get_iter_at_location(click_coords[0], click_coords[1])
-        if Gtk.check_version(3, 19, 8) is None:
-            if not mouseClickPositionIter[0]:
-                return False
 
-            mouseClickPositionIter = mouseClickPositionIter[1]
-
-        return mouseClickPositionIter
-    
     def set_mode(self, snapto):
         self.snapto = snapto
                 
