@@ -54,18 +54,7 @@ class Editable_Textbox( Textbox ):
         
     def clear(self):
         self.article.delete()
-        
-    def get_mouse_iter(self, x, y):
-        click_coords = self.window_to_buffer_coords(Gtk.TextWindowType.TEXT, x, y)
-        mouseClickPositionIter = self.get_iter_at_location(click_coords[0], click_coords[1])
-        if Gtk.check_version(3, 19, 8) is None:
-            if not mouseClickPositionIter[0]:
-                return False
 
-            mouseClickPositionIter = mouseClickPositionIter[1]
-
-        return mouseClickPositionIter
-    
     def set_mode(self, snapto):
         self.snapto = snapto
                 
@@ -130,30 +119,32 @@ class Editable_Textbox( Textbox ):
                 buf = self.get_buffer()            
                 mouseiter = self.get_mouse_iter(int(event.x), int(event.y))
                 article = self.get_article()                
-                
-                if mouseiter.compare(self.selectionstart) == 1:
-                    if self.snapto == SNAP_SENTENCE: 
-                        selectionstart = article.getSentence(self.selectionstart).getStart()
-                        selectionend = article.getSentence(mouseiter).getEnd()
-                    if self.snapto == SNAP_PARAGRAPH:
-                        selectionstart = article.getParagraph(self.selectionstart).getStart()
-                        selectionend = article.getParagraph(mouseiter).getEnd()
-                    if self.snapto == SNAP_SECTION:
-                        selectionstart = article.getSection(self.selectionstart).getStart()
-                        selectionend = article.getSection(mouseiter).getEnd()
+                if isinstance(mouseiter, bool):
+                    pass
                 else:
-                    if self.snapto == SNAP_SENTENCE: 
-                        selectionstart = article.getSentence(mouseiter).getStart()
-                        selectionend = article.getSentence(self.selectionstart).getEnd()
-                    if self.snapto == SNAP_PARAGRAPH:
-                        selectionstart = article.getParagraph(mouseiter).getStart()
-                        selectionend = article.getParagraph(self.selectionstart).getEnd()
-                    if self.snapto == SNAP_SECTION:
-                        selectionstart = article.getSection(mouseiter).getStart()
-                        selectionend = article.getSection(self.selectionstart).getEnd()
-                self.scroll_to_iter(mouseiter, 0)
-                article.highlight(selectionstart, selectionend)                
-                    
+                    if mouseiter.compare(self.selectionstart) == 1:
+                        if self.snapto == SNAP_SENTENCE:
+                            selectionstart = article.getSentence(self.selectionstart).getStart()
+                            selectionend = article.getSentence(mouseiter).getEnd()
+                        if self.snapto == SNAP_PARAGRAPH:
+                            selectionstart = article.getParagraph(self.selectionstart).getStart()
+                            selectionend = article.getParagraph(mouseiter).getEnd()
+                        if self.snapto == SNAP_SECTION:
+                            selectionstart = article.getSection(self.selectionstart).getStart()
+                            selectionend = article.getSection(mouseiter).getEnd()
+                    else:
+                        if self.snapto == SNAP_SENTENCE:
+                            selectionstart = article.getSentence(mouseiter).getStart()
+                            selectionend = article.getSentence(self.selectionstart).getEnd()
+                        if self.snapto == SNAP_PARAGRAPH:
+                            selectionstart = article.getParagraph(mouseiter).getStart()
+                            selectionend = article.getParagraph(self.selectionstart).getEnd()
+                        if self.snapto == SNAP_SECTION:
+                            selectionstart = article.getSection(mouseiter).getStart()
+                            selectionend = article.getSection(self.selectionstart).getEnd()
+                    self.scroll_to_iter(mouseiter, 0)
+                    article.highlight(selectionstart, selectionend)
+
             else:
                 self.block = True
         
