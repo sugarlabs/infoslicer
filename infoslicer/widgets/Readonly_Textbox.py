@@ -2,11 +2,11 @@
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Pango
-import cPickle
+import pickle
 import logging
-from Textbox import Textbox
+from .Textbox import Textbox
 
-SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = range(4)
+SELECT_SENTENCE, SELECT_PARAGRAPH, SELECT_SECTION, FULL_EDIT = list(range(4))
 
 class Readonly_Textbox( Textbox ):    
     """
@@ -172,7 +172,7 @@ class Readonly_Textbox( Textbox ):
         if self.selectionmode == SELECT_SECTION:
             atom = Gdk.atom_intern("section", only_if_exists=False)
             
-        string = cPickle.dumps(a.getSelection())
+        string = pickle.dumps(a.getSelection())
         selection_data.set(atom, 8, string)
         self.stop_emission("drag-data-get")
         self.set_editable(False)

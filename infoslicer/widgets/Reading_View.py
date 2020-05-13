@@ -3,7 +3,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import GObject
-from Readonly_Textbox import Readonly_Textbox
+from .Readonly_Textbox import Readonly_Textbox
 import logging
 
 logger = logging.getLogger('infoslicer')

@@ -1,6 +1,6 @@
 # Copyright (C) IBM Corporation 2008
 
-from BeautifulSoup import BeautifulStoneSoup
+from .BeautifulSoup import BeautifulStoneSoup
 
 #Extend beautiful soup HTML parsing library 
 #to recognise new self-closing tag <reference> 

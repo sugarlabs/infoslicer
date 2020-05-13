@@ -1,6 +1,6 @@
 # Copyright (C) IBM Corporation 2008
 
-from Paragraph import *
+from .Paragraph import *
 import logging
 
 logger = logging.getLogger('infoslicer')

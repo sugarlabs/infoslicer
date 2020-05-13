@@ -4,8 +4,8 @@ from gi.repository import Gtk
 from gi.repository import GdkPixbuf
 
 from random import Random
-from Article_Data import *
-from Section import *
+from .Article_Data import *
+from .Section import *
 import logging
 
 logger = logging.getLogger('infoslicer')

@@ -157,7 +157,7 @@ class Book(GObject.GObject):
             self.revision = 1
 
             if not os.path.exists(self.root):
-                os.makedirs(self.root, 0775)
+                os.makedirs(self.root, 0o775)
 
             for i in preinstalled:
                 filepath = os.path.join(get_bundle_path(), 'examples', i[1])
@@ -196,7 +196,7 @@ class Book(GObject.GObject):
         directory = os.path.join(self.root, str(uid))
 
         if not os.path.exists(directory):
-            os.makedirs(directory, 0777)
+            os.makedirs(directory, 0o777)
 
         contents = contents.replace(
                 '<prolog>', '<prolog>\n<resourceid id="%s" />'
@@ -232,7 +232,7 @@ class CustomBook(Book):
             zip = zipfile.ZipFile(filepath, 'r')
             for i in zip.namelist():
                 path = os.path.join(root, i)
-                os.makedirs(os.path.dirname(path), 0775)
+                os.makedirs(os.path.dirname(path), 0o775)
                 file(path, 'wb').write(zip.read(i))
             zip.close()
 

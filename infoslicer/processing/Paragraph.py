@@ -1,6 +1,6 @@
 # Copyright (C) IBM Corporation 2008
 
-from Sentence import *
+from .Sentence import *
 import logging
 
 logger = logging.getLogger('infoslicer')

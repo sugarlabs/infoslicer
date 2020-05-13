@@ -1,8 +1,8 @@
 # Copyright (C) IBM Corporation 2008
 
-from BeautifulSoup import Tag
-from NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
-from Article_Data import *
+from .BeautifulSoup import Tag
+from .NewtifulSoup import NewtifulStoneSoup as BeautifulStoneSoup
+from .Article_Data import *
 import re
 import os
 import logging
@@ -51,7 +51,7 @@ def get_article_from_dita(image_path, dita):
         input.shortdesc.extract()
         has_shortdesc = True
     taglist = input.findAll(re.compile("refbody|section|p|ph|image"))
-    for i in xrange(len(taglist)):
+    for i in range(len(taglist)):
         tag = taglist[len(taglist) - i - 1]
         if tag.name == "ph":
             id = tag['id']
@@ -63,7 +63,7 @@ def get_article_from_dita(image_path, dita):
             sentence_data = Sentence_Data(id, source_article_id, source_section_id, source_paragraph_id, source_sentence_id, text)
             sentence_data_list.insert(0, sentence_data)
         elif tag.name == "p":
-            if not tag.has_key("id"):
+            if "id" not in tag:
                 id = -1
             else:
                 id = tag['id']
@@ -75,7 +75,7 @@ def get_article_from_dita(image_path, dita):
             sentence_data_list = []
             current_p_id = id
         elif tag.name == "refbody" :
-            if tag.findParent("reference").has_key("id"):
+            if "id" in tag.findParent("reference"):
                 id = "r" + tag.findParent("reference")['id']
             else:
                 id = "r90000"
