@@ -88,7 +88,7 @@ import codecs
 import _markupbase
 import types
 import re
-from html.parser import HTMLParser, HTMLParseError
+from html.parser import HTMLParser
 try:
     from html.entities import name2codepoint
 except ImportError:
@@ -1111,12 +1111,12 @@ class HTMLParserBuilder(HTMLParser):
              j = k+3
              self._toStringSubclass(data, CData)
         else:
-            try:
-                j = HTMLParser.parse_declaration(self, i)
-            except HTMLParseError:
-                toHandle = self.rawdata[i:]
-                self.handle_data(toHandle)
-                j = i + len(toHandle)
+            #try:
+            j = HTMLParser.parse_declaration(self, i)
+            # except HTMLParseError:               '''HTMLParseError is deprecated'''
+            #    toHandle = self.rawdata[i:]
+            #    self.handle_data(toHandle)
+            #    j = i + len(toHandle)
         return j
 
 

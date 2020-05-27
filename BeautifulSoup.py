@@ -84,7 +84,7 @@ __version__ = "3.2.1"
 __copyright__ = "Copyright (c) 2004-2012 Leonard Richardson"
 __license__ = "New-style BSD"
 
-from html.parser import HTMLParser, HTMLParseError
+from html.parser import HTMLParser
 import codecs
 import _markupbase
 import types
@@ -1458,12 +1458,12 @@ class BeautifulStoneSoup(Tag, HTMLParser):
              j = k+3
              self._toStringSubclass(data, CData)
         else:
-            try:
-                j = HTMLParser.parse_declaration(self, i)
-            except HTMLParseError:
-                toHandle = self.rawdata[i:]
-                self.handle_data(toHandle)
-                j = i + len(toHandle)
+            #try:
+            j = HTMLParser.parse_declaration(self, i)
+            # except HTMLParseError:
+            #    toHandle = self.rawdata[i:]
+            #    self.handle_data(toHandle)
+            #   j = i + len(toHandle)
         return j
 
 class BeautifulSoup(BeautifulStoneSoup):
