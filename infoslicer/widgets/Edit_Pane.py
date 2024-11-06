@@ -9,8 +9,8 @@ from gettext import gettext as _
 
 from sugar3.graphics.toolcombobox import ToolComboBox
 
-from Reading_View import Reading_View
-from Editing_View import Editing_View
+from .Reading_View import Reading_View
+from .Editing_View import Editing_View
 from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')

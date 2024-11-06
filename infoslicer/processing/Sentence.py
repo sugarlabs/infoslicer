@@ -7,7 +7,7 @@ from gi.repository import Gtk
 from gi.repository import GdkPixbuf
 import logging
 
-from Article_Data import *
+from .Article_Data import *
 
 """
 Created by Jonathan Mace

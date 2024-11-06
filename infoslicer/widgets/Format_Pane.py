@@ -4,7 +4,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gettext import gettext as _
 
-from Editing_View import Editing_View
+from .Editing_View import Editing_View
 
 class Format_Pane(Editing_View):
     """

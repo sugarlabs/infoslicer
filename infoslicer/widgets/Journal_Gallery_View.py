@@ -15,11 +15,11 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 import os
-import cPickle
+import pickle
 import pickle
 import logging
 
-from Editable_Textbox import Editable_Textbox
+from .Editable_Textbox import Editable_Textbox
 from infoslicer.processing.Article_Data import *
 from infoslicer.processing.Article import Article
 import book
@@ -158,7 +158,7 @@ class Journal_Gallery_View( Gtk.HBox ):
         paragraph1data = Paragraph_Data(0, self.source_article_id, 0, 0, [imagedata])
         paragraph2data = Paragraph_Data(0, self.source_article_id, 0, 0, [captiondata])
         sectionsdata = [Section_Data(0, self.source_article_id, 0, [paragraph1data, paragraph2data])]
-        string = cPickle.dumps(sectionsdata)
+        string = pickle.dumps(sectionsdata)
         selection_data.set(atom, 8, string)
 
     def add_image(self, image_path, title):

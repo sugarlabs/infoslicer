@@ -1,6 +1,6 @@
 # Copyright (C) IBM Corporation 2008
 
-from HTML_Parser import HTML_Parser, NoDocException
+from .HTML_Parser import HTML_Parser, NoDocException
 import re
 import logging
 
@@ -36,7 +36,7 @@ class MediaWiki_Parser(HTML_Parser):
         #infobox should be first table
         first_table = self.input.find("table")
         #the word "infobox" should be in the class name somewhere
-        if (first_table != None and first_table.has_key("class")  and (re.match(re.compile("infobox"), first_table["class"]) != None)):
+        if (first_table != None and "class" in first_table  and (re.match(re.compile("infobox"), first_table["class"]) != None)):
             #make a new output tag to work with
             infobox_tag = self.tag_generator("section", attrs=[("id", "infobox")])
             #sometimes infobox data is in an inner table

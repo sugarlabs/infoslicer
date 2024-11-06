@@ -7,8 +7,8 @@ from gi.repository import GObject
 import logging
 from gettext import gettext as _
 
-from Editing_View import Editing_View
-from Gallery_View import Gallery_View
+from .Editing_View import Editing_View
+from .Gallery_View import Gallery_View
 from infoslicer.processing.Article import Article
 
 logger = logging.getLogger('infoslicer')
