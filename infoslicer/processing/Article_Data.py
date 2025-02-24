@@ -13,7 +13,7 @@ These are the data objects which are passed around to and from the Article class
 class Sentence_Data:
     
     def __init__(self, id = None, source_article_id = -1, source_section_id = -1, source_paragraph_id = -1, source_sentence_id = -1, text = "", formatting = None):
-        if id == None:
+        if id is None:
             self.id = random.randint(100, 100000)
         else:
             self.id = id
@@ -38,7 +38,7 @@ class Picture_Data:
 class Paragraph_Data:
     
     def __init__(self, id = None, source_article_id = -1, source_section_id = -1, source_paragraph_id = -1, sentences_data = []):
-        if id == None:
+        if id is None:
             self.id = random.randint(100, 100000)
         else:
             self.id = id
@@ -51,7 +51,7 @@ class Paragraph_Data:
 class Section_Data:
     
     def __init__(self, id = None, source_article_id = -1, source_section_id = -1, paragraphs_data = []):
-        if id == None:
+        if id is None:
             self.id = random.randint(100, 100000)
         else:
             self.id = id
@@ -63,7 +63,7 @@ class Section_Data:
 class Article_Data:
     
     def __init__(self, id = None, source_article_id = -1, article_title = None, article_theme = None, sections_data = [], image_list=[]):
-        if id == None:
+        if id is None:
             self.id = random.randint(100, 100000)
         else:
             self.id = id
