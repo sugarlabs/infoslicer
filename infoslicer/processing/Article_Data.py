@@ -1,14 +1,10 @@
 # Copyright (C) IBM Corporation 2008
+# Created by Jonathan Mace
+# Each class in this file represents the data associated with an element of an article.
+# These are the data objects which are passed around to and from the Article class.
+
 
 import random
-
-""" 
-Created by Jonathan Mace
-
-Each class in this file represents the data associated with an element of an article.
-
-These are the data objects which are passed around to and from the Article class.
-"""
 
 
 class SentenceData:
