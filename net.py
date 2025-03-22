@@ -16,18 +16,18 @@
 
 import os
 import shutil
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import logging
 from gettext import gettext as _
 
 from sugar3.activity.activity import get_bundle_path
 
 import book
-from infoslicer.processing.NewtifulSoup import NewtifulStoneSoup \
+from infoslicer.processing.newtiful_soup import NewtifulStoneSoup \
         as BeautifulStoneSoup
-from infoslicer.processing.MediaWiki_Parser import MediaWiki_Parser
-from infoslicer.processing.MediaWiki_Helper import MediaWiki_Helper
-from infoslicer.processing.MediaWiki_Helper import PageNotFoundError
+from infoslicer.processing.media_wiki_Parser import MediaWiki_Parser
+from infoslicer.processing.media_wiki_Helper import MediaWiki_Helper
+from infoslicer.processing.media_wiki_Helper import PageNotFoundError
 
 logger = logging.getLogger('infoslicer')
 elogger = logging.getLogger('infoslicer::except')
@@ -37,68 +37,90 @@ proxies = None
 def download_wiki_article(title, wiki, progress):
     try:
         progress.set_label(_('"%s" download in progress...') % title)
-        article, url = MediaWiki_Helper().getArticleAsHTMLByTitle(title, wiki)
+        try:
+            article, url, strip_revid = MediaWiki_Helper().getArticleAsHTMLByTitle(title, wiki)
+
+            # Optional: force decode if it's bytes
+            if isinstance(article, bytes):
+                article = article.decode('utf-8', errors='ignore')
+
+        except Exception as e:
+            progress.set_label(_('Error getArticleAsHTMLByTitle: %s') % e)
+            raise
 
         progress.set_label(_('Processing "%s"...') % title)
-        parser = MediaWiki_Parser(article, title, url)
+        parser = MediaWiki_Parser(document_to_parse=article, revid=strip_revid, title=title, source_url=url)
         contents = parser.parse()
 
         progress.set_label(_('Downloading "%s" images...') % title)
-        book.wiki.create(title + _(' (from %s)') % wiki, contents)
+        book.WIKI.create(title + _(' (from %s)') % wiki, contents)
 
         progress.set_label(_('"%s" successfully downloaded') % title)
 
-    except PageNotFoundError, e:
-        elogger.debug('download_and_add: %s' % e)
+    except PageNotFoundError as e:
+        elogger.debug(f'download_and_add:{e}')
         progress.set_label(_('"%s" could not be found') % title)
 
-    except Exception, e:
-        elogger.debug('download_and_add: %s' % e)
-        progress.set_label(_('Error downloading "%s"; check your connection') % title)
+
+    except Exception as e:
+        # More detailed error logging
+        logger.error(f'Detailed error: {e}', exc_info=True)
+        raise
 
 def image_handler(root, uid, document):
     """
-        Takes a DITA article and downloads images referenced in it
-        (finding all <image> tags).
-        Attemps to fix incomplete paths using source url.
-        @param document: DITA to work on
-        @return: The document with image tags adjusted to point to local paths
+    Takes a DITA article and downloads images referenced in it
+    (finding all <image> tags).
+    Attempts to fix incomplete paths using source url.
     """
     document = BeautifulStoneSoup(document)
-    dir_path =  os.path.join(root, uid, "images")
+    dir_path = os.path.join(root, uid, "images")
 
     logger.debug('image_handler: %s' % dir_path)
 
     if not os.path.exists(dir_path):
-        os.makedirs(dir_path, 0777)
+        os.makedirs(dir_path, 0o777)
 
     for image in document.findAll("image"):
         fail = False
         path = image['href']
-        if "#DEMOLIBRARY#" in path:
+
+        # Handle protocol-relative URLs and other URL formats
+        if path.startswith("//"):
+            path = "https:" + path
+        elif "#DEMOLIBRARY#" in path:
             path = path.replace("#DEMOLIBRARY#",
                     os.path.join(get_bundle_path(), 'examples'))
             image_title = os.path.split(path)[1]
             shutil.copyfile(path, os.path.join(dir_path, image_title))
-        else:
-            image_title = path.rsplit("/", 1)[-1]
-            # attempt to fix incomplete paths
-            if (not path.startswith("http://")) and document.source != None and document.source.has_key("href"):
-                if path.startswith("//upload"):
-                    path = 'http:' + path
-                elif path.startswith("/"):
-                    path = document.source['href'].rsplit("/", 1)[0] + path
+            continue
+
+        image_title = path.rsplit("/", 1)[-1]
+
+        # Fix incomplete paths
+        if not any(path.startswith(proto) for proto in ['http://', 'https://']):
+            if document.source and "href" in document.source:
+                base_url = document.source['href'].rsplit("/", 1)[0]
+                if path.startswith("/"):
+                    path = base_url + path
                 else:
-                    path = document.source['href'].rsplit("/", 1)[0] + "/" + path
-            logger.debug("Retrieving image: " + path)
+                    path = base_url + "/" + path
+
+        logger.debug("Retrieving image: " + path)
+
+        try:
             file = open(os.path.join(dir_path, image_title), 'wb')
             image_contents = _open_url(path)
-            if image_contents == None:
+            if image_contents is None:
                 fail = True
             else:
                 file.write(image_contents)
             file.close()
-        #change to relative paths:
+        except Exception as e:
+            logger.error(f"Failed to download image {path}: {str(e)}")
+            fail = True
+
+        # Change to relative paths
         if not fail:
             image['href'] = os.path.join(dir_path.replace(os.path.join(root, ""), "", 1), image_title)
             image['orig_href'] = path
@@ -109,21 +131,33 @@ def image_handler(root, uid, document):
 
 def _open_url(url):
     """
-        retrieves content from specified url
+    Retrieves content from specified url with improved error handling
     """
-    urllib._urlopener = _new_url_opener()
-    try:
-        logger.debug("opening " + url)
-        logger.debug("proxies: " + str(proxies))
-        doc = urllib.urlopen(url, proxies=proxies)
-        output = doc.read()
-        doc.close()
-        logger.debug("url opened succesfully")
-        return output
-    except IOError, e:
-        elogger.debug('_open_url: %s' % e)
+    urllib.request._urlopener = _new_url_opener()
 
-class _new_url_opener(urllib.FancyURLopener):
+    try:
+        # Ensure URL has a protocol
+        if url.startswith("//"):
+            url = "https:" + url
+
+        logger.debug(f"Opening URL: {url}")
+        logger.debug(f"Using proxies: {proxies}")
+
+        # Create Request object with headers
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        req = urllib.request.Request(url, headers=headers)
+
+        # Open URL with timeout
+        with urllib.request.urlopen(req, timeout=30) as response:
+            return response.read()
+
+    except Exception as e:
+        logger.error(f"Failed to open URL {url}: {str(e)}")
+        return None
+
+class _new_url_opener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1b2)" \
               "Gecko/20081218 Gentoo Iceweasel/3.1b2"
 
@@ -134,7 +168,7 @@ _proxy_file = os.path.join(os.path.split(os.path.split(__file__)[0])[0],
 _proxylist = {}
 
 if os.access(_proxy_file, os.F_OK):
-    proxy_file_handle = open(_proxy_file, "r")
+    proxy_file_handle = open(_proxy_file, "r", encoding="utf-8")
     for line in proxy_file_handle.readlines():
         parts = line.split(':', 1)
         #logger.debug("setting " + parts[0] + " proxy to " + parts[1])

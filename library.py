@@ -19,7 +19,6 @@ from gi.repository import Gdk
 from gi.repository import GObject
 import logging
 from threading import Timer
-from datetime import datetime
 from gettext import gettext as _
 import locale
 
@@ -45,12 +44,14 @@ class View(Gtk.EventBox):
         self.custom.sync()
 
     def __init__(self, activity):
+        logger.info("View initialized with activity: %s", activity)
+
         GObject.GObject.__init__(self)
         self.activity = activity
 
-        self.wiki = BookView(book.wiki,
+        self.wiki = BookView(book.WIKI,
                 _('Wiki'), _('Wiki articles'), False)
-        self.custom = BookView(book.custom,
+        self.custom = BookView(book.CUSTOM,
                 _('Custom'), _('Custom articles'), True)
 
         # stubs for empty articles
@@ -112,10 +113,6 @@ class View(Gtk.EventBox):
         wiki.append_page(wiki_widget, None)
 
         self.progress = Gtk.Label()
-        #self.progress.set_size_request(-1, style.SMALL_ICON_SIZE+4)
-        #progress_box = Gtk.HBox()
-        #progress_box.pack_start(Gtk.HSeparator(, True, True, 0), False)
-        #progress_box.pack_start(self.progress, False)
 
         wiki_box = Gtk.VBox()
         wiki_box.pack_start(search_box, False, False, 0)
@@ -139,7 +136,6 @@ class View(Gtk.EventBox):
                                            style.GRID_CELL_SIZE) / 2))
 
         # workspace
-
         articles_box = Gtk.HBox()
         articles_box.pack_start(self.wiki, True, True, 0)
         articles_box.pack_start(Gtk.VSeparator(), False, False, 0)
@@ -159,18 +155,18 @@ class View(Gtk.EventBox):
 
         # init components
 
-        book.wiki.connect('article-selected', self._article_selected_cb,
+        book.WIKI.connect('article-selected', self._article_selected_cb,
                 wiki_widget, [wiki, custom])
-        book.wiki.connect('article-deleted', self._article_deleted_cb,
+        book.WIKI.connect('article-deleted', self._article_deleted_cb,
                 [wiki, custom])
-        book.custom.connect('article-selected', self._article_selected_cb,
+        book.CUSTOM.connect('article-selected', self._article_selected_cb,
                 custom_widget, [custom, wiki])
-        book.custom.connect('article-deleted', self._article_deleted_cb,
+        book.CUSTOM.connect('article-deleted', self._article_deleted_cb,
                 [custom, wiki])
 
-        self._article_selected_cb(book.wiki, book.wiki.article,
+        self._article_selected_cb(book.WIKI, book.WIKI.article,
                 wiki_widget, [wiki, custom])
-        self._article_selected_cb(book.custom, book.custom.article,
+        self._article_selected_cb(book.CUSTOM, book.CUSTOM.article,
                 custom_widget, [custom, wiki])
 
         self.connect('map', self._map_cb)
@@ -205,7 +201,7 @@ class View(Gtk.EventBox):
         if not title:
             return
 
-        if book.wiki.find('%s (from %s)' % (title, wiki))[0]:
+        if book.WIKI.find('%s (from %s)' % (title, wiki))[0]:
             alert = Alert()
             alert.props.title = _('Exists')
             alert.props.msg = _('"%s" article already exists' % title)

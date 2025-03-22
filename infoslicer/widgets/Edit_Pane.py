@@ -9,9 +9,9 @@ from gettext import gettext as _
 
 from sugar3.graphics.toolcombobox import ToolComboBox
 
-from Reading_View import Reading_View
-from Editing_View import Editing_View
-from infoslicer.processing.Article import Article
+from infoslicer.widgets.Reading_View import Reading_View
+from infoslicer.widgets.Editing_View import Editing_View
+from infoslicer.processing.article import Article
 
 logger = logging.getLogger('infoslicer')
 
@@ -30,8 +30,11 @@ class Edit_Pane(Gtk.HBox):
     
     The toolbar gives options to change the selection type.
     """
-    
+
     def __init__(self):
+        """
+        Create reading and editing panels
+        """
         GObject.GObject.__init__(self)
         self.toolitems = []
 
@@ -42,7 +45,7 @@ class Edit_Pane(Gtk.HBox):
         labeleb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#EEEEEE"))
         readarticle_box.pack_start(labeleb, False, False, 0)
         labeleb.show()
-        
+
         self.articletitle = Gtk.Label()
         self.articletitle.set_justify(Gtk.Justification.CENTER)
         labeleb.add(self.articletitle)
@@ -58,9 +61,7 @@ class Edit_Pane(Gtk.HBox):
         snap.combo.set_active(1)
         vbox.pack_start(snap, False, False, 0)
 
-        """
-        Create reading and editing panels
-        """
+
         self.readarticle = Reading_View()  
         self.readarticle.set_size_request(Gdk.Screen.width()/2, -1)
         self.readarticle.show()
@@ -74,8 +75,8 @@ class Edit_Pane(Gtk.HBox):
         self.editarticle.show()
 
         snap.combo.connect("changed", self.selection_mode_changed, None)
-        
-        
+
+
     """
     When highlighting text, while editing, different selection snap methods 
     can be used (characters, sentences, paragraphs and sections). Change the
@@ -96,7 +97,7 @@ class Edit_Pane(Gtk.HBox):
             self.readarticle.set_section_selection_mode()
             self.editarticle.set_section_selection_mode()
         #logger.debug(current_selection)
-        
+
     def set_source_article(self, article):
         self.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \
@@ -104,7 +105,7 @@ class Edit_Pane(Gtk.HBox):
 
         if self.readarticle.textbox.get_article() != article:
             self.readarticle.textbox.set_article(article)
-        
+
     def set_working_article(self, article):
         self.editarticle.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \

@@ -1,5 +1,4 @@
 # Copyright (C) 2012 Aneesh Dogra <lionaneesh@gmail.com>
-#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -14,16 +13,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-from HTMLParser import HTMLParser
 from re import sub
-from infoslicer.processing.Article_Data import Sentence_Data,  \
-                                               Paragraph_Data, \
-                                               Section_Data, \
-                                               Article_Data
-import string
+import logging
+from html.parser import HTMLParser
+from infoslicer.processing.article_data import SentenceData, ParagraphData, SectionData, ArticleData
+logger = logging.getLogger('infoslicer:html_strip')
 
-def filter_non_printable(str):
-  return ''.join([c for c in str if ord(c) > 31 or ord(c) == 9])
+def filter_non_printable(text_content):
+    return ''.join([c for c in text_content if ord(c) > 31 or ord(c) == 9])
 
 class HTML_Strip(HTMLParser):
     def __init__(self):
@@ -58,32 +55,32 @@ def dehtml(text, title):
         parser.feed(text)
         parser.close()
         text_stripped = parser.text()
-    except:
+        # We now need to convert this stripped data to an
+        # Article Data object.
+        sections = text_stripped.split('<SECTION>')
+        section_objs = []
+        for section in sections:
+            s = section.strip()
+            if s:
+                paragraphs = text_stripped.split('<PARAGRAPH>')
+                p_objs = []
+                for para in paragraphs:
+                    if para[:len('<SECTION>')] == '<SECTION>':
+                        para = para[len('<SECTION>'):]
+                    if para.endswith('<SECTION>'):
+                        para = para[:-len('<SECTION>')]
+                    p = para.strip()
+                    if p:
+                        sentences = para.split('<SENTENCE>')
+                        s_objs = []
+                        for sentence in sentences:
+                            s = sentence.strip()
+                            if s:
+                                s_objs += [SentenceData(text=s)]
+                                s_objs += [SentenceData(text='\n')]
+                        p_objs += [ParagraphData(sentences_data=s_objs)]
+                section_objs += [SectionData(paragraphs_data=p_objs)]
+        return ArticleData(article_title=title, sections_data=section_objs)
+    except Exception as e:
+        logger.error('Error while stripping HTML: %s' % e)
         text_stripped = text
-
-    # We now need to convert this stripped data to an
-    # Article Data object.
-    sections = text_stripped.split('<SECTION>')
-    section_objs = []
-    for section in sections:
-        s = section.strip()
-        if s:
-            paragraphs = text_stripped.split('<PARAGRAPH>')
-            p_objs = []
-            for para in paragraphs:
-                if para[:len('<SECTION>')] == '<SECTION>':
-                    para = para[len('<SECTION>'):]
-                if para.endswith('<SECTION>'):
-                    para = para[:-len('<SECTION>')]
-                p = para.strip()
-                if p:
-                    sentences = para.split('<SENTENCE>')
-                    s_objs = []
-                    for sentence in sentences:
-                        s = sentence.strip()
-                        if s:
-                            s_objs += [Sentence_Data(text=s)]
-                            s_objs += [Sentence_Data(text='\n')]
-                    p_objs += [Paragraph_Data(sentences_data=s_objs)]
-            section_objs += [Section_Data(paragraphs_data=p_objs)]
-    return Article_Data(article_title=title, sections_data=section_objs)

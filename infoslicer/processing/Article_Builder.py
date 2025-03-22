@@ -251,7 +251,7 @@ def get_dita_from_article(image_path, article):
     )
     current_ref = output.reference
     current_title = None
-    
+
     try:
         for section in article_data.sections_data:
             # headings check

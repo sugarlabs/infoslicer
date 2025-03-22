@@ -15,13 +15,13 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 import os
-import cPickle
+import pickle
 import pickle
 import logging
 
-from Editable_Textbox import Editable_Textbox
-from infoslicer.processing.Article_Data import *
-from infoslicer.processing.Article import Article
+from .Editable_Textbox import Editable_Textbox
+from infoslicer.processing.article_data import *
+from infoslicer.processing.article import Article
 import book
 # from infoslicer.processing import Journal_Getter as journal
 
@@ -45,7 +45,7 @@ class Journal_Gallery_View( Gtk.HBox ):
     These correspond to the image
     and caption respectively.
     """
-    
+
     def __init__(self):
         self.image_list = []
         GObject.GObject.__init__(self)
@@ -98,7 +98,7 @@ class Journal_Gallery_View( Gtk.HBox ):
         right_button.connect("clicked", self.get_next_item, None)
         left_button.connect("clicked", self.get_prev_item, None)
         self.get_next_item(right_button, None)
-        
+
     def get_next_item(self, button, param):
         if self.image_list == []:
             self.caption.set_text("No images were found in the journal.")
@@ -127,8 +127,8 @@ class Journal_Gallery_View( Gtk.HBox ):
                                              GdkPixbuf.InterpType.BILINEAR)
         self.image.set_from_pixbuf(self.imagebuf)
         self.caption.set_text("\n" + self.image_list[self.current_index][1])
-        self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))   
-        
+        self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))
+
     def get_first_item(self):
         if self.image_list == []:
             self.caption.set_text("No images were found in the journal.")
@@ -144,21 +144,21 @@ class Journal_Gallery_View( Gtk.HBox ):
         logger.debug("(%d / %d)\n" %
                 (self.current_index+1, len(self.image_list)))
         self.imagenumberlabel.set_text("(%d / %d)\n" % (self.current_index+1, len(self.image_list)))
-        
+
     def drag_begin_event(self, widget, context, data):
         logging.debug('########### Journal_Journal_Gallery_View.drag_begin_event called')
         self.imagebox.drag_source_set_icon_pixbuf(self.imagebuf)
-        
+
     def drag_data_get_event(self, widget, context, selection_data, info, timestamp, data):
         logger.debug('############# Journal_Journal_Gallery_View.drag_data_get_event')
         atom = Gdk.atom_intern("section", only_if_exists=False)
-        imagedata = Picture_Data(self.source_article_id,
+        imagedata = PictureData(self.source_article_id,
                                  self.image_list[self.current_index][0])
-        captiondata = Sentence_Data(0, self.source_article_id, 0, 0, 0, self.image_list[self.current_index][1])
-        paragraph1data = Paragraph_Data(0, self.source_article_id, 0, 0, [imagedata])
-        paragraph2data = Paragraph_Data(0, self.source_article_id, 0, 0, [captiondata])
-        sectionsdata = [Section_Data(0, self.source_article_id, 0, [paragraph1data, paragraph2data])]
-        string = cPickle.dumps(sectionsdata)
+        captiondata = SentenceData(0, self.source_article_id, 0, 0, 0, self.image_list[self.current_index][1])
+        paragraph1data = ParagraphData(0, self.source_article_id, 0, 0, [imagedata])
+        paragraph2data = ParagraphData(0, self.source_article_id, 0, 0, [captiondata])
+        sectionsdata = [SectionData(0, self.source_article_id, 0, [paragraph1data, paragraph2data])]
+        string = pickle.dumps(sectionsdata)
         selection_data.set(atom, 8, string)
 
     def add_image(self, image_path, title):

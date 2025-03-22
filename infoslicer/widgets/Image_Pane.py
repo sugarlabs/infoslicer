@@ -7,9 +7,9 @@ from gi.repository import GObject
 import logging
 from gettext import gettext as _
 
-from Editing_View import Editing_View
-from Gallery_View import Gallery_View
-from infoslicer.processing.Article import Article
+from .Editing_View import Editing_View
+from .Gallery_View import Gallery_View
+from infoslicer.processing.article import Article
 
 logger = logging.getLogger('infoslicer')
 
@@ -23,11 +23,11 @@ class Image_Pane(Gtk.HBox):
     The left hand side shows images in the source article.  These can be dragged into
     the edit article.
     """
-    
+
     def __init__(self):
         GObject.GObject.__init__(self)
         self.toolitems = []
-        
+
         gallery_box = Gtk.VBox()
         gallery_box.show()
 
@@ -35,12 +35,12 @@ class Image_Pane(Gtk.HBox):
         labeleb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#EEEEEE"))
         gallery_box.pack_start(labeleb, False, False, 0)
         labeleb.show()
-        
+
         self.articletitle = Gtk.Label()
         self.articletitle.set_justify(Gtk.Justification.CENTER)
         labeleb.add(self.articletitle)
         self.articletitle.show()
-        
+
         self.gallery = Gallery_View()
         self.gallery.set_size_request(Gdk.Screen.width()/2, -1)
         gallery_box.pack_start(self.gallery, True, True, 0)
@@ -51,7 +51,7 @@ class Image_Pane(Gtk.HBox):
         self.editarticle.show_all()
 
         self.gallery._source_article = None
-        
+
     def set_source_article(self, source):
         self.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>"% \
@@ -70,7 +70,7 @@ class Image_Pane(Gtk.HBox):
                 logger.debug("setting images")
                 self.gallery.set_image_list(source.image_list)
                 self.gallery.get_first_item()
-                
+
                 self.gallery.source_article_id = source.source_article_id
                 logger.debug(source.image_list)
             else:
@@ -80,7 +80,7 @@ class Image_Pane(Gtk.HBox):
         else:
             self.gallery.imagenumberlabel.set_label("")
             self.gallery.caption.set_text(_("Please select a Wikipedia article from the menu above"))
-    
+
     def set_working_article(self, article):
         logger.debug("working received, title %s" % article.article_title)
 

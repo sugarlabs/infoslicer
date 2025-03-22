@@ -30,8 +30,8 @@ from infoslicer.widgets.Edit_Pane import Edit_Pane
 from infoslicer.widgets.Format_Pane import Format_Pane
 from infoslicer.widgets.Image_Pane import Image_Pane
 from infoslicer.widgets.Journal_Image_Pane import Journal_Image_Pane
-from infoslicer.processing.HTML_strip import dehtml
-from infoslicer.processing.Article import Article
+from infoslicer.processing.html_strip import dehtml
+from infoslicer.processing.article import Article
 
 import book
 
@@ -59,10 +59,10 @@ class View(Gtk.Notebook):
     def _map_cb(self, widget):
         index = self.get_current_page()
 
-        if book.wiki.article:
-            TABS[index].set_source_article(book.wiki.article)
-        if book.custom.article:
-            TABS[index].set_working_article(book.custom.article)
+        if book.WIKI.article:
+            TABS[index].set_source_article(book.WIKI.article)
+        if book.CUSTOM.article:
+            TABS[index].set_working_article(book.CUSTOM.article)
 
 class ToolbarBuilder():
     def __init__(self, edit, toolbar):
@@ -116,8 +116,6 @@ class ToolbarBuilder():
         self.jimg_toggle.set_sensitive(False)
 
     def _toggle_image_chooser(self, widget):
-        # self._old_cursor = self.edit.get_window().get_cursor()
-        # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
         GLib.idle_add(self.__image_chooser)
 
     def __image_chooser(self):
@@ -129,11 +127,8 @@ class ToolbarBuilder():
                 title = str(jobject.metadata['title'])
                 path = str(jobject.file_path)
                 TABS[2].gallery.add_image(path, title)
-        # self.edit.get_window().set_cursor(self._old_cursor)
 
     def _toggle_text_chooser(self, widget):
-        # self._old_cursor = self.edit.get_window().get_cursor()
-        # self.edit.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
         GLib.idle_add(self.__text_chooser)
 
     def __text_chooser(self):
@@ -149,7 +144,6 @@ class ToolbarBuilder():
                 fp.close()
                 article_data = dehtml(text, title)
                 TABS[0].set_source_article(Article(article_data))
-        # self.edit.get_window().set_cursor(self._old_cursor)
 
     def _toggle_cb(self, widget, toggles):
         for tab in TABS:
@@ -169,9 +163,9 @@ class ToolbarBuilder():
             i.show()
 
         # We don't require any article data to display jounal images
-        if book.wiki.article and index != 2:
-            TABS[index].set_source_article(book.wiki.article)
-        if book.custom.article:
-            TABS[index].set_working_article(book.custom.article)
+        if book.WIKI.article and index != 2:
+            TABS[index].set_source_article(book.WIKI.article)
+        if book.CUSTOM.article:
+            TABS[index].set_working_article(book.CUSTOM.article)
 
         self.edit.set_current_page(index)

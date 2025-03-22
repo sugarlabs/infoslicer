@@ -3,4 +3,4 @@
 *.pyo
 dist
 locale
-
+.venv

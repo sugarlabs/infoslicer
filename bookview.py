@@ -47,7 +47,6 @@ class BookView(Gtk.VBox):
         title = Gtk.Toolbar()
 
         # title checkbox
-
         if custom:
             self._check = Gtk.CheckButton()
             self._check.props.can_focus = False
@@ -68,7 +67,6 @@ class BookView(Gtk.VBox):
             title.insert(tool_item, -1)
 
         # title caption
-
         caption_label = Gtk.Label(label=name)
         caption_label.props.tooltip_text = tooltip
         caption_label.modify_fg(Gtk.StateType.NORMAL, COLOR_WHITE.get_gdk_color())
@@ -266,7 +264,7 @@ class BookView(Gtk.VBox):
 
         index, column = self.tree.get_cursor()
 
-        if index != None:
+        if index is not None:
             self._changing = GLib.timeout_add(500, self._cursor_changed,
                     index)
 

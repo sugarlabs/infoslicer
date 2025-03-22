@@ -7,9 +7,9 @@ from gi.repository import GObject
 import logging
 
 from gettext import gettext as _
-from Editing_View import Editing_View
+from .Editing_View import Editing_View
 from infoslicer.widgets.Journal_Gallery_View import Journal_Gallery_View
-from infoslicer.processing.Article import Article
+from infoslicer.processing.article import Article
 
 logger = logging.getLogger('infoslicer')
 
@@ -23,11 +23,11 @@ class Journal_Image_Pane(Gtk.HBox):
     The left hand side shows the jounal images. These can be dragged into
     the edit article.
     """
-    
+
     def __init__(self):
         GObject.GObject.__init__(self)
         self.toolitems = []
-        
+
         gallery_box = Gtk.VBox()
         gallery_box.show()
 
@@ -35,12 +35,12 @@ class Journal_Image_Pane(Gtk.HBox):
         labeleb.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#EEEEEE"))
         gallery_box.pack_start(labeleb, False, False, 0)
         labeleb.show()
-        
+
         self.articletitle = Gtk.Label()
         self.articletitle.set_justify(Gtk.Justification.CENTER)
         labeleb.add(self.articletitle)
         self.articletitle.show()
-        
+
         self.gallery = Journal_Gallery_View()
         self.gallery.set_size_request(Gdk.Screen.width()/2, -1)
         gallery_box.pack_start(self.gallery, True, True, 0)

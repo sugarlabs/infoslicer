@@ -5,9 +5,9 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
-import cPickle
+import pickle
 import copy
-from Textbox import Textbox
+from infoslicer.widgets.Textbox import Textbox
 
 import logging
 
@@ -20,7 +20,7 @@ class Editable_Textbox( Textbox ):
     It has an article class which provides the text buffer, and any modifications
     to the text buffer are done via the article class.
     """
-    
+
     def __init__(self): 
         GObject.GObject.__init__(self)
         self.set_border_width(1)
@@ -31,7 +31,7 @@ class Editable_Textbox( Textbox ):
         self.set_mode(SNAP_SENTENCE)
         self.changed = False
         self.block = True
-        
+
         self.selecting = False
         self.handlers = []
         self.modify_font(Pango.FontDescription('arial 9'))
@@ -47,26 +47,25 @@ class Editable_Textbox( Textbox ):
 
     def set_article(self, article):
         self.article = article
-        self.set_buffer(article.getBuffer())
-        
+        self.set_buffer(article.get_buffer())
+
     def get_article(self):
         return self.article
-        
+
     def clear(self):
         self.article.delete()
-
     def set_mode(self, snapto):
         self.snapto = snapto
-                
+
     def set_buffer(self, buffer):
         for handler in self.handlers:
             self.disconnect(handler)
-        
+
         buffer.connect("changed", self.text_changed, None)
         Gtk.TextView.set_buffer(self, buffer)
-        
+
         self.handlers = []
-        
+
         self.handlers.append(self.connect("button-press-event", self.clicked_event, None))
         self.handlers.append(self.connect("button-release-event", self.unclicked_event, None))
         self.handlers.append(self.connect("drag-data-get", self.drag_data_get_event, None))
@@ -79,11 +78,11 @@ class Editable_Textbox( Textbox ):
         self.handlers.append(self.connect("drag-end", self.drag_end_event, None))
         self.handlers.append(self.connect("motion-notify-event", self.motion_notify, None))
         self.handlers.append(self.connect("focus-out-event", self.leave_notify, None))
-        
+
     def text_changed(self, buffer, data):
         self.changed = True
         self.selecting = False
-    
+
     def motion_notify(self, widget, event, data):
         if not self.ignore_snap_self and self.selecting:
             """ The following code implements the 'snapping' to sentences etc.
@@ -107,45 +106,46 @@ class Editable_Textbox( Textbox ):
             
             """
 
-          
+
             if self.block == True:
                 self.stop_emission("motion-notify-event")
                 self.block = False
                 self.emit("motion-notify-event", event)
-                
-                
 
-                    
-                buf = self.get_buffer()            
+
+
+
+                buf = self.get_buffer()
                 mouseiter = self.get_mouse_iter(int(event.x), int(event.y))
-                article = self.get_article()                
-                
+                article = self.get_article()
+                selectionend = None
+                selectionstart = None
                 if mouseiter.compare(self.selectionstart) == 1:
-                    if self.snapto == SNAP_SENTENCE: 
-                        selectionstart = article.getSentence(self.selectionstart).getStart()
-                        selectionend = article.getSentence(mouseiter).getEnd()
+                    if self.snapto == SNAP_SENTENCE:
+                        selectionstart = article.get_sentence(self.selectionstart).getStart()
+                        selectionend = article.get_sentence(mouseiter).getEnd()
                     if self.snapto == SNAP_PARAGRAPH:
-                        selectionstart = article.getParagraph(self.selectionstart).getStart()
-                        selectionend = article.getParagraph(mouseiter).getEnd()
+                        selectionstart = article.get_paragraph(self.selectionstart).getStart()
+                        selectionend = article.get_paragraph(mouseiter).getEnd()
                     if self.snapto == SNAP_SECTION:
                         selectionstart = article.getSection(self.selectionstart).getStart()
                         selectionend = article.getSection(mouseiter).getEnd()
                 else:
-                    if self.snapto == SNAP_SENTENCE: 
-                        selectionstart = article.getSentence(mouseiter).getStart()
-                        selectionend = article.getSentence(self.selectionstart).getEnd()
+                    if self.snapto == SNAP_SENTENCE:
+                        selectionstart = article.get_sentence(mouseiter).getStart()
+                        selectionend = article.get_sentence(self.selectionstart).getEnd()
                     if self.snapto == SNAP_PARAGRAPH:
-                        selectionstart = article.getParagraph(mouseiter).getStart()
-                        selectionend = article.getParagraph(self.selectionstart).getEnd()
+                        selectionstart = article.get_paragraph(mouseiter).getStart()
+                        selectionend = article.get_paragraph(self.selectionstart).getEnd()
                     if self.snapto == SNAP_SECTION:
                         selectionstart = article.getSection(mouseiter).getStart()
                         selectionend = article.getSection(self.selectionstart).getEnd()
                 self.scroll_to_iter(mouseiter, 0)
-                article.highlight(selectionstart, selectionend)                
-                    
+                article.highlight(selectionstart, selectionend)
+
             else:
                 self.block = True
-        
+
     def clicked_event(self, widget, event, data):
         if event.type == Gdk.EventType._2BUTTON_PRESS or event.type == Gdk.EventType._3BUTTON_PRESS:
             self.stop_emission("button_press_event")
@@ -156,15 +156,15 @@ class Editable_Textbox( Textbox ):
         if self.changed == True:
             buf = self.get_buffer()
             article = self.get_article()
-            
-            article.checkIntegrity()
-            self.changed = False  
+
+            article.check_integrity()
+            self.changed = False
         if not self.get_buffer().get_has_selection():
             result = self.do_button_press_event(widget, event)
-            
+
             a = self.article
             loc_iter = self.get_mouse_iter(int(event.x), int(event.y))
-            
+
             self.selecting = True
             self.selectionstart = loc_iter
             self.stop_emission("button-press-event")
@@ -185,56 +185,56 @@ class Editable_Textbox( Textbox ):
                 self.selecting = True
                 self.selectionstart = loc
                 self.stop_emission("button-press-event")
-            
+
     def leave_notify(self, widget, event, data):
         if self.changed == True:
             offset = self.get_buffer().get_property("cursor-position")
-            self.article.checkIntegrity()
-            newbuf = self.article.getBuffer()
+            self.article.check_integrity()
+            newbuf = self.article.get_buffer()
             self.set_buffer(newbuf)
             self.changed = False
             iter = newbuf.get_iter_at_offset(offset)
-            newbuf.place_cursor(iter)        
-        
+            newbuf.place_cursor(iter)
+
     def unclicked_event(self, widget, event, data):
         if self.snapto != SNAP_NONE:
-            self.article.clearArrow()
+            self.article.clear_arrow()
             self.do_button_release_event(widget, event)
             self.selecting = False
             return True
         else:
             return False
-        
+
     def drag_begin_event(self, widget, context, data):
         logging.debug('############ Editable_Textbox.drag_begin_event')
         self.grab_focus()
         if self.snapto != SNAP_NONE:
             a = self.article
-            a.rememberSelection()
+            a.remember_selection()
             self.drag_source = True
-    
+
     def drag_drop_event(self, widget, context, x, y, time, data):
         if self.snapto != SNAP_NONE:
-            self.article.clearArrow()
+            self.article.clear_arrow()
             self.set_cursor_visible(True)
-    
+
     def drag_motion_event(self, widget, drag_context, x, y, time, data):
         if self.snapto != SNAP_NONE and not self.ignore_snap_self or (not self.drag_source and self.ignore_snap_self):
             self.delete_on_fail = False
             self.set_cursor_visible(False)
             a = self.article
             loc_iter = self.get_mouse_iter(x, y)
-            
+
             if self.snapto == SNAP_SENTENCE:
-                a.mark(a.getBestSentence(loc_iter).getStart())
+                a.mark(a.get_best_sentence(loc_iter).getStart())
                 #a.markSentence(loc_iter)
             if self.snapto == SNAP_PARAGRAPH:
-                a.mark(a.getBestParagraph(loc_iter).getStart())
+                a.mark(a.get_best_paragraph(loc_iter).getStart())
                 #a.markParagraph(loc_iter)
             if self.snapto == SNAP_SECTION:
-                a.mark(a.getBestSection(loc_iter).getStart())
+                a.mark(a.get_best_section(loc_iter).getStart())
                 #a.markSection(loc_iter)
-              
+
             result = self.do_drag_motion(widget, drag_context, x, y, time)
             self.stop_emission("drag-motion")
             return result
@@ -242,60 +242,60 @@ class Editable_Textbox( Textbox ):
         else:
             self.set_cursor_visible(True)
             self.drag_source = True
-    
-    
+
+
     def drag_leave_event(self, widget, context, time, data):
         if self.snapto != SNAP_NONE and not self.ignore_snap_self or (not self.drag_source and self.ignore_snap_self):
             self.delete_on_fail = True
-            self.article.clearArrow()
+            self.article.clear_arrow()
             self.do_drag_leave(widget, context, time)
             self.stop_emission("drag-leave")
             self.changed = False
             self.set_cursor_visible(True)
-        
+
     def drag_data_delete_event(self, widget, context, data):
         if self.snapto != SNAP_NONE and not self.ignore_snap_self or (not self.drag_source and self.ignore_snap_self):
             a = self.article
-            a.deleteDragSelection()
+            a.delete_drag_selection()
             self.stop_emission("drag-data-delete")
             self.changed = False
-        
+
     def drag_data_received_event(self, widget, context, x, y, selection_data, info, time, data):
         logging.debug('################ Editable_Textbox.drag_data_received_event')
         if self.snapto != SNAP_NONE and not self.ignore_snap_self or (not self.drag_source and self.ignore_snap_self):    
             a = self.article
             insert_loc = self.get_mouse_iter(x, y)
-            data_received_type = str(selection_data.get_data_type())    
-            data = cPickle.loads(str(selection_data.get_data()))
-            
+            data_received_type = selection_data.get_data_type().name
+            data = pickle.loads(selection_data.get_data())
+
             if data_received_type == "sentence":
-                bestpoint = insert_loc  
+                bestpoint = insert_loc
             if data_received_type == "paragraph":
-                bestpoint = a.getBestParagraph(insert_loc).getStart()
+                bestpoint = a.get_best_paragraph(insert_loc).getStart()
             if data_received_type == "section":
-                bestpoint = a.getBestSection(insert_loc).getStart()
-                
+                bestpoint = a.get_best_section(insert_loc).getStart()
+
             a.insert(data, insert_loc)
-                
+
             self.stop_emission("drag-data-received")
             context.finish(True, True, time)
             self.grab_focus()
-        
+
     def drag_data_get_event(self, widget, context, selection_data, info, time, data):
         logging.debug('############### Editable_Textbox.drag_data_get_event')
         if not self.ignore_snap_self and self.snapto != SNAP_NONE:
             a = self.article
-            
+
             if self.snapto == SNAP_SENTENCE:
                 atom = Gdk.atom_intern("sentence", only_if_exists=False)
             if self.snapto == SNAP_PARAGRAPH:
                 atom = Gdk.atom_intern("paragraph", only_if_exists=False)
             if self.snapto == SNAP_SECTION:
                 atom = Gdk.atom_intern("section", only_if_exists=False)
-                
-            string = cPickle.dumps(a.getSelection())
+
+            string = pickle.dumps(a.get_selection())
             selection_data.set(atom, 8, string)
             self.stop_emission("drag-data-get")
-            
+
     def drag_end_event(self, widget, context, data):
         self.drag_source = False

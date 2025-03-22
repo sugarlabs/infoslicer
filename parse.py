@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from gettext import gettext as _
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 
 def parse_dita(dita_str):
