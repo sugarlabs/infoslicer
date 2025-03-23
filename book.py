@@ -17,23 +17,23 @@
 import os
 import uuid
 import logging
-from gi.repository import GObject
-from gi.repository import GLib
 import json
 import shutil
 import zipfile
 from gettext import gettext as _
+from gi.repository import GObject
+from gi.repository import GLib
 
 from sugar3.activity.activity import get_bundle_path, get_activity_root
 
 import net
-from infoslicer.processing.Article import Article
-from infoslicer.processing import Article_Builder
+from infoslicer.processing.article import Article
+from infoslicer.processing.article_builder import get_article_from_dita, get_dita_from_article
 
 logger = logging.getLogger('infoslicer')
 
-wiki = None
-custom = None
+WIKI = None
+CUSTOM = None
 
 image_root = os.path.join(get_activity_root(), 'data', 'book')
 
@@ -50,7 +50,7 @@ class Book(GObject.GObject):
         if self._article and self._article.article_title == title:
             return
 
-        logger.debug('set_article: %s' % title)
+        logger.debug('set_article: %s', title)
         self.sync_article()
 
         if title is None:
@@ -61,7 +61,7 @@ class Book(GObject.GObject):
         if entry:
             content = self._load(entry['uid'])
             if content:
-                data = Article_Builder.get_article_from_dita(
+                data = get_article_from_dita(
                         image_root, content)
                 self._article = Article(data)
             else:
@@ -82,8 +82,16 @@ class Book(GObject.GObject):
 
     # save current article
     def sync_article(self):
-        # stub
-        pass
+        if not self._article:
+            return
+
+        self.find_by_uuid(self._article.uid)['title'] = \
+                self._article.article_title
+
+        contents = get_dita_from_article(
+                image_root, self._article)
+
+        self._save(self._article.uid, contents)
 
     def create(self, title, content):
         uid = str(uuid.uuid1())
@@ -95,7 +103,7 @@ class Book(GObject.GObject):
         index, entry = self.find(title)
 
         if not entry:
-            logger.debug('cannot find %s to remove' % title)
+            logger.debug('cannot find %s to remove',title)
             return
 
         if self._article and self._article.article_title == title:
@@ -124,7 +132,7 @@ class Book(GObject.GObject):
                  'index'    : self.index,
                  'revision' : self.revision }
 
-        index = file(os.path.join(self.root, 'index'), 'w')
+        index = open(os.path.join(self.root, 'index'), 'w', encoding='utf-8')
         index.write(json.dumps(data))
         index.close()
 
@@ -142,32 +150,32 @@ class Book(GObject.GObject):
 
         if os.path.exists(self.root):
             try:
-                index = file(os.path.join(self.root, 'index'), 'r')
+                index = open(os.path.join(self.root, 'index'), 'r', encoding='utf-8')
                 data = json.loads(index.read())
                 self.uid = data['uid']
                 self.index = data['index']
                 self.revision = data['revision']
                 if self.index:
                     self.props.article = self.index[0]['title']
-            except:
-                logger.debug('cannot find index file; use empty')
+            except (IOError, json.JSONDecodeError) as e:
+                logger.debug('cannot load index file: %s', e)
 
         if not self.uid:
             self.uid = str(uuid.uuid1())
             self.revision = 1
 
             if not os.path.exists(self.root):
-                os.makedirs(self.root, 0775)
+                os.makedirs(self.root, 0o775)
 
             for i in preinstalled:
                 filepath = os.path.join(get_bundle_path(), 'examples', i[1])
 
-                logger.debug("install library: opening %s" % filepath)
-                open_file = open(filepath, "r")
+                logger.debug("install library: opening %s", filepath)
+                open_file = open(filepath, "r", encoding='utf-8')
                 contents = open_file.read()
                 open_file.close()
 
-                logger.debug("install library: saving page %s" % i[0])
+                logger.debug("install library: saving page %s", i[0])
                 self.create(i[0], contents)
                 logger.debug("install library: save successful")
                 self.sync_index()
@@ -179,14 +187,14 @@ class Book(GObject.GObject):
         return entry
 
     def _load(self, uid):
-        logger.debug('load article %s' % uid)
+        logger.debug('load article %s', uid)
 
         path = os.path.join(self.root, str(uid), 'page.dita')
         if not os.access(path, os.F_OK):
-            logger.debug('_load: cannot find %s' % path)
+            logger.debug('_load: cannot find %s', path)
             return None
 
-        page = open(path, "r")
+        page = open(path, "r", encoding='utf-8')
         output = page.read()
         page.close()
 
@@ -196,17 +204,17 @@ class Book(GObject.GObject):
         directory = os.path.join(self.root, str(uid))
 
         if not os.path.exists(directory):
-            os.makedirs(directory, 0777)
+            os.makedirs(directory, 0o777)
 
         contents = contents.replace(
                 '<prolog>', '<prolog>\n<resourceid id="%s" />'
                 % uuid.uuid1(), 1)
 
-        file = open(os.path.join(directory, 'page.dita'), 'w')
+        file = open(os.path.join(directory, 'page.dita'), 'w', encoding='utf-8')
         file.write(contents)
         file.close()
 
-        logger.debug('save: %s' % directory)
+        logger.debug('save: %s', directory)
 
 class WikiBook(Book):
     def __init__(self):
@@ -229,26 +237,26 @@ class CustomBook(Book):
         if not filepath:
             Book.__init__(self, PREINSTALLED, root)
         else:
-            zip = zipfile.ZipFile(filepath, 'r')
-            for i in zip.namelist():
+            zip_file = zipfile.ZipFile(filepath, 'r')
+            for i in zip_file.namelist():
                 path = os.path.join(root, i)
-                os.makedirs(os.path.dirname(path), 0775)
-                file(path, 'wb').write(zip.read(i))
-            zip.close()
+                os.makedirs(os.path.dirname(path), 0o775)
+                open(path, 'wb').write(zip_file.read(i))
+            zip_file.close()
 
             Book.__init__(self, [], root)
 
     def sync(self, filepath):
         Book.sync(self)
 
-        logger.debug('close: save to %s' % filepath)
+        logger.debug('close: save to %s', filepath)
 
-        zip = zipfile.ZipFile(filepath, 'w')
+        zip_file = zipfile.ZipFile(filepath, 'w')
         for root, dirs, files in os.walk(self.root):
             relpath = root.replace(self.root, '', 1)
             for i in files:
-                zip.write(os.path.join(root, i), os.path.join(relpath, i))
-        zip.close()
+                zip_file.write(os.path.join(root, i), os.path.join(relpath, i))
+        zip_file.close()
 
     def sync_article(self):
         if not self._article:
@@ -257,7 +265,7 @@ class CustomBook(Book):
         self.find_by_uuid(self._article.uid)['title'] = \
                 self._article.article_title
 
-        contents = Article_Builder.get_dita_from_article(
+        contents = get_dita_from_article(
                 image_root, self._article)
 
         self._save(self._article.uid, contents)

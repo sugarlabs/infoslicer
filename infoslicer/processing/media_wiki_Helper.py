@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) IBM Corporation 2008
 
-import urllib
+import urllib.request as urllib
 from xml.dom import minidom
 import logging
-
+import json
+import re
 import net
 
-import re
 
 logger = logging.getLogger('infoslicer')
 
@@ -29,18 +29,18 @@ class NoResultsError(Exception):
     def __str__(self):
         return repr(self.parameter)
 
-"""
-Default media wikihost 
-"""
+
+# Default media wikihost
+
 defaultWiki = "en.wikipedia.org"
 
 
-"""
-This class handles interaction with Media Wiki. Getting 
-content based on a number of parameters such as URL, Title, Revision.
-"""
 class MediaWiki_Helper:
-    
+    """
+    This class handles interaction with Media Wiki. Getting 
+    content based on a number of parameters such as URL, Title, Revision.
+    """
+
     def __init__(self):
         self.proxies = net.proxies
 
@@ -60,7 +60,7 @@ class MediaWiki_Helper:
         xmldoc = minidom.parseString(self.getDoc(path))
         #check page exists, return None if it doesn't
         page = xmldoc.getElementsByTagName("page")
-        if (page != []):
+        if page != []:
             if ("missing" in page[0].attributes.keys()):
                 raise PageNotFoundError("The article with title '%s' could not be found on wiki '%s'" % (title, wiki))
         #check if there are any redirection tags defined
@@ -71,7 +71,7 @@ class MediaWiki_Helper:
         #if there is a redirect, recursively follow the chain
         else:
             return self.resolveTitle(redirectList[0].attributes["to"].value, wiki=wiki)
-    
+
     def resolveRevision(self, revision, wiki=defaultWiki):
         """ get an article by revision number.
         
@@ -81,11 +81,11 @@ class MediaWiki_Helper:
          @rtype: string
          @raise PageNotFoundError: if page not found"""
         path = "http://%s/w/api.php?action=query&format=xml&revids=%s" % (wiki, revision)
-        if ("page" in self.getDoc(path)):
+        if "page" in self.getDoc(path):
             return revision
         else:
             raise PageNotFoundError("The article with revision id '%s' could not be found on wiki '%s'" % (revision, wiki))
-        
+
     def getArticleAsHTMLByTitle(self, title, wiki=defaultWiki):
         """Gets the HTML markup of an article by its title from the wiki specified.
         
@@ -93,13 +93,19 @@ class MediaWiki_Helper:
         @param wiki: optional. Defaults to default wiki
         @return: article content in HTML markup
         @rtype: string"""
-        #resolve article title
+        # Resolve the title (handle redirects)
         title = self.resolveTitle(title, wiki)
-        #create the API request string
-        path = "http://%s/w/api.php?action=parse&page=%s&format=xml" % (wiki,title)
-        #remove xml tags around article and fix HTML tags and quotes
-        #return fixHTML(stripTags(getDoc(path), "text"))
-        return self.fixHTML(self.getDoc(path)), path
+
+        # Create the API request URL
+        path = "http://%s/w/api.php?action=parse&page=%s&format=json" % (wiki, title)
+
+        # Fetch the document content
+        doc = self.getDoc(path)
+
+        # Extract article content inside <text> tag
+        article_content, strip_revid = self.stripTags(doc, "text")
+        # Fix HTML entities
+        return self.fixHTML(article_content), path, strip_revid
 
     def getDoc(self, path):
         """opens a remote file by http and retrieves data
@@ -112,32 +118,63 @@ class MediaWiki_Helper:
         logger.debug("proxies: " + str(self.proxies))
         pathencoded = self.urlEncodeNonAscii(path)
         logger.debug("pathencoded " + pathencoded)
-        doc = urllib.urlopen(pathencoded, proxies=self.proxies)
+        doc = urllib.urlopen(pathencoded)
         output = doc.read()
         doc.close()
         logger.debug("url opened successfully")
         return output
-    
+
     def urlEncodeNonAscii(self, b):
         return re.sub('[\x80-\xFF]', lambda c: '%%%02x' % ord(c.group(0)), b)
 
-    def stripTags(self, input, tag):
-        """removes specified tag
-    
-        @param input: string to work on
-        @param tag: tag to remove
-        @return: original string with specified tag removed
-        @rtype: string"""
-        return input.split("<%s>" % (tag), 1)[1].split("</%s>" % (tag), 1)[0]
-    
-    def fixHTML(self, input):
-        """fixes <, > and " characters in HTML
+    def stripTags(self, input_json, tag):
+        """Extracts content inside a specific XML tag.
+        
+        @param input: XML string
+        @param tag: The tag to extract content from
+        @return: Content inside the tag
+        """
+        try:
+            load_data = json.loads(input_json)
+            strip_html = load_data["parse"][tag]['*']
+            strip_revid = load_data['parse']['revid']
+            return strip_html, strip_revid
+        except Exception as e:
+            logger.error(f"Error extracting tag {tag}: {e}")
+            return ""
+
+    def fixHTML(self, input_content):
+        """fixes HTML entities and malformed tags in HTML
         
         @param input: input string to work on
         @return: modified version of input
         @rtype: string"""
-        return input.replace("&lt;", "<").replace("&gt;", ">").replace("&quot;",'"')
-    
+        # First pass: Fix standard HTML entities
+        try:
+            content = input_content.replace("&lt;", " ").replace("&gt;", " ").replace("&quot;", '"')
+
+            # Second pass: Remove HTML tags and citations
+            patterns = [
+                r'</?sup>',                    # Remove sup tags
+                r'\[\d+\]',                    # Remove citation numbers
+                r'&lt;/?sup&gt;',             # Remove escaped sup tags
+                r'&lt;sup&gt;',               # Remove malformed sup tags
+                r'\[citation needed\]',        # Remove citation needed tags
+                r'\[\d+\)',                    # Remove citations with parentheses
+                r'\s+',                        # Normalize whitespace
+            ]
+
+            for pattern in patterns:
+                content = re.sub(pattern, ' ', content)
+
+            # Clean up any remaining HTML entities
+            content = re.sub(r'&[a-zA-Z]+;', '', content)  # Remove any other HTML entities
+            content = re.sub(r'\s+', ' ', content)         # Clean up whitespace
+
+            return content.strip()
+        except Exception as e:
+            logger.error('The error FixHTML %s', e)
+
     def getImageURLs(self, title, wiki=defaultWiki, revision=None):
         """returns a list of the URLs of every image on the specified page on the (optional) specified wiki
         @deprecated: This task is now performed at the parsing stage
@@ -145,13 +182,13 @@ class MediaWiki_Helper:
         #check article title is valid, follow redirects
         title = self.resolveTitle(title, wiki)
         #proceed if title is valid
-        if (title != None):
+        if title is not None:
             #create the API request string
             path = "http://%s/w/api.php?action=query&prop=images&titles=%s&format=xml" % (wiki, title)
             xmldoc = minidom.parseString(self.getDoc(path))
             imglist = xmldoc.getElementsByTagName("im")
             outputlist = []
-            for i in xrange(len(imglist)):
+            for i in range(len(imglist)):
                 #create the API request string
                 path = "http://%s/w/api.php?action=query&titles=%s&prop=imageinfo&iiprop=url&format=xml" % (wiki, imglist[i].attributes["title"].value.replace(" ","_"))
                 xmldoc2 = minidom.parseString(self.getDoc(path))
@@ -159,18 +196,18 @@ class MediaWiki_Helper:
                 outputlist.append(xmldoc2.getElementsByTagName("ii")[0].attributes["url"].value)
             #return outputlist
             return []
-        
+
     def getImages(self, title, wiki=defaultWiki):
         """returns a list of the URLs of every image on the specified page on the (optional) specified wiki
         @deprecated: This task is now performed at the saving stage
         """
         imglist = self.getImageURLs(title, wiki)
-        outputlist = []  
+        outputlist = []
         if imglist !=[]:
             for i in imglist:
                 outputlist.append(self.getDoc(i))
         return outputlist
-    
+
     def searchWiki(self, search, wiki=defaultWiki):
         """Search a wiki using the openSearch protocol.
         
@@ -184,7 +221,7 @@ class MediaWiki_Helper:
         for item in output.getElementsByTagName("Item"):
             results.append((item.getElementsByTagName("Text")[0].firstChild.data, item.getElementsByTagName("Description")[0].firstChild.data))
         return results
-        
+
     # TODO: make this work with new searchWiki method
     """def getFirstSearchResult(search, wiki=defaultWiki):
         xmldoc = minidom.parseString(searchWiki(search, wiki))

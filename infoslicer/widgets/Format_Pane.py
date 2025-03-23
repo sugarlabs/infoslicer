@@ -4,7 +4,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gettext import gettext as _
 
-from Editing_View import Editing_View
+from .Editing_View import Editing_View
 
 class Format_Pane(Editing_View):
     """
@@ -16,11 +16,11 @@ class Format_Pane(Editing_View):
     Users can apply formatting such as bold, underline etc.
     Formatting has currently not been implemented.  Dummy buttons are on the toolbar.
     """
-    
+
     def __init__(self):
         Editing_View.__init__(self)
         self.toolitems = []
-        
+
         """
         self.combocontainer = Gtk.ToolItem()
         self.combocontainer.add(self.combobox)
@@ -45,7 +45,7 @@ class Format_Pane(Editing_View):
 
     def set_source_article(self, article):
         self.source = article
-        
+
     def set_working_article(self, article):
         self.articletitle.set_markup(
                 "<span size='medium'><b> %s </b>  %s</span>" % \
