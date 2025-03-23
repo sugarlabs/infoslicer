@@ -65,7 +65,7 @@ Provides a simple and intuitive way to create and manage articles within the Sug
    ```
 3. Install the required Python dependency, `typing_extensions`, using pip:
    ```
-   pip install typing_extensions
+   pip install typing_extensions bs4
    ```
 4. Run the activity using the following command:
    ```
